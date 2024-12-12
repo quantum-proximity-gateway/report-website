@@ -1,30 +1,44 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { Home, Hammer } from "lucide-react"
+import { Home, Hammer, ChevronRight } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
 
-// Menu items.
 const items = [
   {
     title: "Home",
     url: "/",
     icon: Home,
+    subitems: [
+      {
+        title: "Title",
+        url: "/",
+      },
+    ],
   },
   {
     title: "Requirements",
     url: "/requirements",
     icon: Hammer,
+    subitems: [
+      {
+        title: "Project Background",
+        url: "/requirements",
+      },
+    ],
   }
 ]
 
@@ -36,20 +50,39 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Group 10 Report</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild isActive={pathname === item.url}>
-                    <a href={item.url}>
-                      <item.icon />
+          <SidebarMenu>
+            {items.map((item) => (
+              <Collapsible
+                key={item.title}
+                asChild
+                defaultOpen={pathname === item.url}
+                className="group/collapsible"
+              >
+                <SidebarMenuItem>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton tooltip={item.title}>
+                      {item.icon && <item.icon />}
                       <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
+                      <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      {item.subitems?.map((subItem) => (
+                        <SidebarMenuSubItem key={subItem.title}>
+                          <SidebarMenuSubButton asChild>
+                            <a href={subItem.url}>
+                              <span>{subItem.title}</span>
+                            </a>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuSubItem>
+                      ))}
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
                 </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
+              </Collapsible>
+            ))}
+          </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

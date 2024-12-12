@@ -1,5 +1,5 @@
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -15,9 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         >
           <SidebarProvider>
             <AppSidebar />
-            <main className="w-full">
-              {children}
-            </main>
+            {children}
           </SidebarProvider>
         </ThemeProvider>
       </body>

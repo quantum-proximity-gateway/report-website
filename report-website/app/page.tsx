@@ -4,19 +4,15 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 
 export default function Home() {
   return (
-    <>
+    <main className="w-full">
       <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
         <SidebarTrigger />
         <Separator orientation="vertical" className="mr-2 h-4" />
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              {/* <BreadcrumbLink href={item.href}>
-                {item.label}
-              </BreadcrumbLink> */}
               <BreadcrumbPage>Home</BreadcrumbPage>
             </BreadcrumbItem>
-            {/* <BreadcrumbSeparator className="hidden md:block" /> */}
           </BreadcrumbList>
         </Breadcrumb>
       </header>
@@ -29,6 +25,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-    </>
+    </main>
   )
 }
