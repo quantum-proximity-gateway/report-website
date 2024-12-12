@@ -27,6 +27,10 @@ const items = [
         title: "Title",
         url: "/",
       },
+      {
+        title: "Abstract",
+        url: "/",
+      },
     ],
   },
   {
