@@ -24,12 +24,8 @@ const items = [
     icon: Home,
     subitems: [
       {
-        title: "Title",
-        url: "/",
-      },
-      {
         title: "Abstract",
-        url: "/",
+        url: "/#abstract",
       },
     ],
   },
@@ -40,7 +36,7 @@ const items = [
     subitems: [
       {
         title: "Project Background",
-        url: "/requirements",
+        url: "/requirements#project-background",
       },
     ],
   }
