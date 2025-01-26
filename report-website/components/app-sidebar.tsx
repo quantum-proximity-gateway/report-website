@@ -99,7 +99,24 @@ const items = [
     title: "UI Design",
     url: "/ui-design",
     icon: Frame,
-    subitems: [],
+    subitems: [
+      {
+        title: "Design Principles",
+        url: "/ui-design#design-principles",
+      },
+      {
+        title: "Initial Sketches",
+        url: "/ui-design#initial-sketches",
+      },
+      {
+        title: "Digital Prototypes",
+        url: "/ui-design#digital-prototypes",
+      },
+      {
+        title: "Production Design",
+        url: "/ui-design#production-design",
+      },
+    ],
   },
   {
     title: "System Design",
