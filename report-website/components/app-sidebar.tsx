@@ -50,6 +50,26 @@ const items = [
         title: "Project Background",
         url: "/requirements#project-background",
       },
+      {
+        title: "Goals",
+        url: "/requirements#goals",
+      },
+      {
+        title: "Requirements Gathering",
+        url: "/requirements#requirements-gathering",
+      },
+      {
+        title: "Personas",
+        url: "/requirements#personas",
+      },
+      {
+        title: "Use Cases",
+        url: "/requirements#use-cases",
+      },
+      {
+        title: "MoSCoW List",
+        url: "/requirements#moscow-list",
+      },
     ],
   },
   {
