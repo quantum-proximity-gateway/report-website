@@ -1,6 +1,11 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Research',
+  };
 
 export default function Research() {
   return (
