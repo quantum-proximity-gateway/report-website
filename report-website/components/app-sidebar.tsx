@@ -86,8 +86,8 @@ const items = [
         url: "/research#technology-review",
       },
       {
-        title: "Decisions Summary",
-        url: "/research#decisions-summary",
+        title: "Technical Decisions",
+        url: "/research#technical-decisions",
       },
       {
         title: "References",
@@ -117,8 +117,8 @@ const items = [
         url: "/algorithms#discussions",
       },
       {
-        title: "Final Choices",
-        url: "/algorithms#final-choices",
+        title: "Conclusion",
+        url: "/algorithms#conclusion",
       },
       {
         title: "References",
@@ -252,7 +252,28 @@ const items = [
     title: "Appendices",
     url: "/appendices",
     icon: SquarePlus,
-    subitems: [],
+    subitems: [
+      {
+        title: "User Manual",
+        url: "/appendices#user-manual",
+      },
+      {
+        title: "Deployment Manual",
+        url: "/appendices#deployment-manual",
+      },
+      {
+        title: "Legal",
+        url: "/appendices#legal",
+      },
+      {
+        title: "Development Blog",
+        url: "/appendices#development-blog",
+      },
+      {
+        title: "Monthly Videos",
+        url: "/appendices#monthly-videos",
+      },
+    ],
   }
 ]
 
