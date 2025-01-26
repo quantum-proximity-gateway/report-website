@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { Home, Hammer, ChevronRight } from "lucide-react"
+import { Home, ClipboardList, BookOpenText, Frame, Layers, Hammer, Flag, ChartNoAxesCombined, SquarePlus, ChevronRight } from "lucide-react"
 
 import {
   Sidebar,
@@ -27,18 +27,72 @@ const items = [
         title: "Abstract",
         url: "/#abstract",
       },
+      {
+        title: "Video",
+        url: "/#video",
+      },
+      {
+        title: "Development Team",
+        url: "/#development-team",
+      },
+      {
+        title: "Project Management",
+        url: "/#project-management",
+      },
     ],
   },
   {
     title: "Requirements",
     url: "/requirements",
-    icon: Hammer,
+    icon: ClipboardList,
     subitems: [
       {
         title: "Project Background",
         url: "/requirements#project-background",
       },
     ],
+  },
+  {
+    title: "Research",
+    url: "/research",
+    icon: BookOpenText,
+    subitems: [],
+  },
+  {
+    title: "UI Design",
+    url: "/ui-design",
+    icon: Frame,
+    subitems: [],
+  },
+  {
+    title: "System Design",
+    url: "/system-design",
+    icon: Layers,
+    subitems: [],
+  },
+  {
+    title: "Implementation",
+    url: "/implementation",
+    icon: Hammer,
+    subitems: [],
+  },
+  {
+    title: "Testing",
+    url: "/testing",
+    icon: Flag,
+    subitems: [],
+  },
+  {
+    title: "Evaluation",
+    url: "/evaluation",
+    icon: ChartNoAxesCombined,
+    subitems: [],
+  },
+  {
+    title: "Appendices",
+    url: "/appendices",
+    icon: SquarePlus,
+    subitems: [],
   }
 ]
 
