@@ -59,13 +59,19 @@ export function AppSidebar() {
                 className="group/collapsible"
               >
                 <SidebarMenuItem>
-                  <CollapsibleTrigger asChild>
-                    <SidebarMenuButton tooltip={item.title}>
-                      {item.icon && <item.icon />}
-                      <span>{item.title}</span>
-                      <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                    </SidebarMenuButton>
-                  </CollapsibleTrigger>
+                  <div className="flex items-center">
+                    <a href={item.url} className="flex-1">
+                      <SidebarMenuButton tooltip={item.title}>
+                        {item.icon && <item.icon />}
+                        <span>{item.title}</span>
+                      </SidebarMenuButton>
+                    </a>
+                    <CollapsibleTrigger asChild>
+                      <button className="ml-2">
+                        <ChevronRight className="transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                      </button>
+                    </CollapsibleTrigger>
+                  </div>
                   <CollapsibleContent>
                     <SidebarMenuSub>
                       {item.subitems?.map((subItem) => (
