@@ -194,7 +194,36 @@ const items = [
     title: "Testing",
     url: "/testing",
     icon: Flag,
-    subitems: [],
+    subitems: [
+      {
+        title: "Testing Strategy",
+        url: "/testing#testing-strategy",
+      },
+      {
+        title: "Unit Testing",
+        url: "/testing#unit-testing",
+      },
+      {
+        title: "Integration Testing",
+        url: "/testing#integration-testing",
+      },
+      {
+        title: "Compatibility Testing",
+        url: "/testing#compatibility-testing",
+      },
+      {
+        title: "Responsive Design Testing",
+        url: "/testing#responsive-design-testing",
+      },
+      {
+        title: "Performance Testing",
+        url: "/testing#performance-testing",
+      },
+      {
+        title: "User Acceptance Testing",
+        url: "/testing#user-acceptance-testing",
+      },
+    ],
   },
   {
     title: "Evaluation",
