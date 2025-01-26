@@ -229,7 +229,24 @@ const items = [
     title: "Evaluation",
     url: "/evaluation",
     icon: ChartNoAxesCombined,
-    subitems: [],
+    subitems: [
+      {
+        title: "Achievements",
+        url: "/evaluation#achievments",
+      },
+      {
+        title: "Individual Contribution",
+        url: "/evaluation#individual-contribution",
+      },
+      {
+        title: "Critical Evaluation",
+        url: "/evaluation#critical-evaluation",
+      },
+      {
+        title: "Future",
+        url: "/evaluation#future",
+      },
+    ],
   },
   {
     title: "Appendices",
