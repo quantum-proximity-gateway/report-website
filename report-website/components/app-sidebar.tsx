@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { Home, ClipboardList, BookOpenText, Frame, Layers, Hammer, Flag, ChartNoAxesCombined, SquarePlus, ChevronRight } from "lucide-react"
+import { Home, ClipboardList, BookOpenText, Braces, Frame, Layers, Hammer, Flag, ChartNoAxesCombined, SquarePlus, ChevronRight } from "lucide-react"
 
 import {
   Sidebar,
@@ -96,6 +96,37 @@ const items = [
     ],
   },
   {
+    title: "Algorithms",
+    url: "/algorithms",
+    icon: Braces,
+    subitems: [
+      {
+        title: "Models",
+        url: "/algorithms#models",
+      },
+      {
+        title: "Data",
+        url: "/algorithms#data",
+      },
+      {
+        title: "Experiments",
+        url: "/algorithms#experiments",
+      },
+      {
+        title: "Discussions",
+        url: "/algorithms#discussions",
+      },
+      {
+        title: "Final Choices",
+        url: "/algorithms#final-choices",
+      },
+      {
+        title: "References",
+        url: "/algorithms#references",
+      },
+    ],
+  },
+  {
     title: "UI Design",
     url: "/ui-design",
     icon: Frame,
@@ -140,8 +171,8 @@ const items = [
         url: "/system-design#design-patterns",
       },
       {
-        title: "Class Diagrams",
-        url: "/system-design#class-diagrams",
+        title: "ER Diagrams",
+        url: "/system-design#er-diagrams",
       },
       {
         title: "Data Storage",
