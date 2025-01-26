@@ -122,7 +122,36 @@ const items = [
     title: "System Design",
     url: "/system-design",
     icon: Layers,
-    subitems: [],
+    subitems: [
+      {
+        title: "System Architecture",
+        url: "/system-design#system-architecture",
+      },
+      {
+        title: "Site Map",
+        url: "/system-design#site-map",
+      },
+      {
+        title: "Sequence Diagrams",
+        url: "/system-design#sequence-diagrams",
+      },
+      {
+        title: "Design Patterns",
+        url: "/system-design#design-patterns",
+      },
+      {
+        title: "Class Diagrams",
+        url: "/system-design#class-diagrams",
+      },
+      {
+        title: "Data Storage",
+        url: "/system-design#data-storage",
+      },
+      {
+        title: "APIs",
+        url: "/system-design#apis",
+      },
+    ],
   },
   {
     title: "Implementation",
