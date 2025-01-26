@@ -76,7 +76,24 @@ const items = [
     title: "Research",
     url: "/research",
     icon: BookOpenText,
-    subitems: [],
+    subitems: [
+      {
+        title: "Related Projects",
+        url: "/research#related-projects",
+      },
+      {
+        title: "Technology Review",
+        url: "/research#technology-review",
+      },
+      {
+        title: "Decisions Summary",
+        url: "/research#decisions-summary",
+      },
+      {
+        title: "References",
+        url: "/research#references",
+      },
+    ],
   },
   {
     title: "UI Design",
