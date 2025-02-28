@@ -28,8 +28,11 @@ export default function Home() {
             <p className="text-lg my-6">
               In modern computing environments, whether in the workplace or at home, seamless user-device interaction is essential for both efficiency and security. This interaction relies heavily on authentication and access control mechanisms, which verify user identity and regulate access to sensitive systems. Unfortunately, existing log-in and verification systems remain inflexible, often requiring manual input and failing to adapt dynamically to users' contextual and accessibility needs, which proves especially detrimental for disabled, elderly, or neurodivergent users. 
             </p>
-            <p className="text-lg">
+            <p className="text-lg my-6">
               As such, we have created the Quantum Proximity Gateway. Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. The system design enables a centralised ecosystem of devices to seamlessly communicate with each other, forming a robust and interconnected network of QPG-enabled devices, across which, encrypted user profiles and settings can be interacted with using AI Proximity Agents. Robust security and privacy controls are also prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain highly protected.
+            </p>
+            <p className="text-lg">
+              Our achievements with the Quantum Proximity Gateway mark a significant leap forward in secure and adaptive authentication. By eliminating the need for manual logins, we have not only streamlined user access but also enhanced digital inclusivity—ensuring that individuals of all abilities can interact with technology effortlessly. Our implementation of AI Proximity Agents, through the use of IBM Granite ansd Qiskit, has redefined how devices communicate, creating an intelligent, self-regulating ecosystem that adapts to users' accessibiity needs in real time. Furthermore, with post-quantum encryption, we have future-proofed security, safeguarding sensitive data against even the most advanced threats. This innovation represents more than just convenience - it is a transformative shift towards a smarter, more secure, and universally accessible digital experience.
             </p>
           </div>
           <div id="video">
