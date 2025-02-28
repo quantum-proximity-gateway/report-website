@@ -29,8 +29,7 @@ export default function Home() {
               In modern computing environments, whether in the workplace or at home, seamless user-device interaction is essential for both efficiency and security. This interaction relies heavily on authentication and access control mechanisms, which verify user identity and regulate access to sensitive systems. However, existing authentication and access control systems remain inflexible, often requiring manual input and failing to adapt dynamically to users' contextual and accessibility needs. 
             </p>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+              As such, we have created the Quantum Proximity Gateway. Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. Robust security and privacy controls are prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain proected, and the system . By integrating quantum-maintaining robust security and privacy controls.            </p>
           </div>
           <div id="video">
             <h1 className="text-4xl font-bold my-6">Video</h1>
