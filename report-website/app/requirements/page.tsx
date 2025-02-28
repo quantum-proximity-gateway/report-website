@@ -31,10 +31,13 @@ export default function Requirements() {
       <div className="flex justify-center p-6">
         <div className="max-w-4xl">
           <div id="project-background">
-            <h1 className="text-4xl font-bold my-6">Project Background</h1>
+            <h1 className="text-4xl font-bold my-6">Project Background and Partner Introduction</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              The Quantum Proximity Gateway (QPG) is a cutting-edge authentication system developed in collaboration with IBM. This system aims to revolutionise user authentication and access control by eliminating manual logins and streamlining authentication through proximity detection, facial recognition, and AI-driven profile management.         
             </p>
+            <h1 className="text-2xl font-bold my-6">Why is this Project Needed?</h1>
+            <p className="text-lg">
+              Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Research that we have conducted has shown that employees waste an average of XX minutes per day logging into various systems, which translates into hundreds of hours per year in lost productivity. This is all without considering          </p>
           </div>
           <div id="goals">
             <h1 className="text-4xl font-bold my-6">Goals</h1>
