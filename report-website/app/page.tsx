@@ -1,7 +1,8 @@
-import { SidebarTrigger } from "@/components/ui/sidebar"
-import { Separator } from "@/components/ui/separator"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { SidebarTrigger } from "../components/ui/sidebar";
+import { Separator } from "../components/ui/separator";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../components/ui/breadcrumb";
 import { Metadata } from 'next';
+import VideoComponent from './VideoComponent'; // Import the VideoComponent
 
 export default function Home() {
   return (
@@ -37,9 +38,10 @@ export default function Home() {
           </div>
           <div id="video">
             <h1 className="text-4xl font-bold my-6">Video</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              This video outlines the key finished functionalities of the Quantum Proximity Gateway and explores the technologies used.
             </p>
+            <VideoComponent title="" videoUrl="path/to/our/video.mp4" /> {/* Add the VideoComponent here */}
           </div>
           <div id="development-team">
             <h1 className="text-4xl font-bold my-6">Development Team</h1>
