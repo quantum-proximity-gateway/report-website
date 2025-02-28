@@ -37,7 +37,12 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Why is this Project Needed?</h1>
             <p className="text-lg">
-              Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Research that we have conducted has shown that employees waste an average of XX minutes per day logging into various systems, which translates into hundreds of hours per year in lost productivity. This is all without considering          </p>
+              Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Research that we have conducted has shown that employees waste an average of XX minutes per day logging into various systems, which translates into hundreds of hours per year in lost productivity. More specifically however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent individuals.         
+            </p>
+            <h1 className="text-2xl font-bold my-6">Who Benefits from the QPG?</h1>
+            <p className="text-lg">
+              The QPG is designed with all users in mind - from large enterprises to educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.0 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments.            
+            </p>
           </div>
           <div id="goals">
             <h1 className="text-4xl font-bold my-6">Goals</h1>
