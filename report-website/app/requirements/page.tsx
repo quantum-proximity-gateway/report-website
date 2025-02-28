@@ -41,7 +41,7 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Who Benefits from the QPG?</h1>
             <p className="text-lg">
-              The QPG is designed with all users in mind - from large enterprises to educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.0 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments.            
+              The QPG is designed with all users in mind - from large enterprises to educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.0 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. We believe the QPG will revolutionise the way in which specific users ...     
             </p>
           </div>
           <div id="goals">
