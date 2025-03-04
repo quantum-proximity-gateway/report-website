@@ -41,7 +41,10 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Who Benefits from the QPG?</h1>
             <p className="text-lg">
-              The QPG is designed with all users in mind - from large enterprises to educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.0 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. We believe the QPG will revolutionise the way in which specific users ...     
+              The QPG is designed with all users in mind - from large enterprises to educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.0 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. 
+              </p>
+            <p className="text-lg my-6">
+              We believe the QPG will especially revolutionise the way in which neurodivergent, elderly and quadriplegic users interact with their devices. By eliminating the need for traditional passwords and reducing cognitive load, the QPG enables increased overall accessibility - for neurodivergent users, the system minimises disruptions by automatically loading personalised settings upon login, and providing intuitive, frictionless access. Elderly users benefit from simplified authentication that does not rely on memorisation of passwords or fine motor skills, ensuring security without added complexity. Quadriplegic users can authenticate effortlessly through multimodal inputs, such as facial recognition and proximity detection, eliminating barriers to device interaction. 
             </p>
           </div>
           <div id="goals">
