@@ -37,7 +37,7 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Why is this Project Needed?</h1>
             <p className="text-lg">
-              Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Research that we have conducted has shown that employees waste an average of XX minutes per day logging into various systems, which translates into hundreds of hours per year in lost productivity. More specifically however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent individuals.         
+              Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees waste an average of XX minutes per day logging into various systems, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent individuals.         
             </p>
             <h1 className="text-2xl font-bold my-6">Who Benefits from the QPG?</h1>
             <p className="text-lg">
@@ -49,15 +49,83 @@ export default function Requirements() {
           </div>
           <div id="goals">
             <h1 className="text-4xl font-bold my-6">Goals</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              The Quantum Proximity Gateway is designed to:
             </p>
+            <ul className="list-disc pl-6">
+              <li>
+                <strong>Enhance Accessibility & User Experience</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition.</li>
+                  <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
+                  <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
+                  <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
+
+                </ul>
+              </li>
+              <li>
+                <strong>Improve Security & Privacy</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
+                  <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
+                  <li>Enable role-based access control (RBAC) for shared devices.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Create a Scalable IoT Ecosystem</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Establish a network of interconnected devices that communicate securely using AI Proximity Agents.</li>
+                  <li>Develop a modular authentication system adaptable to various industries.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Increase Efficiency & Reduce Downtime</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Minimize login friction in shared spaces by automatically configuring devices upon user entry.</li>
+                  <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
+                </ul>
+              </li>
+            </ul>
           </div>
           <div id="requirements-gathering">
             <h1 className="text-4xl font-bold my-6">Requirements Gathering</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              In order to collect the requirements needed to design the QPG, we used a multi-phase approach to ensure that our system is user-centric and industry-relevant:
             </p>
+            <ul className="list-disc pl-6">
+              <li>
+                <strong>Enhance Accessibility & User Experience</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition.</li>
+                  <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
+                  <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
+                  <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
+
+                </ul>
+              </li>
+              <li>
+                <strong>Improve Security & Privacy</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
+                  <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
+                  <li>Enable role-based access control (RBAC) for shared devices.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Create a Scalable IoT Ecosystem</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Establish a network of interconnected devices that communicate securely using AI Proximity Agents.</li>
+                  <li>Develop a modular authentication system adaptable to various industries.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Increase Efficiency & Reduce Downtime</strong>
+                <ul className="list-disc my-3 pl-6">
+                  <li>Minimize login friction in shared spaces by automatically configuring devices upon user entry.</li>
+                  <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
+                </ul>
+              </li>
+            </ul>
           </div>
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
