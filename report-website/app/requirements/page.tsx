@@ -97,7 +97,7 @@ export default function Requirements() {
                 <strong>User Surveys and Feedback</strong>
                 <ul className="list-disc my-3 pl-6">
                   <li>We conducted structured surveys to assess the challenges with traditional authentication.</li>
-                  <li>All participants were asked to sign a research participation consent form, which outliined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
+                  <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
                   <li>Participants were asked about hot-desking difficulties, privacy concerns, and preferred authentication methods.</li>
                   <li>We used a combination of open and closed questions, allowing us to gather both detailed, qualitative insights from open-ended questions while also getting quantifiable data and clear structure from closed-ended questions.</li>
                 </ul>
@@ -112,11 +112,15 @@ export default function Requirements() {
               <li>
                 <strong>Prototyping and Iterative Testing</strong>
                 <ul className="list-disc my-3 pl-6">
-                  <li>Establish a network of interconnected devices that communicate securely using AI Proximity Agents.</li>
-                  <li>Develop a modular authentication system adaptable to various industries.</li>
+                  <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [picture of sketches]</li>
+                  <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow.</li>
                 </ul>
               </li>
             </ul>
+            <h1 className="text-2xl font-bold my-6">Survey Data Analysis</h1>
+            <p className="text-lg">
+              Our user survey produced valuable insights:
+            </p>
           </div>
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
