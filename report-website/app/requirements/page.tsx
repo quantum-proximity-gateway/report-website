@@ -2,6 +2,8 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Metadata } from 'next';
+import SurveyTable from "./survey-table"
+
 
 export const metadata: Metadata = {
     title: 'Requirements',
@@ -113,7 +115,7 @@ export default function Requirements() {
                 <strong>Prototyping and Iterative Testing</strong>
                 <ul className="list-disc my-3 pl-6">
                   <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [picture of sketches]</li>
-                  <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow.</li>
+                  <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow. (maybe expand on this? Another subheading?)</li>
                 </ul>
               </li>
             </ul>
@@ -140,30 +142,16 @@ export default function Requirements() {
                 When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed, with one stating that "[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”.</strong> We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
               </li>
               </ul>
-            </ul>
+              </ul>
+            <p className="text-lg">
+              The data we collected sufficienly justified the need for BLE proximity & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
+            </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
-              The survey conducted to gather user requirements for the Quantum Proximity Gateway (QPG) was structured to identify key pain points, user expectations, and feature priorities. It included a mix of quantitative (multiple-choice) and qualitative (open-ended) questions, which allowed us to collect both statistical insights and deeper user opinions.            </p>
-              <ul className="list-disc pl-6 my-6">
-              <li>
-                <strong>67% of respondents stated that they had trouble with hot-desking, and found manual logins inconvenient and time-consuming.</strong>
-              </li>
-              <ul className="list-disc my-6">
-              <li>
-                <strong>100% of respondents suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that "it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices".</strong>
-                </li>
-              </ul>
-                <ul className="list-disc my-6">
-              <li>
-                <strong>Users with accessibility needs strongly supported AI-driven chatbot assistance to modify settings, noting that this would be "a great feature".</strong>
-              </li>
-              </ul>
-              <ul className="list-disc my-6">
-              <li>
-                When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed, with one stating that "[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”.</strong> We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
-              </li>
-              </ul>
-            </ul>
+              The survey conducted to gather user requirements for the (QPG) was structured to identify key pain points, user expectations, and feature priorities.  </p>
+              <SurveyTable />
+            <p className="text-lg">
+            By refining the survey methodology and incorporating more neutral phrasing to reduce bias, we can further improve the survey's accuracy, allowing us to better gauge the system’s real-world effectiveness.            </p>
           </div>
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
