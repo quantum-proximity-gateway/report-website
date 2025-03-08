@@ -144,7 +144,7 @@ export default function Requirements() {
               </ul>
               </ul>
             <p className="text-lg">
-              The data we collected sufficienly justified the need for BLE proximity & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
+              The data we collected sufficiently justified the need for BLE proximity & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
@@ -156,8 +156,7 @@ export default function Requirements() {
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+              To ensure the QPG meets the needs of different user groups, we developed detailed personas representing key stakeholders and typical users of the system. These personas help in designing features that match real-world user behaviors and challenges.  [insert pictures of personas]          </p>
           </div>
           <div id="use-cases">
             <h1 className="text-4xl font-bold my-6">Use Cases</h1>
