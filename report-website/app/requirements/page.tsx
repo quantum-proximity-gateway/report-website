@@ -134,7 +134,7 @@ export default function Requirements() {
               </ul>
                 <ul className="list-disc my-6">
               <li>
-                <strong>Users with accessibility needs strongly supported AI-driven chatbot assistance to modify settings, noting that this would be "a great feature".</strong>
+                <strong>Users with accessibility needs strongly supported AI-driven chatbot assistance for modifying settings, noting that this would be "a great feature".</strong>
               </li>
               </ul>
               <ul className="list-disc my-6">
@@ -168,7 +168,7 @@ export default function Requirements() {
                 <li><strong>Diverse Use Cases: </strong>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.  </li>
               </ul>
               <ul className="list-disc pl-6 my-3">
-                  <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot assistance for modifying settings. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.  </li>
+                  <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.  </li>
               </ul>
             <p className="text-lg my-6">
             Further conclusions can be found in the MoSCoW lists at the bottom of the page. </p>          
@@ -182,7 +182,7 @@ export default function Requirements() {
             </div>
             <h1 className="text-2xl font-bold my-6">Use case List</h1>
             <p className="text-lg">
-              A list of use cases for our QPG system [will improve during overall UI improvement, this is just a rough idea]. 
+              A list of use cases for our QPG system [will improve/edit during overall UI improvement, this is just a rough idea, some sound very similar to each other]. 
               </p>
               <ul className="list-disc pl-6 my-6">
               <li>
@@ -205,19 +205,14 @@ export default function Requirements() {
               </ul>
               <ul className="list-disc my-6">
               <li>
-                UC5: Personalised Smart Desk Setup in Corporate Offices 
-              </li>
-              </ul>
-              <ul className="list-disc my-6">
-              <li>
-                UC6: Secure Auto-Login for Hospital Workstations 
+                UC5: IT Admin Monitoring and Security Enforcement 
               </li>
               </ul>
             </ul>
             <h1 className="text-2xl font-bold my-6">Use case Descriptions</h1>
               <ul className="list-disc pl-6 my-6">
               <li>
-                UC1: Secure Access to Workstations via Proximity & Facial Recognition - Actor: Employee; Description: Securely log into workstation via proximity & facial recognition; Main flow: 1. User enters office and approaches workstation with QPG system. 2. The BLE sensor detects the user's presence. 3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module. 4.If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences. 5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.; Result: secure access to workstations via proximity sensiing and facial recognition. 
+                UC1: Secure Access to Workstations via Proximity & Facial Recognition - Actor: User e.g. employee; Description: Securely log into workstation via proximity & facial recognition; Main flow: 1. User enters office and approaches workstation with QPG system. 2. The BLE sensor detects the user's presence. 3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module. 4.If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences. 5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.; Result: secure access to workstations via proximity sensiing and facial recognition. 
               </li>
               <ul className="list-disc my-6">
               <li>
@@ -226,31 +221,33 @@ export default function Requirements() {
               </ul>
                 <ul className="list-disc my-6">
               <li>
-                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces - Actor: ; Description: ; Main flow: ; Result: 
+                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces - Actor: User e.g. Freelancer, Remote Worker; Description: User has personalised short term access to a shared device ; Main flow: 1. QPG detects the freelancer’s presence and identifies them via BLE proximity. 2.The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings. 3. When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state. ; Result: Secure and efficient access in shared environments.
               </li>
               </ul>
               <ul className="list-disc my-6">
               <li>
-                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance - Actor: ; Description: ; Main flow: ; Result: 
+                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance - Actor: User e.g. employee, student, IT Support Agent; Description: User has trouble accessing their profile or personalising their settings, so uses AI chatbot for assistance.; Main flow: 1.,2.,3. the same as UC1 and 2. 4. The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech). 5. The chatbot analyses the issue and provides guided troubleshooting steps. 6. If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.7. The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).; Result: Self-service troubleshooting and improved accessibility.
               </li>
               </ul>
               <ul className="list-disc my-6">
               <li>
-                UC5: Personalised Smart Desk Setup in Corporate Offices - Actor: ; Description: ; Main flow: ; Result: 
-              </li>
-              </ul>
-              <ul className="list-disc my-6">
-              <li>
-                UC6: Secure Auto-Login for Hospital Workstations - Actor: ; Description: ; Main flow: ; Result: 
+                UC5: IT Admin Monitoring and Security Enforcement (maybe) - Actor: IT Administrator; Description: An IT administrator monitors authentication logs and enforce access policies ; Main flow: 1. The IT admin logs into the QPG dashboard. 2. They view real-time authentication logs, including failed login attempts and access requests. 3. If a security risk is detected, they can manually revoke access or enforce 2FA for specific users; Result: Centralised security monitoring
               </li>
               </ul>
             </ul>
           <div id="moscow-list">
-            <h1 className="text-4xl font-bold my-6">MoSCoW List</h1>
+            <h1 className="text-4xl font-bold my-6">MoSCoW Requirements List</h1>
+            <h1 className="text-2xl font-bold my-6">Functional Requirements</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+              This list defines the core features and functionalities essential for the development of the QPG. With a strong focus on seamless authentication, secure accessibility, and adaptive user control, the QPG leverages BLE proximity detection, facial recognition, post-quantum encryption and AI-driven profile management to provide a frictionless login experience. While the primary focus remains on robust security and usability, the system also considers potential enhancements such as multi-device synchronisation, advanced directional proximity detection via signal strength, and intelligent device-switching capabilities. This structured requirement framework ensures that essential features are prioritised while leaving room for future scalability and innovation.           </p>
+              <p className="text-lg my-6">
+              [insert funtional MoSCoW requirements here, will do when editing UI]          </p>
           </div>
+          <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
+            <p className="text-lg">
+            Non-functional requirements define the quality attributes, constraints, and operational characteristics of the Quantum Proximity Gateway. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance and usability, ensuring that all users can have swift frictionless access to their devices regardless of their physical or technical abilities. We also anticipate that the QPG system will continue to be developed for use in large-scale environments and for easy integration with future IoT devices. Therefore, scalability is another large priority of ours, which is further highlighted in the list below.        </p>
+            <p className="text-lg my-6">
+              [Must Have - Performance, Reliability, Security, Scalability, Compatibility; Should Have - Usability, Privacy Control, Extensibility; Could Have: Multi-Language Support, Feedback Mechanisms; Won't Have: Mobile App Integration ]          </p>
         </div>
       </div>
     </main>
