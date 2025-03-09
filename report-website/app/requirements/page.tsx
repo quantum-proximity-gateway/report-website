@@ -247,7 +247,7 @@ export default function Requirements() {
             <p className="text-lg">
             Non-functional requirements define the quality attributes, constraints, and operational characteristics of the Quantum Proximity Gateway. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance and usability, ensuring that all users can have swift frictionless access to their devices regardless of their physical or technical abilities. We also anticipate that the QPG system will continue to be developed for use in large-scale environments and for easy integration with future IoT devices. Therefore, scalability is another large priority of ours, which is further highlighted in the list below.        </p>
             <p className="text-lg my-6">
-              [Must Have - Performance, Reliability, Security, Scalability, Compatibility; Should Have - Usability, Privacy Control, Extensibility; Could Have: Multi-Language Support, Feedback Mechanisms; Won't Have: Mobile App Integration ]          </p>
+              [Again, will update/edit once editing UI - Must Have - Performance, Reliability, Security, Scalability, Compatibility; Should Have - Usability, Privacy Control, Extensibility; Could Have: Multi-Language Support, Feedback Mechanisms; Won't Have: Mobile App Integration ]          </p>
         </div>
       </div>
     </main>
