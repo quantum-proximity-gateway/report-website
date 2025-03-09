@@ -58,7 +58,7 @@ export default function Requirements() {
               <li>
                 <strong>Enhance Accessibility & User Experience</strong>
                 <ul className="list-disc my-3 pl-6">
-                  <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition.</li>
+                  <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
                   <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
                   <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
                   <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
@@ -114,7 +114,7 @@ export default function Requirements() {
               <li>
                 <strong>Prototyping and Iterative Testing</strong>
                 <ul className="list-disc my-3 pl-6">
-                  <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [picture of sketches]</li>
+                  <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [link to sketches and interactive wireframe URL]</li>
                   <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow. (maybe expand on this? Another subheading?)</li>
                 </ul>
               </li>
@@ -156,14 +156,95 @@ export default function Requirements() {
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
             <p className="text-lg">
-              To ensure the QPG meets the needs of different user groups, we developed detailed personas representing key stakeholders and typical users of the system. These personas help in designing features that match real-world user behaviors and challenges.  [insert pictures of personas]          </p>
+              To ensure the QPG meets the needs of different user groups, we developed detailed personas representing key stakeholders and typical users of the system. These personas help in designing features that match real-world user behaviors and challenges.      </p>
+            <p className="text-lg my-6">
+              [insert pictures of personas]          </p>
+            <p className="text-lg my-6">
+            Based on the surveys and personas, these are the conclusions our team came to regarding requirements:           </p>
+              <ul className="list-disc my-3 pl-6">
+                  <li><strong>Seamless Authentication Across Multiple Environments: </strong>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.  </li>
+              </ul>
+              <ul className="list-disc pl-6 my-3">
+                <li><strong>Diverse Use Cases: </strong>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.  </li>
+              </ul>
+              <ul className="list-disc pl-6 my-3">
+                  <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot assistance for modifying settings. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.  </li>
+              </ul>
+            <p className="text-lg my-6">
+            Further conclusions can be found in the MoSCoW lists at the bottom of the page. </p>          
           </div>
           <div id="use-cases">
             <h1 className="text-4xl font-bold my-6">Use Cases</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+              The use case diagram below shows how users can interact with the QPG to authenticate themselves and access devices seamlessly. Each use case represents a real-world scenario where the QPG enhances efficiency, security, and accessibility by dynamically adapting to user presence and intent.        </p>
+          <p className="text-lg my-6">
+            [insert use case diagram]          </p>
+            </div>
+            <h1 className="text-2xl font-bold my-6">Use case List</h1>
+            <p className="text-lg">
+              A list of use cases for our QPG system [will improve during overall UI improvement, this is just a rough idea]. 
+              </p>
+              <ul className="list-disc pl-6 my-6">
+              <li>
+                UC1: Secure Access to Workstations via Proximity & Facial Recognition 
+              </li>
+              <ul className="list-disc my-6">
+              <li>
+                UC2: Accessibility-Focused Hands-Free Authentication 
+                </li>
+              </ul>
+                <ul className="list-disc my-6">
+              <li>
+                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces
+              </li>
+              </ul>
+              <ul className="list-disc my-6">
+              <li>
+                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance 
+              </li>
+              </ul>
+              <ul className="list-disc my-6">
+              <li>
+                UC5: Personalised Smart Desk Setup in Corporate Offices 
+              </li>
+              </ul>
+              <ul className="list-disc my-6">
+              <li>
+                UC6: Secure Auto-Login for Hospital Workstations 
+              </li>
+              </ul>
+            </ul>
+            <h1 className="text-2xl font-bold my-6">Use case Descriptions</h1>
+              <ul className="list-disc pl-6 my-6">
+              <li>
+                UC1: Secure Access to Workstations via Proximity & Facial Recognition - Actor: Employee; Description: Securely log into workstation via proximity & facial recognition; Main flow: 1. User enters office and approaches workstation with QPG system. 2. The BLE sensor detects the user's presence. 3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module. 4.If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences. 5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.; Result: secure access to workstations via proximity sensiing and facial recognition. 
+              </li>
+              <ul className="list-disc my-6">
+              <li>
+                UC2: Accessibility-Focused Hands-Free Authentication - Actor: User with mobility impairments.; Description: A quadriplegic user logs into a device without movement; Main flow: 1. The quadriplegic user moves towards the device. 2. The BLE sensor detects the user's presence. 3. The QPG system prompts facial recognition as an alternative to manual login. 4. If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (The automatic opening of the chatbot can be turned on or off by the user, depending on necessity). 5. The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot. 6. If authentication fails, access is denied, and an alert is sent to IT security. 7. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user ; Result: Hands-free access to device for users with mobility issues.
+                </li>
+              </ul>
+                <ul className="list-disc my-6">
+              <li>
+                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces - Actor: ; Description: ; Main flow: ; Result: 
+              </li>
+              </ul>
+              <ul className="list-disc my-6">
+              <li>
+                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance - Actor: ; Description: ; Main flow: ; Result: 
+              </li>
+              </ul>
+              <ul className="list-disc my-6">
+              <li>
+                UC5: Personalised Smart Desk Setup in Corporate Offices - Actor: ; Description: ; Main flow: ; Result: 
+              </li>
+              </ul>
+              <ul className="list-disc my-6">
+              <li>
+                UC6: Secure Auto-Login for Hospital Workstations - Actor: ; Description: ; Main flow: ; Result: 
+              </li>
+              </ul>
+            </ul>
           <div id="moscow-list">
             <h1 className="text-4xl font-bold my-6">MoSCoW List</h1>
             <p className="text-lg">
