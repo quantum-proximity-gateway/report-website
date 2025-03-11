@@ -144,7 +144,7 @@ export default function Requirements() {
               </ul>
               </ul>
             <p className="text-lg">
-              The data we collected sufficiently justified the need for BLE proximity & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
+              The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
