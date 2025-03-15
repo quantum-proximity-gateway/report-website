@@ -143,26 +143,20 @@ export default function Requirements() {
             <p className="text-lg">
               Our user survey produced valuable insights:
             </p>
-              <ul className="list-disc pl-6 my-6">
+            <ul className="list-disc pl-6 my-6">
               <li>
                 <strong>67% of respondents stated that they had trouble with hot-desking, and found manual logins inconvenient and time-consuming.</strong>
               </li>
-              <ul className="list-disc my-6">
               <li>
                 <strong>100% of respondents suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that "it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices".</strong>
-                </li>
-              </ul>
-                <ul className="list-disc my-6">
+              </li>
               <li>
                 <strong>Users with accessibility needs strongly supported AI-driven chatbot assistance for modifying settings, noting that this would be "a great feature".</strong>
               </li>
-              </ul>
-              <ul className="list-disc my-6">
               <li>
                 When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed, with one stating that "[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”.</strong> We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
               </li>
-              </ul>
-              </ul>
+            </ul>
             <p className="text-lg">
               The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
             </p>
@@ -171,7 +165,7 @@ export default function Requirements() {
               The survey conducted to gather user requirements for the (QPG) was structured to identify key pain points, user expectations, and feature priorities.
             </p>
             <div className="p-6 w-full">
-              <h2 className="text-2xl font-bold mb-6 text-white text-center">Survey Evaluation</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center">Survey Evaluation</h2>
               <div className="overflow-x-auto">
                 <table className="w-full border border-gray-700 rounded-lg shadow-lg">
                   <thead>
