@@ -82,26 +82,24 @@ export default function Home() {
           <div id="development-team">
             <h1 className="text-4xl font-bold my-6">Development Team</h1>
             <div className="flex flex-wrap justify-center gap-10">
-              {teamMembers.map((member, index) => (
-                <div >
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>{ member.name }</CardTitle>
-                      <CardDescription>{ member.role }</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex justify-center">
-                      <a href={ member.link }>
-                        <Avatar className="w-32 h-32">
-                          <AvatarImage src={ member.photo } />
-                          <AvatarFallback></AvatarFallback>
-                        </Avatar>
-                      </a>
-                    </CardContent>
-                    <CardFooter>
-                      <CardDescription>{ member.email }</CardDescription>
-                    </CardFooter>
-                  </Card>
-                </div>
+              {teamMembers.map((member) => (
+                <Card key={ member.name }>
+                  <CardHeader>
+                    <CardTitle>{ member.name }</CardTitle>
+                    <CardDescription>{ member.role }</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex justify-center">
+                    <a href={ member.link }>
+                      <Avatar className="w-32 h-32">
+                        <AvatarImage src={ member.photo } />
+                        <AvatarFallback></AvatarFallback>
+                      </Avatar>
+                    </a>
+                  </CardContent>
+                  <CardFooter>
+                    <CardDescription>{ member.email }</CardDescription>
+                  </CardFooter>
+                </Card>
               ))}
             </div>
           </div>
