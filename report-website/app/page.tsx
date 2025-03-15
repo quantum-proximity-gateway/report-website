@@ -1,14 +1,13 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
-import TeamMember from './team-member'; 
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const teamMembers = [
     {
         name: 'Marwan Yassini Chairi El Kamel',
         role: '...',
         email: 'marwan.kamel.23@ucl.ac.uk',
-        contribution: '...',
         photo: '/path/to/photo1.jpg',
     },
     {
@@ -22,14 +21,12 @@ const teamMembers = [
         name: 'Abdulhamid Abayomi',
         role: '...',
         email: 'abdulhamid.abayomi.23@ucl.ac.uk',
-        contribution: 'Conducted research',
         photo: '/path/to/photo3.jpg',
     },
     {
         name: 'Abdul Muhaymin Abdul Hafiz',
         role: '...',
         email: 'abdul.hafiz.23@ucl.ac.uk​',
-        contribution: '...',
         photo: '/path/to/photo4.jpg',
     },
 ];
@@ -83,14 +80,27 @@ export default function Home() {
             <h1 className="text-4xl font-bold my-6">Development Team</h1>
             <div className="flex flex-wrap justify-center">
               {teamMembers.map((member, index) => (
-                  <TeamMember key={index} member={member} />
+                <Card>
+                  <CardHeader>
+                    <CardTitle>{ member.name }</CardTitle>
+                    <CardDescription>{ member.role }</CardDescription>
+                    <CardDescription>{ member.email }</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Card Content</p>
+                  </CardContent>
+                  <CardFooter>
+                    <p>Card Footer</p>
+                  </CardFooter>
+                </Card>
               ))}
             </div>
           </div>
           <div id="project-management">
             <h1 className="text-4xl font-bold my-6">Project Management</h1>
             <p className="text-lg">
-            (Will create Gantt-Chart)            </p>
+              (Will create Gantt-Chart)
+            </p>
           </div>
         </div>
       </div>
