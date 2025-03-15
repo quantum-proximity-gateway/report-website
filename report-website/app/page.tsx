@@ -1,6 +1,6 @@
-import { SidebarTrigger } from "../components/ui/sidebar";
-import { Separator } from "../components/ui/separator";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "../components/ui/breadcrumb";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Separator } from "@/components/ui/separator";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import VideoComponent from './video-component'; 
 import TeamMember from './team-member'; 
 
