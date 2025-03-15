@@ -1,7 +1,6 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
-import VideoComponent from './video-component'; 
 import TeamMember from './team-member'; 
 
 const teamMembers = [
@@ -72,7 +71,13 @@ export default function Home() {
             <p className="text-lg my-6">
               This video outlines the key finished functionalities of the Quantum Proximity Gateway and explores the technologies used.
             </p>
-            <VideoComponent title="" videoUrl="path/to/our/video.mp4" /> {/* Add the VideoComponent here */}
+            <div className="video-container">
+              <h2>Title</h2>
+              <video controls width="600">
+                <source src="path/to/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
           <div id="development-team">
             <h1 className="text-4xl font-bold my-6">Development Team</h1>

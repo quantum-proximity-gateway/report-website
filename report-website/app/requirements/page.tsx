@@ -3,7 +3,6 @@ import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Metadata } from 'next';
-import SurveyTable from "./survey-table"
 
 
 export const metadata: Metadata = {
@@ -169,19 +168,67 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
-              The survey conducted to gather user requirements for the (QPG) was structured to identify key pain points, user expectations, and feature priorities.  </p>
-              <SurveyTable />
+              The survey conducted to gather user requirements for the (QPG) was structured to identify key pain points, user expectations, and feature priorities.
+            </p>
+            <div className="p-6 w-full">
+              <h2 className="text-2xl font-bold mb-6 text-white text-center">Survey Evaluation</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full border border-gray-700 rounded-lg shadow-lg">
+                  <thead>
+                    <tr className="bg-gray-800 text-white">
+                      <th className="p-4 text-left border-b border-gray-700 text-lg w-1/2">Strengths ✅</th>
+                      <th className="p-4 text-left border-b border-gray-700 text-lg w-1/2">Limitations ⚠️</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-gray-900 text-white">
+                      <td className="p-4 border-b border-gray-700">
+                        <strong>✅ Direct User Insights</strong>  
+                        <p>The survey provided first-hand responses from individuals who regularly experience authentication challenges, making the data highly relevant.</p>
+                      </td>
+                      <td className="p-4 border-b border-gray-700">
+                        <strong>⚠️ Limited Sample Size</strong>  
+                        <p>The survey was conducted with a relatively small group of users, which may not be fully representative of all potential users. A larger dataset would improve the reliability of conclusions.</p>
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-800 text-white">
+                      <td className="p-4 border-b border-gray-700">
+                        <strong>✅ Broad Applicability</strong>  
+                        <p>The inclusion of various user groups (corporate employees, students, users with advanced accessibility requirements) ensured that diverse perspectives were captured.</p>
+                      </td>
+                      <td className="p-4 border-b border-gray-700">
+                        <strong>⚠️ Potential Response Bias</strong>  
+                        <p>Respondents may have given answers that they thought were socially desirable or aligned with the project’s goals rather than their actual preferences. For example, some users might have expressed support for facial recognition authentication without fully considering the privacy implications.</p>
+                        </td>
+                    </tr>
+                    <tr className="bg-gray-900 text-white">
+                      <td className="p-4 border-b border-gray-700">
+                        <strong>✅ Balanced Question Design</strong>  
+                        <p>The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses specifically provided valuable user-driven feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
+                      </td>
+                      <td className="p-4 border-b border-gray-700">
+                        <strong>⚠️ Lack of Longitudinal Data</strong>  
+                        <p>The survey only captured a single point in time and did not account for changing user preferences over time. A user’s opinion on the access control mechanisms might evolve as they gain experience with new authentication technologies or encounter real-world security breaches.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <p className="text-lg">
-            By refining the survey methodology and incorporating more neutral phrasing to reduce bias, we can further improve the survey's accuracy, allowing us to better gauge the system’s real-world effectiveness.            </p>
+              By refining the survey methodology and incorporating more neutral phrasing to reduce bias, we can further improve the survey's accuracy, allowing us to better gauge the system’s real-world effectiveness.
+            </p>
           </div>
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
             <p className="text-lg">
               To ensure the QPG meets the needs of different user groups, we developed detailed personas representing key stakeholders and typical users of the system. These personas help in designing features that match real-world user behaviors and challenges.      </p>
             <p className="text-lg my-6">
-              [insert pictures of personas]          </p>
+              [insert pictures of personas]
+            </p>
             <p className="text-lg my-6">
-            Based on the surveys and personas, these are the conclusions our team came to regarding requirements:           </p>
+              Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
+            </p>
               <ul className="list-disc my-3 pl-6">
                   <li><strong>Seamless Authentication Across Multiple Environments: </strong>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.  </li>
               </ul>
@@ -192,15 +239,17 @@ export default function Requirements() {
                   <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.  </li>
               </ul>
             <p className="text-lg my-6">
-            Further conclusions can be found in the MoSCoW lists at the bottom of the page. </p>          
+              Further conclusions can be found in the MoSCoW lists at the bottom of the page.
+            </p>          
           </div>
           <div id="use-cases">
             <h1 className="text-4xl font-bold my-6">Use Cases</h1>
             <p className="text-lg">
               The use case diagram below shows how users can interact with the QPG to authenticate themselves and access devices seamlessly. Each use case represents a real-world scenario where the QPG enhances efficiency, security, and accessibility by dynamically adapting to user presence and intent.        </p>
-          <p className="text-lg my-6">
-            [insert use case diagram]          </p>
-            </div>
+            <p className="text-lg my-6">
+              [insert use case diagram]
+            </p>
+          </div>
             <h1 className="text-2xl font-bold my-6">Use case List</h1>
             <p className="text-lg">
               A list of use cases for our QPG system [will improve/edit during overall UI improvement, this is just a rough idea, some sound very similar to each other]. 
