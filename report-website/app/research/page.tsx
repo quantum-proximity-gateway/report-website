@@ -38,20 +38,26 @@ export default function Research() {
             From our research, we concluded that a good proximity-based access control system must:
             <ul className="list-disc pl-6 my-6">
               <li>
-                <strong>Ensure secure authentication</strong>
+                <strong>Ensure secure authentication:</strong> Utilise multi-factor authentication methods such as facial recognition, BLE proximity detection, and post-quantum cryptographic encryption to prevent unauthorized access.
               </li>
               <li>
-                <strong>Support seamless user experience</strong>
+                <strong>Support seamless user experience:</strong> Automatically configure devices based on user proximity and profile, ensuring effortless transitions between workstations, meeting rooms, and other shared spaces.
               </li>
               <li>
-                <strong>Enhance Accessibility & User Experience</strong>
+                <strong>Provide accurate proximity detection:</strong> Implement BLE signal strength analysis for precise location tracking, ensuring users connect only to their intended devices.
               </li>
               <li>
-                <strong>Enhance Accessibility & User Experience</strong>
+                <strong>Feature a user-friendly configuration interface:</strong>Provide a website or app for easy setup, registration, troubleshooting, and user profile management.
               </li>
             </ul>
+          As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
             </p>
-          </div>
+            <h1 className="text-2xl font-bold my-6">Review: Alps Alpine's Secure Digital Key</h1>
+            <p className="text-lg">
+            <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            Alps Alpine 
+            </a>{" "} 
+           is a Japanese multinational corporation specialising in electronic components and in-vehicle information systems. The company has continuously utilised Bluetooth technology to develop secure digital key solutions, enhancing user convenience and vehicle security. Through collaborations with industry leaders like Broadcom and Giesecke+Devrient (G+D), Alps Alpine has introduced advanced systems that employ Bluetooth Low Energy (BLE) for precise distance measurement and keyless entry functionalities, features that we required for our own QPG system.     </p></div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
             <p className="text-lg">
