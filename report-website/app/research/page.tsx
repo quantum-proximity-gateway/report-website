@@ -47,7 +47,7 @@ export default function Research() {
                 <strong>Provide accurate proximity detection:</strong> Implement BLE signal strength analysis for precise location tracking, ensuring users connect only to their intended devices.
               </li>
               <li>
-                <strong>Feature a user-friendly configuration interface:</strong>Provide a website or app for easy setup, registration, troubleshooting, and user profile management.
+                <strong>Feature a user-friendly configuration interface:</strong> Provide a website or app for easy setup, registration, troubleshooting, and user profile management.
               </li>
             </ul>
           As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
@@ -83,6 +83,33 @@ export default function Research() {
             </p>
             <p className="text-lg my-6">
             Ultimately, BLE’s balance of affordability, efficiency, and compatibility makes it the ideal solution for enabling seamless, profile-based authentication across multiple devices in real-world environments, which is why we selected this option for use in our QPG system. 
+            </p>
+            <h1 className="text-2xl font-bold my-6">Post-Quantum Cryptography (PQC) Encryption</h1>
+            <p className="text-lg">
+            To secure user authentication and communication between devices, post-quantum cryptographic (PQC) standards are necessary to future-proof the system against potential quantum attacks. Traditional encryption methods such as RSA-4096 and Elliptic Curve Cryptography (ECC) are effective today but may become vulnerable with advancements in quantum computing, and so we took this into consideration when designing our system. </p>
+            <p className="text-lg my-6">
+            After evaluating several PQC algorithms, the Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM - a standardised version of the CRYSTALS-Kyber algorithm) was chosen as the encryption standard for our system. CRYSTALS-Kyber is a lattice-based encryption algorithm that provides strong security guarantees against quantum attacks. It has been recognized by NIST as a promising candidate for post-quantum encryption, making it a reliable and forward-looking choice. We employed the liboqs-python library to implement this encryption within our system, ensuring seamless integration with existing cryptographic workflows. 
+            </p>
+            <p className="text-lg my-6">
+            While RSA-4096 remains a widely used standard, its susceptibility to quantum decryption makes it less suitable for long-term security. ECC offers improved efficiency over RSA but does not provide sufficient resistance against quantum threats. By integrating CRYSTALS-Kyber, our system ensures that all sensitive user data is encrypted during transmission and storage, mitigating potential future security risks.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
+            <p className="text-lg">
+            Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Ultra-Wideband (UWB), and Wi-Fi-based positioning. </p>
+            <p className="text-lg my-6">
+            BLE was chosen as the primary technology for proximity detection due to its balance of cost-effectiveness, power efficiency, and widespread compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, known for its low-cost and efficient BLE functionality, will act as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and infer directionality, allowing for accurate proximity-based authentication. 
+            </p>
+            <p className="text-lg my-6">
+            Ultra-Wideband (UWB) was considered due to its superior accuracy and directional awareness, which allow it to pinpoint locations with centimeter-level precision using Time of Flight (ToF) and Angle of Arrival (AoA) methods. This makes UWB an attractive option for high-security applications, such as access control in corporate environments or precise indoor tracking in industrial settings. However, UWB technology is still relatively expensive and requires specialised hardware, which limits its adoption in mainstream consumer devices. Additionally, UWB consumes significantly more power than BLE, making it impractical for always-on proximity detection in battery-operated IoT devices.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
+            <p className="text-lg">
+            Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Ultra-Wideband (UWB), and Wi-Fi-based positioning. </p>
+            <p className="text-lg my-6">
+            BLE was chosen as the primary technology for proximity detection due to its balance of cost-effectiveness, power efficiency, and widespread compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, known for its low-cost and efficient BLE functionality, will act as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and infer directionality, allowing for accurate proximity-based authentication. 
+            </p>
+            <p className="text-lg my-6">
+            Ultra-Wideband (UWB) was considered due to its superior accuracy and directional awareness, which allow it to pinpoint locations with centimeter-level precision using Time of Flight (ToF) and Angle of Arrival (AoA) methods. This makes UWB an attractive option for high-security applications, such as access control in corporate environments or precise indoor tracking in industrial settings. However, UWB technology is still relatively expensive and requires specialised hardware, which limits its adoption in mainstream consumer devices. Additionally, UWB consumes significantly more power than BLE, making it impractical for always-on proximity detection in battery-operated IoT devices.
             </p>
           </div>
           <div id="technical-decisions">
