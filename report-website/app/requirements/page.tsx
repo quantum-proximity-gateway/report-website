@@ -239,7 +239,6 @@ export default function Requirements() {
             <p className="text-lg my-6">
               [insert use case diagram]
             </p>
-          </div>
             <h1 className="text-2xl font-bold my-6">Use case List</h1>
             <p className="text-lg">
               A list of use cases for our QPG system [will improve/edit during overall UI improvement, this is just a rough idea, some sound very similar to each other]. 
@@ -295,6 +294,7 @@ export default function Requirements() {
               </li>
               </ul>
             </ul>
+          </div>
           <div id="moscow-list">
             <h1 className="text-4xl font-bold my-6">MoSCoW Requirements List</h1>
             <h1 className="text-2xl font-bold my-6">Functional Requirements</h1>
