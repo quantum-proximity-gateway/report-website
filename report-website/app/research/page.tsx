@@ -33,10 +33,11 @@ export default function Research() {
           <div id="related-projects">
             <h1 className="text-4xl font-bold my-6">Related Projects Review </h1>
             <p className="text-lg">
-            Bluetooth and proximity-based computing have become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies and resources for the QPG, we conducted an in-depth analysis of existing proximity-based automation and authentication systems, examining their software and hardware implementations to understand the key factors driving their functionality.            </p>
-            <p className="text-lg my-6">
-            From our research, we concluded that a good proximity-based access control system must:
-            <ul className="list-disc pl-6 my-6">
+              Bluetooth and proximity-based computing have become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies and resources for the QPG, we conducted an in-depth analysis of existing proximity-based automation and authentication systems, examining their software and hardware implementations to understand the key factors driving their functionality.            </p>
+            <p className="text-lg">
+              From our research, we concluded that a good proximity-based access control system must:
+            </p>
+            <ul className="text-lg list-disc pl-6 my-6">
               <li>
                 <strong>Ensure secure authentication:</strong> Utilise multi-factor authentication methods such as facial recognition, BLE proximity detection, and post-quantum cryptographic encryption to prevent unauthorized access.
               </li>
@@ -74,7 +75,6 @@ export default function Research() {
 
 
    </p>          
-           
            </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
