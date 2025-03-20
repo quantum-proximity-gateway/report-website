@@ -2,8 +2,10 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Metadata } from 'next';
+import { Card, CardContent } from "@/components/ui/card"
 
 
 export const metadata: Metadata = {
@@ -146,16 +148,16 @@ export default function Requirements() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>67% of respondents stated that they had trouble with hot-desking, and found manual logins inconvenient and time-consuming.</strong>
+                <strong>67% of respondents</strong> stated that they had trouble with hot-desking, and <strong>found manual logins inconvenient and time-consuming</strong>.
               </li>
               <li>
-                <strong>100% of respondents suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that "it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices".</strong>
+                <strong>100% of respondents</strong> suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that <strong>"it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices"</strong>.
               </li>
               <li>
-                <strong>Users with accessibility needs strongly supported AI-driven chatbot assistance for modifying settings, noting that this would be "a great feature".</strong>
+                Users with accessibility needs <strong>strongly supported AI-driven chatbot assistance for modifying settings</strong>, noting that this would be <strong>"a great feature"</strong>.
               </li>
               <li>
-                When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed, with one stating that "[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”.</strong> We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
+                When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed</strong>, with one stating that <strong>"[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”</strong>. We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
               </li>
             </ul>
             <p className="text-lg">
@@ -215,9 +217,39 @@ export default function Requirements() {
             <p className="text-lg">
               To ensure the QPG meets the needs of different user groups, we developed detailed personas representing key stakeholders and typical users of the system. These personas help in designing features that match real-world user behaviors and challenges.
             </p>
-            <p className="text-lg my-6">
-              [insert pictures of personas]
-            </p>
+            <Carousel className="my-6">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">Persona 1</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">Persona 2</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={3}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">Persona 3</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
             <p className="text-lg my-6">
               Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
             </p>
