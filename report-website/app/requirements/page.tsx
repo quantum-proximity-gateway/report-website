@@ -217,39 +217,41 @@ export default function Requirements() {
             <p className="text-lg">
               To ensure the QPG meets the needs of different user groups, we developed detailed personas representing key stakeholders and typical users of the system. These personas help in designing features that match real-world user behaviors and challenges.
             </p>
-            <Carousel className="my-6">
-              <CarouselContent>
-                <CarouselItem key={1}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">Persona 1</span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={2}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">Persona 2</span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={3}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">Persona 3</span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <div className="flex justify-center">
+              <Carousel className="my-6">
+                <CarouselContent>
+                  <CarouselItem key={1}>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-6">
+                          <span className="text-4xl font-semibold">Persona 1</span>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem key={2}>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-6">
+                          <span className="text-4xl font-semibold">Persona 2</span>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem key={3}>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-6">
+                          <span className="text-4xl font-semibold">Persona 3</span>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
             <p className="text-lg my-6">
               Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
             </p>
@@ -271,61 +273,339 @@ export default function Requirements() {
             <p className="text-lg my-6">
               [insert use case diagram]
             </p>
-            <h1 className="text-2xl font-bold my-6">Use case List</h1>
+            <h1 className="text-2xl font-bold my-6">Use Case List</h1>
             <p className="text-lg">
               A list of use cases for our QPG system [will improve/edit during overall UI improvement, this is just a rough idea, some sound very similar to each other]. 
-              </p>
-              <ul className="text-lg list-disc pl-6 my-6">
-              <li>
-                UC1: Secure Access to Workstations via Proximity & Facial Recognition 
-              </li>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC2: Accessibility-Focused Hands-Free Authentication 
-                </li>
-              </ul>
-                <ul className="text-lg list-disc my-6">
-              <li>
-                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces
-              </li>
-              </ul>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance 
-              </li>
-              </ul>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC5: IT Admin Monitoring and Security Enforcement 
-              </li>
-              </ul>
-            </ul>
-            <h1 className="text-2xl font-bold my-6">Use case Descriptions</h1>
-              <ul className="text-lg list-disc pl-6 my-6">
-              <li>
-                UC1: Secure Access to Workstations via Proximity & Facial Recognition - Actor: User e.g. employee; Description: Securely log into workstation via proximity & facial recognition; Main flow: 1. User enters office and approaches workstation with QPG system. 2. The BLE sensor detects the user's presence. 3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module. 4.If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences. 5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.; Result: secure access to workstations via proximity sensiing and facial recognition. 
-              </li>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC2: Accessibility-Focused Hands-Free Authentication - Actor: User with mobility impairments.; Description: A quadriplegic user logs into a device without movement; Main flow: 1. The quadriplegic user moves towards the device. 2. The BLE sensor detects the user's presence. 3. The QPG system prompts facial recognition as an alternative to manual login. 4. If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (The automatic opening of the chatbot can be turned on or off by the user, depending on necessity). 5. The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot. 6. If authentication fails, access is denied, and an alert is sent to IT security. 7. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user ; Result: Hands-free access to device for users with mobility issues.
-                </li>
-              </ul>
-                <ul className="text-lg list-disc my-6">
-              <li>
-                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces - Actor: User e.g. Freelancer, Remote Worker; Description: User has personalised short term access to a shared device ; Main flow: 1. QPG detects the freelancer’s presence and identifies them via BLE proximity. 2.The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings. 3. When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state. ; Result: Secure and efficient access in shared environments.
-              </li>
-              </ul>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance - Actor: User e.g. employee, student, IT Support Agent; Description: User has trouble accessing their profile or personalising their settings, so uses AI chatbot for assistance.; Main flow: 1.,2.,3. the same as UC1 and 2. 4. The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech). 5. The chatbot analyses the issue and provides guided troubleshooting steps. 6. If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.7. The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).; Result: Self-service troubleshooting and improved accessibility.
-              </li>
-              </ul>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC5: IT Admin Monitoring and Security Enforcement (maybe) - Actor: IT Administrator; Description: An IT administrator monitors authentication logs and enforce access policies ; Main flow: 1. The IT admin logs into the QPG dashboard. 2. They view real-time authentication logs, including failed login attempts and access requests. 3. If a security risk is detected, they can manually revoke access or enforce 2FA for specific users; Result: Centralised security monitoring
-              </li>
-              </ul>
-            </ul>
+            </p>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="w-[150px]">ID</TableHead>
+                  <TableHead>Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    UC1
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Secure Access to Workstations via Proximity & Facial Recognition
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    UC2
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Accessibility-Focused Hands-Free Authentication
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    UC3
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Proximity-Based Access to Shared Tablets in Co-Working Spaces
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    UC4
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    AI-Driven Chatbot for Troubleshooting and User Assistance
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    UC5
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    IT Admin Monitoring and Security Enforcement
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <h1 className="text-2xl font-bold my-6">Use Case Descriptions</h1>
+            <p className="text-lg">
+              Descriptions for the use cases for our QPG system. 
+            </p>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="text-lg w-[150px]">Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    ID
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    UC1
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Actor
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    User e.g. Employee
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Description
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Securely log into workstation via proximity & facial recognition
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Main flow
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <ul>
+                     <li>1. User enters office and approaches workstation with QPG system.</li>
+                     <li>2. The BLE sensor detects the user's presence.</li>
+                     <li>3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
+                     <li>4. If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences.</li>
+                     <li>5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
+                    </ul>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Result
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Secure access to workstations via proximity sensiing and facial recognition
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="text-lg w-[150px]">Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    ID
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    UC2
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Actor
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    User with mobility impairments
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Description
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    A quadriplegic user logs into a device without movement
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Main flow
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <ul>
+                     <li>1. The quadriplegic user moves towards the device.</li>
+                     <li>2. The BLE sensor detects the user's presence.</li>
+                     <li>3. The QPG system prompts facial recognition as an alternative to manual login.</li>
+                     <li>4. If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (the automatic opening of the chatbot can be turned on or off by the user, depending on necessity).</li>
+                     <li>5. The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot.</li>
+                     <li>6. If authentication fails, access is denied, and an alert is sent to IT security.</li>
+                     <li>7. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
+                    </ul>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Result
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Hands-free access to device for users with mobility issues
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="text-lg w-[150px]">Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    ID
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    UC3
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Actor
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    User e.g. Freelancer, Remote Worker
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Description
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    User has personalised short term access to a shared device
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Main flow
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <ul>
+                     <li>1. QPG detects the freelancer’s presence and identifies them via BLE proximity.</li>
+                     <li>2. The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings.</li>
+                     <li>3. When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state.</li>
+                    </ul>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Result
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Secure and efficient access in shared environments
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="text-lg w-[150px]">Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    ID
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    UC4
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Actor
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    User e.g. Employee, Student, IT Support Agent
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Description
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    User has trouble accessing their profile or personalising their settings, so uses AI chatbot for assistance
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Main flow
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <ul>
+                      <li>1. User enters office and approaches workstation with QPG system.</li>
+                      <li>2. The BLE sensor detects the user's presence.</li>
+                      <li>3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
+                      <li>4. The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech).</li>
+                      <li>5. The chatbot analyses the issue and provides guided troubleshooting steps.</li>
+                      <li>6. If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.</li>
+                      <li>7. The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).</li>
+                    </ul>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Result
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Self-service troubleshooting and improved accessibility
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="text-lg w-[150px]">Use Case</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    ID
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    UC5
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Actor
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    IT Administrator
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Description
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    An IT administrator monitors authentication logs and enforce access policies
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Main flow
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <ul>
+                      <li>1. The IT admin logs into the QPG dashboard.</li>
+                      <li>2. They view real-time authentication logs, including failed login attempts and access requests.</li>
+                      <li>3. If a security risk is detected, they can manually revoke access or enforce 2FA for specific users.</li>
+                    </ul>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Result
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Centralised security monitoring
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
           <div id="moscow-list">
             <h1 className="text-4xl font-bold my-6">MoSCoW Requirements List</h1>
@@ -334,7 +614,7 @@ export default function Requirements() {
               This list defines the core features and functionalities essential for the development of the QPG. With a strong focus on seamless authentication, secure accessibility, and adaptive user control, the QPG leverages BLE proximity detection, facial recognition, post-quantum encryption and AI-driven profile management to provide a frictionless login experience. While the primary focus remains on robust security and usability, the system also considers potential enhancements such as multi-device synchronisation, advanced directional proximity detection via signal strength, and intelligent device-switching capabilities. This structured requirement framework ensures that essential features are prioritised while leaving room for future scalability and innovation.
             </p>
             <p className="text-lg my-6">
-                [insert funtional MoSCoW requirements here, will do when editing UI]
+              [insert funtional MoSCoW requirements here, will do when editing UI]
             </p>
           </div>
           <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
