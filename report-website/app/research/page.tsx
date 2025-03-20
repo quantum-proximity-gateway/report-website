@@ -65,21 +65,24 @@ export default function Research() {
            <p className="text-lg my-6">
            Central to these innovations is the use of BLE technology, which offers low power consumption and high-accuracy distance measurement capabilities. BLE facilitates precise positioning and secure communication between devices, making it ideal for automotive applications where both security and efficiency are paramount. By utilising BLE, Alps Alpine's digital key solutions ensure reliable performance while maintaining the security standards required for vehicle access systems.   </p>          
            <p className="text-lg my-6">
-           Alps Alpine’s use of BLE for secure digital key solutions provided valuable insights for enhancing our QPG system. Their approach to high-accuracy distance measurement using BLE highlights the importance of precise proximity detection for seamless authentication. By leveraging similar BLE technology, our system can ensure users are accurately linked to the intended devices (in our case, an ESP32 microcontroller) without interference. Additionally, their collaboration with security-focused partners like Giesecke+Devrient emphasises the need for robust encryption, reinforcing our decision to implement post-quantum cryptography for secure user authentication. The integration of BLE with cloud-based key management also aligns with our system's requirement for IBM Cloud deployment, ensuring real-time access control across multiple devices. Overall, Alps Alpine’s focus on security, low power consumption, and seamless user experience provides a strong reference for optimising proximity-based authentication in my own QPG system.
-
-
-
-
-
-
-
-   </p>          
-           
+           Alps Alpine’s use of BLE for secure digital key solutions provided valuable insights for enhancing our QPG system. Their approach to high-accuracy distance measurement using BLE highlights the importance of precise proximity detection for seamless authentication. By leveraging similar BLE technology, our system can ensure users are accurately linked to the intended devices (in our case, an ESP32 microcontroller) without interference. Additionally, their collaboration with security-focused partners like Giesecke+Devrient emphasises the need for robust encryption, reinforcing our decision to implement post-quantum cryptography for secure user authentication. The integration of BLE with cloud-based key management also aligns with our system's requirement for IBM Cloud deployment, ensuring real-time access control across multiple devices. Overall, Alps Alpine’s focus on security, low power consumption, and seamless user experience provides a strong reference for optimising proximity-based authentication in my own QPG system.       </p>          
            </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
+            <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Ultra-Wideband (UWB), and Wi-Fi-based positioning. </p>
+            <p className="text-lg my-6">
+            BLE was chosen as the primary technology for proximity detection due to its balance of cost-effectiveness, power efficiency, and widespread compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, known for its low-cost and efficient BLE functionality, will act as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and infer directionality, allowing for accurate proximity-based authentication. 
+            </p>
+            <p className="text-lg my-6">
+            Ultra-Wideband (UWB) was considered due to its superior accuracy and directional awareness, which allow it to pinpoint locations with centimeter-level precision using Time of Flight (ToF) and Angle of Arrival (AoA) methods. This makes UWB an attractive option for high-security applications, such as access control in corporate environments or precise indoor tracking in industrial settings. However, UWB technology is still relatively expensive and requires specialised hardware, which limits its adoption in mainstream consumer devices. Additionally, UWB consumes significantly more power than BLE, making it impractical for always-on proximity detection in battery-operated IoT devices.
+            </p>
+            <p className="text-lg my-6">
+            Wi-Fi-based positioning was another potential solution, using signal strength (RSSI), triangulation, and fingerprinting to estimate a user’s location relative to a device. One advantage of Wi-Fi is that it does not require additional hardware, since most modern buildings are already equipped with Wi-Fi infrastructure, and nearly all devices support Wi-Fi connectivity. However, Wi-Fi-based proximity detection is significantly less precise than BLE and UWB, with typical accuracy ranging from 3 to 5 meters, depending on interference and network conditions. Furthermore, Wi-Fi operates on crowded frequency bands (2.4 GHz & 5 GHz), making it more prone to interference, especially in environments with multiple access points or electronic devices. Another major drawback is power consumption: Wi-Fi scanning requires significantly more energy than BLE, making it impractical for low-power IoT devices such as the ESP32. Additionally, Wi-Fi-based tracking raises privacy and security concerns, as it often relies on tracking MAC addresses and network data, which could introduce vulnerabilities. 
+            </p>
+            <p className="text-lg my-6">
+            Ultimately, BLE’s balance of affordability, efficiency, and compatibility makes it the ideal solution for enabling seamless, profile-based authentication across multiple devices in real-world environments, which is why we selected this option for use in our QPG system. 
             </p>
           </div>
           <div id="technical-decisions">
@@ -95,7 +98,7 @@ export default function Research() {
             <p className="text-lg my-6">
             [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).    </p>          
            <p className="text-lg my-6">
-           [3]    </p>          
+           [3] Remind me to finish please!  </p>          
            <p className="text-lg my-6">
            [4]    </p>
            <p className="text-lg my-6">
