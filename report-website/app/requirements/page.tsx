@@ -77,10 +77,10 @@ export default function Requirements() {
             <p className="text-lg my-6">
               The Quantum Proximity Gateway is designed to:
             </p>
-            <ul className="text-lg list-disc pl-6">
+            <ul className="text-lg list-disc list-inside">
               <li>
                 <strong>Enhance Accessibility & User Experience</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
                   <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
                   <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
@@ -90,7 +90,7 @@ export default function Requirements() {
               </li>
               <li>
                 <strong>Improve Security & Privacy</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
                   <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
                   <li>Enable role-based access control (RBAC) for shared devices.</li>
@@ -98,14 +98,14 @@ export default function Requirements() {
               </li>
               <li>
                 <strong>Create a Scalable IoT Ecosystem</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>Establish a network of interconnected devices that communicate securely using... (may remove this)</li>
                   <li>Develop a modular authentication system adaptable to various industries.</li>
                 </ul>
               </li>
               <li>
                 <strong>Increase Efficiency & Reduce Downtime</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>Minimise login friction in shared spaces by automatically configuring devices upon user entry.</li>
                   <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
                 </ul>
@@ -117,10 +117,10 @@ export default function Requirements() {
             <p className="text-lg my-6">
               In order to collect the requirements needed to design the QPG, we used a multi-phase approach to ensure that our system is user-centric and industry-relevant:
             </p>
-            <ul className="text-lg list-disc pl-6">
+            <ul className="text-lg list-disc list-inside">
               <li>
                 <strong>User Surveys and Feedback</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
                   <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
                   <li>Participants were asked about hot-desking difficulties, privacy concerns, and preferred authentication methods.</li>
@@ -129,14 +129,14 @@ export default function Requirements() {
               </li>
               <li>
                 <strong>Stakeholder and Client Interviews</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>We had several discussions with IBM engineers, IT security specialists and accessibility experts which helped to shape our security and usability priorities.</li>
                   <li>Detailed feedback was gathered on encryption protocols, AI-driven authentication, and privacy policies.</li>
                 </ul>
               </li>
               <li>
                 <strong>Prototyping and Iterative Testing</strong>
-                <ul className="text-lg list-disc my-3 pl-6">
+                <ul className="text-lg list-disc my-3 list-inside">
                   <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [link to sketches and interactive wireframe URL]</li>
                   <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow. (maybe expand on this? Another subheading?)</li>
                 </ul>
@@ -146,7 +146,7 @@ export default function Requirements() {
             <p className="text-lg">
               Our user survey produced valuable insights:
             </p>
-            <ul className="text-lg list-disc pl-6 my-6">
+            <ul className="text-lg list-disc list-inside my-6">
               <li>
                 <strong>67% of respondents</strong> stated that they had trouble with hot-desking, and <strong>found manual logins inconvenient and time-consuming</strong>.
               </li>
@@ -255,13 +255,13 @@ export default function Requirements() {
             <p className="text-lg my-6">
               Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
             </p>
-              <ul className="text-lg list-disc my-3 pl-6">
+              <ul className="text-lg list-disc my-3 list-inside">
                 <li><strong>Seamless Authentication Across Multiple Environments: </strong>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
               </ul>
-              <ul className="text-lg list-disc pl-6 my-3">
+              <ul className="text-lg list-disc list-inside my-3">
                 <li><strong>Diverse Use Cases: </strong>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
               </ul>
-              <ul className="text-lg list-disc pl-6 my-3">
+              <ul className="text-lg list-disc list-inside my-3">
                 <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
               </ul>        
           </div>
@@ -367,12 +367,12 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul>
-                     <li>1. User enters office and approaches workstation with QPG system.</li>
-                     <li>2. The BLE sensor detects the user's presence.</li>
-                     <li>3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
-                     <li>4. If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences.</li>
-                     <li>5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
+                    <ul className="list-decimal list-inside">
+                     <li>User enters office and approaches workstation with QPG system.</li>
+                     <li>The BLE sensor detects the user's presence.</li>
+                     <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
+                     <li>If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences.</li>
+                     <li>If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
                     </ul>
                   </TableCell>
                 </TableRow>
@@ -422,14 +422,14 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul>
-                     <li>1. The quadriplegic user moves towards the device.</li>
-                     <li>2. The BLE sensor detects the user's presence.</li>
-                     <li>3. The QPG system prompts facial recognition as an alternative to manual login.</li>
-                     <li>4. If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (the automatic opening of the chatbot can be turned on or off by the user, depending on necessity).</li>
-                     <li>5. The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot.</li>
-                     <li>6. If authentication fails, access is denied, and an alert is sent to IT security.</li>
-                     <li>7. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
+                    <ul className="list-decimal list-inside">
+                     <li>The quadriplegic user moves towards the device.</li>
+                     <li>The BLE sensor detects the user's presence.</li>
+                     <li>The QPG system prompts facial recognition as an alternative to manual login.</li>
+                     <li>If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (the automatic opening of the chatbot can be turned on or off by the user, depending on necessity).</li>
+                     <li>The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot.</li>
+                     <li>If authentication fails, access is denied, and an alert is sent to IT security.</li>
+                     <li>When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
                     </ul>
                   </TableCell>
                 </TableRow>
@@ -479,10 +479,10 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul>
-                     <li>1. QPG detects the freelancer’s presence and identifies them via BLE proximity.</li>
-                     <li>2. The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings.</li>
-                     <li>3. When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state.</li>
+                    <ul className="list-decimal list-inside">
+                     <li>QPG detects the freelancer’s presence and identifies them via BLE proximity.</li>
+                     <li>The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings.</li>
+                     <li>When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state.</li>
                     </ul>
                   </TableCell>
                 </TableRow>
@@ -532,14 +532,14 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul>
-                      <li>1. User enters office and approaches workstation with QPG system.</li>
-                      <li>2. The BLE sensor detects the user's presence.</li>
-                      <li>3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
-                      <li>4. The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech).</li>
-                      <li>5. The chatbot analyses the issue and provides guided troubleshooting steps.</li>
-                      <li>6. If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.</li>
-                      <li>7. The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).</li>
+                    <ul className="list-decimal list-inside">
+                      <li>User enters office and approaches workstation with QPG system.</li>
+                      <li>The BLE sensor detects the user's presence.</li>
+                      <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
+                      <li>The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech).</li>
+                      <li>The chatbot analyses the issue and provides guided troubleshooting steps.</li>
+                      <li>If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.</li>
+                      <li>The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).</li>
                     </ul>
                   </TableCell>
                 </TableRow>
@@ -589,10 +589,10 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul>
-                      <li>1. The IT admin logs into the QPG dashboard.</li>
-                      <li>2. They view real-time authentication logs, including failed login attempts and access requests.</li>
-                      <li>3. If a security risk is detected, they can manually revoke access or enforce 2FA for specific users.</li>
+                    <ul className="list-decimal list-inside">
+                      <li>The IT admin logs into the QPG dashboard.</li>
+                      <li>They view real-time authentication logs, including failed login attempts and access requests.</li>
+                      <li>If a security risk is detected, they can manually revoke access or enforce 2FA for specific users.</li>
                     </ul>
                   </TableCell>
                 </TableRow>
@@ -613,9 +613,162 @@ export default function Requirements() {
             <p className="text-lg">
               This list defines the core features and functionalities essential for the development of the QPG. With a strong focus on seamless authentication, secure accessibility, and adaptive user control, the QPG leverages BLE proximity detection, facial recognition, post-quantum encryption and AI-driven profile management to provide a frictionless login experience. While the primary focus remains on robust security and usability, the system also considers potential enhancements such as multi-device synchronisation, advanced directional proximity detection via signal strength, and intelligent device-switching capabilities. This structured requirement framework ensures that essential features are prioritised while leaving room for future scalability and innovation.
             </p>
-            <p className="text-lg my-6">
-              [insert funtional MoSCoW requirements here, will do when editing UI]
-            </p>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-bold">
+                    Must Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6">
+                    <li>
+                      BLE proximity connection to Raspberry Pi
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32)
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Facial recognition via Raspberry Pi (Raspberry Pi camera module)
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices
+                        </li>
+                        <li>
+                          Ensure accuracy in low light conditions and secure handling of biometric data
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Accessibility settings fetching
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Server
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          For hosting user profiles, managing proximity data and backend operations
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Post-quantum cryptography encryption for securing user data
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          All data transmitted between devices should be encrypted using a PQC algorithm
+                        </li>
+                        <li>
+                          Secures sensitive user data during transmission and storage 
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      AI chatbot for easy settings configurations
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          Granite 3.0 IBM Model
+                        </li>
+                        <li>
+                          Enable chatbot to help with troubleshooting/guidance 
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-bold">
+                    Should Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6">
+                    <li>
+                      A website to configure settings initially
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          Register new user profiles on website (facial recognition setup, preferences, etc.)
+                        </li>
+                        <li>
+                          Save data to server
+                        </li>
+                        <li>
+                          Secure login - 2 factor authentication
+                        </li>
+                        <li>
+                          Responsive design for computer/tablet use
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Directional proximity management
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          To identify a specific device a user intends to interact with when there are multiple devices nearby
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-bold">
+                    Could Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6">
+                    <li>
+                      Multiple languages support
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          For the configuration website and IoT interactions
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      API Layer to make system reproducible
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-bold">
+                    Won't Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6">
+                    <li>
+                      Voice recognition/authentication
+                      <ul className="text-lg list-disc my-3 pl-6">
+                        <li>
+                          Potential privacy concerns and complexity would be an issue
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Mobile application to remotely login and select device
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
           <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
             <p className="text-lg">
