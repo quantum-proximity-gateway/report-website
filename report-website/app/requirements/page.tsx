@@ -43,8 +43,8 @@ export default function Requirements() {
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
-                  <p className="text-2xl font-bold">
-                    Why is this project needed?
+                  <p className="text-lg font-bold">
+                    Why is it needed?
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -57,8 +57,8 @@ export default function Requirements() {
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
-                  <p className="text-2xl font-bold">
-                    Who benefits from this project?
+                  <p className="text-lg font-bold">
+                    Who benefits?
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
@@ -79,17 +79,16 @@ export default function Requirements() {
             </p>
             <ul className="text-lg list-disc pl-6">
               <li>
-                <strong>Enhance Accessibility & User Experience</strong>
+                <span className="font-semibold">Enhance Accessibility & User Experience</span>
                 <ul className="text-lg list-disc my-3 pl-6">
                   <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
-                  <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
                   <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
                   <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
 
                 </ul>
               </li>
               <li>
-                <strong>Improve Security & Privacy</strong>
+                <span className="font-semibold">Improve Security & Privacy</span>
                 <ul className="text-lg list-disc my-3 pl-6">
                   <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
                   <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
@@ -97,14 +96,14 @@ export default function Requirements() {
                 </ul>
               </li>
               <li>
-                <strong>Create a Scalable IoT Ecosystem</strong>
+                <span className="font-semibold">Create a Scalable IoT Ecosystem</span>
                 <ul className="text-lg list-disc my-3 pl-6">
-                  <li>Establish a network of interconnected devices that communicate securely using... (may remove this)</li>
+                  <li>Establish a network of interconnected devices that communicate securely using.</li>
                   <li>Develop a modular authentication system adaptable to various industries.</li>
                 </ul>
               </li>
               <li>
-                <strong>Increase Efficiency & Reduce Downtime</strong>
+                <span className="font-semibold">Increase Efficiency & Reduce Downtime</span>
                 <ul className="text-lg list-disc my-3 pl-6">
                   <li>Minimise login friction in shared spaces by automatically configuring devices upon user entry.</li>
                   <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
@@ -119,7 +118,7 @@ export default function Requirements() {
             </p>
             <ul className="text-lg list-disc pl-6">
               <li>
-                <strong>User Surveys and Feedback</strong>
+                <span className="font-semibold">User Surveys and Feedback</span>
                 <ul className="text-lg list-disc my-3 pl-6">
                   <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
                   <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
@@ -128,14 +127,14 @@ export default function Requirements() {
                 </ul>
               </li>
               <li>
-                <strong>Stakeholder and Client Interviews</strong>
+                <span className="font-semibold">Stakeholder and Client Interviews</span>
                 <ul className="text-lg list-disc my-3 pl-6">
                   <li>We had several discussions with IBM engineers, IT security specialists and accessibility experts which helped to shape our security and usability priorities.</li>
                   <li>Detailed feedback was gathered on encryption protocols, AI-driven authentication, and privacy policies.</li>
                 </ul>
               </li>
               <li>
-                <strong>Prototyping and Iterative Testing</strong>
+                <span className="font-semibold">Prototyping and Iterative Testing</span>
                 <ul className="text-lg list-disc my-3 pl-6">
                   <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [link to sketches and interactive wireframe URL]</li>
                   <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow. (maybe expand on this? Another subheading?)</li>
@@ -146,21 +145,79 @@ export default function Requirements() {
             <p className="text-lg">
               Our user survey produced valuable insights:
             </p>
-            <ul className="text-lg list-disc pl-6 my-6">
-              <li>
-                <strong>67% of respondents</strong> stated that they had trouble with hot-desking, and <strong>found manual logins inconvenient and time-consuming</strong>.
-              </li>
-              <li>
-                <strong>100% of respondents</strong> suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that <strong>"it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices"</strong>.
-              </li>
-              <li>
-                Users with accessibility needs <strong>strongly supported AI-driven chatbot assistance for modifying settings</strong>, noting that this would be <strong>"a great feature"</strong>.
-              </li>
-              <li>
-                When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed</strong>, with one stating that <strong>"[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”</strong>. We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
-              </li>
-            </ul>
-            <p className="text-lg">
+            <div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <p className="text-lg font-bold">
+                      Do you usually have trouble with hot-desking (logging in to public computers and setting them up according to your preferences)?
+                    </p>  
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-lg">
+                      <span className="font-semibold">67% of respondents</span> stated that they had trouble with hot-desking, and <span className="font-semibold">found manual logins inconvenient and time-consuming</span>.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <p className="text-lg font-bold">
+                      Would having a mechanism to automatically load up your profile and settings be helpful?
+                    </p>  
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-lg">
+                      <span className="font-semibold">100% of respondents</span> affirmed that having a mechanism to automatically load up your profile and settings would be helpful.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <p className="text-lg font-bold">
+                      Why would such a mechanism be helpful?
+                    </p>  
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-lg">
+                      Participants responded with the general sentiment that it would <span className="font-semibold">save time</span> by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <p className="text-lg font-bold">
+                      What are your opinions on a proximity-based mechanism to do this?
+                    </p>  
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-lg">
+                      People generally thought that the idea was quite innovative. For example, one of the responses was <span className="font-semibold">“[the mechanism] sounds very futuristic, it would help people with accessibility challenges all around the world access essential services on their devices”</span>.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <p className="text-lg font-bold">
+                      What features would you like if this were to be implemented?
+                    </p>  
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-lg">
+                      Many potential ideas were given such as “I would like some sort of password-protected service” and “Use a two-factor authentication (2FA)”. These indicate a <span className="font-semibold">general concern about privacy</span>. Some other ideas about utilising chatbots were suggested, saying for example that “An assistant helping me to change my preferences would be a great feature”.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+            <p className="mt-6 text-lg">
               The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
@@ -168,41 +225,40 @@ export default function Requirements() {
               The survey conducted to gather user requirements for the (QPG) was structured to identify key pain points, user expectations, and feature priorities.
             </p>
             <Table className="my-6">
-              <TableCaption className="text-lg">Survey Evaluation</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg">
-                  <TableHead>Strengths</TableHead>
-                  <TableHead>Limitations</TableHead>
+                  <TableHead>✅ Strengths</TableHead>
+                  <TableHead>⚠️ Limitations</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <strong>✅ Direct User Insights</strong>
+                    <span className="font-semibold">Direct User Insights</span>
                     <p>The survey provided first-hand responses from individuals who regularly experience authentication challenges, making the data highly relevant.</p>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <strong>⚠️ Limited Sample Size</strong>
+                    <span className="font-semibold">Limited Sample Size</span>
                     <p>The survey was conducted with a relatively small group of users, which may not be fully representative of all potential users. A larger dataset would improve the reliability of conclusions.</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <strong>✅ Broad Applicability</strong>
+                    <span className="font-semibold">Broad Applicability</span>
                     <p>The inclusion of various user groups (corporate employees, students, users with advanced accessibility requirements) ensured that diverse perspectives were captured.</p>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <strong>⚠️ Potential Response Bias</strong>
+                    <span className="font-semibold">Potential Response Bias</span>
                     <p>Respondents may have given answers that they thought were socially desirable or aligned with the project’s goals rather than their actual preferences. For example, some users might have expressed support for facial recognition authentication without fully considering the privacy implications.</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <strong>✅ Balanced Question Design</strong>  
+                    <span className="font-semibold">Balanced Question Design</span>  
                     <p>The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses specifically provided valuable user-driven feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <strong>⚠️ Lack of Longitudinal Data</strong>  
+                    <span className="font-semibold">Lack of Longitudinal Data</span>  
                     <p>The survey only captured a single point in time and did not account for changing user preferences over time. A user’s opinion on the access control mechanisms might evolve as they gain experience with new authentication technologies or encounter real-world security breaches.</p>
                   </TableCell>
                 </TableRow>
@@ -255,18 +311,19 @@ export default function Requirements() {
             <p className="text-lg my-6">
               Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
             </p>
-              <ul className="text-lg list-disc my-3 pl-6">
-                <li><strong>Seamless Authentication Across Multiple Environments: </strong>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
-              </ul>
-              <ul className="text-lg list-disc pl-6 my-3">
-                <li><strong>Diverse Use Cases: </strong>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
-              </ul>
-              <ul className="text-lg list-disc pl-6 my-3">
-                <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
-              </ul>        
+            <ul className="text-lg list-disc my-3 pl-6">
+              <li><span className="font-semibold">Seamless Authentication Across Multiple Environments: </span>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
+            </ul>
+            <ul className="text-lg list-disc pl-6 my-3">
+              <li><span className="font-semibold">Diverse Use Cases: </span>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
+            </ul>
+            <ul className="text-lg list-disc pl-6 my-3">
+              <li><span className="font-semibold">AI Chatbot: </span>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
+            </ul>        
           </div>
           <div id="use-cases">
             <h1 className="text-4xl font-bold my-6">Use Cases</h1>
+            <h1 className="text-2xl font-bold my-6">Use Case Diagram</h1>
             <p className="text-lg">
               The use case diagram below shows how users can interact with the QPG to authenticate themselves and access devices seamlessly. Each use case represents a real-world scenario where the QPG enhances efficiency, security, and accessibility by dynamically adapting to user presence and intent.
             </p>
