@@ -50,7 +50,7 @@ export default function Requirements() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees waste an average of XX minutes per day logging into various systems, setting up profiles and ensuring access permissions are correctly assigned, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent users, who may require a more automated, handsfree authentication process. 
+                    Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees waste an average of about 30 minutes per day logging into various systems, setting up profiles and ensuring access permissions are correctly assigned, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent users, who may require a more automated, handsfree authentication process. 
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -141,25 +141,43 @@ export default function Requirements() {
           <div id="requirements-gathering">
             <h1 className="text-4xl font-bold my-6">Requirements Gathering</h1>
             <p className="text-lg my-6">
-              In order to collect the requirements needed to design the QPG, we used a multi-phase approach to ensure that our system is user-centric and industry-relevant.
+              We used a multiple approaches when collecting our requirements for the design of the QPG to ensure that our system is user-centric and industry-relevant.
             </p>
-            <ul className="text-lg list-disc pl-6">
-              <li>
-                <span className="font-medium">User Surveys and Feedback</span>
-                <ul className="text-lg list-[circle] my-3 pl-6">
-                  <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
-                  <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
-                  <li>We used a combination of open and closed questions, allowing us to gather both detailed, qualitative insights from open-ended questions while also getting quantifiable data and clear structure from closed-ended questions.</li>
-                </ul>
-              </li>
-              <li>
-                <span className="font-medium">Stakeholder and Client Interviews</span>
-                <ul className="text-lg list-[circle] my-3 pl-6">
-                  <li>We had several discussions with IBM engineers, IT security specialists and accessibility experts which helped to shape our security and usability priorities.</li>
-                  <li>Detailed feedback was gathered on encryption protocols, authentication, and privacy policies.</li>
-                </ul>
-              </li>
-            </ul>
+            <Tabs defaultValue="user-surveys" className="mt-6">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="user-surveys">User Surveys and Feedback</TabsTrigger>
+                <TabsTrigger value="stakeholder-interviews">Stakeholder and Client Interviews</TabsTrigger>
+              </TabsList>
+              <TabsContent value="user-surveys">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">User Surveys and Feedback</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="text-lg list-disc pl-6 space-y-1">
+                      <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
+                      <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
+                      <li>We used a combination of open and closed questions, allowing us to gather both detailed, qualitative insights from open-ended questions while also getting quantifiable data and clear structure from closed-ended questions.</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="stakeholder-interviews">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Stakeholder and Client Interviews</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="text-lg list-disc pl-6 space-y-1">
+                      <li>We had several discussions with IBM engineers, IT security specialists and accessibility experts which helped to shape our security and usability priorities.</li>
+                      <li>Detailed feedback was gathered on encryption protocols, authentication, and privacy policies.</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
             <h1 className="text-2xl font-bold my-6">Survey Data Analysis</h1>
             <p className="text-lg">
               Our user survey produced valuable insights:
@@ -241,9 +259,9 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
-              The survey conducted to gather user requirements was structured to identify pain points, user expectations, and feature priorities.
+              The survey conducted to gather user requirements was structured to identify pain points, user expectations, and feature priorities. In the future, we could refine the survey methodology further and incorporate more neutral phrasing to reduce bias and improve the survey's accuracy, allowing us to better gauge the system’s real-world effectiveness.
             </p>
-            <Table className="my-6">
+            <Table className="mt-6">
               <TableHeader>
                 <TableRow className="text-lg">
                   <TableHead>✅ Strengths</TableHead>
@@ -254,38 +272,35 @@ export default function Requirements() {
                 <TableRow>
                   <TableCell className="text-lg">
                     <span className="font-medium">Direct User Insights</span>
-                    <p>The survey provided first-hand responses from individuals who regularly experience authentication challenges, making the data highly relevant.</p>
+                    <p className="text-muted-foreground">The survey provided first-hand responses from individuals who regularly experience authentication challenges, making the data highly relevant.</p>
                   </TableCell>
                   <TableCell className="text-lg">
                     <span className="font-medium">Limited Sample Size</span>
-                    <p>The survey was conducted with a relatively small group of users, which may not be fully representative of all potential users. A larger dataset would improve the reliability of conclusions.</p>
+                    <p className="text-muted-foreground">The survey was conducted with a relatively small group of users, which may not be fully representative of all potential users. A larger dataset would improve the reliability of conclusions.</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
                     <span className="font-medium">Broad Applicability</span>
-                    <p>The inclusion of various user groups (corporate employees, students, users with advanced accessibility requirements) ensured that diverse perspectives were captured.</p>
+                    <p className="text-muted-foreground">The inclusion of various user groups (corporate employees, students, users with advanced accessibility requirements) ensured that diverse perspectives were captured.</p>
                   </TableCell>
                   <TableCell className="text-lg">
                     <span className="font-medium">Potential Response Bias</span>
-                    <p>Respondents may have given answers that they thought were socially desirable or aligned with the project’s goals rather than their actual preferences. For example, some users might have expressed support for facial recognition authentication without fully considering the privacy implications.</p>
+                    <p className="text-muted-foreground">Respondents may have given answers that they thought were socially desirable or aligned with the project’s goals rather than their actual preferences. For example, some users might have expressed support for facial recognition authentication without fully considering the privacy implications.</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
                     <span className="font-medium">Balanced Question Design</span>  
-                    <p>The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses specifically provided valuable user-driven feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
+                    <p className="text-muted-foreground">The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses specifically provided valuable user-driven feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
                   </TableCell>
                   <TableCell className="text-lg">
                     <span className="font-medium">Lack of Longitudinal Data</span>  
-                    <p>The survey only captured a single point in time and did not account for changing user preferences over time. A user’s opinion on the access control mechanisms might evolve as they gain experience with new authentication technologies or encounter real-world security breaches.</p>
+                    <p className="text-muted-foreground">The survey only captured a single point in time and did not account for changing user preferences over time. A user’s opinion on the access control mechanisms might evolve as they gain experience with new authentication technologies or encounter real-world security breaches.</p>
                   </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
-            <p className="text-lg">
-              By refining the survey methodology and incorporating more neutral phrasing to reduce bias, we can further improve the survey's accuracy, allowing us to better gauge the system’s real-world effectiveness.
-            </p>
           </div>
           <div id="personas">
             <h1 className="text-4xl font-bold my-6">Personas</h1>
@@ -328,17 +343,31 @@ export default function Requirements() {
               </Carousel>
             </div>
             <p className="text-lg">
-              Based on the data collected from our survey and personas, we have extracted these key points:
+              From the data collected thus far from our survey and personas, we have identified these follwing key points that appear prevalent within the data:
             </p>
-            <ul className="text-lg list-disc my-3 pl-6">
-              <li><span className="font-medium">User desire for seamless authentication:</span> The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
-            </ul>
-            <ul className="text-lg list-disc pl-6 my-3">
-              <li><span className="font-medium">Applicability in diverse scenarios:</span> Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
-            </ul>
-            <ul className="text-lg list-disc pl-6 my-3">
-              <li><span className="font-medium">Benefits of AI chatbot:</span> Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
-            </ul>        
+            <Card className="mt-6">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">User desire for seamless authentication</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Applicability in diverse scenarios</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Benefits of AI chatbot</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and elderly users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</p>
+              </CardContent>
+            </Card> 
           </div>
           <div id="use-cases">
             <h1 className="text-4xl font-bold my-6">Use Cases</h1>
@@ -347,15 +376,9 @@ export default function Requirements() {
               The use case diagram below shows how users can interact with the QPG to authenticate themselves and access devices seamlessly. Each use case represents a real-world scenario where the QPG enhances efficiency, security, and accessibility by dynamically adapting to user presence and intent.
             </p>
             <p className="text-lg my-6">
-              [insert use case diagram]
+              [INSERT USE CASE DIAGRAM]
             </p>
             <h1 className="text-2xl font-bold my-6">Use Case List</h1>
-            <p className="text-lg">
-              A list of use cases for our QPG system. 
-            </p>
-            <p className="text-lg my-6">
-              [this is just a rough idea, some sound very similar to each other]
-            </p>
             <Tabs defaultValue="uc1" className="mt-6">
               <TabsList className="grid w-full grid-cols-5">
                 <TabsTrigger value="uc1">UC1</TabsTrigger>
@@ -367,15 +390,15 @@ export default function Requirements() {
               <TabsContent value="uc1">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Secure Access to Workstations via Proximity & Facial Recognition</CardTitle>
-                    <Separator className="my-4" />
+                    <CardTitle className="text-lg"><span className="mr-3">UC1.</span> Secure Access to Workstations via Proximity & Facial Recognition</CardTitle>
+                    <Separator />
                   </CardHeader>
                   <CardContent>
                     <Table>
                       <TableBody>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Actor
+                            <span className="font-medium">Actor</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             User e.g. Employee
@@ -383,7 +406,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Description
+                            <span className="font-medium">Description</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             Securely log into workstation via proximity & facial recognition
@@ -391,10 +414,10 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Main flow
+                            <span className="font-medium">Main flow</span>
                           </TableCell>
                           <TableCell className="text-lg">
-                            <ul className="list-decimal pl-6">
+                            <ul className="list-decimal pl-6 space-y-2">
                             <li>User enters office and approaches workstation with QPG system.</li>
                             <li>The BLE sensor detects the user's presence.</li>
                             <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
@@ -405,7 +428,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Result
+                            <span className="font-medium">Result</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             Secure access to workstations via proximity sensiing and facial recognition
@@ -419,15 +442,15 @@ export default function Requirements() {
               <TabsContent value="uc2">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Accessibility-Focused Hands-Free Authentication</CardTitle>
-                    <Separator className="my-4" />
+                    <CardTitle className="text-lg"><span className="mr-3">UC2.</span> Accessibility-Focused Hands-Free Authentication</CardTitle>
+                    <Separator />
                   </CardHeader>
                   <CardContent>
                     <Table>
                       <TableBody>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Actor
+                            <span className="font-medium">Actor</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             User with mobility impairments
@@ -435,7 +458,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Description
+                            <span className="font-medium">Description</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             A quadriplegic user logs into a device without movement
@@ -443,10 +466,10 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Main flow
+                            <span className="font-medium">Main flow</span>
                           </TableCell>
                           <TableCell className="text-lg">
-                            <ul className="list-decimal pl-6">
+                            <ul className="list-decimal pl-6 space-y-2">
                             <li>The quadriplegic user moves towards the device.</li>
                             <li>The BLE sensor detects the user's presence.</li>
                             <li>The QPG system prompts facial recognition as an alternative to manual login.</li>
@@ -459,7 +482,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Result
+                            <span className="font-medium">Result</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             Hands-free access to device for users with mobility issues
@@ -473,15 +496,15 @@ export default function Requirements() {
               <TabsContent value="uc3">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Proximity-Based Access to Shared Tablets in Co-Working Spaces</CardTitle>
-                    <Separator className="my-4" />
+                    <CardTitle className="text-lg"><span className="mr-3">UC3.</span> Proximity-Based Access to Shared Tablets in Co-Working Spaces</CardTitle>
+                    <Separator />
                   </CardHeader>
                   <CardContent>
                     <Table>
                       <TableBody>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Actor
+                            <span className="font-medium">Actor</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             User e.g. Freelancer, Remote Worker
@@ -489,7 +512,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Description
+                            <span className="font-medium">Description</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             User has personalised short term access to a shared device
@@ -497,10 +520,10 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Main flow
+                            <span className="font-medium">Main flow</span>
                           </TableCell>
                           <TableCell className="text-lg">
-                            <ul className="list-decimal pl-6">
+                            <ul className="list-decimal pl-6 space-y-2">
                             <li>QPG detects the freelancer’s presence and identifies them via BLE proximity.</li>
                             <li>The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings.</li>
                             <li>When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state.</li>
@@ -509,7 +532,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Result
+                            <span className="font-medium">Result</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             Secure and efficient access in shared environments
@@ -523,15 +546,15 @@ export default function Requirements() {
               <TabsContent value="uc4">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">AI-Driven Chatbot for Troubleshooting and User Assistance</CardTitle>
-                    <Separator className="my-4" />
+                    <CardTitle className="text-lg"><span className="mr-3">UC4.</span> AI-Driven Chatbot for Troubleshooting and User Assistance</CardTitle>
+                    <Separator />
                   </CardHeader>
                   <CardContent>
                     <Table>
                       <TableBody>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Actor
+                            <span className="font-medium">Actor</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             User e.g. Employee, Student, IT Support Agent
@@ -539,7 +562,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Description
+                            <span className="font-medium">Description</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             User has trouble accessing their profile or personalising their settings, so uses AI chatbot for assistance
@@ -547,10 +570,10 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Main flow
+                            <span className="font-medium">Main flow</span>
                           </TableCell>
                           <TableCell className="text-lg">
-                            <ul className="list-decimal pl-6">
+                            <ul className="list-decimal pl-6 space-y-2">
                               <li>User enters office and approaches workstation with QPG system.</li>
                               <li>The BLE sensor detects the user's presence.</li>
                               <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
@@ -563,7 +586,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Result
+                            <span className="font-medium">Result</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             Self-service troubleshooting and improved accessibility
@@ -577,15 +600,15 @@ export default function Requirements() {
               <TabsContent value="uc5">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">IT Admin Monitoring and Security Enforcement</CardTitle>
-                    <Separator className="my-4" />
+                    <CardTitle className="text-lg"><span className="mr-3">UC5.</span> IT Admin Monitoring and Security Enforcement</CardTitle>
+                    <Separator />
                   </CardHeader>
                   <CardContent>
                     <Table>
                       <TableBody>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Actor
+                            <span className="font-medium">Actor</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             IT Administrator
@@ -593,7 +616,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Description
+                            <span className="font-medium">Description</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             An IT administrator monitors authentication logs and enforce access policies
@@ -601,10 +624,10 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Main flow
+                            <span className="font-medium">Main flow</span>
                           </TableCell>
                           <TableCell className="text-lg">
-                            <ul className="list-decimal pl-6">
+                            <ul className="list-decimal pl-6 space-y-2">
                               <li>The IT admin logs into the QPG dashboard.</li>
                               <li>They view real-time authentication logs, including failed login attempts and access requests.</li>
                               <li>If a security risk is detected, they can manually revoke access or enforce 2FA for specific users.</li>
@@ -613,7 +636,7 @@ export default function Requirements() {
                         </TableRow>
                         <TableRow>
                           <TableCell className="text-lg">
-                            Result
+                            <span className="font-medium">Result</span>
                           </TableCell>
                           <TableCell className="text-lg">
                             Centralised security monitoring
@@ -636,14 +659,14 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    🔥 Must Have
+                    Must Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="text-lg list-disc pl-6">
+                  <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
                       BLE proximity connection to Raspberry Pi
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32)
                         </li>
@@ -651,7 +674,7 @@ export default function Requirements() {
                     </li>
                     <li>
                       Facial recognition via Raspberry Pi (Raspberry Pi camera module)
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices
                         </li>
@@ -662,7 +685,7 @@ export default function Requirements() {
                     </li>
                     <li>
                       Accessibility settings fetching
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support
                         </li>
@@ -670,7 +693,7 @@ export default function Requirements() {
                     </li>
                     <li>
                       Server
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           For hosting user profiles, managing proximity data and backend operations
                         </li>
@@ -678,7 +701,7 @@ export default function Requirements() {
                     </li>
                     <li>
                       Post-quantum cryptography encryption for securing user data
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           All data transmitted between devices should be encrypted using a PQC algorithm
                         </li>
@@ -689,7 +712,7 @@ export default function Requirements() {
                     </li>
                     <li>
                       AI chatbot for easy settings configurations
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           Granite 3.0 IBM Model
                         </li>
@@ -706,14 +729,14 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    ✅ Should Have
+                    Should Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="text-lg list-disc pl-6">
+                  <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
                       A website to configure settings initially
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           Register new user profiles on website (facial recognition setup, preferences, etc.)
                         </li>
@@ -730,7 +753,7 @@ export default function Requirements() {
                     </li>
                     <li>
                       Directional proximity management
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           To identify a specific device a user intends to interact with when there are multiple devices nearby
                         </li>
@@ -744,14 +767,14 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    💡 Could Have
+                    Could Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="text-lg list-disc pl-6">
+                  <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
                       Multiple languages support
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           For the configuration website and IoT interactions
                         </li>
@@ -768,14 +791,14 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    🚫 Won't Have
+                    Won't Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="text-lg list-disc pl-6">
+                  <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
                       Voice recognition/authentication
-                      <ul className="text-lg list-[circle] my-3 pl-6">
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
                           Potential privacy concerns and complexity would be an issue
                         </li>
@@ -788,14 +811,104 @@ export default function Requirements() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </div>
-          <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
+            <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
             <p className="text-lg">
               Non-functional requirements define the quality attributes, constraints, and operational characteristics of the Quantum Proximity Gateway. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance and usability, ensuring that all users can have swift frictionless access to their devices regardless of their physical or technical abilities. We also anticipate that the QPG system will continue to be developed for use in large-scale environments and for easy integration with future IoT devices. Therefore, scalability is another large priority of ours, which is further highlighted in the list below.
             </p>
             <p className="text-lg my-6">
-              [Again, will update/edit once editing UI - Must Have - Performance, Reliability, Security, Scalability, Compatibility; Should Have - Usability, Privacy Control, Extensibility; Could Have: Multi-Language Support, Feedback Mechanisms; Won't Have: Mobile App Integration]
+              NOT FINISHIED
             </p>
+            <p className="text-lg my-6">
+              [Must Have - Performance, Reliability, Security, Scalability, Compatibility; Should Have - Usability, Privacy Control, Extensibility, Documentation; Could Have: Multi-Language Support, Feedback Mechanisms; Won't Have: Open Source, Mobile App Integration]
+            </p>
+            <p className="text-lg my-6">
+              [Constraints - hardware, software, data, external interfaces, client/industry partner needs]
+            </p>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">🟣</span> Must Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      Placeholder
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Placeholder
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">🟢</span> Should Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      Placeholder
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Placeholder
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">🟡</span> Could Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      Placeholder
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Placeholder
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible className="my-2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">🔴</span> Won't Have
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      Placeholder
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Placeholder
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </div>
     </main>

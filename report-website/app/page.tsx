@@ -106,7 +106,7 @@ export default function Home() {
           <div id="project-management">
             <h1 className="text-4xl font-bold my-6">Project Management</h1>
             <p className="text-lg">
-              (Will create Gantt-Chart)
+              [INSERT GANTT-CHART]
             </p>
           </div>
         </div>
