@@ -75,47 +75,73 @@ export default function Requirements() {
           </div>
           <div id="goals">
             <h1 className="text-4xl font-bold my-6">Goals</h1>
-            <p className="text-lg my-6">
-              The Quantum Proximity Gateway is designed to:
-            </p>
-            <ul className="text-lg list-disc pl-6">
-              <li>
-                <span className="font-medium">Enhance Accessibility & User Experience</span>
-                <ul className="text-lg list-disc my-3 pl-6">
-                  <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
-                  <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
-                  <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
-
-                </ul>
-              </li>
-              <li>
-                <span className="font-medium">Improve Security & Privacy</span>
-                <ul className="text-lg list-disc my-3 pl-6">
-                  <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
-                  <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
-                  <li>Enable role-based access control (RBAC) for shared devices.</li>
-                </ul>
-              </li>
-              <li>
-                <span className="font-medium">Create a Scalable IoT Ecosystem</span>
-                <ul className="text-lg list-disc my-3 pl-6">
-                  <li>Establish a network of interconnected devices that communicate securely using.</li>
-                  <li>Develop a modular authentication system adaptable to various industries.</li>
-                </ul>
-              </li>
-              <li>
-                <span className="font-medium">Increase Efficiency & Reduce Downtime</span>
-                <ul className="text-lg list-disc my-3 pl-6">
-                  <li>Minimise login friction in shared spaces by automatically configuring devices upon user entry.</li>
-                  <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
-                </ul>
-              </li>
-            </ul>
+            <div className="flex justify-center">
+              <Carousel>
+                <CarouselContent>
+                  <CarouselItem key={1} className="basis-1/3">
+                    <Card className="h-full">
+                      <CardHeader>
+                        <CardTitle className="text-2xl font-bold text-primary">Secure Access to Workstations via Proximity & Facial Recognition</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                          <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
+                          <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
+                          <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                  <CarouselItem key={2} className="basis-1/3">
+                    <Card className="h-full">
+                      <CardHeader>
+                        <CardTitle className="text-2xl font-bold text-primary">Improve Security & Privacy</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                          <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
+                          <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
+                          <li>Enable role-based access control (RBAC) for shared devices.</li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                  <CarouselItem key={3} className="basis-1/3">
+                    <Card className="h-full">
+                      <CardHeader>
+                        <CardTitle className="text-2xl font-bold text-primary">Create a Scalable IoT Ecosystem</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                          <li>Establish a network of interconnected devices that communicate securely using.</li>
+                          <li>Develop a modular authentication system adaptable to various industries.</li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                  <CarouselItem key={4} className="basis-1/3">
+                    <Card className="h-full">
+                      <CardHeader>
+                        <CardTitle className="text-2xl font-bold text-primary">Increase Efficiency & Reduce Downtime</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                          <li>Minimise login friction in shared spaces by automatically configuring devices upon user entry.</li>
+                          <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
           <div id="requirements-gathering">
             <h1 className="text-4xl font-bold my-6">Requirements Gathering</h1>
             <p className="text-lg my-6">
-              In order to collect the requirements needed to design the QPG, we used a multi-phase approach to ensure that our system is user-centric and industry-relevant:
+              In order to collect the requirements needed to design the QPG, we used a multi-phase approach to ensure that our system is user-centric and industry-relevant.
             </p>
             <ul className="text-lg list-disc pl-6">
               <li>
@@ -130,14 +156,7 @@ export default function Requirements() {
                 <span className="font-medium">Stakeholder and Client Interviews</span>
                 <ul className="text-lg list-[circle] my-3 pl-6">
                   <li>We had several discussions with IBM engineers, IT security specialists and accessibility experts which helped to shape our security and usability priorities.</li>
-                  <li>Detailed feedback was gathered on encryption protocols, AI-driven authentication, and privacy policies.</li>
-                </ul>
-              </li>
-              <li>
-                <span className="font-medium">Prototyping and Iterative Testing</span>
-                <ul className="text-lg list-[circle] my-3 pl-6">
-                  <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [link to sketches and interactive wireframe URL]</li>
-                  <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow. (maybe expand on this? Another subheading?)</li>
+                  <li>Detailed feedback was gathered on encryption protocols, authentication, and privacy policies.</li>
                 </ul>
               </li>
             </ul>
@@ -150,7 +169,7 @@ export default function Requirements() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
                     <p className="text-lg font-semibold">
-                      Do you usually have trouble with hot-desking (logging in to public computers and setting them up according to your preferences)?
+                      <span className="mr-3">1.</span> Do you usually have trouble with hot-desking (logging in to public computers and setting them up according to your preferences)?
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
@@ -164,7 +183,7 @@ export default function Requirements() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
                     <p className="text-lg font-semibold">
-                      Would having a mechanism to automatically load up your profile and settings be helpful?
+                      <span className="mr-3">2.</span> Would having a mechanism to automatically load up your profile and settings be helpful?
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
@@ -178,7 +197,7 @@ export default function Requirements() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
                     <p className="text-lg font-semibold">
-                      Why would such a mechanism be helpful?
+                      <span className="mr-3">3.</span> Why would such a mechanism be helpful?
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
@@ -192,7 +211,7 @@ export default function Requirements() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
                     <p className="text-lg font-semibold">
-                      What are your opinions on a proximity-based mechanism to do this?
+                      <span className="mr-3">4.</span> What are your opinions on a proximity-based mechanism to do this?
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
@@ -206,7 +225,7 @@ export default function Requirements() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
                     <p className="text-lg font-semibold">
-                      What features would you like if this were to be implemented?
+                      <span className="mr-3">5.</span> What features would you like if this were to be implemented?
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
@@ -218,7 +237,7 @@ export default function Requirements() {
               </Accordion>
             </div>
             <p className="mt-6 text-lg">
-              The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
+              The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security.
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
@@ -309,16 +328,16 @@ export default function Requirements() {
               </Carousel>
             </div>
             <p className="text-lg">
-              Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
+              Based on the data collected from our survey and personas, we have extracted these key points:
             </p>
             <ul className="text-lg list-disc my-3 pl-6">
-              <li><span className="font-medium">Seamless Authentication Across Multiple Environments: </span>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
+              <li><span className="font-medium">User desire for seamless authentication:</span> The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
             </ul>
             <ul className="text-lg list-disc pl-6 my-3">
-              <li><span className="font-medium">Diverse Use Cases: </span>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
+              <li><span className="font-medium">Applicability in diverse scenarios:</span> Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
             </ul>
             <ul className="text-lg list-disc pl-6 my-3">
-              <li><span className="font-medium">AI Chatbot: </span>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
+              <li><span className="font-medium">Benefits of AI chatbot:</span> Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
             </ul>        
           </div>
           <div id="use-cases">
@@ -332,7 +351,10 @@ export default function Requirements() {
             </p>
             <h1 className="text-2xl font-bold my-6">Use Case List</h1>
             <p className="text-lg">
-              A list of use cases for our QPG system [this is just a rough idea, some sound very similar to each other]. 
+              A list of use cases for our QPG system. 
+            </p>
+            <p className="text-lg my-6">
+              [this is just a rough idea, some sound very similar to each other]
             </p>
             <Tabs defaultValue="uc1" className="mt-6">
               <TabsList className="grid w-full grid-cols-5">
