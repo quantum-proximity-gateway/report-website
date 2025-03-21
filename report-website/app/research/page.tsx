@@ -122,11 +122,27 @@ export default function Research() {
             <p className="text-lg my-6">
             The Raspberry Pi 5 provides sufficient processing power to run lightweight AI models, making it suitable for on-device authentication within our system. It supports multiple extensions, including the Raspberry Pi Camera Module, which is essential for real-time facial recognition. While alternatives like NVIDIA's Jetson Nano offer superior AI processing capabilities, they are significantly more expensive and somewhat unnecessary for the scope of our project. On the other hand, the ESP32 was selected for proximity detection due to its affordability and efficiency in handling BLE signals. By using a combination of Raspberry Pi 5 and ESP32, our system achieves a balance between computational power, cost-effectiveness, and real-time processing. 
             </p>
+            <h1 className="text-2xl font-bold my-6">AI Chatbot </h1>
+            <p className="text-lg my-6">
+            For the AI chatbot implementation within the QPG system, we considered several different approaches, including rule-based, retrieval-based, and generative AI models. 
+            </p>
+            <p className="text-lg my-6">
+            Rule-based chatbots, which rely on predefined scripts and decision trees, were found to be too restrictive for handling dynamic authentication and user interactions within our system. For example, these chatbots could adjust accessibility settings based on specific user commands (e.g. "Enable high-contrast mode"), but they wouldn't handle complex, context-aware requests effectively. If a user needed nuanced adjustments like "Make this text easier to read for my visual impairment," a rule-based chatbot would struggle without explicitly preprogrammed responses. 
+            </p>
+            <p className="text-lg my-6">
+            Retrieval-based models, which select responses from a fixed database, provided more flexibility, but lacked the adaptability needed for personalised accessibility adjustments. For example, if a user asked for a new accessibility configuration that wasn't in the database, the chatbot wouldn’t be able to generate a novel response or action. 
+            </p>
+            <p className="text-lg my-6">
+            Generative AI models, particularly those based on transformer architectures, offered the most natural and context-aware responses, although they required substantial computational resources. Given the need for seamless interaction and in spite of the computational cost, the chatbot was designed to modify accessibility settings using Granite 3.0 and AI, ensuring an intuitive and responsive experience tailored to user needs.
+            </p>
           </div>
           <div id="technical-decisions">
             <h1 className="text-4xl font-bold my-6">Technical Decisions</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented:
+              </p>
+              <p className="text-lg my-6">
+                Summary Table, Type vs Decision (will be implemented)
             </p>
           </div>
           <div id="references">
