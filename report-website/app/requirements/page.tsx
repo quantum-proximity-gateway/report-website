@@ -77,10 +77,10 @@ export default function Requirements() {
             <p className="text-lg my-6">
               The Quantum Proximity Gateway is designed to:
             </p>
-            <ul className="text-lg list-disc list-inside">
+            <ul className="text-lg list-disc pl-6">
               <li>
                 <strong>Enhance Accessibility & User Experience</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
                   <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
                   <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
@@ -90,7 +90,7 @@ export default function Requirements() {
               </li>
               <li>
                 <strong>Improve Security & Privacy</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>Implement post-quantum encryption (PQC) to safeguard sensitive user data.</li>
                   <li>Ensure zero-trust authentication by using biometric verification (facial recognition) before granting access.</li>
                   <li>Enable role-based access control (RBAC) for shared devices.</li>
@@ -98,14 +98,14 @@ export default function Requirements() {
               </li>
               <li>
                 <strong>Create a Scalable IoT Ecosystem</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>Establish a network of interconnected devices that communicate securely using... (may remove this)</li>
                   <li>Develop a modular authentication system adaptable to various industries.</li>
                 </ul>
               </li>
               <li>
                 <strong>Increase Efficiency & Reduce Downtime</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>Minimise login friction in shared spaces by automatically configuring devices upon user entry.</li>
                   <li>Improve productivity in corporate environments, education institutions, and hot-desking scenarios.</li>
                 </ul>
@@ -117,10 +117,10 @@ export default function Requirements() {
             <p className="text-lg my-6">
               In order to collect the requirements needed to design the QPG, we used a multi-phase approach to ensure that our system is user-centric and industry-relevant:
             </p>
-            <ul className="text-lg list-disc list-inside">
+            <ul className="text-lg list-disc pl-6">
               <li>
                 <strong>User Surveys and Feedback</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
                   <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
                   <li>Participants were asked about hot-desking difficulties, privacy concerns, and preferred authentication methods.</li>
@@ -129,14 +129,14 @@ export default function Requirements() {
               </li>
               <li>
                 <strong>Stakeholder and Client Interviews</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>We had several discussions with IBM engineers, IT security specialists and accessibility experts which helped to shape our security and usability priorities.</li>
                   <li>Detailed feedback was gathered on encryption protocols, AI-driven authentication, and privacy policies.</li>
                 </ul>
               </li>
               <li>
                 <strong>Prototyping and Iterative Testing</strong>
-                <ul className="text-lg list-disc my-3 list-inside">
+                <ul className="text-lg list-disc my-3 pl-6">
                   <li>Initial sketches were drawn, and prototypes were designed, which we tested with real users. [link to sketches and interactive wireframe URL]</li>
                   <li>A heuristic evaluation was then conducted to refine interface design, accessibility, and user workflow. (maybe expand on this? Another subheading?)</li>
                 </ul>
@@ -146,7 +146,7 @@ export default function Requirements() {
             <p className="text-lg">
               Our user survey produced valuable insights:
             </p>
-            <ul className="text-lg list-disc list-inside my-6">
+            <ul className="text-lg list-disc pl-6 my-6">
               <li>
                 <strong>67% of respondents</strong> stated that they had trouble with hot-desking, and <strong>found manual logins inconvenient and time-consuming</strong>.
               </li>
@@ -255,13 +255,13 @@ export default function Requirements() {
             <p className="text-lg my-6">
               Based on the surveys and personas, these are the conclusions our team came to regarding requirements:
             </p>
-              <ul className="text-lg list-disc my-3 list-inside">
+              <ul className="text-lg list-disc my-3 pl-6">
                 <li><strong>Seamless Authentication Across Multiple Environments: </strong>The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</li>
               </ul>
-              <ul className="text-lg list-disc list-inside my-3">
+              <ul className="text-lg list-disc pl-6 my-3">
                 <li><strong>Diverse Use Cases: </strong>Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</li>
               </ul>
-              <ul className="text-lg list-disc list-inside my-3">
+              <ul className="text-lg list-disc pl-6 my-3">
                 <li><strong>AI Chatbot: </strong>Users appreciated the idea of AI-driven chatbot for personalising preferences. Accessibility features such as high contrast mode, larger text size, and dark mode were found to be crucial to the user experience of devices, especially to neurodivergent and eldelry users, and so this feature serves a pivotal role in ensuring the QPG is user-friendly and accessible.</li>
               </ul>        
           </div>
@@ -367,7 +367,7 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul className="list-decimal list-inside">
+                    <ul className="list-decimal pl-6">
                      <li>User enters office and approaches workstation with QPG system.</li>
                      <li>The BLE sensor detects the user's presence.</li>
                      <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
@@ -422,7 +422,7 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul className="list-decimal list-inside">
+                    <ul className="list-decimal pl-6">
                      <li>The quadriplegic user moves towards the device.</li>
                      <li>The BLE sensor detects the user's presence.</li>
                      <li>The QPG system prompts facial recognition as an alternative to manual login.</li>
@@ -479,7 +479,7 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul className="list-decimal list-inside">
+                    <ul className="list-decimal pl-6">
                      <li>QPG detects the freelancer’s presence and identifies them via BLE proximity.</li>
                      <li>The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings.</li>
                      <li>When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state.</li>
@@ -532,7 +532,7 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul className="list-decimal list-inside">
+                    <ul className="list-decimal pl-6">
                       <li>User enters office and approaches workstation with QPG system.</li>
                       <li>The BLE sensor detects the user's presence.</li>
                       <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
@@ -589,7 +589,7 @@ export default function Requirements() {
                     Main flow
                   </TableCell>
                   <TableCell className="text-lg">
-                    <ul className="list-decimal list-inside">
+                    <ul className="list-decimal pl-6">
                       <li>The IT admin logs into the QPG dashboard.</li>
                       <li>They view real-time authentication logs, including failed login attempts and access requests.</li>
                       <li>If a security risk is detected, they can manually revoke access or enforce 2FA for specific users.</li>
@@ -617,7 +617,7 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-bold">
-                    Must Have
+                    🔥 Must Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -687,7 +687,7 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-bold">
-                    Should Have
+                    ✅ Should Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -725,7 +725,7 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-bold">
-                    Could Have
+                    💡 Could Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -749,7 +749,7 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-bold">
-                    Won't Have
+                    🚫 Won't Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
