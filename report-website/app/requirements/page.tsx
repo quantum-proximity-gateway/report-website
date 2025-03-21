@@ -113,7 +113,7 @@ export default function Requirements() {
                       </CardHeader>
                       <CardContent className="flex-grow">
                         <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
-                          <li>Establish a network of interconnected devices that communicate securely using.</li>
+                          <li>Establish a network of interconnected devices that communicate securely.</li>
                           <li>Develop a modular authentication system adaptable to various industries.</li>
                         </ul>
                       </CardContent>
@@ -343,7 +343,7 @@ export default function Requirements() {
               </Carousel>
             </div>
             <p className="text-lg">
-              From the data collected thus far from our survey and personas, we have identified these follwing key points that appear prevalent within the data:
+              From the data collected thus far from our survey and personas, we have identified these following key points prevalent throughout the data:
             </p>
             <Card className="mt-6">
               <CardHeader>
@@ -668,18 +668,15 @@ export default function Requirements() {
                       BLE proximity connection to Raspberry Pi
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32)
+                          Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32).
                         </li>
                       </ul>
                     </li>
                     <li>
-                      Facial recognition via Raspberry Pi (Raspberry Pi camera module)
+                      Facial recognition via Raspberry Pi (using camera module)
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices
-                        </li>
-                        <li>
-                          Ensure accuracy in low light conditions and secure handling of biometric data
+                          Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices. Ensure accuracy in low light conditions and secure handling of biometric data.
                         </li>
                       </ul>
                     </li>
@@ -687,7 +684,7 @@ export default function Requirements() {
                       Accessibility settings fetching
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support
+                          Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support, etc.
                         </li>
                       </ul>
                     </li>
@@ -695,29 +692,23 @@ export default function Requirements() {
                       Server
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          For hosting user profiles, managing proximity data and backend operations
+                          Use of a server to host user profiles, and manage backend operations.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      Post-quantum cryptography encryption for securing user data
+                      Post-quantum cryptography encryption
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          All data transmitted between devices should be encrypted using a PQC algorithm
-                        </li>
-                        <li>
-                          Secures sensitive user data during transmission and storage 
+                          All data transmitted between devices should be encrypted using a PQC algorithm to secure user data.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      AI chatbot for easy settings configurations
+                      AI chatbot
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Granite 3.0 IBM Model
-                        </li>
-                        <li>
-                          Enable chatbot to help with troubleshooting/guidance 
+                          Use chatbot (powered by Granite 3.0 IBM model) to help with troubleshooting/guidance and for easy settings configurations.
                         </li>
                       </ul>
                     </li>
@@ -735,19 +726,16 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      A website to configure settings initially
+                      A website to register device and configure initial settings
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Register new user profiles on website (facial recognition setup, preferences, etc.)
+                          Register new user profiles on website (facial recognition setup, preferences, etc.), and save to server.
                         </li>
                         <li>
-                          Save data to server
+                          Use secure 2 factor authentication login.
                         </li>
                         <li>
-                          Secure login - 2 factor authentication
-                        </li>
-                        <li>
-                          Responsive design for computer/tablet use
+                          Have a responsive design making it suitable for either computer or tablet use.
                         </li>
                       </ul>
                     </li>
@@ -755,7 +743,7 @@ export default function Requirements() {
                       Directional proximity management
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          To identify a specific device a user intends to interact with when there are multiple devices nearby
+                          Identify a specific device a user intends to interact with when there are multiple devices nearby.
                         </li>
                       </ul>
                     </li>
@@ -773,15 +761,12 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      Multiple languages support
+                      API Layer to make system reproducible
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          For the configuration website and IoT interactions
+                          An API could allow third-party developers to integrate QPG authentication into other systems for broader adoption.
                         </li>
                       </ul>
-                    </li>
-                    <li>
-                      API Layer to make system reproducible
                     </li>
                   </ul>
                 </AccordionContent>
@@ -800,12 +785,17 @@ export default function Requirements() {
                       Voice recognition/authentication
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Potential privacy concerns and complexity would be an issue
+                          Potential privacy concerns and complexity with regards to voice recognition may make it infeasible.
                         </li>
                       </ul>
                     </li>
                     <li>
                       Mobile application to remotely login and select device
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Authentication will be handled directly via IoT devices and not through a dedicated mobile app.
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -813,31 +803,54 @@ export default function Requirements() {
             </Accordion>
             <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
             <p className="text-lg">
-              Non-functional requirements define the quality attributes, constraints, and operational characteristics of the Quantum Proximity Gateway. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance and usability, ensuring that all users can have swift frictionless access to their devices regardless of their physical or technical abilities. We also anticipate that the QPG system will continue to be developed for use in large-scale environments and for easy integration with future IoT devices. Therefore, scalability is another large priority of ours, which is further highlighted in the list below.
-            </p>
-            <p className="text-lg my-6">
-              NOT FINISHIED
-            </p>
-            <p className="text-lg my-6">
-              [Must Have - Performance, Reliability, Security, Scalability, Compatibility; Should Have - Usability, Privacy Control, Extensibility, Documentation; Could Have: Multi-Language Support, Feedback Mechanisms; Won't Have: Open Source, Mobile App Integration]
-            </p>
-            <p className="text-lg my-6">
-              [Constraints - hardware, software, data, external interfaces, client/industry partner needs]
+              Non-functional requirements define the quality attributes, constraints, and operational characteristics of the QPG. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance and usability, ensuring that all users can have swift frictionless access to their devices regardless of their physical or technical abilities. We also anticipate that the QPG system will continue to be developed for use in large-scale environments and for easy integration with future IoT devices. Therefore, scalability is another large priority of ours, which is further highlighted in the list below.
             </p>
             <Accordion type="single" collapsible className="my-2">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    <span className="mr-3">🟣</span> Must Have
+                    Must Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      Placeholder
+                      Performance
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Placeholder
+                          The system must operate with low latency to ensure seamless authentication.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Reliability
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          QPG should maintain high uptime and recover quickly from failures.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Security
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          All user data must be encrypted with post-quantum cryptography.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Scalability
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          The system must support multiple users and devices within a growing IoT ecosystem.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Compatibility
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          QPG must integrate with common operating systems and IoT hardware, including Raspberry Pi and ESP32.
                         </li>
                       </ul>
                     </li>
@@ -849,16 +862,40 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    <span className="mr-3">🟢</span> Should Have
+                    Should Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      Placeholder
+                      Usability
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Placeholder
+                          The interface should be intuitive, ensuring accessibility for all users.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Privacy Control
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Users must have control over data storage, sharing, and deletion.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Extensibility
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          The architecture should allow for future integrations, such as additional authentication methods.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Documentation
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Comprehensive technical and user documentation should be provided for ease of implementation and troubleshooting.
                         </li>
                       </ul>
                     </li>
@@ -870,16 +907,24 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    <span className="mr-3">🟡</span> Could Have
+                    Could Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      Placeholder
+                      Multi-Language Support
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Placeholder
+                          The system could support multiple languages to enhance global accessibility.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Feedback Mechanisms
+                      <ul className="text-lg list-[circle] pl-6 space-y-2">
+                        <li>
+                          Users could provide feedback on authentication experiences for continuous improvement.
                         </li>
                       </ul>
                     </li>
@@ -891,16 +936,16 @@ export default function Requirements() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
-                    <span className="mr-3">🔴</span> Won't Have
+                    Won't Have
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      Placeholder
+                      Open Source
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Placeholder
+                          The project will remain proprietary due to security and commercial considerations.
                         </li>
                       </ul>
                     </li>
