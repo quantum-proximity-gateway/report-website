@@ -37,7 +37,7 @@ export default function Algorithms() {
             </p>
           </div>
           <div id="ai-chatbot">
-            <h1 className="text-4xl font-bold my-6">AI Chatbot</h1>
+            <h1 className="text-4xl font-bold my-6">Facial Recognition Algorithm</h1>
             <h1 className="text-2xl font-bold my-6">Models</h1>
             <p className="text-lg my-6">
             The facial recognition algorithm used in our QPG system is based on the face_recognition library, an open-source Python library that provides tools for facial recognition tasks, and uses deep learning models to detect and recognise faces in images or videos. At its core, the model maps human facial features into high-dimensional numerical vectors, known as face encodings, that uniquely represent each face. These encodings are generated using a convolutional neural network (CNN), a type of deep learning algorithm that analyses visual data by learning hierarchical representations of features through convolutional and pooling layers. When a new face is detected via the Raspberry Pi's camera module, its encoding is compared against a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether a match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have maximised distances. This system is designed to provide real-time recognition while maintaining a balance between accuracy and computational efficiency.
@@ -93,10 +93,30 @@ export default function Algorithms() {
             Since this is a real-time face recognition system, it does not have a traditional training phase. Instead, it operates by storing known face encodings and comparing incoming video frames against this dataset.  
             </p>
             <h1 className="text-2xl font-bold my-6">Experiments</h1>
+            <p className="text-lg">
+              We tested the facial recognition system using a controlled environment and real-world scenarios to measure its accuracy and performance under different conditions.
+            </p>
             <h1 className="text-1xl font-bold my-4">Experiment Deisgn</h1>
             <p className="text-lg">
-              The dataset consists of:
+            The system processes video frames from the Raspberry Pi camera in real-time. A user enters the frame, and the system attempts to detect and match their face against stored encodings. If a match is found, their profile is activated.
             </p>
+            <ul className="list-disc pl-6 my-4">
+              <li>
+                <strong>1. Baseline Test:</strong> Users were asked to stand at a fixed distance and face the camera directly.
+              </li>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>2. Variable Conditions:</strong> Users moved around the frame, wore accessories (glasses/masks), or appeared in different lighting.
+                </li>
+              </ul>
+                <ul className="list-disc my-3">
+              <li>
+                <strong>3. Real-Time Scenario:</strong> The system was deployed in a dynamic environment with multiple people moving in and out of the frame.
+              </li>
+              </ul>
+            </ul>
+            <h1 className="text-1xl font-bold my-4">Performance Evaluation</h1>
+            <p className="text-lg"></p>
           </div>
           <div id="discussions">
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
@@ -126,10 +146,10 @@ export default function Algorithms() {
             </p>
           </div>
           <div id="facial-recognition">
-            <h1 className="text-4xl font-bold my-6">Facial Recognition</h1>
+            <h1 className="text-4xl font-bold my-6">AI Chatbot</h1>
             <h1 className="text-2xl font-bold my-6">Models</h1>
             <p className="text-lg my-6">
-              The facial recognition algorithm used in our QPG project is based on the face_recognition library, which is built upon dlib's deep learning framework <strong>[HYPERLINK]</strong>. The core idea behind this model is to map human facial features into high-dimensional, numerical vector representations, known as face encodings. The underlying model uses a convolutional neural network (CNN) to encode facial features into these face encodings, which are 128-dimensional feature vectors that uniquely describe a person’s face. When a new face is detected via the Raspberry Pi's camera module, its encoding is compared against a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether a match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have maximised distances. The system is designed to provide real-time recognition while maintaining a balance between accuracy and computational efficiency.
+              The 
             </p>
             <h1 className="text-2xl font-bold my-6">Data</h1>
             <p className="text-lg">
