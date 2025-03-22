@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Metadata } from 'next';
+import Image from "next/image";
 
 
 export const metadata: Metadata = {
@@ -143,34 +144,69 @@ export default function Requirements() {
               </li>
             </ul>
             <h1 className="text-2xl font-bold my-6">Survey Data Analysis</h1>
-            <p className="text-lg">
+            <p className="text-lg mb-6">
               Our user survey produced valuable insights:
             </p>
-            <ul className="text-lg list-disc pl-6 my-6">
-              <li>
-                <strong>67% of respondents stated that they had trouble with hot-desking, and found manual logins inconvenient and time-consuming.</strong>
-              </li>
-              <li>
-                <strong>100% of respondents suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that "it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices".</strong>
-              </li>
-              <li>
-                <strong>Users with accessibility needs strongly supported AI-driven chatbot assistance for modifying settings, noting that this would be "a great feature".</strong>
-              </li>
-              <li>
-                When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed, with one stating that "[the mechanism] sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices”.</strong> We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
-              </li>
-            </ul>
-            <p className="text-lg">
-              The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
-            </p>
-            <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
-            <p className="text-lg">
-              The survey conducted to gather user requirements for the (QPG) was structured to identify key pain points, user expectations, and feature priorities.
-            </p>
+
+            <div className="grid gap-6 my-8">
+              {/* Survey Insight 1 */}
+              <div className="rounded-lg p-6 shadow-lg border border-gray-700">
+                <div className="flex items-start">
+                  <div className="text-3xl text-blue-400 mr-4">67%</div>
+                  <p className="text-lg">
+                    of respondents stated that they had trouble with hot-desking, and found manual logins inconvenient and time-consuming.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Survey Insight 2 */}
+              <div className="rounded-lg p-6 shadow-lg border border-gray-700">
+                <div className="flex items-start">
+                  <div className="text-3xl text-green-400 mr-4">100%</div>
+                  <p className="text-lg">
+                    of respondents suggested that having a mechanism to automatically load up your profile and settings would be helpful, with many commenting that "it would save time by eliminating the need to log in and configure settings manually, making the process smoother and faster, especially when switching between devices".
+                  </p>
+                </div>
+              </div>
+
+              {/* Survey Insight 3 */}
+              <div className="rounded-lg p-6 shadow-lg border border-gray-700">
+                <div className="flex items-start">
+                  <div className="text-3xl text-purple-400 mr-4">
+                    <Image src="/chatbot.svg" alt="Chat Bot Icon" width={90} height={100}/>
+                  </div>
+                  <p className="text-lg">
+                    Users with accessibility needs strongly supported AI-driven chatbot assistance for modifying settings, noting that this would be "a great feature".
+                  </p>
+                </div>
+              </div>
+
+              {/* Survey Insight 4 */}
+              <div className="rounded-lg p-6 shadow-lg border border-gray-700">
+                <div className="flex items-start">
+                  <div className="text-3xl text-amber-400 mr-4">67%</div>
+                  <div className="text-lg">
+                    <p>
+                      When asked specifically whether a proximity-based mechanism for authentication and access to profiles would be useful, <strong>67% of respondents agreed</strong>, with one stating that "<em>it sounds very futuristic; it would help people with accessibility challenges all around the world access essential services on their devices</em>".
+                    </p>
+                    <p className="mt-3">
+                      We believe that this figure will be significantly higher once more users are educated on how the mechanism works and how it can be used, as one respondent selected the "I'm not sure" option, suggesting they may not have known what the mechanism entails.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-lg p-6 border border-gray-700 my-8">
+              <h3 className="text-xl font-semibold mb-4">Conclusion</h3>
+              <p className="text-lg">
+                The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security, as many respondents highlighted slight security concerns within the "Any additional comments?" section of the questionnaire.
+              </p>
+            </div>
             <div className="p-6 w-full">
               <h2 className="text-2xl font-bold mb-6 text-center">Survey Evaluation</h2>
               <div className="overflow-x-auto">
-                <table className="w-full border border-gray-700 rounded-lg shadow-lg">
+                <table className="w-full rounded-xl shadow-lg overflow-hidden">
                   <thead>
                     <tr className="bg-gray-800 text-white">
                       <th className="p-4 text-left border-b border-gray-700 text-lg w-1/2">Strengths ✅</th>
@@ -203,7 +239,7 @@ export default function Requirements() {
                         <strong>✅ Balanced Question Design</strong>  
                         <p>The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses specifically provided valuable user-driven feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
                       </td>
-                      <td className="p-4 border-b border-gray-700">
+                      <td className="p-4">
                         <strong>⚠️ Lack of Longitudinal Data</strong>  
                         <p>The survey only captured a single point in time and did not account for changing user preferences over time. A user’s opinion on the access control mechanisms might evolve as they gain experience with new authentication technologies or encounter real-world security breaches.</p>
                       </td>
