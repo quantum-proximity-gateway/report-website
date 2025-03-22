@@ -86,7 +86,8 @@ export default function Research() {
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
             <p className="text-lg">
-              [1] Alps Alpine: Our Business (2015) Company | Alps Alpine. Available at: https://www.alpsalpine.com/e/company/business/#anc03 (Accessed: 18 March 2025). 
+              [1] Alps Alpine: Our Business (2015) Company | Alps Alpine. Available at: https://www.alpsalpine.com/e/company/business/#anc03 (Accessed: 18 March 2025).
+            </p>
             <p className="text-lg my-6">
               [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).
             </p>          
@@ -103,11 +104,10 @@ export default function Research() {
               [6]
             </p>
             <p className="text-lg my-6">
-              [6]
-            </p>
-            <p className="text-lg my-6">
               [7]
             </p>
+            <p className="text-lg my-6">
+              [8]
             </p>
           </div>
         </div>
