@@ -2,6 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Metadata } from 'next';
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: 'Research',
@@ -58,6 +59,10 @@ export default function Research() {
             <p className="text-lg">
               <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Yubico</a>{" "} is an American company manufacturing hardware authentication devices, their main product is the Yubikey which is a security key utilised for 2FA based authentication. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
             </p>
+            <div className="flex flex-col items-center my-6">
+            <Image src="/research/yubico.png" alt="Yubico Key Lineup" width={400} height={200}/>
+            <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Various YubiKey security devices offering multi-factor authentication</p>
+          </div>
             <h1 className="text-2xl font-bold my-6">Review 2: Alps Alpine's Secure Digital Key</h1>
             <p className="text-lg">
             <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
@@ -173,7 +178,6 @@ export default function Research() {
            [6]    </p>
            <p className="text-lg my-6">
            [7]    </p>
-          </p>
           </div>
         </div>
       </div>
