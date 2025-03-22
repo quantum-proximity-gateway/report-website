@@ -255,18 +255,16 @@ export default function UIDesign() {
             <Table>
               <TableHeader>
                 <TableRow className="text-lg">
-                  <TableHead>Problem</TableHead>
-                  <TableHead>Description</TableHead>
-                  <TableHead>Solution</TableHead>
+                  <TableHead className="w-[50%]">❌ Problem</TableHead>
+                  <TableHead>💡 Solution</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    Colour Choice
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    The background colours are not suitable for visually impaired individuals.
+                    <p className="text-lg">
+                      <span className="font-medium">Colour Choice.</span> The background colours are not suitable for visually impaired individuals.
+                    </p>
                   </TableCell>
                   <TableCell className="text-lg">
                     Research and implement more visual impairment friendly UI designs.
@@ -274,10 +272,9 @@ export default function UIDesign() {
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    Ambiguity of System Usage
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    The current prototype does not convey well how the system is meant to be used.
+                    <p className="text-lg">
+                      <span className="font-medium">Ambiguity of System Usage.</span> The current prototype does not convey well how the system is meant to be used.
+                    </p>
                   </TableCell>
                   <TableCell className="text-lg">
                     Add a more detailed explanation about the connections between devices.
@@ -285,10 +282,9 @@ export default function UIDesign() {
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    Lack of Security
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Users may be concerned about their data not being safely stored in the current prototype.
+                    <p className="text-lg">
+                      <span className="font-medium">Lack of Security.</span> Users may be concerned about their data not being safely stored in the current prototype.
+                    </p>
                   </TableCell>
                   <TableCell className="text-lg">
                     Specify that all data will be encrypted utilising post-quantum encryption algorithms.
@@ -310,7 +306,7 @@ export default function UIDesign() {
               In practice, we were unfortunately unable to put these design choices into practice. Due to other priorities, we did not get around to redesigning the login interface used in the linux distribution we were developing with, and did not manage to display facial verification hints. Furthermore, the technologies used in these prototypes have become outdated, as we have since made the decision to use BLE over RFID.
             </p>
             <p className="text-lg my-6">
-              As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default in the linux distribution being used.
+              As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default of the linux distribution being used.
             </p>
             <p className="text-lg my-6">
               [INSERT IMAGES OF ACTUAL LOGIN PAGE]
