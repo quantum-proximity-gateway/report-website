@@ -169,10 +169,9 @@ export default function Research() {
            [6]    </p>
            <p className="text-lg my-6">
            [7]    </p>
-          </p>
+          </div>
           </div>
         </div>
-      </div>
     </main>
   )
 }
