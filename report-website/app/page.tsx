@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from "next/image";
 
 const teamMembers = [
     {
@@ -15,7 +16,7 @@ const teamMembers = [
     {
         name: 'Raghav Awasthi',
         role: '...',
-        email: 'raghav.awasthi.23@ucl.ac.uk​',
+        email: 'raghav.awasthi.23@ucl.ac.uk',
         photo: 'https://media.licdn.com/dms/image/v2/D4D03AQFuvfBp8p67OQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693158111702?e=1747267200&v=beta&t=l5pfVphfPZRFpvKzLdh8jh31j1zey6UlGDL78Pwjeyc',
         link: 'https://www.linkedin.com/in/raghavawasthi2005/',
     },
@@ -29,7 +30,7 @@ const teamMembers = [
     {
         name: 'Abdul Muhaymin Abdul Hafiz',
         role: '...',
-        email: 'abdul.hafiz.23@ucl.ac.uk​',
+        email: 'abdul.hafiz.23@ucl.ac.uk',
         photo: 'https://media.licdn.com/dms/image/v2/D4E03AQFGlo5aExH12A/profile-displayphoto-shrink_400_400/B4EZUstHvKH0Ag-/0/1740211781181?e=1747267200&v=beta&t=l8pAdQSDr3_IE98cTwWD6s0K3k_0OPM-fbP9-pnddJA',
         link: 'https://www.linkedin.com/in/abmu/',
     },
@@ -44,14 +45,19 @@ export default function Home() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbPage>Home</BreadcrumbPage>
+              <BreadcrumbPage>Quantum Proximity Gateway</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </header>
       <div className="flex flex-col items-center shrink-0 border-b p-8">
-        <h1 className="text-8xl font-bold text-center my-6">Quantum Proximity Gateway</h1>
-        <h1 className="text-6xl text-center my-6">IBM + UCL</h1>
+        <h1 className="text-6xl font-bold text-center">Post-Quantum Proximity Gateway</h1>
+        <h1 className="text-4xl text-center my-6">IBM Proximity Agents</h1>
+        <div className="flex items-center justify-center gap-12">
+          <Image src="/ibmlogo.png" alt="IBM logo" width={200} height={100} className="object-contain" />
+          <Image src="/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
+          <Image src="/rpi.png" alt="UCL logo" width={200} height={100} className="object-contain" />
+        </div>
       </div>
       <div className="flex justify-center p-6">
         <div className="max-w-4xl">
@@ -61,10 +67,11 @@ export default function Home() {
               In modern computing environments, whether in the workplace or at home, seamless user-device interaction is essential for both efficiency and security. This interaction relies heavily on authentication and access control mechanisms, which verify user identity and regulate access to sensitive systems. Unfortunately, existing log-in and verification systems remain inflexible, often requiring manual input and failing to adapt dynamically to users' contextual and accessibility needs, which proves especially detrimental for disabled, elderly, or neurodivergent users. 
             </p>
             <p className="text-lg my-6">
-              As such, we have created the Quantum Proximity Gateway. Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. The system design allows for a centralised ecosystem of devices to seamlessly communicate with each other, forming a robust and interconnected network of quantum proximity gateway enabled devices, across which encrypted user profiles and settings can be interacted with using AI Proximity Agents. Robust security and privacy controls are also prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain highly protected.
+              As such, we have created the <strong>Quantum Proximity Gateway</strong>. Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. The system design allows for a centralised ecosystem of devices to seamlessly communicate with each other, forming a robust and interconnected network of QPG-enabled devices, across which, encrypted user profiles and settings can be interacted with using <strong>Proximity Agents</strong>. Robust security and privacy controls are also prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain highly protected.
             </p>
             <p className="text-lg">
-              Our achievements with the Quantum Proximity Gateway mark a significant leap forward in secure and adaptive authentication. By eliminating the need for manual logins, we have not only streamlined user access but also enhanced digital inclusivity — ensuring that individuals of all abilities can interact with technology effortlessly. Our implementation of AI Proximity Agents, through the use of IBM Granite, has redefined how users personalise their digital experience, creating an intelligent, self-regulating ecosystem that adapts to users' accessibility needs in real time. Furthermore, with post-quantum encryption, we have future-proofed security, safeguarding sensitive data against even the most advanced threats. This innovation represents not just convenience, but a transformative shift towards a smarter, more secure, and universally accessible digital experience.
+              Our achievements with the Quantum Proximity Gateway mark a significant leap forward in secure and adaptive authentication. By eliminating the need for manual logins, we have not only streamlined user access but also enhanced digital inclusivity — ensuring that individuals of all abilities can interact with technology effortlessly. 
+              Our implementation of AI Proximity Agents, through the use of IBM Granite, has redefined how users personalise their digital experience, creating an intelligent, self-regulating ecosystem that adapts to users' accessibility needs in real time. Furthermore, leveraging <strong>post-quantum encryption</strong>, we have future-proofed security, safeguarding sensitive data against even the most advanced threats. This innovation represents not just convenience, but a transformative shift towards a smarter, more secure, and universally accessible digital experience.
             </p>
           </div>
           <div id="video">
