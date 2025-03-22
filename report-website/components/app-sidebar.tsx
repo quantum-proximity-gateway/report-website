@@ -101,20 +101,24 @@ const items = [
     icon: Braces,
     subitems: [
       {
-        title: "Models",
-        url: "/algorithms#models",
+        title: "Overview",
+        url: "/algorithms#overview",
       },
       {
-        title: "Data",
-        url: "/algorithms#data",
+        title: "AI Chatbot",
+        url: "/algorithms#ai-chatbot",
       },
       {
-        title: "Experiments",
-        url: "/algorithms#experiments",
+        title: "Post-Quantum Cryptography",
+        url: "/algorithms#post-quantum-cryptography",
       },
       {
-        title: "Discussions",
-        url: "/algorithms#discussions",
+        title: "Facial Recognition",
+        url: "/algorithms#facial-recognition",
+      },
+      {
+        title: "Time-Based One-Time Password",
+        url: "/algorithms#time-based-one-time-password",
       },
       {
         title: "Conclusion",
