@@ -51,7 +51,7 @@ export default function Home() {
         </Breadcrumb>
       </header>
       <div className="flex flex-col items-center shrink-0 border-b p-8">
-        <h1 className="text-6xl font-bold text-center">Post-Quantum Proximity Gateway</h1>
+        <h1 className="text-7xl font-bold text-center">Post-Quantum Proximity Gateway</h1>
         <h1 className="text-4xl text-center my-6">IBM Proximity Agents</h1>
         <div className="flex items-center justify-center gap-12">
           <Image src="/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
