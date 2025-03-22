@@ -113,6 +113,7 @@ export default function Requirements() {
               </li>
             </ul>
           </div>
+          {/* TODO: Add interviews/proof of survey */}
           <div id="requirements-gathering">
             <h1 className="text-4xl font-bold my-6">Requirements Gathering</h1>
             <p className="text-lg my-6">
