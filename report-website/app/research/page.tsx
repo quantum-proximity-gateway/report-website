@@ -16,7 +16,7 @@ export default function Research() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -33,10 +33,11 @@ export default function Research() {
           <div id="related-projects">
             <h1 className="text-4xl font-bold my-6">Related Projects Review </h1>
             <p className="text-lg">
-            Bluetooth and proximity-based computing have become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies and resources for the QPG, we conducted an in-depth analysis of existing proximity-based automation and authentication systems, examining their software and hardware implementations to understand the key factors driving their functionality.            </p>
-            <p className="text-lg my-6">
-            From our research, we concluded that a good proximity-based access control system must:
-            <ul className="list-disc pl-6 my-6">
+              Bluetooth and proximity-based computing have become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies and resources for the QPG, we conducted an in-depth analysis of existing proximity-based automation and authentication systems, examining their software and hardware implementations to understand the key factors driving their functionality.            </p>
+            <p className="text-lg">
+              From our research, we concluded that a good proximity-based access control system must:
+            </p>
+            <ul className="text-lg list-disc pl-6 my-6">
               <li>
                 <strong>Ensure secure authentication:</strong> Utilise multi-factor authentication methods such as facial recognition, BLE proximity detection, and post-quantum cryptographic encryption to prevent unauthorized access.
               </li>
@@ -50,8 +51,9 @@ export default function Research() {
                 <strong>Feature a user-friendly configuration interface:</strong> Provide a website or app for easy setup, registration, troubleshooting, and user profile management.
               </li>
             </ul>
-          As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
-          </p>
+            <p className="text-lg">
+              As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
+            </p>
             <h1 className="text-2xl font-bold my-6">Review: Alps Alpine's Secure Digital Key</h1>
             <p className="text-lg">
             <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
@@ -148,7 +150,11 @@ export default function Research() {
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
             <p className="text-lg">
-            [1] Alps Alpine: Our Business (2015) Company | Alps Alpine. Available at: https://www.alpsalpine.com/e/company/business/#anc03 (Accessed: 18 March 2025). 
+              [1] Alps Alpine: Our Business (2015) Company | Alps Alpine. Available at: https://www.alpsalpine.com/e/company/business/#anc03 (Accessed: 18 March 2025).
+            </p>
+            <p className="text-lg my-6">
+              [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).
+            </p>          
             <p className="text-lg my-6">
             [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).    </p>          
            <p className="text-lg my-6">
