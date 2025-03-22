@@ -43,7 +43,7 @@ export default function Requirements() {
               The Quantum Proximity Gateway (QPG) is a cutting-edge authentication system developed in collaboration with IBM. This system aims to revolutionise user authentication and access control by eliminating manual logins and streamlining authentication through proximity detection, facial recognition, and AI-driven profile management.         
             </p>
             <p className="text-lg">
-              Our project sets a precedent for an innovative way to interact with LLMs via a method we named <strong>Proximity Prompting</strong>. By leveraging the proximity detection capabilities of our system, users can engage with IBM's Granite 3.2 AI model contextually and intuitively, without the friction of traditional interfaces.
+              Our project sets a precedent for an innovative way to interact with LLMs via a method we named <span className="font-medium">Proximity Prompting</span>. By leveraging the proximity detection capabilities of our system, users can engage with IBM's Granite 3.2 AI model contextually and intuitively, without the friction of traditional interfaces.
             </p>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
@@ -68,7 +68,7 @@ export default function Requirements() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    The QPG is designed with all users in mind - from corporate employees in large enterprises, to students and faculty memnbers in educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.2 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. 
+                    The QPG is designed with all users in mind - from corporate employees in large enterprises, to students and faculty memnbers in educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM's Granite 3.2 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. 
                   </p>
                   <p className="text-lg my-6">
                     We believe the QPG will especially revolutionise the way in which neurodivergent, elderly and quadriplegic users interact with their devices. By eliminating the need for traditional passwords and reducing cognitive load, the QPG enables increased overall accessibility - for neurodivergent users, the system minimises disruptions by automatically loading personalised settings upon login, and providing intuitive, frictionless access. Elderly users benefit from simplified authentication that does not rely on memorisation of passwords or fine motor skills, ensuring security without added complexity. Quadriplegic users can authenticate effortlessly through multimodal inputs, such as facial recognition and proximity detection, eliminating barriers to device interaction. 
@@ -91,7 +91,7 @@ export default function Requirements() {
                         <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
                           <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
                           <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
-                          <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
+                          <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.2 AI Model.</li>
                         </ul>
                       </CardContent>
                     </Card>
@@ -184,7 +184,7 @@ export default function Requirements() {
               </TabsContent>
             </Tabs>
             <h1 className="text-2xl font-bold my-6">Survey Data Analysis</h1>
-            <p className="text-lg mb-6">
+            <p className="text-lg mb-3">
               Our user survey produced valuable insights:
             </p>
             <div>
@@ -713,7 +713,7 @@ export default function Requirements() {
                       AI chatbot
                       <ul className="text-lg list-[circle] pl-6 space-y-2">
                         <li>
-                          Use chatbot (powered by Granite 3.0 IBM model) to help with troubleshooting/guidance and for easy settings configurations.
+                          Use chatbot (powered by IBM's Granite 3.2 AI model) to help with troubleshooting/guidance and for easy settings configurations.
                         </li>
                       </ul>
                     </li>
