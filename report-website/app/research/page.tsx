@@ -2,6 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Metadata } from 'next';
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: 'Research',
@@ -55,10 +56,32 @@ export default function Research() {
             <p className="text-lg my-6">
               As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
             </p>
-            <h1 className="text-2xl font-bold my-6">Review: Alps Alpine's Secure Digital Key</h1>
+            <h1 className="text-2xl font-bold my-6">Review 1: Yubico Key</h1>
+            <p className="text-lg">
+              <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Yubico</a>{" "} is an American company manufacturing hardware authentication devices, their main product is the Yubikey which is a security key utilised for 2FA based authentication. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
+            </p>
+            <div className="flex flex-col items-center my-6">
+              <Image src="/research/yubico.png" alt="Yubico Key Lineup" width={400} height={200}/>
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Various YubiKey security devices offering multi-factor authentication</p>
+            </div>
+
+            <p className="text-lg my-6">
+              Their products serve as the industry standard for hardware-based authentication systems, our intial prototypes were inspired by their work as we also considered using Near-Field Communication (NFC) based authentication, however after gathering our requirements and surveying stakeholders we realised it would not be the most appropriate for the purposes of our project. This is due to the fact that our project is largely aimed at creating a seamless proximity-based login system that is both accessible and secure. NFC would hinder our ability to leverage proximity-based authentication.
+            </p>
+            <p className="text-lg my-6">
+              As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a> - one of the leading InfoSec companies that specialises in identity security and they also recommended an approach involving TOTP authentication which we talk about in more detail in our algorithms page.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Review 2: Alps Alpine's Secure Digital Key</h1>
             <p className="text-lg my-6">
               <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Alps Alpine</a> is a Japanese multinational corporation specialising in electronic components and in-vehicle information systems [1]. The company has continuously utilised Bluetooth technology to develop secure digital key solutions, enhancing user convenience and vehicle security. Through collaborations with industry leaders like Broadcom and Giesecke+Devrient (G+D), Alps Alpine has introduced advanced systems that employ Bluetooth Low Energy (BLE) for precise distance measurement and keyless entry functionalities [2], features that we required for our own QPG system.
             </p>
+           <div className="flex flex-col items-center my-6">
+            <div className="flex flex-row gap-4 justify-center">
+              <Image src="/research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
+              <Image src="/research/broadcom.png" alt="Broadcom Logo" width={300} height={150}/>
+            </div>
+            <p className="text-center mt-3 text-sm text-gray-500">Alps Alpine and Broadcom logos</p>
+          </div>
             <p className="text-lg my-6">
               In partnership with Broadcom, Alps Alpine developed a high-accuracy distance measurement system based on BLE technology. This system enables secure keyless entry by accurately determining the proximity of a user's smartphone to the vehicle, allowing for seamless locking and unlocking without physical keys. Broadcom's innovative smartphone Bluetooth and Wi-Fi® combo chip supports these high-accuracy distance measurements, ensuring both security and convenience for users.
             </p>          
@@ -75,9 +98,8 @@ export default function Research() {
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
             <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
-            <p className="text-lg my-6">
-              Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Radio Frequency Identification (RFID), and Wi-Fi-based positioning.
-            </p>
+            <p className="text-lg">
+            Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi-based positioning. </p>
             <p className="text-lg my-6">
               BLE was chosen as the primary technology for proximity detection due to its balance of cost-effectiveness, power efficiency, and widespread compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, known for its low-cost and efficient BLE functionality, will act as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and infer directionality, allowing for accurate proximity-based authentication. 
             </p>
@@ -147,7 +169,7 @@ export default function Research() {
               Retrieval-based models, which select responses from a fixed database, provided more flexibility, but lacked the adaptability needed for personalised accessibility adjustments. For example, if a user asked for a new accessibility configuration that wasn't in the database, the chatbot wouldn't be able to generate a novel response or action. 
             </p>
             <p className="text-lg my-6">
-              Generative AI models, particularly those based on transformer architectures, offered the most natural and context-aware responses, although they required substantial computational resources. Given the need for seamless interaction and in spite of the computational cost, the chatbot was designed to modify accessibility settings using Granite 3.2, ensuring an intuitive and responsive experience tailored to user needs.
+            Generative AI models, particularly those based on transformer architectures, offered the most natural and context-aware responses, although they required substantial computational resources. Given the need for seamless interaction and in spite of the computational cost, the chatbot was designed to modify accessibility settings using Granite 3.2 and AI, ensuring an intuitive and responsive experience tailored to user needs.
             </p>
           </div>
           <div id="technical-decisions">
