@@ -255,6 +255,20 @@ export default function Requirements() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <p className="text-lg font-semibold">
+                      <span className="mr-3">6.</span> Do you usually have your phone on you in public?
+                    </p>  
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-lg">
+                      All responses were affirmative, generally stating that they have their phone on them all the time.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
             <p className="mt-6 text-lg">
               The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security.
