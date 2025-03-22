@@ -68,7 +68,7 @@ export default function Research() {
               Their products serve as the industry standard for hardware-based authentication systems, our intial prototypes were inspired by their work as we also considered using Near-Field Communication (NFC) based authentication, however after gathering our requirements and surveying stakeholders we realised it would not be the most appropriate for the purposes of our project. This is due to the fact that our project is largely aimed at creating a seamless proximity-based login system that is both accessible and secure. NFC would hinder our ability to leverage proximity-based authentication.
             </p>
             <p className="text-lg my-6">
-              As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. We've been in touch with employees from.
+              As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a> - one of the leading InfoSec companies that specialises in identity security and they also recommended an approach involving TOTP authentication which we talk about in more detail in our algorithms page.
             </p>
             <h1 className="text-2xl font-bold my-6">Review 2: Alps Alpine's Secure Digital Key</h1>
             <p className="text-lg">
