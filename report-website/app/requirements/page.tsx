@@ -316,31 +316,166 @@ export default function Requirements() {
               </ul>
             </ul>
             <h1 className="text-2xl font-bold my-6">Use case Descriptions</h1>
-              <ul className="text-lg list-disc pl-6 my-6">
-              <li>
-                UC1: Secure Access to Workstations via Proximity & Facial Recognition - Actor: User e.g. employee; Description: Securely log into workstation via proximity & facial recognition; Main flow: 1. User enters office and approaches workstation with QPG system. 2. The BLE sensor detects the user's presence. 3. The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module. 4.If successful, the system loads the user’s profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences. 5. If authentication fails, access is denied, and an alert is sent to IT security. 6. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.; Result: secure access to workstations via proximity sensiing and facial recognition. 
-              </li>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC2: Accessibility-Focused Hands-Free Authentication - Actor: User with mobility impairments.; Description: A quadriplegic user logs into a device without movement; Main flow: 1. The quadriplegic user moves towards the device. 2. The BLE sensor detects the user's presence. 3. The QPG system prompts facial recognition as an alternative to manual login. 4. If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (The automatic opening of the chatbot can be turned on or off by the user, depending on necessity). 5. The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot. 6. If authentication fails, access is denied, and an alert is sent to IT security. 7. When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user ; Result: Hands-free access to device for users with mobility issues.
-                </li>
-              </ul>
-                <ul className="text-lg list-disc my-6">
-              <li>
-                UC3: Proximity-Based Access to Shared Tablets in Co-Working Spaces - Actor: User e.g. Freelancer, Remote Worker; Description: User has personalised short term access to a shared device ; Main flow: 1. QPG detects the freelancer’s presence and identifies them via BLE proximity. 2.The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings. 3. When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state. ; Result: Secure and efficient access in shared environments.
-              </li>
-              </ul>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC4: AI-Driven Chatbot for Troubleshooting and User Assistance - Actor: User e.g. employee, student, IT Support Agent; Description: User has trouble accessing their profile or personalising their settings, so uses AI chatbot for assistance.; Main flow: 1.,2.,3. the same as UC1 and 2. 4. The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech). 5. The chatbot analyses the issue and provides guided troubleshooting steps. 6. If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.7. The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).; Result: Self-service troubleshooting and improved accessibility.
-              </li>
-              </ul>
-              <ul className="text-lg list-disc my-6">
-              <li>
-                UC5: IT Admin Monitoring and Security Enforcement (maybe) - Actor: IT Administrator; Description: An IT administrator monitors authentication logs and enforce access policies ; Main flow: 1. The IT admin logs into the QPG dashboard. 2. They view real-time authentication logs, including failed login attempts and access requests. 3. If a security risk is detected, they can manually revoke access or enforce 2FA for specific users; Result: Centralised security monitoring
-              </li>
-              </ul>
-            </ul>
+            <div className="space-y-8">
+              {/* UC1 */}
+              <div className="rounded-lg p-6 border border-gray-700">
+                <div className="flex items-center mb-4">
+                  <span className="bg-gray-400 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">UC1</span>
+                  <h3 className="text-xl font-bold">Secure Access to Workstations via Proximity & Facial Recognition</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-lg">
+                  <div className="md:col-span-1">
+                    <p className="font-semibold text-blue-400">Actor</p>
+                    <p>User e.g. employee</p>
+                  </div>
+                  
+                  <div className="md:col-span-3">
+                    <p className="font-semibold text-blue-400">Description</p>
+                    <p>Securely log into workstation via proximity & facial recognition</p>
+                      
+                    <p className="font-semibold text-blue-400 mt-4">Main flow</p>
+                    <ol className="list-decimal pl-6">
+                      <li>User enters office and approaches workstation with QPG system.</li>
+                      <li>The BLE sensor detects the user's presence.</li>
+                      <li>The QPG authenticates the user automatically via facial recognition using the Raspberry Pi camera module.</li>
+                      <li>If successful, the system loads the user's profile, workspace preferences, and applications. The workstation adjusts personal settings including contrast, text size and zoom based on their stored preferences.</li>
+                      <li>If authentication fails, access is denied, and an alert is sent to IT security.</li>
+                      <li>When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
+                    </ol>
+                    
+                    <p className="font-semibold text-blue-400 mt-4">Result</p>
+                    <p>Secure access to workstations via proximity sensing and facial recognition.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* UC2 */}
+              <div className="rounded-lg p-6 border border-gray-700">
+                <div className="flex items-center mb-4">
+                  <span className="bg-gray-400 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">UC2</span>
+                  <h3 className="text-xl font-bold">Accessibility-Focused Hands-Free Authentication</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-lg">
+                  <div className="md:col-span-1">
+                    <p className="font-semibold text-blue-400">Actor</p>
+                    <p>User with mobility impairments</p>
+                  </div>
+                  
+                  <div className="md:col-span-3">
+                    <p className="font-semibold text-blue-400">Description</p>
+                    <p>A quadriplegic user logs into a device without movement</p>
+                      
+                    <p className="font-semibold text-blue-400 mt-4">Main flow</p>
+                    <ol className="list-decimal pl-6">
+                      <li>The quadriplegic user moves towards the device.</li>
+                      <li>The BLE sensor detects the user's presence.</li>
+                      <li>The QPG system prompts facial recognition as an alternative to manual login.</li>
+                      <li>If successful, the system loads the user's profile, stored preferences and AI chatbot automatically (The automatic opening of the chatbot can be turned on or off by the user, depending on necessity).</li>
+                      <li>The system automatically equips the device's in-built microphone, and prompts the user to make accessibility changes via the AI chatbot, or alternatvely, close the chatbot.</li>
+                      <li>If authentication fails, access is denied, and an alert is sent to IT security.</li>
+                      <li>When the user leaves, the QPG logs them out, protects their stored preferences via post-quantum encryption and resets the desk for the next user.</li>
+                    </ol>
+                    
+                    <p className="font-semibold text-blue-400 mt-4">Result</p>
+                    <p>Hands-free access to device for users with mobility issues.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* UC3 */}
+              <div className="rounded-lg p-6 border border-gray-700">
+                <div className="flex items-center mb-4">
+                  <span className="bg-gray-400 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">UC3</span>
+                  <h3 className="text-xl font-bold">Proximity-Based Access to Shared Tablets in Co-Working Spaces</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-lg">
+                  <div className="md:col-span-1">
+                    <p className="font-semibold text-blue-400">Actor</p>
+                    <p>User e.g. Freelancer, Remote Worker</p>
+                  </div>
+                  
+                  <div className="md:col-span-3">
+                    <p className="font-semibold text-blue-400">Description</p>
+                    <p>User has personalised short term access to a shared device</p>
+                      
+                    <p className="font-semibold text-blue-400 mt-4">Main flow</p>
+                    <ol className="list-decimal pl-6">
+                      <li>QPG detects the freelancer's presence and identifies them via BLE proximity.</li>
+                      <li>The system loads their workspace preferences, such as bookmarks, cloud storage access, and custom app settings.</li>
+                      <li>When the freelancer moves away, the tablet stores their preferences securely via post-quantum encryption on their profile, and automatically resets to its default state.</li>
+                    </ol>
+                    
+                    <p className="font-semibold text-blue-400 mt-4">Result</p>
+                    <p>Secure and efficient access in shared environments.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* UC4 */}
+              <div className="rounded-lg p-6 border border-gray-700">
+                <div className="flex items-center mb-4">
+                  <span className="bg-gray-400 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">UC4</span>
+                  <h3 className="text-xl font-bold">AI-Driven Chatbot for Troubleshooting and User Assistance</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-lg">
+                  <div className="md:col-span-1">
+                    <p className="font-semibold text-blue-400">Actor</p>
+                    <p>User e.g. employee, student, IT Support Agent</p>
+                  </div>
+                  
+                  <div className="md:col-span-3">
+                    <p className="font-semibold text-blue-400">Description</p>
+                    <p>User has trouble accessing their profile or personalising their settings, so uses AI chatbot for assistance</p>
+                      
+                    <p className="font-semibold text-blue-400 mt-4">Main flow</p>
+                    <ol className="list-decimal pl-6">
+                      <li>1.,2.,3. the same as UC1 and 2.</li>
+                      <li>The user interacts with the built-in AI chatbot via voice or text input (no voice authentication available, only text-to-speech).</li>
+                      <li>The chatbot analyses the issue and provides guided troubleshooting steps.</li>
+                      <li>If the issue is unresolved, the chatbot escalates the case to IT support with diagnostic logs.</li>
+                      <li>The chatbot can also suggest accessibility settings (e.g., adjusting text size, enabling dark mode).</li>
+                    </ol>
+                    
+                    <p className="font-semibold text-blue-400 mt-4">Result</p>
+                    <p>Self-service troubleshooting and improved accessibility.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* UC5 */}
+              <div className="rounded-lg p-6 border border-gray-700">
+                <div className="flex items-center mb-4">
+                  <span className="bg-gray-400 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">UC5</span>
+                  <h3 className="text-xl font-bold">IT Admin Monitoring and Security Enforcement (maybe)</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-lg">
+                  <div className="md:col-span-1">
+                    <p className="font-semibold text-blue-400">Actor</p>
+                    <p>IT Administrator</p>
+                  </div>
+                  
+                  <div className="md:col-span-3">
+                    <p className="font-semibold text-blue-400">Description</p>
+                    <p>An IT administrator monitors authentication logs and enforce access policies</p>
+                      
+                    <p className="font-semibold text-blue-400 mt-4">Main flow</p>
+                    <ol className="list-decimal pl-6">
+                      <li>The IT admin logs into the QPG dashboard.</li>
+                      <li>They view real-time authentication logs, including failed login attempts and access requests.</li>
+                      <li>If a security risk is detected, they can manually revoke access or enforce 2FA for specific users.</li>
+                    </ol>
+                    
+                    <p className="font-semibold text-blue-400 mt-4">Result</p>
+                    <p>Centralised security monitoring.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           <div id="moscow-list">
             <h1 className="text-4xl font-bold my-6">MoSCoW Requirements List</h1>
             <h1 className="text-2xl font-bold my-6">Functional Requirements</h1>
