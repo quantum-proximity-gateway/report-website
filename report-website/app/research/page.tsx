@@ -76,6 +76,13 @@ export default function Research() {
             Alps Alpine 
             </a>{" "} 
            is a Japanese multinational corporation specialising in electronic components and in-vehicle information systems [1]. The company has continuously utilised Bluetooth technology to develop secure digital key solutions, enhancing user convenience and vehicle security. Through collaborations with industry leaders like Broadcom and Giesecke+Devrient (G+D), Alps Alpine has introduced advanced systems that employ Bluetooth Low Energy (BLE) for precise distance measurement and keyless entry functionalities [2], features that we required for our own QPG system.    </p>
+           <div className="flex flex-col items-center my-6">
+            <div className="flex flex-row gap-4 justify-center">
+              <Image src="/research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
+              <Image src="/research/broadcom.png" alt="Broadcom Logo" width={300} height={150}/>
+            </div>
+            <p className="text-center mt-3 text-sm text-gray-500">Alps Alpine and Broadcom logos</p>
+          </div>
            <p className="text-lg my-6">
            In partnership with Broadcom, Alps Alpine developed a high-accuracy distance measurement system based on BLE technology. This system enables secure keyless entry by accurately determining the proximity of a user's smartphone to the vehicle, allowing for seamless locking and unlocking without physical keys. Broadcom's innovative smartphone Bluetooth and Wi-Fi® combo chip supports these high-accuracy distance measurements, ensuring both security and convenience for users.   </p>          
            <p className="text-lg my-6">
