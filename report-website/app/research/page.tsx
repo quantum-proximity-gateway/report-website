@@ -14,7 +14,6 @@ export default function Research() {
         <SidebarTrigger />
         <Separator orientation="vertical" className="mr-2 h-4 hidden md:block" />
         <Breadcrumb>
-          <p>hi</p>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
               <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
