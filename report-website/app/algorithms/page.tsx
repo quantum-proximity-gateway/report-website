@@ -30,9 +30,6 @@ export default function Algorithms() {
       </div>
       <div className="flex justify-center p-6">
         <div className="max-w-4xl">
-          <p className="text-lg">
-            [CHANGE SIDEBAR TO MATCH THE SECTIONS ADDED]
-          </p>
           <div id="overview">
             <h1 className="text-4xl font-bold my-6">Overview</h1>
             <p className="text-lg">
