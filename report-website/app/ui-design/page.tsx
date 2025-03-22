@@ -255,7 +255,7 @@ export default function UIDesign() {
             <Table>
               <TableHeader>
                 <TableRow className="text-lg">
-                  <TableHead>❌ Problem</TableHead>
+                  <TableHead className="w-[50%]">❌ Problem</TableHead>
                   <TableHead>💡 Solution</TableHead>
                 </TableRow>
               </TableHeader>
