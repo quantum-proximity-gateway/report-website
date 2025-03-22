@@ -63,7 +63,7 @@ export default function Requirements() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    The QPG is designed with all users in mind - from corporate employees in large enterprises, to students and faculty memnbers in educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.0 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. 
+                    The QPG is designed with all users in mind - from corporate employees in large enterprises, to students and faculty memnbers in educational institutions, and even individual users who frequently switch between multiple devices, this system provides seamless, context-aware authentication to improve the lives of all. By integrating IBM’s Granite 3.2 AI model and post-quantum cryptography, this solution further ensures that users experience effortless, secure, and adaptive authentication in their work environments. 
                   </p>
                   <p className="text-lg my-6">
                     We believe the QPG will especially revolutionise the way in which neurodivergent, elderly and quadriplegic users interact with their devices. By eliminating the need for traditional passwords and reducing cognitive load, the QPG enables increased overall accessibility - for neurodivergent users, the system minimises disruptions by automatically loading personalised settings upon login, and providing intuitive, frictionless access. Elderly users benefit from simplified authentication that does not rely on memorisation of passwords or fine motor skills, ensuring security without added complexity. Quadriplegic users can authenticate effortlessly through multimodal inputs, such as facial recognition and proximity detection, eliminating barriers to device interaction. 
@@ -84,7 +84,7 @@ export default function Requirements() {
                   <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
                   <li>Offer automated authentication to reduce cognitive load for neurodivergent users.</li>
                   <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
-                  <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.0.</li>
+                  <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.2</li>
 
                 </ul>
               </li>
@@ -99,7 +99,7 @@ export default function Requirements() {
               <li>
                 <strong>Create a Scalable IoT Ecosystem</strong>
                 <ul className="text-lg list-disc my-3 pl-6">
-                  <li>Establish a network of interconnected devices that communicate securely using... (may remove this)</li>
+                  <li>Establish a centralised authetnication architecture that can validate users.</li>
                   <li>Develop a modular authentication system adaptable to various industries.</li>
                 </ul>
               </li>
