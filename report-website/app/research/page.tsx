@@ -63,6 +63,13 @@ export default function Research() {
               <Image src="/research/yubico.png" alt="Yubico Key Lineup" width={400} height={200}/>
               <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Various YubiKey security devices offering multi-factor authentication</p>
             </div>
+
+            <p className="text-lg my-6">
+              Their products serve as the industry standard for hardware-based authentication systems, our intial prototypes were inspired by their work as we also considered using Near-Field Communication (NFC) based authentication, however after gathering our requirements and surveying stakeholders we realised it would not be the most appropriate for the purposes of our project. This is due to the fact that our project is largely aimed at creating a seamless proximity-based login system that is both accessible and secure. NFC would hinder our ability to leverage proximity-based authentication.
+            </p>
+            <p className="text-lg my-6">
+              As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. We've been in touch with employees from.
+            </p>
             <h1 className="text-2xl font-bold my-6">Review 2: Alps Alpine's Secure Digital Key</h1>
             <p className="text-lg">
             <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
