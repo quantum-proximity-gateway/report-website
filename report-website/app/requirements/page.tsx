@@ -39,10 +39,10 @@ export default function Requirements() {
         <div className="max-w-4xl">
           <div id="project-background">
             <h1 className="text-4xl font-bold my-6">Project Background and Partner Introduction</h1>
-            <p className="text-lg my-6">
+            <p className="text-lg">
               The Quantum Proximity Gateway (QPG) is a cutting-edge authentication system developed in collaboration with IBM. This system aims to revolutionise user authentication and access control by eliminating manual logins and streamlining authentication through proximity detection, facial recognition, and AI-driven profile management.         
             </p>
-            <p className="text-lg">
+            <p className="text-lg my-6">
               Our project sets a precedent for an innovative way to interact with LLMs via a method we named <span className="font-medium">Proximity Prompting</span>. By leveraging the proximity detection capabilities of our system, users can engage with IBM's Granite 3.2 AI model contextually and intuitively, without the friction of traditional interfaces.
             </p>
             <Accordion type="single" collapsible>
