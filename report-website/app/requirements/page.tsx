@@ -399,7 +399,7 @@ export default function Requirements() {
               <TabsList className="grid w-full grid-cols-5">
                 <TabsTrigger value="uc1">UC1</TabsTrigger>
                 <TabsTrigger value="uc2">UC2</TabsTrigger>
-                <TabsTrigger value="uc3">UC4</TabsTrigger>
+                <TabsTrigger value="uc3">UC3</TabsTrigger>
                 <TabsTrigger value="uc4">UC4</TabsTrigger>
                 <TabsTrigger value="uc5">UC5</TabsTrigger>
               </TabsList>
