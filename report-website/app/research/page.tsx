@@ -54,7 +54,11 @@ export default function Research() {
             <p className="text-lg">
               As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
             </p>
-            <h1 className="text-2xl font-bold my-6">Review: Alps Alpine's Secure Digital Key</h1>
+            <h1 className="text-2xl font-bold my-6">Review 1: Yubico Key</h1>
+            <p className="text-lg">
+              <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Yubico</a>{" "} is an American company manufacturing hardware authentication devices, their main product is the Yubikey which is a security key utilised for 2FA based authentication. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Review 2: Alps Alpine's Secure Digital Key</h1>
             <p className="text-lg">
             <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
             Alps Alpine 
