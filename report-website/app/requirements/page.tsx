@@ -316,7 +316,7 @@ export default function Requirements() {
                     <div className="p-1">
                       <Card>
                         <CardContent className="flex items-center justify-center p-6">
-                          <img src="/persona-1.png"></img>
+                          <img src="/requirements/persona-1.png"></img>
                         </CardContent>
                       </Card>
                     </div>
@@ -325,7 +325,7 @@ export default function Requirements() {
                     <div className="p-1">
                       <Card>
                         <CardContent className="flex items-center justify-center p-6">
-                          <img src="/persona-2.png"></img>
+                          <img src="/requirements/persona-2.png"></img>
                         </CardContent>
                       </Card>
                     </div>
@@ -334,7 +334,7 @@ export default function Requirements() {
                     <div className="p-1">
                       <Card>
                         <CardContent className="flex items-center justify-center p-6">
-                          <img src="/persona-3.png"></img>
+                          <img src="/requirements/persona-3.png"></img>
                         </CardContent>
                       </Card>
                     </div>

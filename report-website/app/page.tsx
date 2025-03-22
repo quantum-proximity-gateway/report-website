@@ -54,9 +54,9 @@ export default function Home() {
         <h1 className="text-6xl font-bold text-center">Post-Quantum Proximity Gateway</h1>
         <h1 className="text-4xl text-center my-6">IBM Proximity Agents</h1>
         <div className="flex items-center justify-center gap-12">
-          <Image src="/ibmlogo.png" alt="IBM logo" width={200} height={100} className="object-contain" />
+          <Image src="/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
           <Image src="/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
-          <Image src="/rpi.png" alt="UCL logo" width={200} height={100} className="object-contain" />
+          <Image src="/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
         </div>
       </div>
       <div className="flex justify-center p-6">
