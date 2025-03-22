@@ -255,18 +255,16 @@ export default function UIDesign() {
             <Table>
               <TableHeader>
                 <TableRow className="text-lg">
-                  <TableHead>Problem</TableHead>
-                  <TableHead>Description</TableHead>
-                  <TableHead>Solution</TableHead>
+                  <TableHead>❌ Problem</TableHead>
+                  <TableHead>💡 Solution</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    Colour Choice
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    The background colours are not suitable for visually impaired individuals.
+                    <p className="text-lg">
+                      <span className="font-medium">Colour Choice</span>. The background colours are not suitable for visually impaired individuals.
+                    </p>
                   </TableCell>
                   <TableCell className="text-lg">
                     Research and implement more visual impairment friendly UI designs.
@@ -274,10 +272,9 @@ export default function UIDesign() {
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    Ambiguity of System Usage
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    The current prototype does not convey well how the system is meant to be used.
+                    <p className="text-lg">
+                      <span className="font-medium">Ambiguity of System Usage</span>. The current prototype does not convey well how the system is meant to be used.
+                    </p>
                   </TableCell>
                   <TableCell className="text-lg">
                     Add a more detailed explanation about the connections between devices.
@@ -285,10 +282,9 @@ export default function UIDesign() {
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    Lack of Security
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Users may be concerned about their data not being safely stored in the current prototype.
+                    <p className="text-lg">
+                      <span className="font-medium">Lack of Security</span>. Users may be concerned about their data not being safely stored in the current prototype.
+                    </p>
                   </TableCell>
                   <TableCell className="text-lg">
                     Specify that all data will be encrypted utilising post-quantum encryption algorithms.
