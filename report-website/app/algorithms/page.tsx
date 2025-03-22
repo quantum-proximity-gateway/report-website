@@ -37,20 +37,70 @@ export default function Algorithms() {
             <h1 className="text-4xl font-bold my-6">Facial Recognition Algorithm</h1>
             <h1 className="text-2xl font-bold my-6">Models </h1>
             <p className="text-lg my-6">
-            The facial recognition algorithm used in our QPG project is based on the face_recognition library, which is built upon dlib’s deep learning framework (hyperlink to dlib?). The core idea behind this model is to map human facial features into high-dimensional, numerical vector representations, known as face encodings. The underlying model uses a convolutional neural network (CNN) to encode facial features into these face encodings, which are 128-dimensional feature vectors that uniquely describe a person’s face. When a new face is detected via the Raspberry Pi's camera module, its encoding is compared against a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether a match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have maximised distances. The system is designed to provide real-time recognition while maintaining a balance between accuracy and computational efficiency.
+            The facial recognition algorithm used in our QPG system is based on the face_recognition library, an open-source Python library that provides tools for facial recognition tasks, and uses deep learning models to detect and recognise faces in images or videos. At its core, the model maps human facial features into high-dimensional numerical vectors, known as face encodings, that uniquely represent each face. These encodings are generated using a convolutional neural network (CNN), a type of deep learning algorithm that analyses visual data by learning hierarchical representations of features through convolutional and pooling layers. When a new face is detected via the Raspberry Pi's camera module, its encoding is compared against a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether a match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have maximised distances. This system is designed to provide real-time recognition while maintaining a balance between accuracy and computational efficiency.
             </p>
           </div>
           <div id="data">
             <h1 className="text-2xl font-bold my-6">Data</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            The dataset we used for facial recognition consists of high-resolution images captured by the Raspberry Pi camera module. Each image undergoes preprocessing to extract meaningful facial features while ensuring real-time recognition performance.            
+            </p>
+            <h1 className="text-1xl font-bold my-4">Dataset</h1>
+            <p className="text-lg">
+              The dataset consists of:
+            </p>
+              <ul className="list-disc pl-6 my-3">
+              <li>
+                <strong>Captured faces:</strong> Images of authorised personnel stored in an encoded format.
+              </li>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>Real-time Frames:</strong> Continuous video feed used for live recognition.
+                </li>
+              </ul>
+                <ul className="list-disc my-3">
+              <li>
+                <strong>Environmental Variations:</strong> Data collected under different lighting conditions, angles, and facial obstructions.
+              </li>
+              </ul>
+              </ul>
+              <h1 className="text-1xl font-bold my-4">Data Preprocessing</h1>
+            <p className="text-lg">
+            </p>
+              <ul className="list-disc pl-6 my-3">
+              <li>
+                <strong>Resolution Adjustment:</strong> We resized images to balance detail retention and computational efficiency.
+              </li>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>Encoding Generation:</strong> Each detected face is converted into a 128-dimensional vector using deep metric learning.
+                </li>
+              </ul>
+                <ul className="list-disc my-3">
+              <li>
+                <strong>Color Conversion:</strong> Frames were converted to RGB format, as required by the face_recognition library.
+              </li>
+              </ul>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>Noise Reduction:</strong> We discarded blurry or low-confidence frames to prevent incorrect identifications.
+              </li>
+              </ul>
+              </ul>
+              <h1 className="text-1xl font-bold my-4">Training and Testing Sets</h1>
+            <p className="text-lg">
+            Since this is a real-time face recognition system, it does not have a traditional training phase. Instead, it operates by storing known face encodings and comparing incoming video frames against this dataset.  
             </p>
           </div>
           <div id="experiments">
             <h1 className="text-2xl font-bold my-6">Experiments</h1>
+            <h1 className="text-1xl font-bold my-4">Experiment Deisgn</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              The dataset consists of:
             </p>
+              <ul className="list-disc pl-6 my-3">
+              <li></li>
+              </ul>
           </div>
           <div id="discussions">
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
