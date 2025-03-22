@@ -234,17 +234,86 @@ export default function UIDesign() {
                 </Card>
               </TabsContent>
             </Tabs>
+            <h1 className="text-2xl font-bold my-6">Evaluation of Sketches</h1>
+            <p className="text-lg">
+              Taking into account the feedback from both sketches, we believe Sketch 2 was more aligned with our original proposal as it allows for more users to easily connect to their devices without external help. However, it seems like some users are finding Sketch 2 quite confusing due to unfamiliar technologies being used in it. In later iterations we will explain how these technologies work.
+            </p>
           </div>
           <div id="digital-prototypes">
             <h1 className="text-4xl font-bold my-6">Digital Prototypes</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h1 className="text-2xl font-bold my-6">Prototype 1</h1>
+            <p className="text-lg my-6">
+              Based on our evaluation, we decided that Sketch 2 would better suit our vision for a more accessible system, so we added a few more details and created a prototype using Figma to make our idea come to life.
             </p>
+            <div className="flex items-center justify-center w-full">
+              <Image src="/ui-design/prototype-1.png" alt="Prototype 1" width={1000} height={1000} className="object-contain" />
+            </div>
+            <h1 className="text-2xl font-bold my-6">Evaluation of Prototype 1</h1>
+            <p className="text-lg my-6">
+              We met with our client over at IBM, who gave us feedback about our first prototype. They listed some problems they had with the prototype, as well as potential fixes we could make.
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead>Problem</TableHead>
+                  <TableHead>Description</TableHead>
+                  <TableHead>Solution</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Colour Choice
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    The background colours are not suitable for visually impaired individuals.
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Research and implement more visual impairment friendly UI designs.
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Ambiguity of System Usage
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    The current prototype does not convey well how the system is meant to be used.
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Add a more detailed explanation about the connections between devices.
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Lack of Security
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Users may be concerned about their data not being safely stored in the current prototype.
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Specify that all data will be encrypted utilising post-quantum encryption algorithms.
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <h1 className="text-2xl font-bold my-6">Prototype 2</h1>
+            <p className="text-lg my-6">
+              We arrive at our finalised prototype version, utilising all of the feedback we have received from our users and clients throughout the entire process.
+            </p>
+            <div className="flex items-center justify-center w-full">
+              <Image src="/ui-design/prototype-2.png" alt="Prototype 2" width={1000} height={1000} className="object-contain" />
+            </div>
           </div>
           <div id="production-design">
             <h1 className="text-4xl font-bold my-6">Production Design</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              In practice, we were unfortunately unable to put these design choices into practice. Due to other priorities, we did not get around to redesigning the login interface used in the linux distribution we were developing with, and did not manage to display facial verification hints. Furthermore, the technologies used in these prototypes have become outdated, as we have since made the decision to use BLE over RFID.
+            </p>
+            <p className="text-lg my-6">
+              As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default in the linux distribution being used.
+            </p>
+            <p className="text-lg my-6">
+              [INSERT IMAGES OF ACTUAL LOGIN PAGE]
             </p>
           </div>
         </div>
