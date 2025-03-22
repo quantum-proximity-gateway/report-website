@@ -50,8 +50,8 @@ export default function Home() {
         </Breadcrumb>
       </header>
       <div className="flex flex-col items-center shrink-0 border-b p-8">
-        <h1 className="text-8xl font-bold text-center my-6">Quantum Proximity Gateway</h1>
-        <h1 className="text-6xl text-center my-6">IBM + UCL</h1>
+        <h1 className="text-6xl font-bold text-center">Post-Quantum Proximity Gateway</h1>
+        <h1 className="text-4xl text-center my-6">IBM Proximity Agents</h1>
       </div>
       <div className="flex justify-center p-6">
         <div className="max-w-4xl">
