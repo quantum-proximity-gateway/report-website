@@ -84,7 +84,13 @@ export default function SystemDesign() {
             </p>
             <h1 className="text-2xl font-medium my-6">Registration Site/ESP32</h1>
             <p className="text-lg mb-4">
+              Our registration site is a simple frontend written utilising Next.js and the Chakra UI component library that communicates with our main backend on IBM Cloud. It registers a users' ESP32 onto the database and records a 5 second video of the user to send to the server for encodings processing.
+            </p>
+            <p className="text-lg mb-4">
               The ESP32 communicates with the Registration Site via an API called Web Serial. This allows us to use the user's browser to read the MAC Address of the ESP32 and share the secret key with the server, without having the ESP32 needing to be connected directly to the server. However, the downside of this comes from the fact that this API is only supported on Chromium-based browsers currently.
+            </p>
+            <p className="text-lg mb-4"> 
+              On the other hand, the ESP32 interacts with it's Bluetooth Stack to advertise itself as an available device. It initializes itself as a BLE peripheral and broadcasts a specific service UUID that client devices can discover. When a connection is established, it serves a characteristic that provides the TOTP token, which is being constantly regenerated in intervals of 30 seconds. This TOTP is read by the Raspberry Pi to verify the user's identity.
             </p>
 
             <h1 className="text-2xl font-medium my-6">Raspberry Pi</h1>
