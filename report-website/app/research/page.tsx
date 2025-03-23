@@ -36,7 +36,7 @@ export default function Research() {
           <div id="related-projects">
             <h1 className="text-4xl font-bold my-6">Related Projects</h1>
             <p className="text-lg my-6">
-              Proximity-based solutions has become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies to be used in our project, we conducted an in-depth analysis of existing proximity-based authentication systems, examining their software and hardware implementations to understand the core driving their functionality.
+              Proximity-based solutions has become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies to be used in our project, we conducted an in-depth analysis of existing proximity-based authentication systems from 2 different companies, examining their software and hardware implementations to understand the core driving their functionality.
             </p>
             <Tabs defaultValue="review-1" className="mt-6">
               <TabsList className="grid w-full grid-cols-2">
@@ -65,7 +65,7 @@ export default function Research() {
                       <p className="text-center mt-3 text-sm text-gray-500">Figure 1: YubiKey security devices offering multi-factor authentication</p>
                     </div>
                     <p className="text-lg my-6">
-                      As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a> - one of the leading InfoSec companies that specialises in identity security and they also recommended an approach involving TOTP authentication which we talk about in more detail in our algorithms page.
+                      As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a>, a leading InfoSec companies that specialises in identity security, and they also recommended an approach involving TOTP authentication.
                     </p>
                     <div className="flex flex-col items-center my-6">
                       <Image src="/research/cyberark.svg" alt="Cyberark Logo" width={300} height={150}/>
@@ -114,7 +114,7 @@ export default function Research() {
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
             <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
             <p className="text-lg">
-            Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi-based positioning. </p>
+              Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi-based positioning. </p>
             <p className="text-lg my-6">
               BLE was chosen as the primary technology for proximity detection due to its balance of cost-effectiveness, power efficiency, and widespread compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, known for its low-cost and efficient BLE functionality, will act as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and infer directionality, allowing for accurate proximity-based authentication. 
             </p>
@@ -126,26 +126,6 @@ export default function Research() {
             </p>
             <p className="text-lg my-6">
               Ultimately, BLE's balance of affordability, efficiency, and compatibility makes it the ideal solution for enabling seamless, profile-based authentication across multiple devices in real-world environments, which is why we selected this option for use in our QPG system. 
-            </p>
-            <h1 className="text-2xl font-bold my-6">Facial Recognition for Authentication</h1>
-            <p className="text-lg my-6">
-              Facial recognition was selected as the primary authentication method for our system due to its balance of security, ease of use, and accessibility. By utilising facial recognition, users can gain access to devices seamlessly without requiring physical interaction, making it an ideal solution for accessible two-factor authentication (2FA).
-            </p>
-            <p className="text-lg my-6">
-              The facial recognition process involves capturing a user's face through a camera module, preprocessing the image to enhance clarity, and comparing the extracted facial features against stored encodings. If a match is found within a predefined confidence threshold, authentication is granted. In cases where no encoding data is available or the authentication attempt fails, the system gracefully handles exceptions and logs warnings, ensuring continuous functionality without unexpected interruptions. 
-            </p>
-            <p className="text-lg my-6">
-              Voice recognition was considered as an alternative authentication method but was ultimately not chosen due to several limitations. While voice authentication provides a hands-free authentication method, it is significantly more susceptible to environmental noise, variations in a user's voice due to illness or stress, and spoofing attacks using recorded samples. Additionally, voice authentication systems require continuous model training to adapt to changes in a user's voice, making them less practical for a seamless authentication experience. Facial recognition, in contrast, offers a higher level of security due to unique facial features and ensures a more reliable and user-friendly authentication experience. 
-            </p>
-            <h1 className="text-2xl font-bold my-6">Post-Quantum Cryptography (PQC) Encryption</h1>
-            <p className="text-lg my-6">
-              To secure user authentication and communication between devices, post-quantum cryptographic (PQC) standards are necessary to future-proof the system against potential quantum attacks. Traditional encryption methods such as RSA-4096 and Elliptic Curve Cryptography (ECC) are effective today but may become vulnerable with advancements in quantum computing, and so we took this into consideration when designing our system.
-            </p>
-            <p className="text-lg my-6">
-              After researching and evaluating several PQC algorithms, the Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM - a standardised version of the CRYSTALS-Kyber algorithm) was chosen as the encryption standard for our system. CRYSTALS-Kyber is a lattice-based encryption algorithm that provides strong security guarantees against quantum attacks. It has been recognized by NIST as a promising candidate for post-quantum encryption, making it a reliable and forward-looking choice. We employed the liboqs-python library to implement this encryption within our system, ensuring seamless integration with existing cryptographic workflows. 
-            </p>
-            <p className="text-lg my-6">
-              While RSA-4096 remains a widely used standard, its susceptibility to quantum decryption makes it less suitable for long-term security. ECC offers improved efficiency over RSA but does not provide sufficient resistance against quantum threats. By integrating CRYSTALS-Kyber, our system ensures that all sensitive user data is encrypted during transmission and storage, mitigating potential future security risks.
             </p>
             <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, Libraries, and APIs</h1>
             <p className="text-lg my-6">
@@ -173,22 +153,10 @@ export default function Research() {
             <p className="text-lg my-6">
               The Raspberry Pi 5 provides sufficient processing power to run lightweight AI models, making it suitable for on-device authentication within our system. It supports multiple extensions, including the Raspberry Pi Camera Module, which is essential for real-time facial recognition. While alternatives like NVIDIA's Jetson Nano offer superior AI processing capabilities, they are significantly more expensive and somewhat unnecessary for the scope of our project. On the other hand, the ESP32 was selected for proximity detection due to its affordability and efficiency in handling BLE signals. By using a combination of Raspberry Pi 5 and ESP32, our system achieves a balance between computational power, cost-effectiveness, and real-time processing. 
             </p>
-            <h1 className="text-2xl font-bold my-6">AI Chatbot</h1>
+            <h1 className="text-2xl font-bold my-6">Time-Based One-Time Password</h1>
             <p className="text-lg my-6">
-              As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
-            </p>
-            <p className="text-lg my-6">
-              For the AI chatbot implementation within the QPG system, we considered several different approaches, including rule-based, retrieval-based, and generative AI models. 
-            </p>
-            <p className="text-lg my-6">
-              Rule-based chatbots, which rely on predefined scripts and decision trees, were found to be too restrictive for handling dynamic authentication and user interactions within our system. For example, these chatbots could adjust accessibility settings based on specific user commands (e.g. "Enable high-contrast mode"), but they wouldn't handle complex, context-aware requests effectively. If a user needed nuanced adjustments like "Make this text easier to read for my visual impairment," a rule-based chatbot would struggle without explicitly preprogrammed responses. 
-            </p>
-            <p className="text-lg my-6">
-              Retrieval-based models, which select responses from a fixed database, provided more flexibility, but lacked the adaptability needed for personalised accessibility adjustments. For example, if a user asked for a new accessibility configuration that wasn't in the database, the chatbot wouldn't be able to generate a novel response or action. 
-            </p>
-            <p className="text-lg my-6">
-            Generative AI models, particularly those based on transformer architectures, offered the most natural and context-aware responses, although they required substantial computational resources. Given the need for seamless interaction and in spite of the computational cost, the chatbot was designed to modify accessibility settings using Granite 3.2 and AI, ensuring an intuitive and responsive experience tailored to user needs.
-            </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>            
           </div>
           <div id="technical-decisions">
             <h1 className="text-4xl font-bold my-6">Technical Decisions</h1>
