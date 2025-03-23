@@ -94,8 +94,17 @@ export default function SystemDesign() {
             </p>
 
             <h1 className="text-2xl font-medium my-6">Raspberry Pi</h1>
+            <p className="text-lg mb-4"> 
+              The Raspberry Pi acts as the key component for each and every QPG enabled device, it processed incoming BLE signals, sorts signal strength, filters MAC Addresses and performs facial recognition on incoming users. This is all done utilising Python 3.11 and many different components that we have specifically built to authenticate users securely.
+            </p>
+            <p className="text-lg mb-4"> 
+              INSERT DIAGRAM OF RASPBERRY PI CODE HERE
+            </p>
 
             <h1 className="text-2xl font-medium my-6">Proximity Agents</h1>
+            <p className="text-lg mb-4"> 
+              We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri - a rust-based desktop application framework.
+            </p>
 
           </div>
           <div id="site-map">
@@ -125,7 +134,7 @@ export default function SystemDesign() {
           <div id="data-storage">
             <h1 className="text-4xl font-bold my-6">Data Storage</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              As explained in the IBM Cloud System Architecture section, we have managed to containerize our server and deploy it as a serverless application utilising IBM Code Engine. As the scale of our database is currently very small, we have opted to use an SQLite database that's part of the container.
             </p>
           </div>
           <div id="apis">
