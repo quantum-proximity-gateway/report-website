@@ -115,9 +115,13 @@ export default function SystemDesign() {
           </div>
           <div id="design-patterns">
             <h1 className="text-4xl font-bold my-6">Design Patterns</h1>
+            <h1 className="text-2xl font-medium my-6">Delegate Pattern</h1>
             <p className="text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            <h1 className="text-2xl font-medium my-6">Client-Server Pattern</h1>
+            <h1 className="text-2xl font-medium my-6">Facade Pattern</h1>
+            <h1 className="text-2xl font-medium my-6">Observer Pattern</h1>
           </div>
           <div id="er-diagrams">
             <h1 className="text-4xl font-bold my-6">ER Diagrams</h1>
