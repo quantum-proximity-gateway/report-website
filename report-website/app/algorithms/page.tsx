@@ -33,7 +33,7 @@ export default function Algorithms() {
           <div id="overview">
             <h1 className="text-4xl font-bold my-6">Overview</h1>
             <p className="text-lg">
-              Our Quantum Proximity Gateway system incorporates multiple algorithms to ensure the highest level of security and usability. This page provides an in-depth explanation of each algorithm used within the system. The following sections cover the AI chatbot assistant model, post-quantum cryptography, facial recognition, and time-based one-time password authentication.
+              Our Quantum Proximity Gateway system incorporates multiple algorithms to ensure the highest level of security and usability. This page provides an in-depth explanation of each algorithm used within the system. The following sections cover the AI chatbot assistant model, post-quantum cryptography, and facial recognition.
             </p>
           </div>
           <div id="ai-chatbot">

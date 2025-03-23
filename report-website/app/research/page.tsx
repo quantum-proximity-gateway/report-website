@@ -108,25 +108,74 @@ export default function Research() {
                   </CardContent>
                 </Card>
               </TabsContent>
-            </Tabs>           
+            </Tabs>
           </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
             <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
             <p className="text-lg">
-              Proximity detection is a critical component of our system, enabling users to interact seamlessly with nearby devices while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi-based positioning. </p>
-            <p className="text-lg my-6">
-              BLE was chosen as the primary technology for proximity detection due to its balance of cost-effectiveness, power efficiency, and widespread compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, known for its low-cost and efficient BLE functionality, will act as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and infer directionality, allowing for accurate proximity-based authentication. 
+              Proximity detection is a crucial element of our system, allowing users to interact effortlessly with nearby devices whilst also ensuring security. To determine the most suitable technology for this purpose, we evaluated several options, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi Positioning System (WPS).
             </p>
-            <p className="text-lg my-6">
-              RFID (Radio Frequency Identification) was considered as an alternative due to its capability for short-range authentication using electromagnetic fields. RFID operates by having a reader transmit a radio signal that activates passive RFID tags, allowing for secure identification. Unlike BLE, RFID does not require power on the tag itself, making it highly efficient for authentication applications. However, RFID is primarily designed for close-range authentication, typically within a few centimeters, which does not align with our requirement for seamless proximity detection across a room or workspace. Additionally, RFID lacks the ability to track real-time distance variations like BLE, making it less effective for dynamic user-device interaction. Widespread RFID implementation would also require installing dedicated RFID readers in every interaction zone, increasing both complexity and cost.
-            </p>
-            <p className="text-lg my-6">
-              Wi-Fi-based positioning was another potential solution, using signal strength (RSSI), triangulation, and fingerprinting to estimate a user's location relative to a device. One advantage of Wi-Fi is that it does not require additional hardware, since most modern buildings are already equipped with Wi-Fi infrastructure, and nearly all devices support Wi-Fi connectivity. However, Wi-Fi-based proximity detection is significantly less precise than BLE, with typical accuracy ranging from 3 to 5 meters, depending on interference and network conditions. Another major drawback is power consumption: Wi-Fi scanning requires significantly more energy than BLE, making it impractical for low-power IoT devices such as the ESP32. Additionally, Wi-Fi-based tracking raises privacy and security concerns, as it often relies on tracking MAC addresses and network data, which could introduce vulnerabilities. 
-            </p>
-            <p className="text-lg my-6">
-              Ultimately, BLE's balance of affordability, efficiency, and compatibility makes it the ideal solution for enabling seamless, profile-based authentication across multiple devices in real-world environments, which is why we selected this option for use in our QPG system. 
-            </p>
+            <Tabs defaultValue="ble" className="mt-6">
+              <TabsList className="grid w-full grid-cols-4">
+                <TabsTrigger value="ble">BLE</TabsTrigger>
+                <TabsTrigger value="nfc">NFC</TabsTrigger>
+                <TabsTrigger value="rfid">RFID</TabsTrigger>
+                <TabsTrigger value="wps">WPS</TabsTrigger>
+              </TabsList>
+              <TabsContent value="ble">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Bluetooth Low Energy (BLE)</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      BLE was selected as the primary technology after careful consideration due to its optimal balance of cost-effectiveness, power efficiency, and broad compatibility. BLE signals provide an adequate range and signal strength variations, enabling accurate detection of a user's presence near a specific device. The ESP32 microcontroller, recognized for its affordable and efficient BLE functionality, will serve as the primary BLE beacon. When paired with a Raspberry Pi, this system can analyze signal strength variations and infer directionality, allowing for precise proximity-based authentication.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="nfc">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Near-Field Communication (NFC)</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      NFC, although a good consideration for authentication, was rejected after a thorough analysis of our requirements indicated that it was not the best fit for our project. Given that our primary objective is to develop a seamless, proximity-based login system that is both secure and accessible, NFC's inherent limitations would hinder our ability to achieve this goal since it requires users to bring an NFC-enabled card or device into close contact of a reader to complete authentication. While this provides a high level of security by requiring intentional user interaction, it does not align with our vision of seamless authentication where users can be automatically detected as they approach a device. These constraints make NFC less practical for our intended application compared to BLE.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="rfid">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Radio Frequency Identification (RFID)</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      RFID was also explored as a potential alternative due to its ability to facilitate short-range authentication via electromagnetic fields. This technology operates by having a reader transmit a radio signal that activates passive RFID tags, enabling secure identification. Unlike BLE, RFID tags do not require a power source, making them highly efficient for authentication applications. However, RFID is primarily intended for close-range authentication, typically within just a few centimetres, which does not align with our need for seamless proximity detection across a workspace. Additionally, implementing RFID on a large scale would also necessitate deploying dedicated RFID readers in every interaction zone, significantly increasing both cost and complexity.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="wps">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Wi-Fi Positioning System (WPS)</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      WPS was another alternative considered, leveraging signal strength (RSSI), triangulation, and fingerprinting to estimate a user's location relative to a device. One notable advantage of Wi-Fi is that it does not require additional hardware, as modern buildings are already equipped with Wi-Fi infrastructure, and most devices support Wi-Fi connectivity. However, WPS is considerably less precise than BLE, and varies greatly depending on interference and network conditions. Another significant drawback is power consumption: Wi-Fi scanning requires substantially more energy than BLE, making it impractical for low-power IoT devices like the ESP32.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
             <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, Libraries, and APIs</h1>
             <p className="text-lg my-6">
               The development of our QPG system involved multiple programming languages to optimise performance across different components.
@@ -195,6 +244,9 @@ export default function Research() {
             </Card>
             <p className="text-lg my-6">
               Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented:
+            </p>
+            <p className="text-lg my-6">
+              Ultimately, BLE offers the best combination of affordability, efficiency, and compatibility, making it the ideal choice for enabling seamless, profile-based authentication across multiple devices in real-world environments. For these reasons, we have chosen BLE as the core technology for proximity detection in our QPG system.
             </p>
             <p className="text-lg my-6">
               Summary Table, Type vs Decision [...]
