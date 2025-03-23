@@ -116,7 +116,38 @@ export default function Algorithms() {
               </ul>
             </ul>
             <h1 className="text-1xl font-bold my-4">Performance Evaluation</h1>
-            <p className="text-lg"></p>
+            <p className="text-lg">
+              The metrics we used to evaluate and measure the algorithm's performance include:
+            </p>
+            <ul className="list-disc pl-6 my-4">
+              <li>
+                <strong>Recognition Accuracy (%):</strong> Number of correct identifications vs total attempted identifications. 
+              </li>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>False Positive Rate (FPR):</strong> Incorrect matches where an unauthorised face is recognized.
+                </li>
+              </ul>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>Frame Rate (FPS)</strong> Number of frames processed per second.
+              </li>
+              </ul>
+              <ul className="list-disc my-3">
+              <li>
+                <strong>Latency (ms):</strong> Time taken for face detection and verification.
+              </li>
+              </ul>
+            </ul>
+            <h1 className="text-1xl font-bold my-4">Experiment Results</h1>
+            <p className="text-lg">
+              [Table: left column = Scenario/Condition - Controlled lighting, dim lighting, wearing glasses, wearing mask?; top row = Accuracy (%), False Positives, FPS, Latency (ms)]
+            </p>
+            <h1 className="text-1xl font-bold my-4">Hyperparameter Investigation</h1>
+            <p className="text-lg">
+            In our QPG's facial recognition system, optimising hyperparameters is crucial for balancing speed, accuracy, and resource efficiency. Hyperparameters are tunable values that affect how the model processes images, detects faces, and matches them against stored encodings. We investigated several key hyperparameters to determine their impact on system performance.
+            </p>
+            
           </div>
           <div id="discussions">
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
