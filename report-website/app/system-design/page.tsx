@@ -130,6 +130,23 @@ export default function SystemDesign() {
             <p className="text-lg">
               As explained in the IBM Cloud System Architecture section, we have managed to containerize our server and deploy it as a serverless application utilising IBM Code Engine. As the scale of our database is currently very small, we have opted to use an SQLite database that's part of the container.
             </p>
+            <div className="flex flex-col items-center ">
+              <Image 
+                src="/system-design/sqlite.png" 
+                alt="IBM Cloud Engine Architecture" 
+                width={300} 
+                height={300}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center text-sm text-gray-500">Figure 3: SQLite Logo</p>
+            </div>
+            <p className="text-lg my-6">
+              This approach not only allows us to simplify the deployment of our application, but it also acts as a cost-saving measure allowing the system to be deployed at a much cheaper cost as a separate database service is not needed.
+            </p>
+            <p className="text-lg my-6">
+              In future iterations, utilising propietary database services such as IBM Cloud Databases for PostgreSQL or AWS RDS will be essential for scalability. However, due to the budget and time constraints of our projects we chose SQLite for the proof of concept.
+            </p>
           </div>
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
