@@ -77,6 +77,10 @@ export default function SystemDesign() {
             </div>
             <p className="text-lg mb-4">
               By containerizing our Litestar server onto a Docker container, we ensured that our deployment options were flexible too, allowing us to easily update the server or switch to other cloud providers in the future if needed.
+              Our container includes an in-memory SQLite database alongside the main code for the endpoints and image processing for the facial recognition encodings.
+            </p>
+            <p className="text-lg mb-4">
+              This container serves as the central backend for all our services, all other components such as the ESP32, Raspberry Pi and Proximity Agents interact with this core, at least once in their lifetime. The ESP32 shares a TOTP secret key with this server, the Raspberry Pi fetches all registered ESP32s from the server and the Proximity Agents continuously fetch and update user profiles.
             </p>
           </div>
           <div id="site-map">
