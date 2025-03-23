@@ -1,6 +1,8 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
 
@@ -34,66 +36,79 @@ export default function Research() {
           <div id="related-projects">
             <h1 className="text-4xl font-bold my-6">Related Projects</h1>
             <p className="text-lg my-6">
-              Bluetooth and proximity-based computing have become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies and resources for the QPG, we conducted an in-depth analysis of existing proximity-based automation and authentication systems, examining their software and hardware implementations to understand the key factors driving their functionality.
+              Proximity-based solutions has become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies to be used in our project, we conducted an in-depth analysis of existing proximity-based authentication systems, examining their software and hardware implementations to understand the core driving their functionality.
             </p>
-            <p className="text-lg my-6">
-              From our research, we concluded that a good proximity-based access control system must:
-            </p>
-            <ul className="text-lg list-disc pl-6 my-6">
-              <li>
-                <strong>Ensure secure authentication:</strong> Utilise multi-factor authentication methods such as facial recognition, BLE proximity detection, and post-quantum cryptographic encryption to prevent unauthorized access.
-              </li>
-              <li>
-                <strong>Support seamless user experience:</strong> Automatically configure devices based on user proximity and profile, ensuring effortless transitions between workstations, meeting rooms, and other shared spaces.
-              </li>
-              <li>
-                <strong>Provide accurate proximity detection:</strong> Implement BLE signal strength analysis for precise location tracking, ensuring users connect only to their intended devices.
-              </li>
-              <li>
-                <strong>Feature a user-friendly configuration interface:</strong> Provide a website or app for easy setup, registration, troubleshooting, and user profile management.
-              </li>
-            </ul>
-            <p className="text-lg my-6">
-              As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
-            </p>
-            <h1 className="text-2xl font-bold my-6">Review 1: Yubico Key</h1>
-            <p className="text-lg">
-              <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Yubico</a>{" "} is an American company manufacturing hardware authentication devices, their main product is the Yubikey which is a security key utilised for 2FA based authentication. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
-            </p>
-            <div className="flex flex-col items-center my-6">
-              <Image src="/research/yubico.png" alt="Yubico Key Lineup" width={400} height={200}/>
-              <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Various YubiKey security devices offering multi-factor authentication</p>
-            </div>
-
-            <p className="text-lg my-6">
-              Their products serve as the industry standard for hardware-based authentication systems, our intial prototypes were inspired by their work as we also considered using Near-Field Communication (NFC) based authentication, however after gathering our requirements and surveying stakeholders we realised it would not be the most appropriate for the purposes of our project. This is due to the fact that our project is largely aimed at creating a seamless proximity-based login system that is both accessible and secure. NFC would hinder our ability to leverage proximity-based authentication.
-            </p>
-            <p className="text-lg my-6">
-              As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a> - one of the leading InfoSec companies that specialises in identity security and they also recommended an approach involving TOTP authentication which we talk about in more detail in our algorithms page.
-            </p>
-            <h1 className="text-2xl font-bold my-6">Review 2: Alps Alpine's Secure Digital Key</h1>
-            <p className="text-lg my-6">
-              <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Alps Alpine</a> is a Japanese multinational corporation specialising in electronic components and in-vehicle information systems [1]. The company has continuously utilised Bluetooth technology to develop secure digital key solutions, enhancing user convenience and vehicle security. Through collaborations with industry leaders like Broadcom and Giesecke+Devrient (G+D), Alps Alpine has introduced advanced systems that employ Bluetooth Low Energy (BLE) for precise distance measurement and keyless entry functionalities [2], features that we required for our own QPG system.
-            </p>
-           <div className="flex flex-col items-center my-6">
-            <div className="flex flex-row gap-4 justify-center">
-              <Image src="/research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
-              <Image src="/research/broadcom.png" alt="Broadcom Logo" width={300} height={150}/>
-            </div>
-            <p className="text-center mt-3 text-sm text-gray-500">Alps Alpine and Broadcom logos</p>
-          </div>
-            <p className="text-lg my-6">
-              In partnership with Broadcom, Alps Alpine developed a high-accuracy distance measurement system based on BLE technology. This system enables secure keyless entry by accurately determining the proximity of a user's smartphone to the vehicle, allowing for seamless locking and unlocking without physical keys. Broadcom's innovative smartphone Bluetooth and Wi-Fi® combo chip supports these high-accuracy distance measurements, ensuring both security and convenience for users.
-            </p>          
-            <p className="text-lg my-6">
-              Alps Alpine also collaborated with G+D to create a wireless digital key system compliant with the Car Connectivity Consortium (CCC) global standard specification. This system integrates advanced security technologies similar to those used in credit cards and mobile payments, ensuring secure communication between the vehicle and the user's smartphone. Alps Alpine developed the keyless entry system components, including communication modules and electronic control units (ECUs), while G+D focused on secure digital key issuance and management systems.
-            </p>          
-            <p className="text-lg my-6">
-              Central to these innovations is the use of BLE technology, which offers low power consumption and high-accuracy distance measurement capabilities. BLE facilitates precise positioning and secure communication between devices, making it ideal for automotive applications where both security and efficiency are paramount. By utilising BLE, Alps Alpine's digital key solutions ensure reliable performance while maintaining the security standards required for vehicle access systems.
-            </p>          
-            <p className="text-lg my-6">
-              Alps Alpine's use of BLE for secure digital key solutions provided valuable insights for enhancing our QPG system. Their approach to high-accuracy distance measurement using BLE highlights the importance of precise proximity detection for seamless authentication. By leveraging similar BLE technology, our system can ensure users are accurately linked to the intended devices (in our case, an ESP32 microcontroller) without interference. Additionally, their collaboration with security-focused partners like Giesecke+Devrient emphasises the need for robust encryption, reinforcing our decision to implement post-quantum cryptography for secure user authentication. The integration of BLE with cloud-based key management also aligns with our system's requirement for IBM Cloud deployment, ensuring real-time access control across multiple devices. Overall, Alps Alpine's focus on security, low power consumption, and seamless user experience provides a strong reference for optimising proximity-based authentication in my own QPG system.
-            </p>          
+            <Tabs defaultValue="review-1" className="mt-6">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="review-1">Review 1: Yubico</TabsTrigger>
+                <TabsTrigger value="review-2">Review 2: Alps Alpine</TabsTrigger>
+              </TabsList>
+              <TabsContent value="review-1">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Review 1: Yubico</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Yubico</a> is an American company manufacturing hardware authentication devices, their main product is the YubiKey which is a security key utilised for 2FA based authentication. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
+                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image src="/research/yubico.svg" alt="Yubico Logo" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Yubico logo</p>
+                    </div>
+                    <p className="text-lg my-6">
+                      Their products serve as the industry standard for hardware-based authentication systems, and inspired some of our intial ideas as we also considered using Near-Field Communication (NFC) based authentication, however after gathering our requirements and surveying stakeholders we realised it would not be the most appropriate for the purposes of our project. This is due to the fact that our project is largely aimed at creating a seamless proximity-based login system that is both accessible and secure. NFC would hinder our ability to leverage proximity-based authentication.
+                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image src="/research/yubikeys.png" alt="YubiKeys Lineup" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Figure 1: YubiKey security devices offering multi-factor authentication</p>
+                    </div>
+                    <p className="text-lg my-6">
+                      As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a> - one of the leading InfoSec companies that specialises in identity security and they also recommended an approach involving TOTP authentication which we talk about in more detail in our algorithms page.
+                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image src="/research/cyberark.svg" alt="Cyberark Logo" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Cyberark logo</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="review-2">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Review 2: Alps Alpine</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Alps Alpine</a> is a Japanese multinational corporation specializing in electronic components and vehicle information systems. They leverage Bluetooth Low Energy (BLE) for secure digital key solutions, collaborating with industry leaders like Broadcom and Giesecke+Devrient (G+D) to enhance vehicle security and user convenience.
+                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image src="/research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Alps Alpine logo</p>
+                    </div>
+                    <p className="text-lg my-6">
+                      In partnership with Broadcom, Alps Alpine developed BLE-based high-accuracy distance measurement for secure keyless entry, enabling seamless locking and unlocking via smartphones. Their system ensures both convenience and security, integrating Broadcom's Bluetooth and Wi-Fi® combo chip for precise proximity detection.
+                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image src="/research/broadcom.png" alt="Broadcom Logo" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Broadcom logo</p>
+                    </div>
+                    <p className="text-lg my-6">
+                      Their collaboration with G+D led to a wireless digital key system aligned with the Car Connectivity Consortium (CCC) standard, incorporating encryption technologies similar to mobile payments. Alps Alpine designed keyless entry components, while G+D handled secure digital key issuance and management.
+                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image src="/research/giesecke+devrient.svg" alt="Giesecke+Devrient Logo" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Giesecke+Devrient logo</p>
+                    </div>
+                    <p className="text-lg my-6">
+                      BLE's low power consumption and high-accuracy distance measurement make it ideal for automotive applications. Alps Alpine's implementation of this technology provided key insights for our QPG system, influencing our approach to proximity-based authentication using BLE with an ESP32 microcontroller. Additionally, their emphasis on encryption reinforced our decision to adopt post-quantum cryptography, ensuring secure user authentication.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>           
           </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
@@ -149,7 +164,7 @@ export default function Research() {
               Several other languages were considered but we decided against them due to various limitations. We considered using Java for backend development, but its verbosity and slower development cycle made it less suitable for rapid prototyping and integration with modern AI and cryptographic libraries. Rust was another candidate due to its memory safety and performance benefits, however its ecosystem lacks mature libraries for machine learning and IoT applications, making it less practical for our use case.
             </p>
             <p className="text-lg my-6">
-              To streamline development, we researched and integrated several frameworks and libraries for our project, including Flask for backend APIs, Next.js for frontend development, and PlatformIO for ESP32 firmware management. Secure encryption is ensured through cryptography and liboqs-python, and BLE communication is managed via bluepy. RESTful APIs also facilitate secure data exchange between system components, ensuring real-time authentication and device communication.
+              To streamline development, we researched and integrated several frameworks and libraries for our project, including Litestar (explain why this was chosen over something like Flask) for backend APIs, Next.js for frontend development, and PlatformIO for ESP32 firmware management. Secure encryption is ensured through cryptography and liboqs-python, and BLE communication is managed via bluepy. RESTful APIs also facilitate secure data exchange between system components, ensuring real-time authentication and device communication.
             </p>
             <h1 className="text-2xl font-bold my-6">Comparison of IoT Devices</h1>
             <p className="text-lg my-6">
@@ -159,6 +174,9 @@ export default function Research() {
               The Raspberry Pi 5 provides sufficient processing power to run lightweight AI models, making it suitable for on-device authentication within our system. It supports multiple extensions, including the Raspberry Pi Camera Module, which is essential for real-time facial recognition. While alternatives like NVIDIA's Jetson Nano offer superior AI processing capabilities, they are significantly more expensive and somewhat unnecessary for the scope of our project. On the other hand, the ESP32 was selected for proximity detection due to its affordability and efficiency in handling BLE signals. By using a combination of Raspberry Pi 5 and ESP32, our system achieves a balance between computational power, cost-effectiveness, and real-time processing. 
             </p>
             <h1 className="text-2xl font-bold my-6">AI Chatbot</h1>
+            <p className="text-lg my-6">
+              As the QPG is designed with all users in mind, we believed an AI chatbot would be highly useful for neurodivergent/immobilised users to modify their accessibility preferences, and therefore we also researched the use of Large Language Models (LLMs) as an assistance feature in a variety of devices and technologies.
+            </p>
             <p className="text-lg my-6">
               For the AI chatbot implementation within the QPG system, we considered several different approaches, including rule-based, retrieval-based, and generative AI models. 
             </p>
@@ -174,6 +192,39 @@ export default function Research() {
           </div>
           <div id="technical-decisions">
             <h1 className="text-4xl font-bold my-6">Technical Decisions</h1>
+            <p className="text-lg my-6">
+              From our research, we concluded that a good proximity-based access control system would support the following.
+            </p>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Ensure secure authentication</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">Utilise multi-factor authentication methods such as facial recognition, BLE proximity detection, and post-quantum cryptographic encryption to prevent unauthorized access.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Support seamless user experience</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">Automatically configure devices based on user proximity and profile, ensuring effortless transitions between workstations, meeting rooms, and other shared spaces.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Provide accurate proximity detection</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">Implement BLE signal strength analysis for precise location tracking, ensuring users connect only to their intended devices.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Feature a user-friendly configuration interface</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">Provide a website or app for easy setup, registration, troubleshooting, and user profile management.</p>
+              </CardContent>
+            </Card>
             <p className="text-lg my-6">
               Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented:
             </p>
