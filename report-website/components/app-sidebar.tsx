@@ -163,10 +163,6 @@ const items = [
         url: "/system-design#system-architecture",
       },
       {
-        title: "Site Map",
-        url: "/system-design#site-map",
-      },
-      {
         title: "Sequence Diagrams",
         url: "/system-design#sequence-diagrams",
       },

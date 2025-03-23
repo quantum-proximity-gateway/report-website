@@ -100,19 +100,13 @@ export default function SystemDesign() {
             <p className="text-lg mb-4"> 
               INSERT DIAGRAM OF RASPBERRY PI CODE HERE
             </p>
-
             <h1 className="text-2xl font-medium my-6">Proximity Agents</h1>
             <p className="text-lg mb-4"> 
-              We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri - a rust-based desktop application framework.
+              We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri - a rust-based desktop application framework. This application consists of a TypeScript based front-end alongside a Rust backend which is invoked by the frontend. The Rust backend allows us to do local LLM inferencing utilising ollama, communicate with the core server to update and fetch preferences, whilst the Next.js frontend displays the chatbot and the preferences according to the users actions.
             </p>
 
           </div>
-          <div id="site-map">
-            <h1 className="text-4xl font-bold my-6">Site Map</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+          
           <div id="sequence-diagrams">
             <h1 className="text-4xl font-bold my-6">Sequence Diagrams</h1>
             <p className="text-lg">
