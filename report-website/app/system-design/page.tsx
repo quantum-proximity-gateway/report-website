@@ -82,6 +82,15 @@ export default function SystemDesign() {
             <p className="text-lg mb-4">
               This container serves as the central backend for all our services, all other components such as the ESP32, Raspberry Pi and Proximity Agents interact with this core, at least once in their lifetime. The ESP32 shares a TOTP secret key with this server, the Raspberry Pi fetches all registered ESP32s from the server and the Proximity Agents continuously fetch and update user profiles.
             </p>
+            <h1 className="text-2xl font-medium my-6">Registration Site/ESP32</h1>
+            <p className="text-lg mb-4">
+              The ESP32 communicates with the Registration Site via an API called Web Serial. This allows us to use the user's browser to read the MAC Address of the ESP32 and share the secret key with the server, without having the ESP32 needing to be connected directly to the server. However, the downside of this comes from the fact that this API is only supported on Chromium-based browsers currently.
+            </p>
+
+            <h1 className="text-2xl font-medium my-6">Raspberry Pi</h1>
+
+            <h1 className="text-2xl font-medium my-6">Proximity Agents</h1>
+
           </div>
           <div id="site-map">
             <h1 className="text-4xl font-bold my-6">Site Map</h1>
