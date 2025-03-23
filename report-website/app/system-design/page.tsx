@@ -33,6 +33,7 @@ export default function SystemDesign() {
         <div className="max-w-4xl">
           <div id="system-architecture">
             <h1 className="text-4xl font-bold my-6">System Architecture</h1>
+            <h1 className="text-2xl font-medium  my-6">High-Level System Architecture</h1>
             <p className="text-lg mb-4">
               Our project consists of a centralised system architecture which allows us to leverage 
               Bluetooth Low Energy capable devices across multiple workstations. The main components 
@@ -40,8 +41,7 @@ export default function SystemDesign() {
             </p>
             <ul className="text-lg list-disc pl-6 my-4">
               <li>Raspberry Pi 5 - Central computing platform for proximity detection and authentication</li>
-              <li>Host PC - Device to be authenticated into and where local Granite inferencing happens.</li>
-        
+              <li>Host PC - Device to be authenticated into and where local LLM inferencing occurs.</li>
               <li>ESP32 - Bluetooth-enabled microcontroller for BLE signal emitting and TOTP generation</li>
               <li>IBM Cloud Server - For secure data storage and device authentication.</li>
             </ul>
@@ -56,6 +56,9 @@ export default function SystemDesign() {
               />
               <p className="text-center mt-3 text-sm text-gray-500">Figure 1: System Architecture Diagram</p>
             </div>
+            <p className="text-lg mb-4">
+              All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
+            </p>
           </div>
           <div id="site-map">
             <h1 className="text-4xl font-bold my-6">Site Map</h1>
