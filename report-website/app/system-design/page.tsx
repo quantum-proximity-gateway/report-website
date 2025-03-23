@@ -33,9 +33,18 @@ export default function SystemDesign() {
         <div className="max-w-4xl">
           <div id="system-architecture">
             <h1 className="text-4xl font-bold my-6">System Architecture</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg mb-4">
+              Our project consists of a centralised system architecture which allows us to leverage 
+              Bluetooth Low Energy capable devices across multiple workstations. The main components 
+              of the system diagram include:
             </p>
+            <ul className="text-lg list-disc pl-6 my-4">
+              <li>Raspberry Pi 5 - Central computing platform for proximity detection and authentication</li>
+              <li>Host PC - Device to be authenticated into and where local Granite inferencing happens.</li>
+        
+              <li>ESP32 - Bluetooth-enabled microcontroller for BLE signal emitting and TOTP generation</li>
+              <li>IBM Cloud Server - For secure data storage and device authentication.</li>
+            </ul>
             <div className="flex flex-col items-center my-6">
               <Image 
                 src="/system-design/system-diagram.jpg" 
