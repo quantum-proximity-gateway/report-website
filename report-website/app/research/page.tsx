@@ -176,24 +176,26 @@ export default function Research() {
                 </Card>
               </TabsContent>
             </Tabs>
-            <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, Libraries, and APIs</h1>
+            <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, and Libraries</h1>
             <p className="text-lg my-6">
               The development of our QPG system involved multiple programming languages to optimise performance across different components.
             </p>
+            <h1 className="text-lg font-bold my-6">Main Server</h1>
+            <h1 className="text-lg font-bold my-6">Desktop App</h1>
+            <h1 className="text-lg font-bold my-6">Frontends</h1>
+            <h1 className="text-lg font-bold my-6">Raspberry Pi</h1>
+            <h1 className="text-lg font-bold my-6">ESP32</h1>
             <p className="text-lg my-6">
-              Python 3.11 serves as the primary backend language due to its extensive ecosystem of libraries and ease of integration with machine learning, cryptography, and IoT frameworks. We used Python for implementing facial recognition, managing BLE proximity detection, and handling API communication. The flexibility of Python enables rapid development while maintaining a high level of security.
+              Python primary backend language due to its extensive ecosystem of libraries and ease of integration with machine learning, cryptography, and IoT frameworks. We used Python for implementing facial recognition, managing BLE proximity detection, and handling API communication. The flexibility of Python enables rapid development while maintaining a high level of security. Secure encryption is ensured through cryptography and liboqs-python, and BLE communication is managed via bluepy. Litestar used for server.
             </p>
             <p className="text-lg my-6">
-              C++ was used for programming the ESP32 microcontroller, specifically handling BLE communication and cryptographic operations. C++ was chosen due to its low-level hardware control capabilities and high performance, which are essential for real-time data processing on constrained devices. The BLE beaconing functionality and cryptographic token generation occur in C++, ensuring efficient device-to-device communication.
+              C++ was used for programming the ESP32 microcontroller, specifically handling BLE communication. C++ was chosen due to being established, and its low-level hardware control capabilities and high performance, which are essential for real-time data processing on constrained devices. The BLE beaconing functionality occur in C++, ensuring efficient device-to-device communication. PlatformIO for ESP32 firmware management
             </p>
             <p className="text-lg my-6">
-              We used TypeScript for the frontend web application, primarily in the registration interface. TypeScript provides a structured approach to JavaScript development, offering type safety and enhanced maintainability. By using TypeScript with Next.js, the frontend ensures a modern and responsive user experience while maintaining security best practices.
+              We used TypeScript for the frontend web application, primarily in the registration interface. TypeScript provides a structured approach to JavaScript development, offering type safety and enhanced maintainability. By using TypeScript with Next.js, the frontend ensures a modern and responsive user experience while maintaining security best practices - well used in industry, lots of support, use of ui libraries such as chakra ui and shadcn.
             </p>
             <p className="text-lg my-6">
-              Several other languages were considered but we decided against them due to various limitations. We considered using Java for backend development, but its verbosity and slower development cycle made it less suitable for rapid prototyping and integration with modern AI and cryptographic libraries. Rust was another candidate due to its memory safety and performance benefits, however its ecosystem lacks mature libraries for machine learning and IoT applications, making it less practical for our use case.
-            </p>
-            <p className="text-lg my-6">
-              To streamline development, we researched and integrated several frameworks and libraries for our project, including Litestar (explain why this was chosen over something like Flask) for backend APIs, Next.js for frontend development, and PlatformIO for ESP32 firmware management. Secure encryption is ensured through cryptography and liboqs-python, and BLE communication is managed via bluepy. RESTful APIs also facilitate secure data exchange between system components, ensuring real-time authentication and device communication.
+              We considered using Java for backend development, but its verbosity and slower development cycle made it less suitable for rapid prototyping and integration with modern AI and cryptographic libraries. Rust was another candidate due to its memory safety and performance benefits, however its ecosystem lacks mature libraries for machine learning and IoT applications, making it less practical for our use case.
             </p>
             <h1 className="text-2xl font-bold my-6">Comparison of IoT Devices</h1>
             <p className="text-lg my-6">
@@ -205,7 +207,7 @@ export default function Research() {
             <h1 className="text-2xl font-bold my-6">Time-Based One-Time Password</h1>
             <p className="text-lg my-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>            
+            </p>  
           </div>
           <div id="technical-decisions">
             <h1 className="text-4xl font-bold my-6">Technical Decisions</h1>
