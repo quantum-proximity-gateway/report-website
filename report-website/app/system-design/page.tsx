@@ -147,6 +147,12 @@ export default function SystemDesign() {
             The Facade pattern allowed us to implement all of this in a single class such that the functionality can also be extended and modified for our purposes.
             </p>
             <h1 className="text-2xl font-medium my-6">Observer Pattern</h1>
+            <p className="text-lg mb-4">
+              The observer pattern is another one that we utilise across all our codebase, most importantly, it is used whenever we scan for Bluetooth signals as devices such as the Raspberry Pi and ESP32 need to react accordingly to connections.
+            </p>
+            <p className="text-lg mb-4">
+              The ESP32 also uses a similar pattern whenever searching for a secret key via it's serial port, it continously reads incoming bytes from the USB port awaiting a secret key and accordingly begins generating TOTP keys when it finds a valid secret.
+            </p>
           </div>
           <div id="er-diagrams">
             <h1 className="text-4xl font-bold my-6">ER Diagrams</h1>
