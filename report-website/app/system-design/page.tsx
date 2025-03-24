@@ -117,7 +117,7 @@ export default function SystemDesign() {
             <h1 className="text-4xl font-bold my-6">Design Patterns</h1>
             <h1 className="text-2xl font-medium my-6">Delegate Pattern</h1>
             <p className="text-lg">
-              This pattern allows objects to delegate specific tasks to other objects, in our case we have used this in the Raspberry Pi code, more specifically when handling Bluetooth device discovery. We have a class named ScanDelegate which extends a DefaultDelegate class from the bluepy library.
+              This pattern allows objects to delegate specific tasks to other objects, in our case we have used this in the Raspberry Pi code, more specifically when handling Bluetooth device discovery. We have a class named ScanDelegate which extends a DefaultDelegate class from the bluepy library. This allowed us to easily extend the functionality of the library to suit our needs for this project.
             </p>
             <h1 className="text-2xl font-medium my-6">Client-Server Pattern</h1>
             <p className="text-lg">
@@ -127,6 +127,25 @@ export default function SystemDesign() {
               INSERT PICTURE OF ALL COMPONENTS COMMUNICATING WITH SERVER
             </p>
             <h1 className="text-2xl font-medium my-6">Facade Pattern</h1>
+            <p className="text-lg mb-4">
+              There are many complex algorithms utilised all over our code which we use the Facade pattern to abstract away their complexity. One example, is the FaceRecognizer class that exists in the Raspberry Pi code, we abstact away all the following features:
+            </p>
+
+            <ul className="text-lg list-disc pl-8 mb-4">
+              <li>Camera handling</li>
+              <li>Image processing</li>
+              <li>Face detection algorithms</li>
+              <li>Feature extraction</li>
+              <li>Comparison with stored facial encodings</li>
+              <li>User identification logic</li>
+            </ul>
+
+            <p className="text-lg mb-4">
+              Another example where we use the Facade pattern on our codebase is with the EncryptionClients, we hide all the complexity of the ML-KEM key exchange mechanism and the AES-GCM encryption and provide a simple API where you can encrypt and decrypt data.
+            </p>
+            <p className="text-lg mb-4">
+            The Facade pattern allowed us to implement all of this in a single class such that the functionality can also be extended and modified for our purposes.
+            </p>
             <h1 className="text-2xl font-medium my-6">Observer Pattern</h1>
           </div>
           <div id="er-diagrams">
