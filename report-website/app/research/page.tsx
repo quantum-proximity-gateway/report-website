@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Metadata } from 'next';
 import Image from "next/image";
 
@@ -176,34 +177,93 @@ export default function Research() {
                 </Card>
               </TabsContent>
             </Tabs>
-            <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, and Libraries</h1>
-            <p className="text-lg my-6">
-              The development of our QPG system involved multiple programming languages to optimise performance across different components.
-            </p>
-            <h1 className="text-lg font-bold my-6">Main Server</h1>
-            <h1 className="text-lg font-bold my-6">Desktop App</h1>
-            <h1 className="text-lg font-bold my-6">Frontends</h1>
-            <h1 className="text-lg font-bold my-6">Raspberry Pi</h1>
-            <h1 className="text-lg font-bold my-6">ESP32</h1>
-            <p className="text-lg my-6">
-              Python primary backend language due to its extensive ecosystem of libraries and ease of integration with machine learning, cryptography, and IoT frameworks. We used Python for implementing facial recognition, managing BLE proximity detection, and handling API communication. The flexibility of Python enables rapid development while maintaining a high level of security. Secure encryption is ensured through cryptography and liboqs-python, and BLE communication is managed via bluepy. Litestar used for server.
-            </p>
-            <p className="text-lg my-6">
-              C++ was used for programming the ESP32 microcontroller, specifically handling BLE communication. C++ was chosen due to being established, and its low-level hardware control capabilities and high performance, which are essential for real-time data processing on constrained devices. The BLE beaconing functionality occur in C++, ensuring efficient device-to-device communication. PlatformIO for ESP32 firmware management
-            </p>
-            <p className="text-lg my-6">
-              We used TypeScript for the frontend web application, primarily in the registration interface. TypeScript provides a structured approach to JavaScript development, offering type safety and enhanced maintainability. By using TypeScript with Next.js, the frontend ensures a modern and responsive user experience while maintaining security best practices - well used in industry, lots of support, use of ui libraries such as chakra ui and shadcn.
-            </p>
-            <p className="text-lg my-6">
-              We considered using Java for backend development, but its verbosity and slower development cycle made it less suitable for rapid prototyping and integration with modern AI and cryptographic libraries. Rust was another candidate due to its memory safety and performance benefits, however its ecosystem lacks mature libraries for machine learning and IoT applications, making it less practical for our use case.
-            </p>
             <h1 className="text-2xl font-bold my-6">Comparison of IoT Devices</h1>
             <p className="text-lg my-6">
-              Selecting the appropriate hardware for proximity detection and facial recognition was crucial for ensuring our system's reliability and efficiency. We chose the Raspberry Pi 5 as the primary device for processing facial recognition and managing BLE connectivity, while the ESP32 microcontroller serves as a low-power BLE beacon.
+              Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.
             </p>
             <p className="text-lg my-6">
-              The Raspberry Pi 5 provides sufficient processing power to run lightweight AI models, making it suitable for on-device authentication within our system. It supports multiple extensions, including the Raspberry Pi Camera Module, which is essential for real-time facial recognition. While alternatives like NVIDIA's Jetson Nano offer superior AI processing capabilities, they are significantly more expensive and somewhat unnecessary for the scope of our project. On the other hand, the ESP32 was selected for proximity detection due to its affordability and efficiency in handling BLE signals. By using a combination of Raspberry Pi 5 and ESP32, our system achieves a balance between computational power, cost-effectiveness, and real-time processing. 
+              The Raspberry Pi 5 offers ample processing power to handle incoming BLE signals, run facial recognition algorithms, and communicate with our main server. Furthermore, the Raspberry Pi Camera Module enables us to capture high definition video which is used in the facial recogntion algorithms. Whilst more advanced alternatives like NVIDIA's Jetson Nano provide superior AI capabilities, they come at a higher cost and exceed the requirements of our project. The Raspberry Pi 5 strikes a balance between performance and affordability.
             </p>
+            <p className="text-lg my-6">
+              Meanwhile, the ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, and Libraries</h1>
+            <p className="text-lg my-6">
+              Our system consists of many distinct parts which come together to form the quantum proximity gateway. For each part, we thought about the optimal programming languages which would strike a balance between development time and performance.
+            </p>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Server
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    For our main server that manages user profiles, Python was chosen as the core language due to its simplicity and extensive library ecosystem. The Litestar framework was used to develop the API endpoints on our server. It was chosen over other renowned frameworks such as Flask or Django due to being asynchronous, highly performant, and lightweight out of the box. Whilst there are more mature, tested frameworks such as Spring for Java, its verbosity and slower development cycle makes it less suitable for rapid prototyping. Moreover, Python bindings for liboqs were available and easy to use allowing us to implement post-quantum encryption without much friction.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Desktop App
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    For our desktop application with the AI chatbot, we chose Rust with the Tauri framework to create the backend. Rust offers memory safety and high performance, making it ideal for a secure desktop application. Compared to the popular alternative Electron, Tauri is lightweight and more compact, reducing resource consumption. It also enables direct access to native system APIs without the heavy resource consumption of bundling an entire Chromium engine, unlike Electron, which requires a full-fledged Chromium instance for rendering.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Frontend(s)
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    
+                  </p>
+                  <p className="text-lg">
+                    Next.js is a react framework used across all of our frontends (i.e. Desktop app, Reigstration site, Report site, Raspberry Pi BLE proximity demo site) due to its popularity, and ease of use. By using supported UI libraries such as Chakra UI and shadcn/ui, we were able to quickly develop impressive, robust frontends. Furthermore, TypeScript, which is the language we used with Next.js, provides a structured approach to JavaScript development, offering type safety and enhanced maintainability.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Raspberry Pi
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    Python was chosen to be used on our Raspberry Pi due to its simplicity, and extensive library ecosystem. Its ease of use allowed us to focus on the overall development of our system, without being bogged down by syntax and other considerations. It is well-suited for implementing facial recognition due to support for libraries like OpenCV and Dlib. Furthermore, its support for BLE communication via bluepy, UART, and USB HID libraries, makes it an excellent choice for IoT hardware.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    ESP32
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    C++ was chosen to program the ESP32 microcontroller to handle the constant BLE broadcasting, as it is highly performant, and enables low-level hardware control and efficient memory management. This is is crucial for real-time processing on constrained devices. Furthermore, C++ has a mature toolchain, and good support for the Arduino framework, and BLE libraries. Additionally, PlatformIO is used for ESP32 firmware management, streamlining development, debugging, and deployment.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
             <h1 className="text-2xl font-bold my-6">Time-Based One-Time Password</h1>
             <p className="text-lg my-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -248,10 +308,10 @@ export default function Research() {
               Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented:
             </p>
             <p className="text-lg my-6">
-              Ultimately, BLE offers the best combination of affordability, efficiency, and compatibility, making it the ideal choice for enabling seamless, profile-based authentication across multiple devices in real-world environments. For these reasons, we have chosen BLE as the core technology for proximity detection in our QPG system.
+              Summary Table, Type vs Decision [...]
             </p>
             <p className="text-lg my-6">
-              Summary Table, Type vs Decision [...]
+              Ultimately, BLE offers the best combination of affordability, efficiency, and compatibility, making it the ideal choice for enabling seamless, profile-based authentication across multiple devices in real-world environments. For these reasons, we have chosen BLE as the core technology for proximity detection in our QPG system.
             </p>
           </div>
           <div id="references">
