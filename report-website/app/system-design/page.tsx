@@ -117,16 +117,22 @@ export default function SystemDesign() {
             <h1 className="text-4xl font-bold my-6">Design Patterns</h1>
             <h1 className="text-2xl font-medium my-6">Delegate Pattern</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              This pattern allows objects to delegate specific tasks to other objects, in our case we have used this in the Raspberry Pi code, more specifically when handling Bluetooth device discovery. We have a class named ScanDelegate which extends a DefaultDelegate class from the bluepy library.
             </p>
             <h1 className="text-2xl font-medium my-6">Client-Server Pattern</h1>
+            <p className="text-lg">
+              This is the main pattern we utilise in our system, most of our components rely on the centralised server to fetch updated data on the user like credentials, encodings, preferences amongst other items. However, we also utilise this pattern in our Rapsberry Pi code, where we have the main Bluetooth scanner program act as a server to provide data to a graphical interface that allows you to see shortlisted ESP32 keys and their estimated distance to the Raspberry Pi.
+            </p>
+            <p className="text-lg">
+              INSERT PICTURE OF ALL COMPONENTS COMMUNICATING WITH SERVER
+            </p>
             <h1 className="text-2xl font-medium my-6">Facade Pattern</h1>
             <h1 className="text-2xl font-medium my-6">Observer Pattern</h1>
           </div>
           <div id="er-diagrams">
             <h1 className="text-4xl font-bold my-6">ER Diagrams</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              For our core server, we currently rely on a single database with two tables, one identifying the users and one which stores the user's accessibility preferences. This is to be scaled up in the future with further tables storing different data related to the user's profile.
             </p>
           </div>
           <div id="data-storage">
