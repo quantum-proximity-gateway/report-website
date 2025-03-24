@@ -1,6 +1,7 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Metadata } from 'next';
 import Image from "next/image";
 
@@ -293,9 +294,50 @@ export default function SystemDesign() {
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
             <p className="text-lg">
-              We utilise multiple
-              [might remove this section ngl, we dont use any external apis]
+              We utilise various different libraries and packages throughout our codebase to allow us to implement different complex algorithms and to interact with low-level hardware. The main libraries we use are:
             </p>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">Bluepy</span>
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                  We utilise this library to allow us to easily process incoming BLE packets on the Raspberry Pi. It abstracts away a lot of the validation of packets and simplifies our codebase significantly.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">Liboqs</span>
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    This is the industry standard implementation for Post-Quantum Cryptography, ML-KEM is one of the algorithms they provide a simple API for so we utilise this package to manage the key encapsulation algorithm.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    <span className="mr-3">ArduinoBLE</span> 
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    A lightweight library we use on the ESP32 to manage the BLE connections and characteristics.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>
