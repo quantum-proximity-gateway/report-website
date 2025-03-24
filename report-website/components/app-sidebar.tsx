@@ -117,10 +117,6 @@ const items = [
         url: "/algorithms#facial-recognition",
       },
       {
-        title: "Time-Based One-Time Password",
-        url: "/algorithms#time-based-one-time-password",
-      },
-      {
         title: "Conclusion",
         url: "/algorithms#conclusion",
       },
