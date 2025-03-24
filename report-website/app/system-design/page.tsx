@@ -196,11 +196,105 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               In future iterations, utilising propietary database services such as IBM Cloud Databases for PostgreSQL or AWS RDS will be essential for scalability. However, due to the budget and time constraints of our projects we chose SQLite for the proof of concept.
             </p>
+            <p className="text-lg my-6">
+              Currently, this is how we store preferences as a JSON on the database:
+            </p>
+            <details>
+            <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
+            <code className="block whitespace-pre-wrap bg-gray-100 p-4 rounded-md">
+              {`
+              {
+                "zoom": {
+                  "lower_bound": 0.5,
+                  "upper_bound": 3.0,
+                  "current": 1.0,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.interface text-scaling-factor"
+                  }
+                },
+                "on_screen_keyboard": {
+                  "lower_bound": null,
+                  "upper_bound": null,
+                  "current": false,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled"
+                  }
+                },
+                "magnifier": {
+                  "lower_bound": 0.1,
+                  "upper_bound": 32.0,
+                  "current": 1.0,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.a11y.magnifier mag-factor"
+                  }
+                },
+                "enable_animation": {
+                  "lower_bound": null,
+                  "upper_bound": null,
+                  "current": true,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.interface enable-animations"
+                  }
+                },
+                "screen_reader": {
+                  "lower_bound": null,
+                  "upper_bound": null,
+                  "current": false,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.a11y.applications screen-reader-enabled"
+                  }
+                },
+                "cursor_size": {
+                  "lower_bound": 0.0,
+                  "upper_bound": 128.0,
+                  "current": 24.0,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.interface cursor-size"
+                  }
+                },
+                "font_name": {
+                  "lower_bound": null,
+                  "upper_bound": null,
+                  "current": "Cantarell 11",
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.interface font-name"
+                  }
+                },
+                "locate_pointer": {
+                  "lower_bound": null,
+                  "upper_bound": null,
+                  "current": false,
+                  "commands": {
+                    "windows": "",
+                    "macos": "",
+                    "gnome": "gsettings set org.gnome.desktop.interface locate-pointer"
+                  }
+                }
+              }
+              `}
+            </code>
+          </details>
+
           </div>
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              We utilise multiple
+              [might remove this section ngl, we dont use any external apis]
             </p>
           </div>
         </div>
