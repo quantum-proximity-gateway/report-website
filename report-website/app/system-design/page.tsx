@@ -156,8 +156,8 @@ export default function SystemDesign() {
           </div>
           <div id="er-diagrams">
             <h1 className="text-4xl font-bold my-6">ER Diagrams</h1>
-            <p className="text-lg">
-              For our core server, we currently rely on a single database with two tables, one identifying the users and one which stores the user's accessibility preferences. This is to be scaled up in the future with further tables storing different data related to the user's profile.
+            <p className="text-lg my-6">
+              For our core server, we currently rely on a single database with three tables, one identifying the device and one which stores the user's accessibility preferences and one which stores authentication related fields. This is to be scaled up in the future with further tables storing different data related to the user's profile.
             </p>
             <div className="flex flex-col items-center">
               <Image 
@@ -170,6 +170,9 @@ export default function SystemDesign() {
               />
               <p className="text-center text-sm text-gray-500">Figure 3: Entity Relationship Diagram</p>
             </div>
+            <p className="text-lg my-6">
+              By default, we intilize a Device with a preferences JSON which has the default values for the specific accessibility command, this is stored on the Preferences table. On the other hand in the Authentication table, a nonce is stored which helps the server decrypt the password utilising a key stored elsewhere, making it difficult for bad actors to steal credentials. The TOTP timestamp and secret that is agreed upon during registration is also stored on this table.
+            </p>
           </div>
           <div id="data-storage">
             <h1 className="text-4xl font-bold my-6">Data Storage</h1>
@@ -185,7 +188,7 @@ export default function SystemDesign() {
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
-              <p className="text-center text-sm text-gray-500">Figure 3: SQLite Logo</p>
+              <p className="text-center text-sm text-gray-500">Figure 4: SQLite Logo</p>
             </div>
             <p className="text-lg my-6">
               This approach not only allows us to simplify the deployment of our application, but it also acts as a cost-saving measure allowing the system to be deployed at a much cheaper cost as a separate database service is not needed.
