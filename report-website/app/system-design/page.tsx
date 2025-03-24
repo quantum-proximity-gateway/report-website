@@ -153,6 +153,17 @@ export default function SystemDesign() {
             <p className="text-lg">
               For our core server, we currently rely on a single database with two tables, one identifying the users and one which stores the user's accessibility preferences. This is to be scaled up in the future with further tables storing different data related to the user's profile.
             </p>
+            <div className="flex flex-col items-center">
+              <Image 
+                src="/system-design/er.svg" 
+                alt="ER Diagram - Server" 
+                width={750} 
+                height={600}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center text-sm text-gray-500">Figure 3: Entity Relationship Diagram</p>
+            </div>
           </div>
           <div id="data-storage">
             <h1 className="text-4xl font-bold my-6">Data Storage</h1>
@@ -162,7 +173,7 @@ export default function SystemDesign() {
             <div className="flex flex-col items-center ">
               <Image 
                 src="/system-design/sqlite.png" 
-                alt="IBM Cloud Engine Architecture" 
+                alt="SQLite Logo" 
                 width={300} 
                 height={300}
                 className="max-w-full object-contain bg-white"
