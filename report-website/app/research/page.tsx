@@ -115,25 +115,7 @@ export default function Research() {
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
             <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
             <p className="text-lg">
-            Proximity detection is a central part of our system, allowing users to connect to nearby devices with ease while maintaining security and profile-based access control. Various technologies were evaluated for this purpose, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi-based positioning. </p>
-            <p className="text-lg my-6">
-              BLE was chosen as the primary technology for proximity detection due to its balance of low-cost, low power consumption, and wide compatibility. BLE signals can provide sufficient range and signal strength variations to determine a user's presence near a specific device. The ESP32 microcontroller, an inexpensive, low-power with efficient BLE functionality, is used as the primary BLE beacon. When combined with a Raspberry Pi, the system can detect signal strength variations and determine directionality, allowing for accurate proximity-based authentication. 
-            </p>
-            <p className="text-lg my-6">
-              We considered RFID (Radio Frequency Identification) as an alternative due to its capability for short-range authentication using electromagnetic fields. RFID operates by having a reader emit a radio signal that activates passive RFID tags, enabling secure identification. Unlike BLE, RFID does not require power on the tag itself, which means it is highly efficient for authentication solutions. However, RFID is mostly suited for close-range authentication, usually within a few centimetres, which does not align with our requirement for precise proximity detection across a room or workspace. Additionally, RFID does not support real-time distance variation tracking like BLE, and is therefore less suitable for dynamic user-device interaction. Widespread RFID use would also require installing dedicated RFID readers in every interaction zone, increasing both complexity and cost of the system's implementation.
-            </p>
-            <p className="text-lg my-6">
-              Wi-Fi-based positioning was another solution that we considered, using signal strength (RSSI), triangulation, and fingerprinting to compute an estimate of a user's location relative to a device. One advantage of Wi-Fi is no additional hardware is required, since most modern buildings are already equipped with Wi-Fi infrastructure, and nearly all devices support Wi-Fi connectivity. However, Wi-Fi-based proximity detection is far less precise than BLE, with typical accuracy ranging from 3 to 5 meters, depending on interference and network conditions. Another major limitation is power consumption: Wi-Fi scanning requires significantly more energy than BLE, and as such, it is less suitable for low-power IoT devices such as the ESP32. Moreover, Wi-Fi-based tracking raises several privacy and security concerns, as it often relies on tracking MAC addresses and network data, which could introduce some vulnerabilities. 
-            </p>
-            <p className="text-lg my-6">
-              Ultimately, BLE's balance of affordability, efficiency, and compatibility renders it the most appropriate solution for seamless, profile-based authentication across multiple devices in real-world environments, which is why we selected this option for use in our QPG system. 
-            </p>
-            <h1 className="text-2xl font-bold my-6">Facial Recognition for Authentication</h1>
-            <p className="text-lg my-6">
-              We chose facial recognition to be the primary authentication method for our system as it provides a reasonable compromise between security, usability, and accessibility. Implementing facial recognition within our system means that users can log in to devices without physical interaction, which makes it an ideal solution for accessible two-factor authentication (2FA).
-            </p>
-              Proximity detection is a crucial element of our system, allowing users to interact effortlessly with nearby devices whilst also ensuring security. To determine the most suitable technology for this purpose, we evaluated several options, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi Positioning System (WPS).
-            </p>
+            Proximity detection is a central part of our system, allowing users to interact effortlessly with nearby devices whilst also ensuring security. To determine the most suitable technology for this purpose, we evaluated several options, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi Positioning System (WPS).
             <Tabs defaultValue="ble" className="mt-6">
               <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="ble">BLE</TabsTrigger>
@@ -194,6 +176,17 @@ export default function Research() {
                 </Card>
               </TabsContent>
             </Tabs>
+           </p>
+            <p className="text-lg my-6">
+              Ultimately, BLE's balance of affordability, efficiency, and compatibility makes it the most appropriate solution for seamless, profile-based authentication in real-world environments, which is why we selected this option for use in our QPG system. 
+            </p>
+            <h1 className="text-2xl font-bold my-6">Facial Recognition for Authentication</h1>
+            <p className="text-lg my-6">
+              We chose facial recognition to be the primary authentication method for our system as it provides a reasonable compromise between security, usability, and accessibility. Implementing facial recognition within our system means that users can log in to devices without physical interaction, which makes it an ideal solution for accessible two-factor authentication (2FA).
+            </p>
+            <p className="text-lg my-6">
+              Voice recognition was considered as an alternative authentication method but we decided against this due to several limitations. While voice authentication does provide a hands-free authentication method, it is a lot more susceptible to environmental noise, variations in a user's voice due to illness or stress, and spoofing attacks using recorded samples. Additionally, voice authentication systems require continuous model training to adapt to changes in a user's voice, making them less practical for seamless authentication. Facial recognition however, offers a higher level of security due to unique facial features and ensures a more reliable and user-friendly authentication experience.          
+           </p>
             <h1 className="text-2xl font-bold my-6">Comparison of IoT Devices</h1>
             <p className="text-lg my-6">
               Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.
