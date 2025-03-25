@@ -265,7 +265,7 @@ export default function UIDesign() {
                     <span className="font-medium">Colour Choice.</span> <span className="text-muted-foreground">The background colours are not suitable for visually impaired individuals.</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="text-muted-foreground">Research and implement more visual impairment friendly UI designs.</span>
+                    <span className="text-muted-foreground">Research and implement</span> <span className="font-medium">more visual impairment friendly</span> <span className="text-muted-foreground">UI designs.</span>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -273,7 +273,7 @@ export default function UIDesign() {
                     <span className="font-medium">Ambiguity of System Usage.</span> <span className="text-muted-foreground">The current prototype does not convey well how the system is meant to be used.</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="text-muted-foreground">Add a more detailed explanation about the connections between devices.</span>
+                    <span className="text-muted-foreground">Add a</span> <span className="font-medium">more detailed explanation</span> <span className="text-muted-foreground">about the connections between devices.</span>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -281,7 +281,7 @@ export default function UIDesign() {
                     <span className="font-medium">Lack of Security.</span> <span className="text-muted-foreground">Users may be concerned about their data not being safely stored in the current prototype.</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="text-muted-foreground">Specify that all data will be encrypted utilising post-quantum encryption algorithms.</span>
+                    <span className="text-muted-foreground">Specify that</span> <span className="font-medium">all data will be encrypted</span> <span className="text-muted-foreground">utilising post-quantum encryption algorithms.</span>
                   </TableCell>
                 </TableRow>
               </TableBody>
