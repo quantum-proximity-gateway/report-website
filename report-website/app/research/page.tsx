@@ -146,7 +146,7 @@ export default function Research() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      NFC, although a good consideration for authentication, was rejected after a thorough analysis of our requirements indicated that it was not the best fit for our project. Given that our primary objective is to develop a seamless, proximity-based login system that is both secure and accessible, NFC's inherent limitations would hinder our ability to achieve this goal since it requires users to bring an NFC-enabled card or device into close contact of a reader to complete authentication. While this provides a high level of security by requiring intentional user interaction, it does not align with our vision of seamless authentication where users can be automatically detected as they approach a device. These constraints make NFC less practical for our intended application compared to BLE.
+                      NFC, although a good consideration for authentication, was rejected after a thorough analysis of our requirements indicated that it was not the best fit for our project. Given that our primary objective is to develop a seamless, proximity-based login system that is both secure and accessible, NFC's inherent limitations would hinder our ability to achieve this goal since it requires users to bring an NFC-enabled card or device into close contact of a reader to complete authentication. While this provides a high level of security, it does not align with our vision of seamless authentication where users can be automatically detected as they approach a device. These constraints make NFC less practical for our intended application compared to BLE.
                     </p>
                   </CardContent>
                 </Card>
@@ -398,33 +398,14 @@ export default function Research() {
             <p className="text-lg my-6">
               [Abdulhamid - REMIND ME TO FINISH]
             </p>
-            <p className="text-lg my-6">
-              [1] Alps Alpine: Our Business (2015) Company | Alps Alpine. Available at: https://www.alpsalpine.com/e/company/business/#anc03 (Accessed: 18 March 2025).
-            </p>
-            <p className="text-lg my-6">
-              [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).
-            </p>          
-            <p className="text-lg my-6">
-              [3]
-            </p>          
-            <p className="text-lg my-6">
-              [4]
-            </p>          
-            <p className="text-lg my-6">
-              [5]
-            </p>
-            <p className="text-lg my-6">
-              [6]
-            </p>          
-            <p className="text-lg my-6">
-              [7]
-            </p>
-            <p className="text-lg my-6">
-              [8]
-            </p>
-            <p className="text-lg my-6">
-              [9]
-            </p>
+            <ul className="text-lg space-y-6">
+              <li>
+                [1] Alps Alpine: Our Business (2015) Company | Alps Alpine. Available at: https://www.alpsalpine.com/e/company/business/#anc03 (Accessed: 18 March 2025).
+              </li>
+              <li>
+                [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).
+              </li>
+            </ul>
           </div>
         </div>
       </div>

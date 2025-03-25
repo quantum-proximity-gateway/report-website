@@ -280,9 +280,8 @@ export default function SystemDesign() {
     }
   }
 }`}
-            </code>
-          </details>
-
+              </code>
+            </details>
           </div>
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
