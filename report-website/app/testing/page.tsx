@@ -53,7 +53,7 @@ export default function Testing() {
               The most sophisticated part of these tests focuses on the key encapsulation mechanism (KEM) using quantum-resistant cryptography via the OQS library with ML-KEM-512. These tests validate the server's ability to initiate secure key exchange, generate appropriate public keys, and successfully complete the key exchange process by decapsulating client-provided ciphertexts to establish shared secrets. The comprehensive test coverage ensures the API provides secure device management capabilities while maintaining data confidentiality through end-to-end encryption - critical for a system that stores sensitive credentials and device information.
             </p>
             <p className="text-lg my-6">
-              The test suite uses pytest's fixture mechanism for dependency injection, this helps us easily create test clients for our server before every test, inject them into the test function as a dependency and automatically handle the test cleanup.
+              Our test suite uses pytest's fixture mechanism for dependency injection, this helps us easily create test clients for our server before every test, inject them into the test function as a dependency and automatically handle the test cleanup.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -66,6 +66,9 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
     os.remove(TEST_DB_FILENAME)`}
               </code>
             </pre>
+            <p className="text-lg my-6">
+               The <code>@pytest_asyncio.fixture</code> decorator registers this as an asynchronous fixture with function scope. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file. Ensuring that each test runs with a fresh environment, preventing test interference and maintaining consistent results across test runs.
+            </p>
             <p className="text-lg my-6">
               Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced.
             </p>
