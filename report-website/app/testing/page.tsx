@@ -121,6 +121,38 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-sm text-gray-500 mt-2">
               Table 1: Operating System Compatibility for IBM Proximity Agents
             </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
+                <thead>
+                  <tr className="bg-gray-100 dark:bg-gray-700 text-left">
+                    <th className="py-3 px-4 font-semibold border-b">Browser</th>
+                    <th className="py-3 px-4 font-semibold border-b">Compatibility</th>
+                    <th className="py-3 px-4 font-semibold border-b">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">Chrome</td>
+                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
+                    <td className="py-3 px-4">Full functionality utilising Web Serial API</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">Edge</td>
+                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
+                    <td className="py-3 px-4">Full functionality utilising Web Serial API</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">Firefox</td>
+                    <td className="py-3 px-4 text-yellow-500">⚠️ Lacking functionality</td>
+                    <td className="py-3 px-4">Communication using Web Serial API not natively supported. Extensions avaliable to fix this.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              Table 2: Browser Compatibility for Registration Site
+            </p>
           </div>
           <div id="responsive-design-testing">
             <h1 className="text-4xl font-bold my-6">Responsive Design Testing</h1>
