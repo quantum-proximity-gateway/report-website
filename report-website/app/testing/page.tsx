@@ -186,7 +186,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
-              <p className="text-center text-sm text-gray-500">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
+              <p className="text-center text-sm text-gray-500">Figure 2: IBM Proximity Agents - Responsive Design Test</p>
             </div>
           </div>
           <div id="performance-testing">
