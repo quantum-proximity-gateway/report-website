@@ -164,7 +164,10 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
           <div id="responsive-design-testing">
             <h1 className="text-4xl font-bold my-6">Responsive Design Testing</h1>
             <p className="text-lg my-6">
-              As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistant design throughout multiple platforms and devices. MORE TEXT NEEDED
+              As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistent design throughout multiple platforms and devices. We've implemented responsive layouts that automatically adjust to different screen sizes, from large desktop monitors to mobile devices. This approach ensures that both of our applications remain usable and visually coherent regardless of the device being used.
+            </p>
+            <p className="text-lg my-6">
+              During development, we regularly tested our interfaces across various viewport sizes using Dev Tools like ResponsivelyApp and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
             <div className="flex flex-col items-center my-6">
               <Image
