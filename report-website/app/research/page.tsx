@@ -270,6 +270,83 @@ export default function Research() {
           <div id="technical-decisions">
             <h1 className="text-4xl font-bold my-6">Technical Decisions</h1>
             <p className="text-lg my-6">
+              Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented.
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="w-[50%]">Type</TableHead>
+                  <TableHead>Decision</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Wireless Proximity Technology</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Bluetooth Low Energy
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Proximity Detector & Authenticator</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Raspberry Pi
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">BLE Beacon</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ESP32
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Raspberry Pi</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Python
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">ESP32</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    C++
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Server</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Python, Litestar
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Desktop App</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Rust, Tauri
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Frontends</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    TypeScript, Next.js
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-lg my-6">
               From our research, we concluded that a good proximity-based access control system would support the following.
             </p>
             <Card>
@@ -302,83 +379,6 @@ export default function Research() {
                 <p className="text-muted-foreground text-lg">Provide a website or app for easy setup, registration, troubleshooting, and user profile management.</p>
               </CardContent>
             </Card>
-            <p className="text-lg my-6">
-              Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented.
-            </p>
-            <Table>
-              <TableHeader>
-                <TableRow className="text-lg">
-                  <TableHead className="w-[50%]">Type</TableHead>
-                  <TableHead>Decision</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    Wireless Proximity Technology
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Bluetooth Low Energy
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    Proximity Detector & Authenticator
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Raspberry Pi
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    BLE Beacon
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    ESP32
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    Raspberry Pi
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Python
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    ESP32
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    C++
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    Server
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Python, Litestar
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    Desktop App
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Rust, Tauri
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    Frontends
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    TypeScript, Next.js
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
           </div>
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
