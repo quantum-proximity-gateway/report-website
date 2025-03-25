@@ -122,6 +122,13 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               Table 1: Operating System Compatibility for IBM Proximity Agents
             </p>
 
+            <h1 className="text-2xl font-medium my-6">Registration Site</h1>
+            <p className="text-lg mb-4">
+              We have also tested our registration site across multiple different environments. However, there are some issues regarding certain out-of-date browsers not natively supporting the Web Serial API, which is a core functionality of our website. This API allows us to directly communicate with the ESP32 during the registration process to share secret keys for TOTP and to read the MAC address of your device.
+            </p>
+            <p className="text-lg mb-4">
+              Fortunately, there are simple solutions available by using widely available extensions that expose the Web Serial API. For example, for Firefox users, we recommend using the <a href="https://addons.mozilla.org/en-GB/firefox/addon/webserial-for-firefox/" className="text-blue-500 hover:text-blue-700 underline transition-colors" target="_blank" rel="noopener noreferrer">WebSerial for Firefox</a> extension.
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
                 <thead>
