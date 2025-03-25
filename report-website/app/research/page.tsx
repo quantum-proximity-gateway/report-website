@@ -114,7 +114,7 @@ export default function Research() {
           </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
-            <h1 className="text-2xl font-bold my-6">Proximity Detection Solutions</h1>
+            <h1 className="text-2xl font-bold my-6">Wireless Proximity Technology</h1>
             <p className="text-lg">
               Proximity detection is a crucial element of our system, allowing users to interact effortlessly with nearby devices whilst also ensuring security. To determine the most suitable technology for this purpose, we evaluated several options, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi Positioning System (WPS).
             </p>
@@ -182,11 +182,35 @@ export default function Research() {
             <p className="text-lg my-6">
               Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.
             </p>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Proximity Detector & Authenticator
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    The Raspberry Pi 5 offers ample processing power to handle incoming BLE signals, run facial recognition algorithms, and communicate with our main server. Furthermore, the Raspberry Pi Camera Module enables us to capture high definition video which is used in the facial recogntion algorithms. Whilst more advanced alternatives like NVIDIA's Jetson Nano provide superior AI capabilities, they come at a higher cost and exceed the requirements of our project. The Raspberry Pi 5 strikes a balance between performance and affordability.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    BLE Beacon
+                  </p>  
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-lg">
+                    The ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
             <p className="text-lg my-6">
-              The Raspberry Pi 5 offers ample processing power to handle incoming BLE signals, run facial recognition algorithms, and communicate with our main server. Furthermore, the Raspberry Pi Camera Module enables us to capture high definition video which is used in the facial recogntion algorithms. Whilst more advanced alternatives like NVIDIA's Jetson Nano provide superior AI capabilities, they come at a higher cost and exceed the requirements of our project. The Raspberry Pi 5 strikes a balance between performance and affordability.
-            </p>
-            <p className="text-lg my-6">
-              Meanwhile, the ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
             </p>
             <h1 className="text-2xl font-bold my-6">Programming Languages, Frameworks, and Libraries</h1>
             <p className="text-lg my-6">
@@ -347,7 +371,7 @@ export default function Research() {
               </TableBody>
             </Table>
             <p className="text-lg my-6">
-              From our research, we concluded that a good proximity-based access control system would support the following.
+              From our research, we concluded that a good proximity-based access control system would provide the following.
             </p>
             <Card>
               <CardHeader>
@@ -355,14 +379,14 @@ export default function Research() {
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">Utilise multi-factor authentication methods such as facial recognition, BLE proximity detection, and post-quantum cryptographic encryption to prevent unauthorized access.</p>
+                <p className="text-muted-foreground text-lg">Utilise multi-factor authentication methods composed of facial recognition and BLE proximity detection, as well as post-quantum cryptographic encryption to prevent unauthorised access.</p>
               </CardContent>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Support seamless user experience</CardTitle>
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">Automatically configure devices based on user proximity and profile, ensuring effortless transitions between workstations, meeting rooms, and other shared spaces.</p>
+                <p className="text-muted-foreground text-lg">Automatically configure devices based on user proximity, ensuring effortless transitions between workstations, meeting rooms, and other shared spaces.</p>
               </CardContent>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Provide accurate proximity detection</CardTitle>
@@ -370,13 +394,6 @@ export default function Research() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">Implement BLE signal strength analysis for precise location tracking, ensuring users connect only to their intended devices.</p>
-              </CardContent>
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold">Feature a user-friendly configuration interface</CardTitle>
-                <Separator />
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-lg">Provide a website or app for easy setup, registration, troubleshooting, and user profile management.</p>
               </CardContent>
             </Card>
           </div>
@@ -392,7 +409,7 @@ export default function Research() {
               [2] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).
             </p>          
             <p className="text-lg my-6">
-              [3] Dolan, M., Prado, J. del and Marcel, J. (2025) How Alps Alpine uses Bluetooth Technology for Secure Digital Key Solutions, Bluetooth® Technology Website . Available at: https://www.bluetooth.com/blog/how-alps-alpine-uses-bluetooth-technology-for-secure-digital-key-solutions/ (Accessed: 18 March 2025).
+              [3]
             </p>          
             <p className="text-lg my-6">
               [4]
