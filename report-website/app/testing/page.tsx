@@ -7,6 +7,7 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-python';
 import 'prismjs/themes/prism-okaidia.css';
 import { useEffect } from 'react';
+import Image from "next/image";
 
 export default function Testing() {
 
@@ -87,9 +88,20 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
           </div>
           <div id="responsive-design-testing">
             <h1 className="text-4xl font-bold my-6">Responsive Design Testing</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistant design throughout multiple platforms and devices.
             </p>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/testing/responsive.png" 
+                alt="Responsiveness Test" 
+                width={750} 
+                height={600}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center text-sm text-gray-500">Figure 1: Registration Site - Responsive Design Test</p>
+            </div>
           </div>
           <div id="performance-testing">
             <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
