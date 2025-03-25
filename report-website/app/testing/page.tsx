@@ -205,36 +205,94 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
             <p className="text-lg my-6">
-              Throughout the project, we have prioritised ease of use to ensure our system remains as user-friendly as possible. To achieve this goal, we involved multiple stakeholders in the development process, organizing structured testing sessions where we could gather actionable feedback and iteratively improve our designs.
+              Throughout the project, we have prioritised ease of use to ensure our system remains as user-friendly as possible. To achieve this, we involved multiple stakeholders in the development process, utilising different opportunities provided by outreach events to carry out structured testing sessions where we could gather actionable feedback and iteratively improve our designs.
             </p>
             <p className="text-lg my-6">
-              Our test groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This allowed us to gain a wide range of perspectives on the usability of our project.
+              We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
             <div className="flex justify-center">
-              <Carousel className="my-6">
-                <CarouselContent>
-                  <CarouselItem key={1}>
-                    <div className="p-1">
-                      <Card>
-                        <CardContent className="flex items-center justify-center p-6">
-                          <Image src="/testing/user_testing_1.jpg" alt="User Testing 1" width={1636} height={1169} className="object-contain" />
-                        </CardContent>
-                      </Card>
-                      </div>
-                  </CarouselItem>
-                  <CarouselItem key={2}>
-                    <div className="p-1">
-                      <Card>
-                        <CardContent className="flex items-center justify-center p-6">
-                          <Image src="/testing/enfield.jpg" alt="User Testing 2" width={1636} height={1169} className="object-contain" />
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
+            <Carousel className="my-6 w-full max-w-3xl">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <Image 
+                          src="/testing/user_testing_1.jpg" 
+                          alt="User Testing 1" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[400px] w-auto" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <Image 
+                          src="/testing/enfield.jpg" 
+                          alt="Enfield Students Testing" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[400px] w-auto" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={3}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <Image 
+                          src="/testing/user_testing_2.jpg" 
+                          alt="User Testing 2" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[400px] w-auto" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={4}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <Image 
+                          src="/testing/user_testing_4.jpg" 
+                          alt="User Testing 2" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[400px] w-auto" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={5}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <Image 
+                          src="/testing/user_testing_3.jpg" 
+                          alt="User Testing 3" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[400px] w-auto" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+              <p className="text-center text-sm text-gray-500 mt-2">User Testing Sessions</p>
+            </Carousel>
             </div>
 
             <h1 className="text-2xl font-bold my-6">User Testing Methodology</h1>
