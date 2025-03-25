@@ -200,8 +200,90 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
           </div>
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
-            <p className="text-lg">
-              
+            <p className="text-lg my-6">
+              Throughout the project, we have prioritised ease of use to ensure our system remains as user-friendly as possible. To achieve this goal, we involved multiple stakeholders in the development process, organizing structured testing sessions where we could gather actionable feedback and iteratively improve our designs.
+            </p>
+            <p className="text-lg my-6">
+              Our test groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This allowed us to gain a wide range of perspectives on the usability of our project.
+            </p>
+            <Carousel className="my-6">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-6">
+                        <Image src="/requirements/persona-1.png" alt="Persona 1" width={1636} height={1169} className="object-contain" />
+                      </CardContent>
+                    </Card>
+                    </div>
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
+
+            <h1 className="text-2xl font-bold my-6">User Testing Methodology</h1>
+            <p className="text-lg my-6">
+              We employed a structured approach to user testing that combined task-based evaluation with qualitative feedback collection:
+            </p>
+            <ul className="list-disc ml-8 text-lg my-6">
+              <li className="mb-2">
+                <strong>Contextual inquiry:</strong> Participants were given minimal instructions and observed while they attempted to complete common tasks with our system.
+              </li>
+              <li className="mb-2">
+                <strong>Task completion analysis:</strong> We measured success rates for key workflows such as device registration, authentication, and system configuration.
+              </li>
+              <li className="mb-2">
+                <strong>Think-aloud protocols:</strong> Users were encouraged to verbalize their thoughts and expectations as they navigated the interface.
+              </li>
+              <li className="mb-2">
+                <strong>Post-task interviews:</strong> Structured debriefing sessions were conducted to gather detailed insights on user experience and satisfaction.
+              </li>
+            </ul>
+            <p className="text-lg my-6">
+              This methodology allowed us to identify both obvious usability issues and more subtle pain points that might otherwise go undetected in traditional testing approaches.
+            </p>
+
+            <h1 className="text-2xl font-bold my-6">User Feedback</h1>
+            <p className="text-lg my-6">
+              Key insights from our user testing sessions revealed several areas for improvement:
+            </p>
+            <ul className="list-disc ml-8 text-lg my-6">
+              <li className="mb-2">
+                <strong>Initial onboarding:</strong> Users expressed confusion about the first-time setup process, particularly regarding the ESP32 connection and registration flow.
+              </li>
+              <li className="mb-2">
+                <strong>Error messaging:</strong> Technical error messages during device pairing created uncertainty for non-technical users.
+              </li>
+              <li className="mb-2">
+                <strong>Verification feedback:</strong> Users wanted clearer visual confirmation when authentication was successful.
+              </li>
+              <li className="mb-2">
+                <strong>Terminology:</strong> Terms like "quantum-resistant cryptography" and "TOTP" were unfamiliar to non-technical users and created unnecessary cognitive load.
+              </li>
+            </ul>
+            <p className="text-lg my-6">
+              Positive feedback highlighted the system&apos;s perceived security benefits and the convenience of proximity-based authentication once properly configured.
+            </p>
+
+            <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
+            <p className="text-lg my-6">
+              Based on user feedback, we implemented several significant improvements:
+            </p>
+            <ul className="list-disc ml-8 text-lg my-6">
+              <li className="mb-2">
+                <strong>Guided setup wizard:</strong> We developed a step-by-step setup process with visual cues and simplified instructions for the registration process.
+              </li>
+              <li className="mb-2">
+                <strong>Error handling:</strong> Technical errors were rewritten in plain language with specific troubleshooting steps.
+              </li>
+              <li className="mb-2">
+                <strong>Visual feedback:</strong> We added clear visual indicators for successful authentication and other system states.
+              </li>
+              <li className="mb-2">
+                <strong>Simplified language:</strong> Technical terminology was replaced with more accessible language throughout the interface, with additional information available through tooltips for technical users.
+              </li>
+            </ul>
+            <p className="text-lg my-6">
+              After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, particularly among non-technical users who had previously struggled with the system.
             </p>
           </div>
         </div>
