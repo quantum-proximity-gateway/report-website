@@ -102,6 +102,17 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               />
               <p className="text-center text-sm text-gray-500">Figure 1: Registration Site - Responsive Design Test</p>
             </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/testing/responsive-app.png" 
+                alt="Responsiveness Test" 
+                width={750} 
+                height={600}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center text-sm text-gray-500">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
+            </div>
           </div>
           <div id="performance-testing">
             <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
