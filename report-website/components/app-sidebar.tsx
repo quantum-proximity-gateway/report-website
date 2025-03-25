@@ -184,7 +184,32 @@ const items = [
     title: "Implementation",
     url: "/implementation",
     icon: Hammer,
-    subitems: [],
+    subitems: [
+      {
+        title: "Overview",
+        url: "/implementation#overview",
+      },
+      {
+        title: "Server",
+        url: "/implementation#server",
+      },
+      {
+        title: "Registration Site",
+        url: "/implementation#registration-site",
+      },
+      {
+        title: "ESP32",
+        url: "/implementation#esp32",
+      },
+      {
+        title: "Raspberry Pi",
+        url: "/implementation#raspberry-pi",
+      },
+      {
+        title: "Desktop App",
+        url: "/implementation#desktop-app",
+      },
+    ],
   },
   {
     title: "Testing",
