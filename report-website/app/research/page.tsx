@@ -4,6 +4,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Metadata } from 'next';
 import Image from "next/image";
 
@@ -228,9 +229,6 @@ export default function Research() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    
-                  </p>
-                  <p className="text-lg">
                     Next.js is a react framework used across all of our frontends (i.e. Desktop app, Reigstration site, Report site, Raspberry Pi BLE proximity demo site) due to its popularity, and ease of use. By using supported UI libraries such as Chakra UI and shadcn/ui, we were able to quickly develop impressive, robust frontends. Furthermore, TypeScript, which is the language we used with Next.js, provides a structured approach to JavaScript development, offering type safety and enhanced maintainability.
                   </p>
                 </AccordionContent>
@@ -305,14 +303,82 @@ export default function Research() {
               </CardContent>
             </Card>
             <p className="text-lg my-6">
-              Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented:
+              Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented.
             </p>
-            <p className="text-lg my-6">
-              Summary Table, Type vs Decision [...]
-            </p>
-            <p className="text-lg my-6">
-              Ultimately, BLE offers the best combination of affordability, efficiency, and compatibility, making it the ideal choice for enabling seamless, profile-based authentication across multiple devices in real-world environments. For these reasons, we have chosen BLE as the core technology for proximity detection in our QPG system.
-            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead className="w-[50%]">Type</TableHead>
+                  <TableHead>Decision</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Wireless Proximity Technology
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Bluetooth Low Energy
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Proximity Detector & Authenticator
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Raspberry Pi
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    BLE Beacon
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ESP32
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Raspberry Pi
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Python
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    ESP32
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    C++
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Server
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Python, Litestar
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Desktop App
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Rust, Tauri
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Frontends
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    TypeScript, Next.js
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
