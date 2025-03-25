@@ -50,10 +50,12 @@ export default function Home() {
           </BreadcrumbList>
         </Breadcrumb>
       </header>
-      <div className="flex flex-col items-center shrink-0 border-b p-8">
-        <h1 className="text-7xl font-bold text-center">Post-Quantum Proximity Gateway</h1>
-        <h1 className="text-4xl text-center my-6">IBM Proximity Agents</h1>
-        <div className="flex items-center justify-center gap-12">
+      <div className="flex flex-col items-center shrink-0 border-b px-8 py-16">
+        <h1 className="text-8xl font-bold text-center">Quantum Proximity Gateway</h1>
+        <h1 className="text-4xl text-center my-6">+ Proximity Agents</h1>
+      </div>
+      <div className="flex flex-col items-center shrink-0 border-b px-8 py-4">
+        <div className="flex flex-wrap items-center justify-center gap-12">
           <Image src="/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
           <Image src="/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
           <Image src="/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
@@ -67,10 +69,10 @@ export default function Home() {
               In modern computing environments, whether in the workplace or at home, seamless user-device interaction is essential for both efficiency and security. This interaction relies heavily on authentication and access control mechanisms, which verify user identity and regulate access to sensitive systems. Unfortunately, existing log-in and verification systems remain inflexible, often requiring manual input and failing to adapt dynamically to users' contextual and accessibility needs, which proves especially detrimental for disabled, elderly, or neurodivergent users. 
             </p>
             <p className="text-lg my-6">
-              As such, we have created the <span className="font-semibold">Quantum Proximity Gateway</span>. Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. The system design allows for a centralised ecosystem of devices to seamlessly communicate with each other, forming a robust and interconnected network of QPG-enabled devices, across which, encrypted user profiles and settings can be interacted with using <span className="font-semibold">Proximity Agents</span>. Robust security and privacy controls are also prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain highly protected.
+              As such, we have created the <span className="font-semibold">Quantum Proximity Gateway</span> (QPG). Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. The system design allows for a centralised ecosystem of devices to seamlessly communicate with each other, forming a robust and interconnected network of QPG-enabled devices, across which, encrypted user profiles and settings can be interacted with using <span className="font-semibold">Proximity Agents</span>. Robust security and privacy controls are also prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain highly protected.
             </p>
-            <p className="text-lg">
-              Our achievements with the Quantum Proximity Gateway mark a significant leap forward in secure and adaptive authentication. By eliminating the need for manual logins, we have not only streamlined user access but also enhanced digital inclusivity — ensuring that individuals of all abilities can interact with technology effortlessly. Our implementation of AI Proximity Agents, through the use of IBM Granite, has redefined how users personalise their digital experience, creating an intelligent, self-regulating ecosystem that adapts to users' accessibility needs in real time. Furthermore, leveraging <span className="font-semibold">post-quantum encryption</span>, we have future-proofed security, safeguarding sensitive data against even the most advanced threats. This innovation represents not just convenience, but a transformative shift towards a smarter, more secure, and universally accessible digital experience.
+            <p className="text-lg mb-12">
+              Through eliminating the need for manual logins, we have not only streamlined user access but also enhanced digital inclusivity — ensuring that individuals of all abilities can interact with technology effortlessly. Furthermore, our implementation of AI Proximity Agents, through the use of IBM Granite, has redefined how users personalise their digital experience, creating an intelligent, self-regulating ecosystem that adapts to users' accessibility needs in real time. In addition, by leveraging <span className="font-semibold">post-quantum encryption</span>, we have also future-proofed security, safeguarding sensitive data against even the most advanced threats. This project certainly represents a transformative shift towards a smarter, more secure, and accessible digital experience.
             </p>
           </div>
           <div id="video">

@@ -54,7 +54,7 @@ export default function Requirements() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees waste an average of about 30 minutes per day logging into various systems, setting up profiles and ensuring access permissions are correctly assigned, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent users, who may require a more automated, handsfree authentication process. 
+                    Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees <span className="font-medium">waste an average of ~30 minutes per day</span> logging into various systems, setting up profiles and ensuring access permissions are correctly assigned, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent users, who may require a more automated, handsfree authentication process. 
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -139,7 +139,6 @@ export default function Requirements() {
               </Carousel>
             </div>
           </div>
-          {/* TODO: Add interviews/proof of survey */}
           <div id="requirements-gathering">
             <h1 className="text-4xl font-bold my-6">Requirements Gathering</h1>
             <p className="text-lg my-6">
@@ -158,10 +157,10 @@ export default function Requirements() {
                   </CardHeader>
                   <CardContent>
                     <ul className="text-lg list-disc pl-6 space-y-1">
-                      <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
-                      <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
+                      <li>We conducted structured surveys via questionnaires<span className="text-muted-foreground">*</span> to assess the challenges with traditional authentication.</li>
                       <li>We used a combination of open and closed questions, allowing us to gather both detailed, qualitative insights from open-ended questions while also getting quantifiable data and clear structure from closed-ended questions.</li>
                     </ul>
+                    <p className="text-sm text-muted-foreground mt-6">* All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</p>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -193,7 +192,7 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
+                    <p className="text-lg mb-3">
                       <span className="font-medium">67% of respondents</span> stated that they had trouble with hot-desking, and found manual logins <span className="font-medium">inconvenient and time-consuming</span>.
                     </p>
                   </AccordionContent>
@@ -207,7 +206,7 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
+                    <p className="text-lg mb-3">
                       <span className="font-medium">100% of respondents</span> affirmed that having a mechanism to automatically load up your profile and settings would be helpful.
                     </p>
                   </AccordionContent>
@@ -221,7 +220,7 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
+                    <p className="text-lg mb-3">
                       Participants responded with the general sentiment that it would <span className="font-medium">save time</span> by eliminating the need to log in and configure settings manually, making the process <span className="font-medium">smoother and faster</span>, especially when switching between devices.
                     </p>
                   </AccordionContent>
@@ -235,7 +234,7 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
+                    <p className="text-lg mb-3">
                       People generally thought that the idea was quite innovative. For example, one of the responses was “[the mechanism] <span className="font-medium">sounds very futuristic</span>, it would help people with accessibility challenges all around the world access essential services on their devices”.
                     </p>
                   </AccordionContent>
@@ -249,7 +248,7 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
+                    <p className="text-lg mb-3">
                       Many potential ideas were given such as “I would like some sort of password-protected service” and “Use a two-factor authentication (2FA)”. These indicate a <span className="font-medium">general concern about privacy</span>. Some other ideas about utilising chatbots were suggested, saying for example that “An assistant helping me to change my preferences would be a great feature”.
                     </p>
                   </AccordionContent>
@@ -263,7 +262,7 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
+                    <p className="text-lg mb-3">
                       All responses were affirmative, generally stating that they have their phone on them at all times.
                     </p>
                   </AccordionContent>
@@ -681,22 +680,22 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">BLE proximity connection to Raspberry Pi</span> — Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32).
+                      <span className="font-medium">BLE proximity connection to Raspberry Pi</span><span className="text-muted-foreground"> — Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32).</span>
                     </li>
                     <li>
-                      <span className="font-medium">Facial recognition via Raspberry Pi (using camera module)</span> — Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices. Ensure accuracy in low light conditions and secure handling of biometric data.
+                      <span className="font-medium">Facial recognition via Raspberry Pi (using camera module)</span><span className="text-muted-foreground"> — Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices. Ensure accuracy in low light conditions and secure handling of biometric data.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Accessibility settings fetching</span> — Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support, etc.
+                      <span className="font-medium">Accessibility settings fetching</span><span className="text-muted-foreground"> — Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support, etc.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Server to host user profiles</span> — Use of a server to user profiles, and manage backend operations.
+                      <span className="font-medium">Server to host user profiles</span><span className="text-muted-foreground"> — Use of a server to user profiles, and manage backend operations.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Post-quantum cryptography encryption</span> — All data transmitted between devices should be encrypted using a PQC algorithm to secure user data.
+                      <span className="font-medium">Post-quantum cryptography encryption</span><span className="text-muted-foreground"> — All data transmitted between devices should be encrypted using a PQC algorithm to secure user data.</span>
                     </li>
                     <li>
-                      <span className="font-medium">AI chatbot assistant</span> — Use chatbot (powered by IBM's Granite 3.2 AI model) to help with troubleshooting/guidance and for easy settings configurations.
+                      <span className="font-medium">AI chatbot assistant</span><span className="text-muted-foreground"> — Use chatbot (powered by IBM's Granite 3.2 AI model) to help with troubleshooting/guidance and for easy settings configurations.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -712,10 +711,10 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Website to register device and configure initial settings</span> — Register new user profiles on the website (facial recognition setup, preferences, etc.), and save to the server. Use secure 2 factor authentication login. Have a responsive design making it suitable for either computer or tablet use.
+                      <span className="font-medium">Website to register device and configure initial settings</span><span className="text-muted-foreground"> — Register new user profiles on the website (facial recognition setup, preferences, etc.), and save to the server. Use secure 2 factor authentication login. Have a responsive design making it suitable for either computer or tablet use.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Directional proximity management</span> — Identify a specific device a user intends to interact with when there are multiple devices nearby.
+                      <span className="font-medium">Directional proximity management</span><span className="text-muted-foreground"> — Identify a specific device a user intends to interact with when there are multiple devices nearby.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -731,7 +730,7 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">API Layer to make system reproducible</span> — An API could allow third-party developers to integrate QPG authentication into other systems for broader adoption.
+                      <span className="font-medium">API Layer to make system reproducible</span><span className="text-muted-foreground"> — An API could allow third-party developers to integrate QPG authentication into other systems for broader adoption.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -747,10 +746,10 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Voice recognition/authentication</span> — Potential privacy concerns and complexity with regards to voice recognition may make it infeasible.
+                      <span className="font-medium">Voice recognition/authentication</span><span className="text-muted-foreground"> — Potential privacy concerns and complexity with regards to voice recognition may make it infeasible.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Mobile application to remotely login and select device</span> — Authentication will be handled directly via IoT devices and not through a dedicated mobile app.
+                      <span className="font-medium">Mobile application to remotely login and select device</span><span className="text-muted-foreground"> — Authentication will be handled directly via IoT devices and not through a dedicated mobile app.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -770,19 +769,19 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Performance</span> — The system must operate with low latency to ensure seamless authentication.
+                      <span className="font-medium">Performance</span><span className="text-muted-foreground"> — The system must operate with low latency to ensure seamless authentication.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Reliability</span> — QPG should maintain high uptime and recover quickly from failures.
+                      <span className="font-medium">Reliability</span><span className="text-muted-foreground"> — QPG should maintain high uptime and recover quickly from failures.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Security</span> — All user data must be encrypted with post-quantum cryptography.
+                      <span className="font-medium">Security</span><span className="text-muted-foreground"> — All user data must be encrypted with post-quantum cryptography.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Scalability</span> — The system must support multiple users and devices within a growing IoT ecosystem.
+                      <span className="font-medium">Scalability</span><span className="text-muted-foreground"> — The system must support multiple users and devices within a growing IoT ecosystem.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Compatibility</span> — QPG must integrate with common operating systems and IoT hardware, including Raspberry Pi and ESP32.
+                      <span className="font-medium">Compatibility</span><span className="text-muted-foreground"> — QPG must integrate with common operating systems and IoT hardware, including Raspberry Pi and ESP32.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -798,16 +797,16 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Usability</span> — The interface should be intuitive, ensuring accessibility for all users.
+                      <span className="font-medium">Usability</span><span className="text-muted-foreground"> — The interface should be intuitive, ensuring accessibility for all users.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Privacy Control</span> — Users must have control over data storage, sharing, and deletion.
+                      <span className="font-medium">Privacy Control</span><span className="text-muted-foreground"> — Users must have control over data storage, sharing, and deletion.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Extensibility</span> — The architecture should allow for future integrations, such as additional authentication methods.
+                      <span className="font-medium">Extensibility</span><span className="text-muted-foreground"> — The architecture should allow for future integrations, such as additional authentication methods.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Documentation</span> — Comprehensive technical and user documentation should be provided for ease of implementation and troubleshooting.
+                      <span className="font-medium">Documentation</span><span className="text-muted-foreground"> — Comprehensive technical and user documentation should be provided for ease of implementation and troubleshooting.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -823,10 +822,10 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Multi-Language Support</span> — The system could support multiple languages to enhance global accessibility.
+                      <span className="font-medium">Multi-Language Support</span><span className="text-muted-foreground"> — The system could support multiple languages to enhance global accessibility.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Feedback Mechanisms</span> — Users could provide feedback on authentication experiences for continuous improvement.
+                      <span className="font-medium">Feedback Mechanisms</span><span className="text-muted-foreground"> — Users could provide feedback on authentication experiences for continuous improvement.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -842,7 +841,7 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Open Source</span> — The project will remain proprietary due to security and commercial considerations.
+                      <span className="font-medium">Open Source</span><span className="text-muted-foreground"> — The project will remain proprietary due to security and commercial considerations.</span>
                     </li>
                   </ul>
                 </AccordionContent>
