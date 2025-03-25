@@ -4,6 +4,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -254,7 +255,7 @@ export default function Evaluation() {
                   <Table>
                     <TableHeader>
                       <TableRow className="text-lg">
-                        <TableHead>Work Packages</TableHead>
+                        <TableHead>Work Package</TableHead>
                         <TableHead className="w-[20%]">Marwan</TableHead>
                         <TableHead className="w-[20%]">Raghav</TableHead>
                         <TableHead className="w-[20%]">Abdulhamid</TableHead>
@@ -431,7 +432,7 @@ export default function Evaluation() {
                   <Table>
                     <TableHeader>
                       <TableRow className="text-lg">
-                        <TableHead>Work Packages</TableHead>
+                        <TableHead>Work Package</TableHead>
                         <TableHead className="w-[20%]">Marwan</TableHead>
                         <TableHead className="w-[20%]">Raghav</TableHead>
                         <TableHead className="w-[20%]">Abdulhamid</TableHead>
@@ -650,7 +651,7 @@ export default function Evaluation() {
             </Accordion>
             <h1 className="text-2xl font-medium my-6">Combined Overall</h1>
             <p className="text-lg my-6">
-              Note that some sections are not weighted equally, therefore the values below many not exactly match the raw data given in the tables above.
+              It should be noted that some sections are not weighted equally, therefore the values below many not exactly align with the raw data given in the tables above.
             </p>
             <Card>
               <CardContent className="p-6">
@@ -666,16 +667,16 @@ export default function Evaluation() {
                   <TableBody>
                     <TableRow>
                     <TableCell className="text-lg">
-                      XX<span className="text-muted-foreground">%</span>
+                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      XX<span className="text-muted-foreground">%</span>
+                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      XX<span className="text-muted-foreground">%</span>
+                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      XX<span className="text-muted-foreground">%</span>
+                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     </TableRow>
                   </TableBody>
@@ -685,9 +686,111 @@ export default function Evaluation() {
           </div>
           <div id="critical-evaluation">
             <h1 className="text-4xl font-bold my-6">Critical Evaluation</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              Whilst great effort has been put into this project by all members, this project is not without fault. In the section below, we will evaluate which areas were completed to a high standard, and which areas could be improved upon given more time.
             </p>
+            <Tabs defaultValue="ui-ux">
+              <TabsList className="grid w-full grid-cols-7">
+                <TabsTrigger value="ui-ux">UI/UX</TabsTrigger>
+                <TabsTrigger value="functionality">Functionality</TabsTrigger>
+                <TabsTrigger value="stability">Stability</TabsTrigger>
+                <TabsTrigger value="efficiency">Efficiency</TabsTrigger>
+                <TabsTrigger value="compatibility">Compatibility</TabsTrigger>
+                <TabsTrigger value="maintainability">Maintainability</TabsTrigger>
+                <TabsTrigger value="project-management" className="text-xs">Project Management</TabsTrigger>
+              </TabsList>
+              <TabsContent value="ui-ux">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">User Interface / User Experience</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="functionality">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Functionality</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="stability">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Stability</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="efficiency">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Efficiency</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="compatibility">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Compatibility</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="maintainability">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Maintainability</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="project-management">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Project Management</CardTitle>
+                    <Separator />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
           <div id="future">
             <h1 className="text-4xl font-bold my-6">Future</h1>
