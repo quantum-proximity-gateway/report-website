@@ -8,6 +8,10 @@ import 'prismjs/components/prism-python';
 import 'prismjs/themes/prism-okaidia.css';
 import { useEffect } from 'react';
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+
 
 export default function Testing() {
 
@@ -167,7 +171,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistent design throughout multiple platforms and devices. We've implemented responsive layouts that automatically adjust to different screen sizes, from large desktop monitors to mobile devices. This approach ensures that both of our applications remain usable and visually coherent regardless of the device being used.
             </p>
             <p className="text-lg my-6">
-              During development, we regularly tested our interfaces across various viewport sizes using Dev Tools like ResponsivelyApp and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
+              During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
             <div className="flex flex-col items-center my-6">
               <Image
@@ -206,19 +210,32 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               Our test groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This allowed us to gain a wide range of perspectives on the usability of our project.
             </p>
-            <Carousel className="my-6">
-              <CarouselContent>
-                <CarouselItem key={1}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <Image src="/requirements/persona-1.png" alt="Persona 1" width={1636} height={1169} className="object-contain" />
-                      </CardContent>
-                    </Card>
+            <div className="flex justify-center">
+              <Carousel className="my-6">
+                <CarouselContent>
+                  <CarouselItem key={1}>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-6">
+                          <Image src="/testing/user_testing_1.jpg" alt="User Testing 1" width={1636} height={1169} className="object-contain" />
+                        </CardContent>
+                      </Card>
+                      </div>
+                  </CarouselItem>
+                  <CarouselItem key={2}>
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-6">
+                          <Image src="/testing/enfield.jpg" alt="User Testing 2" width={1636} height={1169} className="object-contain" />
+                        </CardContent>
+                      </Card>
                     </div>
-                </CarouselItem>
-              </CarouselContent>
-            </Carousel>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
 
             <h1 className="text-2xl font-bold my-6">User Testing Methodology</h1>
             <p className="text-lg my-6">
