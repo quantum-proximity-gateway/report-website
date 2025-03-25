@@ -34,7 +34,7 @@ export default function SystemDesign() {
         <div className="max-w-4xl">
           <div id="system-architecture">
             <h1 className="text-4xl font-bold my-6">System Architecture</h1>
-            <h1 className="text-2xl font-medium  my-6">High-Level System Architecture</h1>
+            <h1 className="text-2xl font-medium my-6">High-Level System Architecture</h1>
             <p className="text-lg mb-4">
               Our project consists of a centralised system architecture which allows us to leverage 
               Bluetooth Low Energy capable devices across multiple workstations. The main components 
@@ -60,7 +60,7 @@ export default function SystemDesign() {
             <p className="text-lg mb-4">
               All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
             </p>
-            <h1 className="text-2xl font-medium  my-6">IBM Cloud System Architecture</h1>
+            <h1 className="text-2xl font-medium my-6">IBM Cloud System Architecture</h1>
             <p className="text-lg mb-4">
               Both our registration website and API are hosted utilising cloud services, this is the first step to getting a QPG system setup. For our server, we are making use of serverless computing utilising IBM's Cloud Code Engine, which allows us to deploy a flexible and scalable server. This helps us ensure the costs of such a system are reasonable and that the services are accessible at all times. IBM Cloud Code Engine automatically scales the number of instances of the server that we have running just by the number of requests that we are getting, so if there are no requests incoming no instances of the server will be initiated and vice-versa.
             </p>

@@ -1,6 +1,8 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -32,9 +34,211 @@ export default function Evaluation() {
         <div className="max-w-4xl">
           <div id="achievments">
             <h1 className="text-4xl font-bold my-6">Achievements</h1>
+            <h1 className="text-2xl font-medium my-6">Functional Requirements</h1>
             <p className="text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            <Table className="my-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead>ID</TableHead>
+                  <TableHead>MoSCoW</TableHead>
+                  <TableHead>Requirement</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Contributors</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    1
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Must
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">BLE proximity connection to Raspberry Pi</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ✅
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    2
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Must
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Facial recognition via Raspberry Pi (using camera module)</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ✅
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    3
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Must
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Accessibility settings fetching</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ✅
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    4
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Must
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Server to host user profiles</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ✅
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    5
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Must
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Post-quantum cryptography encryption</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ✅
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    6
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Must
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">AI chatbot assistant</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ✅
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    7
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Should
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Website to register device and configure initial settings</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ⚠️
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    8
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Should
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">Directional proximity management</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ❌
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    9
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Could
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">API Layer to make system reproducible</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ⚠️?
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    ...
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <Card>
+              <CardContent className="flex-grow p-6">
+                <ul className="text-lg list-disc pl-6 space-y-1">
+                  <li><span className="font-medium">100%</span> of our "must have" requirements were complete.</li>
+                  <li><span className="font-medium">XX%</span> of our "should have" requirements were complete.</li>
+                  <li><span className="font-medium">XX%</span> of our "could have" requirements were complete.</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <h1 className="text-2xl font-medium my-6">Known Bugs</h1>
+            <p className="text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <Table className="mt-6">
+              <TableHeader>
+                <TableRow className="text-lg">
+                  <TableHead>ID</TableHead>
+                  <TableHead>Description</TableHead>
+                  <TableHead>Severity</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    1
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium">...</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    🟢🟡🔴
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
           <div id="individual-contribution">
             <h1 className="text-4xl font-bold my-6">Individual Contribution</h1>
@@ -50,6 +254,9 @@ export default function Evaluation() {
           </div>
           <div id="future">
             <h1 className="text-4xl font-bold my-6">Future</h1>
+            <p className="text-lg">
+              How could the project be extended if you had more time
+            </p>
             <p className="text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
