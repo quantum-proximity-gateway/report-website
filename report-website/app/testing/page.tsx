@@ -82,16 +82,52 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
           </div>
           <div id="compatibility-testing">
             <h1 className="text-4xl font-bold my-6">Compatibility Testing</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h1 className="text-2xl font-medium my-6">IBM Proximity Agents</h1>
+            <p className="text-lg mb-4">
+              Our IBM Proximity Agents application was tested across multiple operating systems to ensure broad compatibility, although due to the limitations and restrictions of some operating systems, some features are not fully avaliable. However, the core functionality of the proximity-based agent is retained on all operating systems.
+            </p>
+            <p className="text-lg mb-4">
+              The high rate of compatibility was enabled by Tauri, which allowed us to easily create native applications on all platforms leveraging one single codebase.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
+                <thead>
+                  <tr className="bg-gray-100 dark:bg-gray-700 text-left">
+                    <th className="py-3 px-4 font-semibold border-b">Operating System</th>
+                    <th className="py-3 px-4 font-semibold border-b">Compatibility</th>
+                    <th className="py-3 px-4 font-semibold border-b">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">MacOS</td>
+                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
+                    <td className="py-3 px-4">Accessibility commands not available</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">Linux</td>
+                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
+                    <td className="py-3 px-4">Full functionality utilising gsettings</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">Windows</td>
+                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
+                    <td className="py-3 px-4">Accessibility commands not available</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p className="text-sm text-gray-500 mt-2">
+              Table 1: Operating System Compatibility for IBM Proximity Agents
             </p>
           </div>
           <div id="responsive-design-testing">
             <h1 className="text-4xl font-bold my-6">Responsive Design Testing</h1>
             <p className="text-lg my-6">
-              As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistant design throughout multiple platforms and devices.
+              As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistant design throughout multiple platforms and devices. MORE TEXT NEEDED
             </p>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center my-6">
               <Image
                 src="/testing/responsive.png" 
                 alt="Responsiveness Test" 
