@@ -70,78 +70,63 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
             </p>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <h1 className="text-2xl font-medium">IBM Cloud Server</h1>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-lg mb-6">
-                    Both our registration website and API are hosted utilising cloud services, this is the first step to getting a QPG system setup. For our server, we are making use of serverless computing utilising IBM's Cloud Code Engine, which allows us to deploy a flexible and scalable server. This helps us ensure the costs of such a system are reasonable and that the services are accessible at all times. IBM Cloud Code Engine automatically scales the number of instances of the server that we have running just by the number of requests that we are getting, so if there are no requests incoming no instances of the server will be initiated and vice-versa.
-                  </p>
-                  <div className="flex flex-col items-center my-6">
-                    <Image 
-                      src="/system-design/codeengine-architecture.svg" 
-                      alt="IBM Cloud Engine Architecture" 
-                      width={800} 
-                      height={800}
-                      className="max-w-full object-contain bg-white"
-                      style={{borderRadius:'10px'}}
-                    />
-                    <p className="text-center mt-3 text-sm text-gray-500">Figure 2: IBM Code Engine Architecture Diagram</p>
-                    <p className="text-center text-sm text-gray-500">https://cloud.ibm.com/docs/codeengine?topic=codeengine-architecture</p>
-                  </div>
-                  <p className="text-lg my-6">
-                    By containerizing our Litestar server onto a Docker container, we ensured that our deployment options were flexible too, allowing us to easily update the server or switch to other cloud providers in the future if needed. Our container includes a persistent SQLite database alongside the main code for the endpoints and image processing for the facial recognition encodings.
-                  </p>
-                  <p className="text-lg my-6">
-                    This container serves as the central backend for all our services, all other components such as the ESP32, Raspberry Pi and Proximity Agents interact with this core, at least once in their lifetime. The ESP32 shares a TOTP secret key with this server, the Raspberry Pi fetches all registered ESP32s from the server and the Proximity Agents continuously fetch and update user profiles.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <h1 className="text-2xl font-medium">ESP32/Registration Site</h1>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-lg mb-6">
-                    Our registration site is a simple frontend written utilising Next.js and the Chakra UI component library that communicates with our main backend on IBM Cloud. It registers a user's ESP32 onto the database and records a 5 second video of the user to send to the server for encodings processing.
-                  </p>
-                  <p className="text-lg my-6">
-                    The ESP32 communicates with the Registration Site via an API called Web Serial. This allows us to use the user's browser to read the MAC Address of the ESP32 and share the secret key with the server, without having the ESP32 needing to be connected directly to the server. However, the downside of this comes from the fact that this API is only supported on Chromium-based browsers currently.
-                  </p>
-                  <p className="text-lg my-6"> 
-                    On the other hand, the ESP32 interacts with it's Bluetooth Stack to advertise itself as an available device. It initializes itself as a BLE peripheral and broadcasts a specific service UUID that client devices can discover. When a connection is established, it serves a characteristic that provides the TOTP token, which is being constantly regenerated in intervals of 30 seconds. This TOTP is read by the Raspberry Pi to verify the user's identity.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <h1 className="text-2xl font-medium">Raspberry Pi</h1>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-lg mb-6"> 
-                    The Raspberry Pi acts as the key component for each and every QPG enabled device, it processed incoming BLE signals, sorts signal strength, filters MAC Addresses and performs facial recognition on incoming users. This is all done utilising Python and many different components that we have specifically built in-house to authenticate users securely.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <h1 className="text-2xl font-medium">Proximity Agents</h1>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-lg mb-6"> 
-                    We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri, which is a rust-based desktop application framework. This application runs on the host pc, and consists of a TypeScript based front-end alongside a Rust backend which is invoked by the frontend. The Rust backend allows us to do local LLM inferencing utilising ollama, communicate with the core server to update and fetch preferences, whilst the Next.js frontend displays the chatbot and the preferences according to the users actions.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <div className="space-y-12 my-6">
+              {/* IBM Cloud Server Section */}
+              <div className="system-component">
+                <h2 className="text-2xl font-medium mb-4">IBM Cloud Server</h2>
+                <p className="text-lg mb-6">
+                  Both our registration website and API are hosted utilising cloud services, this is the first step to getting a QPG system setup. For our server, we are making use of serverless computing utilising IBM's Cloud Code Engine, which allows us to deploy a flexible and scalable server. This helps us ensure the costs of such a system are reasonable and that the services are accessible at all times. IBM Cloud Code Engine automatically scales the number of instances of the server that we have running just by the number of requests that we are getting, so if there are no requests incoming no instances of the server will be initiated and vice-versa.
+                </p>
+                <div className="flex flex-col items-center my-6">
+                  <Image 
+                    src="/system-design/codeengine-architecture.svg" 
+                    alt="IBM Cloud Engine Architecture" 
+                    width={800} 
+                    height={800}
+                    className="max-w-full object-contain bg-white"
+                    style={{borderRadius:'10px'}}
+                  />
+                  <p className="text-center mt-3 text-sm text-gray-500">Figure 2: IBM Code Engine Architecture Diagram</p>
+                  <p className="text-center text-sm text-gray-500">https://cloud.ibm.com/docs/codeengine?topic=codeengine-architecture</p>
+                </div>
+                <p className="text-lg my-6">
+                  By containerizing our Litestar server onto a Docker container, we ensured that our deployment options were flexible too, allowing us to easily update the server or switch to other cloud providers in the future if needed. Our container includes a persistent SQLite database alongside the main code for the endpoints and image processing for the facial recognition encodings.
+                </p>
+                <p className="text-lg my-6">
+                  This container serves as the central backend for all our services, all other components such as the ESP32, Raspberry Pi and Proximity Agents interact with this core, at least once in their lifetime. The ESP32 shares a TOTP secret key with this server, the Raspberry Pi fetches all registered ESP32s from the server and the Proximity Agents continuously fetch and update user profiles.
+                </p>
+              </div>
+
+              {/* ESP32/Registration Site Section */}
+              <div className="system-component">
+                <h2 className="text-2xl font-medium mb-4">ESP32/Registration Site</h2>
+                <p className="text-lg mb-6">
+                  Our registration site is a simple frontend written utilising Next.js and the Chakra UI component library that communicates with our main backend on IBM Cloud. It registers a user's ESP32 onto the database and records a 5 second video of the user to send to the server for encodings processing.
+                </p>
+                <p className="text-lg my-6">
+                  The ESP32 communicates with the Registration Site via an API called Web Serial. This allows us to use the user's browser to read the MAC Address of the ESP32 and share the secret key with the server, without having the ESP32 needing to be connected directly to the server. However, the downside of this comes from the fact that this API is only supported on Chromium-based browsers currently.
+                </p>
+                <p className="text-lg my-6"> 
+                  On the other hand, the ESP32 interacts with it's Bluetooth Stack to advertise itself as an available device. It initializes itself as a BLE peripheral and broadcasts a specific service UUID that client devices can discover. When a connection is established, it serves a characteristic that provides the TOTP token, which is being constantly regenerated in intervals of 30 seconds. This TOTP is read by the Raspberry Pi to verify the user's identity.
+                </p>
+              </div>
+
+              {/* Raspberry Pi Section */}
+              <div className="system-component">
+                <h2 className="text-2xl font-medium mb-4">Raspberry Pi</h2>
+                <p className="text-lg mb-6"> 
+                  The Raspberry Pi acts as the key component for each and every QPG enabled device, it processed incoming BLE signals, sorts signal strength, filters MAC Addresses and performs facial recognition on incoming users. This is all done utilising Python and many different components that we have specifically built in-house to authenticate users securely.
+                </p>
+              </div>
+
+              {/* Proximity Agents Section */}
+              <div className="system-component">
+                <h2 className="text-2xl font-medium mb-4">Proximity Agents</h2>
+                <p className="text-lg mb-6"> 
+                  We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri, which is a rust-based desktop application framework. This application runs on the host pc, and consists of a TypeScript based front-end alongside a Rust backend which is invoked by the frontend. The Rust backend allows us to do local LLM inferencing utilising ollama, communicate with the core server to update and fetch preferences, whilst the Next.js frontend displays the chatbot and the preferences according to the users actions.
+                </p>
+              </div>
+            </div>
           </div>
           <div id="sequence-diagrams">
             <h1 className="text-4xl font-bold my-6">Sequence Diagrams</h1>
