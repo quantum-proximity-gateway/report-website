@@ -213,7 +213,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     ⚠️ Lacking functionality
                   </TableCell>
                   <TableCell className="text-lg">
-                    Communication using Web Serial API not natively supported. Extensions are avaliable to fix this.
+                    Communication using Web Serial API not natively supported. Extensions are available to fix this.
                   </TableCell>
                 </TableRow>
               </TableBody>
