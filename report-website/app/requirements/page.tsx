@@ -54,7 +54,7 @@ export default function Requirements() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees waste an average of about 30 minutes per day logging into various systems, setting up profiles and ensuring access permissions are correctly assigned, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent users, who may require a more automated, handsfree authentication process. 
+                    Traditional authentication methods, such as password-based logins and manual profile configurations, are slow, inefficient, and prone to security vulnerabilities. Our research has shown that employees <span className="font-medium">waste an average of ~30 minutes per day</span> logging into various systems, setting up profiles and ensuring access permissions are correctly assigned, which translates into hundreds of hours per year in lost productivity. More specifically, however, current authentication methods drastically fail to include all members of society, creating additional barriers for disabled, elderly and neurodivergent users, who may require a more automated, handsfree authentication process. 
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -68,7 +68,7 @@ export default function Requirements() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-lg">
-                    The QPG is designed for all users, from corporate employees in large enterprises to students, faculty members, and individuals who frequently switch between devices, offering seamless, context-aware authentication to enhance security and convenience. By integrating IBM's Granite 3.2 AI model and post-quantum cryptography, the system ensures effortless, adaptive authentication in various work environments. Notably, QPG revolutionizes accessibility for neurodivergent, elderly, and quadriplegic users by eliminating traditional passwords and reducing cognitive load. Neurodivergent users benefit from automatic loading of personalized settings and intuitive, frictionless access, while elderly users enjoy simplified authentication that removes the need for memorization or fine motor skills. Quadriplegic users authenticate effortlessly through multimodal inputs such as facial recognition and proximity detection, breaking down barriers to device interaction and ensuring security without added complexity.
+                    <span className="font-medium">All users</span>, from corporate employees, to students and faculty members, to individuals who frequently switch between devices, may benefit from our project which offers seamless authentication to enhance convenience. Our project also revolutionises accessibility for many users who are often forgotten about by eliminating difficulties and reducing cognitive load. <span className="font-medium">Neurodivergent users</span> benefit from automatic loading of personalized settings and intuitive, frictionless access, while <span className="font-medium">elderly users</span> enjoy simplified authentication that removes the need for memorisation or fine motor skills. Furthermore, <span className="font-medium">Quadriplegic users</span> are able to authenticate effortlessly through multimodal inputs such as facial recognition and proximity detection, breaking down barriers to device interaction whilst still ensuring security.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -88,7 +88,7 @@ export default function Requirements() {
                         <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
                           <li>Eliminate manual logins by using BLE proximity sensing and real-time facial recognition via Raspberry Pi.</li>
                           <li>Provide customised experiences by dynamically loading user profiles and accessibility settings.</li>
-                          <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.2 AI Model.</li>
+                          <li>Enable easy settings configuration via an AI agent, implemented using Granite 3.2.</li>
                         </ul>
                       </CardContent>
                     </Card>
@@ -139,7 +139,6 @@ export default function Requirements() {
               </Carousel>
             </div>
           </div>
-          {/* TODO: Add interviews/proof of survey */}
           <div id="requirements-gathering">
             <h1 className="text-4xl font-bold my-6">Requirements Gathering</h1>
             <p className="text-lg my-6">
@@ -158,10 +157,10 @@ export default function Requirements() {
                   </CardHeader>
                   <CardContent>
                     <ul className="text-lg list-disc pl-6 space-y-1">
-                      <li>We conducted structured surveys via questionnaires to assess the challenges with traditional authentication.</li>
-                      <li>All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</li>
-                      <li>We used a combination of open and closed questions, allowing us to gather both detailed, qualitative insights from open-ended questions while also getting quantifiable data and clear structure from closed-ended questions.</li>
+                      <li>We conducted structured surveys via questionnaires<span className="text-muted-foreground">*</span> to assess the challenges with traditional authentication.</li>
+                      <li>Open and closed-ended questions were used, allowing us to gather both detailed, qualitative insights from open-ended questions while also getting quantifiable data and clear structure from closed-ended questions.</li>
                     </ul>
+                    <p className="text-sm text-muted-foreground mt-6">* All participants were asked to sign a research participation consent form, which outlined the details of the survey to participants and allowed them to make an informed decision on whether to participate.</p>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -193,8 +192,8 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
-                      <span className="font-medium">67% of respondents</span> stated that they had trouble with hot-desking, and found manual logins <span className="font-medium">inconvenient and time-consuming</span>.
+                    <p className="text-lg mb-3">
+                      <span className="font-medium">67% of respondents</span> <span className="text-muted-foreground">stated that they had trouble with hot-desking, and found manual logins</span> <span className="font-medium">inconvenient and time-consuming</span><span className="text-muted-foreground">.</span>
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -207,8 +206,8 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
-                      <span className="font-medium">100% of respondents</span> affirmed that having a mechanism to automatically load up your profile and settings would be helpful.
+                    <p className="text-lg mb-3">
+                      <span className="font-medium">100% of respondents</span> <span className="text-muted-foreground">affirmed that having a mechanism to automatically load up your profile and settings would be</span> <span className="font-medium">helpful</span><span className="text-muted-foreground">.</span>
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -221,8 +220,8 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
-                      Participants responded with the general sentiment that it would <span className="font-medium">save time</span> by eliminating the need to log in and configure settings manually, making the process <span className="font-medium">smoother and faster</span>, especially when switching between devices.
+                    <p className="text-lg mb-3">
+                      <span className="text-muted-foreground">Participants responded with the general sentiment that it would</span> <span className="font-medium">save time</span> <span className="text-muted-foreground">by eliminating the need to log in and configure settings manually, making the process</span> <span className="font-medium">smoother and faster</span><span className="text-muted-foreground">, especially when switching between devices.</span>
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -235,8 +234,8 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
-                      People generally thought that the idea was quite innovative. For example, one of the responses was “[the mechanism] <span className="font-medium">sounds very futuristic</span>, it would help people with accessibility challenges all around the world access essential services on their devices”.
+                    <p className="text-lg mb-3">
+                      <span className="text-muted-foreground">People generally thought that the idea was quite innovative. For example, one of the responses was “[the mechanism]</span> <span className="font-medium">sounds very futuristic</span><span className="text-muted-foreground">, it would help people with accessibility challenges all around the world access essential services on their devices”.</span>
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -249,8 +248,8 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
-                      Many potential ideas were given such as “I would like some sort of password-protected service” and “Use a two-factor authentication (2FA)”. These indicate a <span className="font-medium">general concern about privacy</span>. Some other ideas about utilising chatbots were suggested, saying for example that “An assistant helping me to change my preferences would be a great feature”.
+                    <p className="text-lg mb-3">
+                      <span className="text-muted-foreground">Many potential ideas were given such as “I would like some sort of password-protected service” and “Use a two-factor authentication (2FA)”. These indicate a</span> <span className="font-medium">general concern about privacy</span><span className="text-muted-foreground">. Some other ideas about utilising</span> <span className="font-medium">chatbots</span> <span className="text-muted-foreground">were suggested, saying for example that “An assistant helping me to change my preferences would be a great feature”.</span>
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -263,24 +262,24 @@ export default function Requirements() {
                     </p>  
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-lg">
-                      All responses were affirmative, generally stating that they have their phone on them at all times.
+                    <p className="text-lg mb-3">
+                      <span className="text-muted-foreground">All responses were affirmative, generally stating that they have their phone</span> <span className="font-medium">on them at all times</span><span className="text-muted-foreground">.</span>
                     </p>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
             <p className="mt-6 text-lg">
-              The data we collected sufficiently justified the need for BLE proximity technology & facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance & settings adjustments. The survey also encouraged us to use post-quantum encryption to enhance security.
+              The data we collected sufficiently justified the need for BLE proximity technology and facial recognition integration for auto-profile loading, as well as the implementation of an AI chatbot feature added for guidance and settings adjustments. The survey also reinforced the idea to use post-quantum encryption to enhance security.
             </p>
             <h1 className="text-2xl font-bold my-6">Evaluation of Survey Methods</h1>
             <p className="text-lg">
-              The survey conducted to gather user requirements was structured to identify pain points, user expectations, and feature priorities. In the future, we could refine the survey methodology further and incorporate more neutral phrasing to reduce bias and improve the survey's accuracy, allowing us to better gauge the system’s real-world effectiveness.
+              The survey conducted to gather user requirements was structured to identify pain points, user expectations, and feature priorities. In the future, we could refine the survey methodology further and incorporate more neutral phrasing to reduce bias and improve the survey's accuracy, allowing us to better gauge the system's real-world effectiveness.
             </p>
             <Table className="mt-6">
               <TableHeader>
                 <TableRow className="text-lg">
-                  <TableHead>✅ Strengths</TableHead>
+                  <TableHead className="w-[50%]">✅ Strengths</TableHead>
                   <TableHead>⚠️ Limitations</TableHead>
                 </TableRow>
               </TableHeader>
@@ -292,7 +291,7 @@ export default function Requirements() {
                   </TableCell>
                   <TableCell className="text-lg">
                     <span className="font-medium">Limited Sample Size</span>
-                    <p className="text-muted-foreground">The survey was conducted with a relatively small group of users, which may not be fully representative of all potential users. A larger dataset would improve the reliability of conclusions.</p>
+                    <p className="text-muted-foreground">The survey was conducted with a relatively small group of users, which may not be fully representative of all users. A larger dataset would be more reliable.</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -302,17 +301,17 @@ export default function Requirements() {
                   </TableCell>
                   <TableCell className="text-lg">
                     <span className="font-medium">Potential Response Bias</span>
-                    <p className="text-muted-foreground">Respondents may have given answers that they thought were socially desirable or aligned with the project’s goals rather than their actual preferences. For example, some users might have expressed support for facial recognition authentication without fully considering the privacy implications.</p>
+                    <p className="text-muted-foreground">Respondents may have given answers that they thought were desirable rather than their actual preferences. For example, some users might have shown support for facial recognition authentication without fully considering the privacy implications.</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
                     <span className="font-medium">Balanced Question Design</span>  
-                    <p className="text-muted-foreground">The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses specifically provided valuable user-driven feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
+                    <p className="text-muted-foreground">The mix of multiple-choice, closed-ended and open-ended questions allowed for both statistical analysis and deeper qualitative insights. Open-ended responses provided valuable feature suggestions, such as 2-factor authentication and an AI chatbot for editing accessibility settings.</p>
                   </TableCell>
                   <TableCell className="text-lg">
                     <span className="font-medium">Lack of Longitudinal Data</span>  
-                    <p className="text-muted-foreground">The survey only captured a single point in time and did not account for changing user preferences over time. A user’s opinion on the access control mechanisms might evolve as they gain experience with new authentication technologies or encounter real-world security breaches.</p>
+                    <p className="text-muted-foreground">The survey only captured a single point in time and did not account for changing user preferences over time. A user's opinion might evolve as they gain experience with new technologies or encounter real-world security breaches.</p>
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -367,14 +366,14 @@ export default function Requirements() {
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">The surveys highlighted a significant frustration with manual logins, particularly in hot-desking offices, educational institutions, and accessibility-focused use cases. Users consistently expressed a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</p>
+                <p className="text-muted-foreground text-lg">The surveys highlighted a need for instant, hands-free authentication without having to enter passwords repeatedly. This reinforced the necessity of Bluetooth Low Energy (BLE) proximity detection combined with real-time facial recognition to provide frictionless access to computers and shared devices.</p>
               </CardContent>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Applicability in diverse scenarios</CardTitle>
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences, and as such, facial recognition must be combined with the proximity mechanism to ensure complete functionality and multi-factor authentication.</p>
+                <p className="text-muted-foreground text-lg">Our survey results revealed a variety of use cases for the QPG authentication system, ranging from increasing productivity and reducing time wasted accessing devices in the office, to enhancing accessibility for users with disabilities. This diversity emphasises the importance of creating a versatile solution that adapts to a wide range of user needs and preferences.</p>
               </CardContent>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Benefits of AI chatbot</CardTitle>
@@ -669,7 +668,7 @@ export default function Requirements() {
             <h1 className="text-4xl font-bold my-6">MoSCoW Requirements List</h1>
             <h1 className="text-2xl font-bold my-6">Functional Requirements</h1>
             <p className="text-lg">
-              This list defines the core features and functionalities essential for the development of the QPG. With a strong focus on seamless authentication, secure accessibility, and adaptive user control, the QPG leverages BLE proximity detection, facial recognition, post-quantum encryption and AI-driven profile management to provide a frictionless login experience. While the primary focus remains on robust security and usability, the system also considers potential enhancements such as multi-device synchronisation, advanced directional proximity detection via signal strength, and intelligent device-switching capabilities. This structured requirement framework ensures that essential features are prioritised while leaving room for future scalability and innovation.
+              This list defines the core features and functionalities essential for the development of the QPG. With a strong focus on seamless authentication, secure accessibility, and adaptive user control, the QPG leverages BLE proximity detection, facial recognition, post-quantum encryption and AI-driven profile management to provide a frictionless login experience. While the primary focus remains on robust security and usability, the system also considers potential enhancements such as advanced directional proximity detection, and intelligent device-switching capabilities.
             </p>
             <Accordion type="single" collapsible className="my-2">
               <AccordionItem value="item-1">
@@ -681,22 +680,22 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">BLE proximity connection to Raspberry Pi</span> — Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32).
+                      <span className="font-medium">BLE proximity connection to Raspberry Pi</span><span className="text-muted-foreground"> — Integration with BLE connected to Raspberry Pi for detecting user proximity to a specific device (ESP32).</span>
                     </li>
                     <li>
-                      <span className="font-medium">Facial recognition via Raspberry Pi (using camera module)</span> — Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices. Ensure accuracy in low light conditions and secure handling of biometric data.
+                      <span className="font-medium">Facial recognition via Raspberry Pi (using camera module)</span><span className="text-muted-foreground"> — Use of Raspberry Pi for real-time facial recognition, to authenticate users and link their profiles to devices. Ensure accuracy in low light conditions and secure handling of biometric data.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Accessibility settings fetching</span> — Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support, etc.
+                      <span className="font-medium">Accessibility settings fetching</span><span className="text-muted-foreground"> — Automatically fetch user-specific accessibility settings when the user connects to a device e.g text size, contrast, voice support, etc.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Server to host user profiles</span> — Use of a server to user profiles, and manage backend operations.
+                      <span className="font-medium">Server to host user profiles</span><span className="text-muted-foreground"> — Use of a server to user profiles, and manage backend operations.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Post-quantum cryptography encryption</span> — All data transmitted between devices should be encrypted using a PQC algorithm to secure user data.
+                      <span className="font-medium">Post-quantum cryptography encryption</span><span className="text-muted-foreground"> — All data transmitted between devices should be encrypted using a PQC algorithm to secure user data.</span>
                     </li>
                     <li>
-                      <span className="font-medium">AI chatbot assistant</span> — Use chatbot (powered by IBM's Granite 3.2 AI model) to help with troubleshooting/guidance and for easy settings configurations.
+                      <span className="font-medium">AI chatbot assistant</span><span className="text-muted-foreground"> — Use chatbot (powered by IBM's Granite 3.2 AI model) to help with troubleshooting/guidance and for easy settings configurations.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -712,10 +711,10 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Website to register device and configure initial settings</span> — Register new user profiles on the website (facial recognition setup, preferences, etc.), and save to the server. Use secure 2 factor authentication login. Have a responsive design making it suitable for either computer or tablet use.
+                      <span className="font-medium">Website to register device and configure initial settings</span><span className="text-muted-foreground"> — Register new user profiles on the website (facial recognition setup, preferences, etc.), and save to the server. Use secure 2 factor authentication login. Have a responsive design making it suitable for either computer or tablet use.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Directional proximity management</span> — Identify a specific device a user intends to interact with when there are multiple devices nearby.
+                      <span className="font-medium">Directional proximity management</span><span className="text-muted-foreground"> — Identify a specific device a user intends to interact with when there are multiple devices nearby.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -731,7 +730,7 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">API Layer to make system reproducible</span> — An API could allow third-party developers to integrate QPG authentication into other systems for broader adoption.
+                      <span className="font-medium">API Layer to make system reproducible</span><span className="text-muted-foreground"> — An API could allow third-party developers to integrate QPG authentication into other systems for broader adoption.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -747,10 +746,10 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Voice recognition/authentication</span> — Potential privacy concerns and complexity with regards to voice recognition may make it infeasible.
+                      <span className="font-medium">Voice recognition/authentication</span><span className="text-muted-foreground"> — Potential privacy concerns and complexity with regards to voice recognition may make it infeasible.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Mobile application to remotely login and select device</span> — Authentication will be handled directly via IoT devices and not through a dedicated mobile app.
+                      <span className="font-medium">Mobile application to remotely login and select device</span><span className="text-muted-foreground"> — Authentication will be handled directly via IoT devices and not through a dedicated mobile app.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -758,7 +757,7 @@ export default function Requirements() {
             </Accordion>
             <h1 className="text-2xl font-bold my-6">Non-Functional Requirements</h1>
             <p className="text-lg">
-              Non-functional requirements define the quality attributes, constraints, and operational characteristics of the QPG. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance and usability, ensuring that all users can have swift frictionless access to their devices regardless of their physical or technical abilities. We also anticipate that the QPG system will continue to be developed for use in large-scale environments and for easy integration with future IoT devices. Therefore, scalability is another large priority of ours, which is further highlighted in the list below.
+              Non-functional requirements define the quality attributes, constraints, and operational characteristics of the QPG. Our project is strongly focused on accessibility, designed to facilitate easier device access for neurodivergent and disabled users. As such, the non-functional requirements that we prioritised include reliability, performance, and usability, ensuring that all users can have easy access to their devices regardless of their physical or technical abilities.
             </p>
             <Accordion type="single" collapsible className="my-2">
               <AccordionItem value="item-1">
@@ -770,19 +769,19 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Performance</span> — The system must operate with low latency to ensure seamless authentication.
+                      <span className="font-medium">Performance</span><span className="text-muted-foreground"> — The system must operate with low latency to ensure seamless authentication.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Reliability</span> — QPG should maintain high uptime and recover quickly from failures.
+                      <span className="font-medium">Reliability</span><span className="text-muted-foreground"> — QPG should maintain high uptime and recover quickly from failures.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Security</span> — All user data must be encrypted with post-quantum cryptography.
+                      <span className="font-medium">Security</span><span className="text-muted-foreground"> — All user data must be encrypted with post-quantum cryptography.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Scalability</span> — The system must support multiple users and devices within a growing IoT ecosystem.
+                      <span className="font-medium">Scalability</span><span className="text-muted-foreground"> — The system must support multiple users and devices within a growing IoT ecosystem.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Compatibility</span> — QPG must integrate with common operating systems and IoT hardware, including Raspberry Pi and ESP32.
+                      <span className="font-medium">Compatibility</span><span className="text-muted-foreground"> — QPG must integrate with common operating systems and IoT hardware, including Raspberry Pi and ESP32.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -798,16 +797,16 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Usability</span> — The interface should be intuitive, ensuring accessibility for all users.
+                      <span className="font-medium">Usability</span><span className="text-muted-foreground"> — The interface should be intuitive, ensuring accessibility for all users.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Privacy Control</span> — Users must have control over data storage, sharing, and deletion.
+                      <span className="font-medium">Privacy Control</span><span className="text-muted-foreground"> — Users must have control over data storage, sharing, and deletion.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Extensibility</span> — The architecture should allow for future integrations, such as additional authentication methods.
+                      <span className="font-medium">Extensibility</span><span className="text-muted-foreground"> — The architecture should allow for future integrations, such as additional authentication methods.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Documentation</span> — Comprehensive technical and user documentation should be provided for ease of implementation and troubleshooting.
+                      <span className="font-medium">Documentation</span><span className="text-muted-foreground"> — Comprehensive technical and user documentation should be provided for ease of implementation and troubleshooting.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -823,10 +822,10 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Multi-Language Support</span> — The system could support multiple languages to enhance global accessibility.
+                      <span className="font-medium">Multi-Language Support</span><span className="text-muted-foreground"> — The system could support multiple languages to enhance global accessibility.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Feedback Mechanisms</span> — Users could provide feedback on authentication experiences for continuous improvement.
+                      <span className="font-medium">Feedback Mechanisms</span><span className="text-muted-foreground"> — Users could provide feedback on authentication experiences for continuous improvement.</span>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -842,7 +841,7 @@ export default function Requirements() {
                 <AccordionContent>
                   <ul className="text-lg list-disc pl-6 space-y-3">
                     <li>
-                      <span className="font-medium">Open Source</span> — The project will remain proprietary due to security and commercial considerations.
+                      <span className="font-medium">Open Source</span><span className="text-muted-foreground"> — The project will remain proprietary due to security and commercial considerations.</span>
                     </li>
                   </ul>
                 </AccordionContent>

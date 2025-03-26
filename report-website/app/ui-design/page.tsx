@@ -3,8 +3,9 @@ import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Metadata } from 'next';
 import Image from "next/image";
 
@@ -262,32 +263,26 @@ export default function UIDesign() {
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-lg">
-                      <span className="font-medium">Colour Choice.</span> The background colours are not suitable for visually impaired individuals.
-                    </p>
+                    <span className="font-medium">Colour Choice.</span> <span className="text-muted-foreground">The background colours are not suitable for visually impaired individuals.</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    Research and implement more visual impairment friendly UI designs.
+                    <span className="text-muted-foreground">Research and implement</span> <span className="font-medium">more visual impairment friendly</span> <span className="text-muted-foreground">UI designs.</span>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-lg">
-                      <span className="font-medium">Ambiguity of System Usage.</span> The current prototype does not convey well how the system is meant to be used.
-                    </p>
+                    <span className="font-medium">Ambiguity of System Usage.</span> <span className="text-muted-foreground">The current prototype does not convey well how the system is meant to be used.</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    Add a more detailed explanation about the connections between devices.
+                    <span className="text-muted-foreground">Add a</span> <span className="font-medium">more detailed explanation</span> <span className="text-muted-foreground">about the connections between devices.</span>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-lg">
-                      <span className="font-medium">Lack of Security.</span> Users may be concerned about their data not being safely stored in the current prototype.
-                    </p>
+                    <span className="font-medium">Lack of Security.</span> <span className="text-muted-foreground">Users may be concerned about their data not being safely stored in the current prototype.</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    Specify that all data will be encrypted utilising post-quantum encryption algorithms.
+                    <span className="text-muted-foreground">Specify that</span> <span className="font-medium">all data will be encrypted</span> <span className="text-muted-foreground">utilising post-quantum encryption algorithms.</span>
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -306,11 +301,44 @@ export default function UIDesign() {
               In practice, we were unfortunately unable to put these design choices into practice. Due to other priorities, we did not get around to redesigning the login interface used in the linux distribution we were developing with, and did not manage to display facial verification hints. Furthermore, the technologies used in these prototypes have become outdated, as we have since made the decision to use BLE over RFID.
             </p>
             <p className="text-lg my-6">
-              As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default of the linux distribution being used.
+              As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default login interface of the linux distribution being used.
             </p>
-            <p className="text-lg my-6">
-              [INSERT IMAGES OF ACTUAL LOGIN PAGE]
-            </p>
+            <Carousel className="my-6">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <Image src="/ui-design/login.jpg" alt="Login" width={1552} height={1105} className="object-contain"/>
+                        <p className="text-center mt-3 text-sm text-gray-500">Login</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
+                        <p className="text-center mt-3 text-sm text-gray-500">Registration Site</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={3}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <Image src="/ui-design/ai-chatbot.png" alt="AI Chatbot" width={1552} height={1105} className="object-contain"/>
+                        <p className="text-center mt-3 text-sm text-gray-500">AI Chatbot</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>

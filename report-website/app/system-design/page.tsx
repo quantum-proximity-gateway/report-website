@@ -34,7 +34,7 @@ export default function SystemDesign() {
         <div className="max-w-4xl">
           <div id="system-architecture">
             <h1 className="text-4xl font-bold my-6">System Architecture</h1>
-            <h1 className="text-2xl font-medium  my-6">High-Level System Architecture</h1>
+            <h1 className="text-2xl font-medium my-6">High-Level System Architecture</h1>
             <p className="text-lg mb-4">
               Our project consists of a centralised system architecture which allows us to leverage 
               Bluetooth Low Energy capable devices across multiple workstations. The main components 
@@ -60,7 +60,7 @@ export default function SystemDesign() {
             <p className="text-lg mb-4">
               All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
             </p>
-            <h1 className="text-2xl font-medium  my-6">IBM Cloud System Architecture</h1>
+            <h1 className="text-2xl font-medium my-6">IBM Cloud System Architecture</h1>
             <p className="text-lg mb-4">
               Both our registration website and API are hosted utilising cloud services, this is the first step to getting a QPG system setup. For our server, we are making use of serverless computing utilising IBM's Cloud Code Engine, which allows us to deploy a flexible and scalable server. This helps us ensure the costs of such a system are reasonable and that the services are accessible at all times. IBM Cloud Code Engine automatically scales the number of instances of the server that we have running just by the number of requests that we are getting, so if there are no requests incoming no instances of the server will be initiated and vice-versa.
             </p>
@@ -98,9 +98,6 @@ export default function SystemDesign() {
             <p className="text-lg mb-4"> 
               The Raspberry Pi acts as the key component for each and every QPG enabled device, it processed incoming BLE signals, sorts signal strength, filters MAC Addresses and performs facial recognition on incoming users. This is all done utilising Python 3.11 and many different components that we have specifically built to authenticate users securely.
             </p>
-            <p className="text-lg mb-4"> 
-              INSERT DIAGRAM OF RASPBERRY PI CODE HERE
-            </p>
             <h1 className="text-2xl font-medium my-6">Proximity Agents</h1>
             <p className="text-lg mb-4"> 
               We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri - a rust-based desktop application framework. This application consists of a TypeScript based front-end alongside a Rust backend which is invoked by the frontend. The Rust backend allows us to do local LLM inferencing utilising ollama, communicate with the core server to update and fetch preferences, whilst the Next.js frontend displays the chatbot and the preferences according to the users actions.
@@ -124,14 +121,13 @@ export default function SystemDesign() {
             <p className="text-lg">
               This is the main pattern we utilise in our system, most of our components rely on the centralised server to fetch updated data on the user like credentials, encodings, preferences amongst other items. However, we also utilise this pattern in our Rapsberry Pi code, where we have the main Bluetooth scanner program act as a server to provide data to a graphical interface that allows you to see shortlisted ESP32 keys and their estimated distance to the Raspberry Pi.
             </p>
-            <p className="text-lg">
-              INSERT PICTURE OF ALL COMPONENTS COMMUNICATING WITH SERVER
+            <p className="text-lg my-6">
+              [INSERT PICTURE OF ALL COMPONENTS COMMUNICATING WITH SERVER]
             </p>
             <h1 className="text-2xl font-medium my-6">Facade Pattern</h1>
             <p className="text-lg mb-4">
               There are many complex algorithms utilised all over our code which we use the Facade pattern to abstract away their complexity. One example, is the FaceRecognizer class that exists in the Raspberry Pi code, we abstact away all the following features:
             </p>
-
             <ul className="text-lg list-disc pl-8 mb-4">
               <li>Camera handling</li>
               <li>Image processing</li>
@@ -140,7 +136,6 @@ export default function SystemDesign() {
               <li>Comparison with stored facial encodings</li>
               <li>User identification logic</li>
             </ul>
-
             <p className="text-lg mb-4">
               Another example where we use the Facade pattern on our codebase is with the EncryptionClients, we hide all the complexity of the ML-KEM key exchange mechanism and the AES-GCM encryption and provide a simple API where you can encrypt and decrypt data.
             </p>
@@ -201,95 +196,92 @@ export default function SystemDesign() {
               Currently, this is how we store preferences as a JSON on the database:
             </p>
             <details>
-            <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
-            <code className="block whitespace-pre-wrap bg-gray-100 p-4 rounded-md">
-              {`
-              {
-                "zoom": {
-                  "lower_bound": 0.5,
-                  "upper_bound": 3.0,
-                  "current": 1.0,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.interface text-scaling-factor"
-                  }
-                },
-                "on_screen_keyboard": {
-                  "lower_bound": null,
-                  "upper_bound": null,
-                  "current": false,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled"
-                  }
-                },
-                "magnifier": {
-                  "lower_bound": 0.1,
-                  "upper_bound": 32.0,
-                  "current": 1.0,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.a11y.magnifier mag-factor"
-                  }
-                },
-                "enable_animation": {
-                  "lower_bound": null,
-                  "upper_bound": null,
-                  "current": true,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.interface enable-animations"
-                  }
-                },
-                "screen_reader": {
-                  "lower_bound": null,
-                  "upper_bound": null,
-                  "current": false,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.a11y.applications screen-reader-enabled"
-                  }
-                },
-                "cursor_size": {
-                  "lower_bound": 0.0,
-                  "upper_bound": 128.0,
-                  "current": 24.0,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.interface cursor-size"
-                  }
-                },
-                "font_name": {
-                  "lower_bound": null,
-                  "upper_bound": null,
-                  "current": "Cantarell 11",
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.interface font-name"
-                  }
-                },
-                "locate_pointer": {
-                  "lower_bound": null,
-                  "upper_bound": null,
-                  "current": false,
-                  "commands": {
-                    "windows": "",
-                    "macos": "",
-                    "gnome": "gsettings set org.gnome.desktop.interface locate-pointer"
-                  }
-                }
-              }
-              `}
-            </code>
-          </details>
-
+              <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
+              <code className="block whitespace-pre-wrap bg-gray-100 p-4 rounded-md">
+{`{
+  "zoom": {
+    "lower_bound": 0.5,
+    "upper_bound": 3.0,
+    "current": 1.0,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.interface text-scaling-factor"
+    }
+  },
+  "on_screen_keyboard": {
+    "lower_bound": null,
+    "upper_bound": null,
+    "current": false,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled"
+    }
+  },
+  "magnifier": {
+    "lower_bound": 0.1,
+    "upper_bound": 32.0,
+    "current": 1.0,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.a11y.magnifier mag-factor"
+    }
+  },
+  "enable_animation": {
+    "lower_bound": null,
+    "upper_bound": null,
+    "current": true,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.interface enable-animations"
+    }
+  },
+  "screen_reader": {
+    "lower_bound": null,
+    "upper_bound": null,
+    "current": false,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.a11y.applications screen-reader-enabled"
+    }
+  },
+  "cursor_size": {
+    "lower_bound": 0.0,
+    "upper_bound": 128.0,
+    "current": 24.0,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.interface cursor-size"
+    }
+  },
+  "font_name": {
+    "lower_bound": null,
+    "upper_bound": null,
+    "current": "Cantarell 11",
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.interface font-name"
+    }
+  },
+  "locate_pointer": {
+    "lower_bound": null,
+    "upper_bound": null,
+    "current": false,
+    "commands": {
+      "windows": "",
+      "macos": "",
+      "gnome": "gsettings set org.gnome.desktop.interface locate-pointer"
+    }
+  }
+}`}
+              </code>
+            </details>
           </div>
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
