@@ -47,6 +47,30 @@ export default function Testing() {
             <p className="text-lg my-6">
               Our project consists of varied components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
+            <div className="flex flex-wrap justify-center gap-6 my-8">
+              <div className="testing-tool-card">
+                <Image 
+                  src="/testing/pytest.svg" 
+                  alt="PyTest Logo" 
+                  width={200} 
+                  height={200}
+                  className="mx-auto transition-transform hover:scale-105"
+                />
+                <p className="text-center font-medium mt-3">PyTest</p>
+                <p className="text-center text-sm text-gray-500">Unit Testing Framework</p>
+              </div>
+              <div className="testing-tool-card">
+                <Image 
+                  src="/testing/responsivelyapp.png" 
+                  alt="Responsively App Logo" 
+                  width={200} 
+                  height={200}
+                  className="mx-auto transition-transform hover:scale-105"
+                />
+                <p className="text-center font-medium mt-3">Responsively App</p>
+                <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
+              </div>
+            </div>
           </div>
           <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
