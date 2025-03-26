@@ -363,7 +363,9 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement:
             </p>
-
+            <p className="text-lg my-6">
+              MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
                 <thead>
@@ -431,7 +433,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             </p>
 
             <p className="text-lg mt-6">
-              Overall, users were impressed by the innovative technology, our main focus for improvements was making the system more intuitive and user-friendly, especially for non-technical users.
+              Overall, users were impressed by the innovative technology, praising it's ease of use and seamlessness once installed on computers. Our main focus for improvements was making the system more intuitive and user-friendly, especially for non-technical users.
             </p>
 
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
@@ -443,13 +445,10 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
                 <strong>Restrictions:</strong> A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.
               </li>
               <li className="mb-2">
-                <strong>Error handling:</strong> Technical errors were rewritten in plain language with specific troubleshooting steps.
+                <strong>Error handling:</strong> Cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.
               </li>
               <li className="mb-2">
                 <strong>Visual feedback:</strong> We added clear visual indicators for successful authentication and other system states.
-              </li>
-              <li className="mb-2">
-                <strong>Simplified language:</strong> Technical terminology was replaced with more accessible language throughout the interface, with additional information available through tooltips for technical users.
               </li>
             </ul>
             <p className="text-lg my-6">
