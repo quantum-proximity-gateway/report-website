@@ -61,7 +61,7 @@ export default function Testing() {
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
-                {`@pytest_asyncio.fixture(scope='function')
+{`@pytest_asyncio.fixture(scope='function')
 async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
     async with AsyncTestClient(app=app) as client:
         yield client
@@ -174,7 +174,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             </p>
             <div className="flex flex-col items-center my-6">
               <Image
-                src="/testing/responsive.png" 
+                src="/testing/responsive-site.png" 
                 alt="Responsiveness Test" 
                 width={750} 
                 height={600}
@@ -210,18 +210,18 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
             <div className="flex justify-center">
-            <Carousel className="my-6 w-full max-w-3xl">
+            <Carousel className="my-6 w-full max-w-4xl">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/user_testing_1.jpg" 
-                          alt="User Testing 1" 
+                          src="/testing/user-testing-3.jpg" 
+                          alt="User Testing 3" 
                           width={1636} 
                           height={1169} 
-                          className="object-contain max-h-[400px] w-auto" 
+                          className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
                     </Card>
@@ -232,11 +232,11 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/enfield.jpg" 
-                          alt="Enfield Students Testing" 
+                          src="/testing/user-testing-5.jpg" 
+                          alt="User Testing 5" 
                           width={1636} 
                           height={1169} 
-                          className="object-contain max-h-[400px] w-auto" 
+                          className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
                     </Card>
@@ -247,41 +247,11 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/user_testing_2.jpg" 
-                          alt="User Testing 2" 
+                          src="/testing/user-testing-4.jpg" 
+                          alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
-                          className="object-contain max-h-[400px] w-auto" 
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={4}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <Image 
-                          src="/testing/user_testing_4.jpg" 
-                          alt="User Testing 2" 
-                          width={1636} 
-                          height={1169} 
-                          className="object-contain max-h-[400px] w-auto" 
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={5}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <Image 
-                          src="/testing/user_testing_3.jpg" 
-                          alt="User Testing 3" 
-                          width={1636} 
-                          height={1169} 
-                          className="object-contain max-h-[400px] w-auto" 
+                          className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
                     </Card>
