@@ -71,6 +71,10 @@ export default function Testing() {
                 <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
               </div>
             </div>
+            <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
+              <p className="text-lg my-6">
+                Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application depending on who is using it. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities. On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
+              </p>
           </div>
           <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
@@ -262,8 +266,82 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               Ensuring that perfomance stayed optimal in our application was a priority we took as a team, specially considering the hardware we were using. As it is such a complex project, we needed to ensure that our code remained optimal and that we caught out any bottlenecks that may arise from unoptimized code. This applies more to the Raspberry Pi, which is a lot less powerful than the hardware the core server is meant to run on. 
             </p>
             <p className="text-lg my-6">
-              Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
+              Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi or the overhead it would add to typical operations on the server. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
             </p>
+            <h1 className="text-2xl font-bold my-6">Performance Benchmarks</h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold">ML-KEM-512 Key Exchange</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Metric</TableHead>
+                          <TableHead>Time (ms)</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell>Minimum</TableCell>
+                          <TableCell>0.067</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Maximum</TableCell>
+                          <TableCell>3.354</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Mean</TableCell>
+                          <TableCell>0.078</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Median</TableCell>
+                          <TableCell>0.069</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>95th Percentile</TableCell>
+                          <TableCell>0.083</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                    <p className="text-sm text-gray-500 mt-3">Complete KEM cycle operations (key generation, encapsulation, and decapsulation)</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold">Message Encryption/Decryption</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Operation</TableHead>
+                          <TableHead>Mean (ms)</TableHead>
+                          <TableHead>Median (ms)</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell>Encrypt</TableCell>
+                          <TableCell>0.015</TableCell>
+                          <TableCell>0.009</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Decrypt</TableCell>
+                          <TableCell>0.009</TableCell>
+                          <TableCell>0.008</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                    <p className="text-sm text-gray-500 mt-3">Time to encrypt and decrypt messages using our EncryptionHelper</p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <p className="text-lg my-6">
+                Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
+              </p>
           </div>
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
