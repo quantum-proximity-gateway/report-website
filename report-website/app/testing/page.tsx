@@ -8,9 +8,8 @@ import 'prismjs/components/prism-python';
 import 'prismjs/themes/prism-okaidia.css';
 import { useEffect } from 'react';
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 
 export default function Testing() {
@@ -50,7 +49,10 @@ export default function Testing() {
             </p>
           </div>
           <div id="unit-testing">
-            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
+            <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
+            <p className="text-lg my-6">
+              ADD INTEGRATION TESTING PARAGRAPH
+            </p>
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses. The suite also includes cleanup procedures that ensure test isolation by removing the test database after each test run.
             </p>
@@ -293,44 +295,143 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               We employed a structured approach to user testing that combined task-based evaluation with qualitative feedback collection:
             </p>
-            <ul className="list-disc ml-8 text-lg my-6">
-              <li className="mb-2">
-                <strong>Contextual inquiry:</strong> We gave a quick overview of the project to participants to insure they were given minimal instructions and then we observed while they attempted to complete tasks with our system, such as registering, interacting with the offline model and logging in.
-              </li>
-              <li className="mb-2">
-                <strong>Task completion analysis:</strong> We measured success rates for key workflows such as device registration, authentication, and system configuration.
-              </li>
-              <li className="mb-2">
-                <strong>Think-aloud protocols:</strong> We encouraged participants to verbalize their thoughts and expectations as they navigated the interface.
-              </li>
-              <li className="mb-2">
-                <strong>Post-task interviews:</strong> Finally, we debriefed with users and conducted short interviews to gather detailed insights on user experience and satisfaction.
-              </li>
-            </ul>
+            <Carousel>
+              <CarouselContent>
+                <CarouselItem key={1} className="basis-1/3">
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-bold text-primary">Contextual Inquiry</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                        <li>We gave a quick overview of the project to participants to ensure they were given minimal instructions.</li>
+                        <li>We observed participants as they attempted to complete tasks with our system, such as registering, interacting with the offline model and logging in.</li>
+                        <li>This approach helped identify different interaction patterns and unexpected obstacles users face.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                <CarouselItem key={2} className="basis-1/3">
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-bold text-primary">Task Completion Analysis</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                        <li>We tracked the time users required to complete each task and noted where users got stuck.</li>
+                        <li>This data really helped identify the most problematic areas of our interface and allowed us to gain insight into the issues with our UI design.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                <CarouselItem key={3} className="basis-1/3">
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-bold text-primary">Think-Aloud Protocols</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                        <li>We encouraged participants to verbalize their thoughts and expectations as they navigated the interface.</li>
+                        <li>This revealed mental models and assumptions that influenced how users approached our system.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                <CarouselItem key={4} className="basis-1/3">
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-bold text-primary">Post-Task Interviews</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <ul className="text-base text-muted-foreground list-disc pl-2 space-y-1">
+                        <li>We debriefed with users and conducted short interviews after testing sessions.</li>
+                        <li>We gathered detailed insights on user experience and satisfaction with specific features.</li>
+                        <li>This helped us prioritize improvements based on user impact and expectations.</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
             <p className="text-lg my-6">
               This methodology allowed us to identify both obvious usability issues and more subtle pain points that we may have missed with our perspective as technical users.
             </p>
 
             <h1 className="text-2xl font-bold my-6">User Feedback</h1>
             <p className="text-lg my-6">
-              Key insights from our user testing sessions revealed several areas for improvement:
+              Key insights from our user testing sessions revealed both positive aspects and areas for improvement:
             </p>
-            <ul className="list-disc ml-8 text-lg my-6">
-              <li className="mb-2">
-                <strong>Initial onboarding:</strong> Users expressed confusion about the first-time setup process, particularly regarding the ESP32 connection and registration flow.
-              </li>
-              <li className="mb-2">
-                <strong>Error messaging:</strong> Technical error messages during device pairing created uncertainty for non-technical users.
-              </li>
-              <li className="mb-2">
-                <strong>Verification feedback:</strong> Users wanted clearer visual confirmation when authentication was successful.
-              </li>
-              <li className="mb-2">
-                <strong>Terminology:</strong> Terms like "quantum-resistant cryptography" and "TOTP" were unfamiliar to non-technical users and created unnecessary cognitive load.
-              </li>
-            </ul>
-            <p className="text-lg my-6">
-              Positive feedback highlighted the system&apos;s perceived security benefits and the convenience of proximity-based authentication once properly configured.
+
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
+                <thead>
+                  <tr className="bg-gray-100 dark:bg-gray-700 text-left">
+                    <th className="py-3 px-4 font-semibold border-b">Positive Feedback</th>
+                    <th className="py-3 px-4 font-semibold border-b">Areas for Improvement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-green-500 font-bold mt-0.5">✓</span>
+                        <p>"Straight out of Star Trek" - impressive integration of technologies</p>
+                      </div>
+                    </td>
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold mt-0.5">✗</span>
+                        <p>ESP32 registration process was confusing/buggy during first-time setup</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-green-500 font-bold mt-0.5">✓</span>
+                        <p>Strong perceived security benefits that users appreciated</p>
+                      </div>
+                    </td>
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold mt-0.5">✗</span>
+                        <p>Technical error messages were cluttered and difficult to understand</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-green-500 font-bold mt-0.5">✓</span>
+                        <p>Convenient authentication once properly configured</p>
+                      </div>
+                    </td>
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold mt-0.5">✗</span>
+                        <p>Technical terminology like "quantum-resistant cryptography" and "TOTP" confused non-technical users</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4">
+                      <div className="flex items-start gap-2">
+                        <span className="text-green-500 font-bold mt-0.5">✓</span>
+                        <p>Time-saving capabilities praised</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              Table 3: Summary of User Feedback
+            </p>
+
+            <p className="text-lg mt-6">
+              Overall, users were impressed by the innovative technology, our main focus for improvements was making the system more intuitive and user-friendly, especially for non-technical users.
             </p>
 
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
