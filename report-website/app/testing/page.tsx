@@ -54,10 +54,10 @@ export default function Testing() {
               [ADD INTEGRATION TESTING PARAGRAPH]
             </p>
             <p className="text-lg my-6">
-              Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses. The suite also includes cleanup procedures that ensure test isolation by removing the test database after each test run.
+              Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
             <p className="text-lg my-6">
-              Our test suite uses pytest's fixture mechanism for dependency injection, this helps us easily create test clients for our server before every test, inject them into the test function as a dependency and automatically handle the test cleanup.
+              Our test suite uses pytest's fixture mechanism for dependency injection, this helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -76,12 +76,42 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               The most sophisticated part of these tests focuses on the key encapsulation mechanism (KEM) using quantum-resistant cryptography via the OQS library with ML-KEM-512. These tests validate the server's ability to initiate secure key exchange, generate appropriate public keys, and successfully complete the key exchange process by decapsulating client-provided ciphertexts to establish shared secrets. The comprehensive test coverage ensures the API provides secure device management capabilities while maintaining data confidentiality through end-to-end encryption - critical for a system that stores sensitive credentials and device information.
             </p>
-            <p className="text-lg">
-              [GIVE EXAMPLE CODE OF TEST]
-            </p>
-            <p className="text-lg my-6">
-              Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced.
-            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`TEST_CLIENT_ID_1 = '1'
+TEST_SHARED_SECRET_1 = b'\xbd\xb4\xe9\xf7\x91\xf3\x97\x90\xc1\x93i\xe2\xc9\x0b\xa3\x115\xac\xcb<\xae\x96\xd6\x16\x88\x18\xc8\xd9FRG?'
+encryption_helper.shared_secrets[TEST_CLIENT_ID_1] = TEST_SHARED_SECRET_1
+
+
+@pytest.mark.asyncio
+async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
+    # Get public key
+    data = {'client_id': TEST_CLIENT_ID_1}
+    response = await test_client.post('/kem/initiate', json=data)
+    public_key_b64 = response.json().get('public_key_b64')
+    if not public_key_b64:
+        assert False
+    
+    assert encryption_helper.kem_sessions.get(TEST_CLIENT_ID_1) != None
+
+    # Encapsulate a shared secret
+    with oqs.KeyEncapsulation('ML-KEM-512') as client_kem:
+        try:
+            public_key = base64.b64decode(public_key_b64)
+            ciphertext, shared_secret = client_kem.encap_secret(public_key)
+        except Exception as e:
+            assert False
+
+    # Send encapsulated shared secret
+    ciphertext_b64 = base64.b64encode(ciphertext).decode()
+    data = {'client_id': TEST_CLIENT_ID_1, 'ciphertext_b64': ciphertext_b64}
+    response = await test_client.post(f'/kem/complete', json=data)
+    if response.status_code != 201:
+        assert False
+
+    assert shared_secret == encryption_helper.shared_secrets.get(TEST_CLIENT_ID_1)`}
+              </code>
+            </pre>
           </div>
           <div id="compatibility-testing">
             <h1 className="text-4xl font-bold my-6">Compatibility Testing</h1>
