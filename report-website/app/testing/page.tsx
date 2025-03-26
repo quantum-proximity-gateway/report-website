@@ -78,12 +78,6 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced.
             </p>
           </div>
-          <div id="integration-testing">
-            <h1 className="text-4xl font-bold my-6">Integration Testing</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
           <div id="compatibility-testing">
             <h1 className="text-4xl font-bold my-6">Compatibility Testing</h1>
             <h1 className="text-2xl font-medium my-6">IBM Proximity Agents</h1>
@@ -345,7 +339,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             </p>
             <ul className="list-disc ml-8 text-lg my-6">
               <li className="mb-2">
-                <strong>Guided setup wizard:</strong> We developed a step-by-step setup process with visual cues and simplified instructions for the registration process.
+                <strong>Restrictions:</strong> A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.
               </li>
               <li className="mb-2">
                 <strong>Error handling:</strong> Technical errors were rewritten in plain language with specific troubleshooting steps.
