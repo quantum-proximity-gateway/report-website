@@ -359,8 +359,255 @@ export default function SystemDesign() {
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
             <p className="text-lg">
-              [...]
+              We defined 11 API endpoints on our server in total, which allow for a range of operations such as registering a new device, managing preferences, facial recognition, etc.
             </p>
+            <h1 className="text-2xl font-bold mt-6">Authentication</h1>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">1.</span> POST /register
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Registers a new device.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id (string) - Required in request. EncryptedMessageRequest with: mac_address, username, password, secret, timestamp.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted success message or error.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">2.</span> PUT /devices/credentials
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Retrieves stored credentials after verifying TOTP.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — EncryptedMessageRequest with: mac_address, totp.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted credentials (username, password).</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <h1 className="text-2xl font-bold mt-6">Device Management</h1>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">3.</span> GET /devices/all-mac-addresses
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Fetches all registered MAC addresses.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id (query parameter, required).</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted list of MAC addresses.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">4.</span> GET /devices/{'{'}mac_address{'}'}/username
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Retrieves username associated with a MAC address.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id (query parameter, required).</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted username.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">5.</span> DELETE /devices/delete
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Deletes a registered device.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — EncryptedMessageRequest with: mac_address.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Success status or error.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <h1 className="text-2xl font-bold mt-6">Preferences Management</h1>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">6.</span> POST /preferences/update
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Updates user preferences.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — EncryptedMessageRequest with: username, preferences.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted updated preferences.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">7.</span> GET /preferences/{'{'}username{'}'}
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Retrieves stored preferences for a user.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id (query parameter, required).</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted preferences.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <h1 className="text-2xl font-bold mt-6">Key Exchange Mechanism (KEM)</h1>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">8.</span> POST /kem/initiate
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Initiates key exchange.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Initiate key exchange session. The server generates a KEM key pair and returns the public key.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">9.</span> POST /kem/complete
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Completes key exchange.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id, ciphertext_b64.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Complete the key exchange. The client sends back the encapsulated shared secret that they have generated.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <h1 className="text-2xl font-bold mt-6">Face Recognition</h1>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">10.</span> POST /register/face
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Registers a user's face from a video.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — FaceRegistrationRequest with: mac_address, video.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Success status.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <h1 className="text-lg font-medium">
+                    <span className="mr-3">11.</span> GET /encodings
+                  </h1>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Description</span><span className="text-muted-foreground"> — Retrieves face encodings from stored data.</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Request</span><span className="text-muted-foreground"> — client_id (query parameter, required).</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Response</span><span className="text-muted-foreground"> — Encrypted face encodings.</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>

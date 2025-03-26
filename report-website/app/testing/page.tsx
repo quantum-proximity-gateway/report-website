@@ -45,7 +45,7 @@ export default function Testing() {
           <div id="testing-strategy">
             <h1 className="text-4xl font-bold my-6">Testing Strategy</h1>
             <p className="text-lg my-6">
-              Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing to judge the feasibility and reception of our project in practice.
+              Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
           </div>
           <div id="unit-integration-testing">
@@ -451,7 +451,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </p>
             <Card className="my-6">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">Added Restrictions</CardTitle>
+                <CardTitle className="text-2xl font-bold">Extra Restrictions</CardTitle>
                 <Separator />
               </CardHeader>
               <CardContent>
