@@ -10,10 +10,10 @@ import { useEffect } from 'react';
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table"
 
 
 export default function Testing() {
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       Prism.highlightAll();
@@ -86,83 +86,109 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
           <div id="compatibility-testing">
             <h1 className="text-4xl font-bold my-6">Compatibility Testing</h1>
             <h1 className="text-2xl font-medium my-6">IBM Proximity Agents</h1>
-            <p className="text-lg mb-4">
+            <p className="text-lg my-6">
               Our IBM Proximity Agents application was tested across multiple operating systems to ensure broad compatibility, although due to the limitations and restrictions of some operating systems, some features are not fully avaliable. However, the core functionality of the proximity-based agent is retained on all operating systems.
             </p>
-            <p className="text-lg mb-4">
+            <p className="text-lg my-6">
               The high rate of compatibility was enabled by Tauri, which allowed us to easily create native applications on all platforms leveraging one single codebase.
             </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
-                <thead>
-                  <tr className="bg-gray-100 dark:bg-gray-700 text-left">
-                    <th className="py-3 px-4 font-semibold border-b">Operating System</th>
-                    <th className="py-3 px-4 font-semibold border-b">Compatibility</th>
-                    <th className="py-3 px-4 font-semibold border-b">Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">MacOS</td>
-                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
-                    <td className="py-3 px-4">Accessibility commands not available</td>
-                  </tr>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">Linux</td>
-                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
-                    <td className="py-3 px-4">Full functionality utilising gsettings</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">Windows</td>
-                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
-                    <td className="py-3 px-4">Accessibility commands not available</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-            <p className="text-sm text-gray-500 mt-2">
-              Table 1: Operating System Compatibility for IBM Proximity Agents
-            </p>
-
+            <Table className="my-6">
+              <TableCaption>Table 1: Operating System Compatibility for IBM Proximity Agents</TableCaption>
+              <TableHeader>
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
+                  <TableHead>Operating System</TableHead>
+                  <TableHead>Compatibility</TableHead>
+                  <TableHead>Notes</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    MacOS
+                  </TableCell>
+                  <TableCell className="text-lg text-green-500">
+                    ✅ Compatible
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Accessibility commands not available
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Linux
+                  </TableCell>
+                  <TableCell className="text-lg text-green-500">
+                    ✅ Compatible
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Full functionality utilising gsettings
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Windows
+                  </TableCell>
+                  <TableCell className="text-lg text-green-500">
+                    ✅ Compatible
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Accessibility commands not available
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
             <h1 className="text-2xl font-medium my-6">Registration Site</h1>
             <p className="text-lg mb-4">
               We have also tested our registration site across multiple different environments. However, there are some issues regarding certain out-of-date browsers not natively supporting the Web Serial API, which is a core functionality of our website. This API allows us to directly communicate with the ESP32 during the registration process to share secret keys for TOTP and to read the MAC address of your device.
             </p>
             <p className="text-lg mb-4">
-              Fortunately, there are simple solutions available by using widely available extensions that expose the Web Serial API. For example, for Firefox users, we recommend using the <a href="https://addons.mozilla.org/en-GB/firefox/addon/webserial-for-firefox/" className="text-blue-500 hover:text-blue-700 underline transition-colors" target="_blank" rel="noopener noreferrer">WebSerial for Firefox</a> extension.
+              Fortunately, there are simple solutions available by using widely available extensions that expose the Web Serial API. For example, for Firefox users, we recommend using the <a href="https://addons.mozilla.org/en-GB/firefox/addon/webserial-for-firefox/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">WebSerial for Firefox</a> extension.
             </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
-                <thead>
-                  <tr className="bg-gray-100 dark:bg-gray-700 text-left">
-                    <th className="py-3 px-4 font-semibold border-b">Browser</th>
-                    <th className="py-3 px-4 font-semibold border-b">Compatibility</th>
-                    <th className="py-3 px-4 font-semibold border-b">Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">Chrome</td>
-                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
-                    <td className="py-3 px-4">Full functionality utilising Web Serial API</td>
-                  </tr>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">Edge</td>
-                    <td className="py-3 px-4 text-green-500">✅ Compatible</td>
-                    <td className="py-3 px-4">Full functionality utilising Web Serial API</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">Firefox</td>
-                    <td className="py-3 px-4 text-yellow-500">⚠️ Lacking functionality</td>
-                    <td className="py-3 px-4">Communication using Web Serial API not natively supported. Extensions avaliable to fix this.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-sm text-gray-500 mt-2">
-              Table 2: Browser Compatibility for Registration Site
-            </p>
+            <Table className="my-6">
+              <TableCaption>Table 2: Browser Compatibility for Registration Site</TableCaption>
+              <TableHeader>
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
+                  <TableHead>Browser</TableHead>
+                  <TableHead>Compatibility</TableHead>
+                  <TableHead>Notes</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Chrome
+                  </TableCell>
+                  <TableCell className="text-lg text-green-500">
+                    ✅ Compatible
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Full functionality utilising Web Serial API
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Edge
+                  </TableCell>
+                  <TableCell className="text-lg text-green-500">
+                    ✅ Compatible
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Full functionality utilising Web Serial API
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    Firefox
+                  </TableCell>
+                  <TableCell className="text-lg text-yellow-500">
+                    ⚠️ Lacking functionality
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    Communication using Web Serial API not natively supported. Extensions are avaliable to fix this.
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
           <div id="responsive-design-testing">
             <h1 className="text-4xl font-bold my-6">Responsive Design Testing</h1>
@@ -170,7 +196,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistent design throughout multiple platforms and devices. We've implemented responsive layouts that automatically adjust to different screen sizes, from large desktop monitors to mobile devices. This approach ensures that both of our applications remain usable and visually coherent regardless of the device being used.
             </p>
             <p className="text-lg my-6">
-              During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
+              During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
             <div className="flex flex-col items-center my-6">
               <Image
@@ -247,11 +273,11 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/user-testing-4.jpg" 
+                          src="/testing/user-testing-2.jpg" 
                           alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
-                          className="object-contain max-h-[560px] w-auto" 
+                          className="object-containmax-h-[560px] w-auto" 
                         />
                       </CardContent>
                     </Card>
@@ -339,88 +365,64 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION
             </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md my-4">
-                <thead>
-                  <tr className="bg-gray-100 dark:bg-gray-700 text-left">
-                    <th className="py-3 px-4 font-semibold border-b">Positive Feedback</th>
-                    <th className="py-3 px-4 font-semibold border-b">Areas for Improvement</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-green-500 font-bold mt-0.5">✓</span>
-                        <p>"Straight out of Star Trek" - impressive integration of technologies</p>
-                      </div>
-                    </td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-red-500 font-bold mt-0.5">✗</span>
-                        <p>ESP32 registration process was confusing/buggy during first-time setup</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-green-500 font-bold mt-0.5">✓</span>
-                        <p>Strong perceived security benefits that users appreciated</p>
-                      </div>
-                    </td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-red-500 font-bold mt-0.5">✗</span>
-                        <p>Technical error messages were cluttered and difficult to understand</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-green-500 font-bold mt-0.5">✓</span>
-                        <p>Convenient authentication once properly configured</p>
-                      </div>
-                    </td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-red-500 font-bold mt-0.5">✗</span>
-                        <p>Technical terminology like "quantum-resistant cryptography" and "TOTP" confused non-technical users</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <td className="py-3 px-4">
-                      <div className="flex items-start gap-2">
-                        <span className="text-green-500 font-bold mt-0.5">✓</span>
-                        <p>Time-saving capabilities praised</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-sm text-gray-500 mt-2">
-              Table 3: Summary of User Feedback
-            </p>
-
+            <Table className="my-6">
+              <TableCaption>Table 3: Summary of User Feedback</TableCaption>
+              <TableHeader>
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
+                  <TableHead className="w-[50%]">✅ Positive Feedback</TableHead>
+                  <TableHead>❌ Areas for Improvement</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">"Straight out of Star Trek" - impressive integration of technologies</p>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">ESP32 registration process was confusing and buggy during first-time setup</p>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">Strong perceived security benefits that users appreciated</p>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">Error messages were cluttered and difficult to understand</p>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">Convenient authentication once properly configured</p>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">Technical terminology like "quantum-resistant cryptography" and "TOTP" confused non-technical users</p>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground">Time-saving capabilities praised</p>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <p className="text-muted-foreground"></p>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
             <p className="text-lg mt-6">
               Overall, users were impressed by the innovative technology, praising it's ease of use and seamlessness once installed on computers. Our main focus for improvements was making the system more intuitive and user-friendly, especially for non-technical users.
             </p>
-
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
             <p className="text-lg my-6">
               Based on user feedback, we implemented several significant improvements:
             </p>
-            <ul className="list-disc ml-8 text-lg my-6">
-              <li className="mb-2">
+            <ul className="list-disc pl-6 text-lg my-6 space-y-3">
+              <li>
                 <strong>Restrictions:</strong> A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.
               </li>
-              <li className="mb-2">
+              <li>
                 <strong>Error handling:</strong> Cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.
               </li>
-              <li className="mb-2">
+              <li>
                 <strong>Visual feedback:</strong> We added clear visual indicators for successful authentication and other system states.
               </li>
             </ul>

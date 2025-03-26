@@ -160,7 +160,7 @@ export default function UIDesign() {
                     </p>
                     <Table>
                       <TableHeader>
-                        <TableRow className="text-lg">
+                        <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                           <TableHead>Responses</TableHead>
                         </TableRow>
                       </TableHeader>
@@ -204,7 +204,7 @@ export default function UIDesign() {
                     </p>
                     <Table>
                       <TableHeader>
-                        <TableRow className="text-lg">
+                        <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                           <TableHead>Responses</TableHead>
                         </TableRow>
                       </TableHeader>
@@ -255,7 +255,7 @@ export default function UIDesign() {
             </p>
             <Table>
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[50%]">❌ Problem</TableHead>
                   <TableHead>💡 Solution</TableHead>
                 </TableRow>

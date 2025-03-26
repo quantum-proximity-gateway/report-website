@@ -53,7 +53,7 @@ export default function Research() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Yubico</a> is an American company manufacturing hardware authentication devices, their main product is the YubiKey which is a security key utilised for 2FA based authentication <span className="text-muted-foreground">[1]</span>. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
+                      <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">Yubico</a> is an American company manufacturing hardware authentication devices, their main product is the YubiKey which is a security key utilised for 2FA based authentication <span className="text-muted-foreground">[1]</span>. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
                     </p>
                     <div className="flex flex-col items-center my-6">
                       <Image src="/research/yubico.svg" alt="Yubico Logo" width={300} height={150}/>
@@ -67,7 +67,7 @@ export default function Research() {
                       <p className="text-center mt-3 text-sm text-gray-500">Figure 1: YubiKey security devices offering multi-factor authentication</p>
                     </div>
                     <p className="text-lg my-6">
-                      As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">CyberArk</a>, a leading InfoSec companies that specialises in identity security, and they also recommended an approach involving TOTP authentication.
+                      As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">CyberArk</a>, a leading InfoSec companies that specialises in identity security, and they also recommended an approach involving TOTP authentication.
                     </p>
                     <div className="flex flex-col items-center my-6">
                       <Image src="/research/cyberark.svg" alt="Cyberark Logo" width={300} height={150}/>
@@ -84,7 +84,7 @@ export default function Research() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Alps Alpine</a> is a Japanese multinational corporation specializing in electronic components and vehicle information systems <span className="text-muted-foreground">[2]</span>. They leverage Bluetooth Low Energy (BLE) for secure digital key solutions, collaborating with industry leaders like Broadcom and Giesecke+Devrient (G+D) to enhance vehicle security and user convenience.
+                      <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">Alps Alpine</a> is a Japanese multinational corporation specializing in electronic components and vehicle information systems <span className="text-muted-foreground">[2]</span>. They leverage Bluetooth Low Energy (BLE) for secure digital key solutions, collaborating with industry leaders like Broadcom and Giesecke+Devrient (G+D) to enhance vehicle security and user convenience.
                     </p>
                     <div className="flex flex-col items-center my-6">
                       <Image src="/research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
@@ -292,80 +292,84 @@ export default function Research() {
             <p className="text-lg my-6">
               Having extensively researched different technologies and methodologies, evaluating their strengths and limitations, we made the following decisions on how our Quantum Proximity Gateway should be implemented.
             </p>
-            <Table>
-              <TableHeader>
-                <TableRow className="text-lg">
-                  <TableHead className="w-[50%]">Type</TableHead>
-                  <TableHead>Decision</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">Wireless Proximity Technology</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Bluetooth Low Energy
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">Proximity Detector & Authenticator</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Raspberry Pi
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">BLE Beacon</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    ESP32
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">Raspberry Pi</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Python
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">ESP32</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    C++
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">Server</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Python, Litestar
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">Desktop App</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    Rust, Tauri
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <span className="font-medium">Frontends</span>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    TypeScript, Next.js
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+            <Card>
+              <CardContent className="p-6">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
+                      <TableHead className="w-[50%]">Type</TableHead>
+                      <TableHead>Decision</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">Wireless Proximity Technology</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        Bluetooth Low Energy
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">Proximity Detector & Authenticator</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        Raspberry Pi
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">BLE Beacon</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        ESP32
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">Raspberry Pi</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        Python
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">ESP32</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        C++
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">Server</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        Python, Litestar
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">Desktop App</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        Rust, Tauri
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="text-lg">
+                        <span className="font-medium">Frontends</span>
+                      </TableCell>
+                      <TableCell className="text-lg">
+                        TypeScript, Next.js
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
             <p className="text-lg my-6">
               From our research, we concluded that a good proximity-based access control system would provide the following.
             </p>
@@ -397,43 +401,43 @@ export default function Research() {
             <h1 className="text-4xl font-bold my-6">References</h1>
             <ul className="text-lg space-y-6">
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Yubico, "Meet the YubiKey". [Online]. Available: <a href="https://www.yubico.com/why-yubico/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.yubico.com/why-yubico/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Yubico, "Meet the YubiKey". [Online]. Available: <a href="https://www.yubico.com/why-yubico/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.yubico.com/why-yubico/</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[2]</span><span className="text-muted-foreground">Alps Alpine, "Our Business". [Online]. Available: <a href="https://www.alpsalpine.com/e/company/business/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.alpsalpine.com/e/company/business/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[2]</span><span className="text-muted-foreground">Alps Alpine, "Our Business". [Online]. Available: <a href="https://www.alpsalpine.com/e/company/business/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.alpsalpine.com/e/company/business/</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[3]</span><span className="text-muted-foreground">Alps Alpine, "Alps Alpine and Broadcom Collaborate on a Secure Distance Measurement Solution based on Bluetooth® Technology", Jan. 5, 2021. [Online]. Available: <a href="https://www.alpsalpine.com/e/news/detail/2021-0105-02/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.alpsalpine.com/e/news/detail/2021-0105-02/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[3]</span><span className="text-muted-foreground">Alps Alpine, "Alps Alpine and Broadcom Collaborate on a Secure Distance Measurement Solution based on Bluetooth® Technology", Jan. 5, 2021. [Online]. Available: <a href="https://www.alpsalpine.com/e/news/detail/2021-0105-02/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.alpsalpine.com/e/news/detail/2021-0105-02/</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[4]</span><span className="text-muted-foreground">Wikipedia, "Bluetooth Low Energy", March 1, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://en.wikipedia.org/wiki/Bluetooth_Low_Energy</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[4]</span><span className="text-muted-foreground">Wikipedia, "Bluetooth Low Energy", March 1, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://en.wikipedia.org/wiki/Bluetooth_Low_Energy</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[5]</span><span className="text-muted-foreground">Wikipedia, "Near-field communication", Feb. 4, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Near-field_communication" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://en.wikipedia.org/wiki/Near-field_communication</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[5]</span><span className="text-muted-foreground">Wikipedia, "Near-field communication", Feb. 4, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Near-field_communication" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://en.wikipedia.org/wiki/Near-field_communication</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[6]</span><span className="text-muted-foreground">Wikipedia, "Radio-frequency identification", March 18, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Radio-frequency_identification" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://en.wikipedia.org/wiki/Radio-frequency_identification</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[6]</span><span className="text-muted-foreground">Wikipedia, "Radio-frequency identification", March 18, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Radio-frequency_identification" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://en.wikipedia.org/wiki/Radio-frequency_identification</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[7]</span><span className="text-muted-foreground">Wikipedia, "Wi-Fi positioning system", Jan. 19, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Wi-Fi_positioning_system" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://en.wikipedia.org/wiki/Wi-Fi_positioning_system</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[7]</span><span className="text-muted-foreground">Wikipedia, "Wi-Fi positioning system", Jan. 19, 2025. [Online]. Available: <a href="https://en.wikipedia.org/wiki/Wi-Fi_positioning_system" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://en.wikipedia.org/wiki/Wi-Fi_positioning_system</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[8]</span><span className="text-muted-foreground">Raspberry Pi, "Buy a Raspberry Pi 5". [Online]. Available: <a href="https://www.raspberrypi.com/products/raspberry-pi-5/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.raspberrypi.com/products/raspberry-pi-5/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[8]</span><span className="text-muted-foreground">Raspberry Pi, "Buy a Raspberry Pi 5". [Online]. Available: <a href="https://www.raspberrypi.com/products/raspberry-pi-5/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.raspberrypi.com/products/raspberry-pi-5/</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[9]</span><span className="text-muted-foreground">NVIDIA, "Jetson Nano Brings the Power of Modern AI to Edge Devices". [Online]. Available: <a href="https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-nano/product-development/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-nano/product-development/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[9]</span><span className="text-muted-foreground">NVIDIA, "Jetson Nano Brings the Power of Modern AI to Edge Devices". [Online]. Available: <a href="https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-nano/product-development/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.nvidia.com/en-gb/autonomous-machines/embedded-systems/jetson-nano/product-development/</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[10]</span><span className="text-muted-foreground">Espressif, "ESP32 Wi-Fi & Bluetooth SoC". [Online]. Available: <a href="https://www.espressif.com/en/products/socs/esp32" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.espressif.com/en/products/socs/esp32</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[10]</span><span className="text-muted-foreground">Espressif, "ESP32 Wi-Fi & Bluetooth SoC". [Online]. Available: <a href="https://www.espressif.com/en/products/socs/esp32" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.espressif.com/en/products/socs/esp32</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[11]</span><span className="text-muted-foreground">Litestar, "Litestar". [Online]. Available: <a href="https://litestar.dev/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://litestar.dev/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[11]</span><span className="text-muted-foreground">Litestar, "Litestar". [Online]. Available: <a href="https://litestar.dev/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://litestar.dev/</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[12]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[12]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
               </li>
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[13]</span><span className="text-muted-foreground">Vercel, "Next.js by Vercel - The React Framework". [Online]. Available: <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://nextjs.org/</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[13]</span><span className="text-muted-foreground">Vercel, "Next.js by Vercel - The React Framework". [Online]. Available: <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://nextjs.org/</a>. [Accessed March 26, 2025].</span>
               </li>
             </ul>
           </div>

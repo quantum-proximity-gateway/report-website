@@ -42,7 +42,7 @@ export default function Evaluation() {
             </p>
             <Table className="my-6">
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead>ID</TableHead>
                   <TableHead>MoSCoW</TableHead>
                   <TableHead className="w-[60%]">Requirement</TableHead>
@@ -221,7 +221,7 @@ export default function Evaluation() {
             </p>
             <Table className="mt-6">
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead>ID</TableHead>
                   <TableHead className="w-[70%]">Description</TableHead>
                   <TableHead>Severity</TableHead>
@@ -254,7 +254,7 @@ export default function Evaluation() {
                 <AccordionContent>
                   <Table>
                     <TableHeader>
-                      <TableRow className="text-lg">
+                      <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                         <TableHead>Work Package</TableHead>
                         <TableHead className="w-[20%]">Marwan</TableHead>
                         <TableHead className="w-[20%]">Raghav</TableHead>
@@ -431,7 +431,7 @@ export default function Evaluation() {
                 <AccordionContent>
                   <Table>
                     <TableHeader>
-                      <TableRow className="text-lg">
+                      <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                         <TableHead>Work Package</TableHead>
                         <TableHead className="w-[20%]">Marwan</TableHead>
                         <TableHead className="w-[20%]">Raghav</TableHead>

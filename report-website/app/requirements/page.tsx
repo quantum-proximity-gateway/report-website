@@ -278,7 +278,7 @@ export default function Requirements() {
             </p>
             <Table className="mt-6">
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[50%]">✅ Strengths</TableHead>
                   <TableHead>⚠️ Limitations</TableHead>
                 </TableRow>
