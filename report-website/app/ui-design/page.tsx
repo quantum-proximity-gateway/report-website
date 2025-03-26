@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Metadata } from 'next';
 import Image from "next/image";
 
@@ -302,9 +303,42 @@ export default function UIDesign() {
             <p className="text-lg my-6">
               As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default login interface of the linux distribution being used.
             </p>
-            <p className="text-lg my-6">
-              [INSERT IMAGES OF ACTUAL LOGIN PAGE]
-            </p>
+            <Carousel className="my-6">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <Image src="/ui-design/login.jpg" alt="Login" width={4032} height={2579} className="object-contain"/>
+                        <p className="text-center mt-3 text-sm text-gray-500">Login</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={4032} height={2579} className="object-contain"/>
+                        <p className="text-center mt-3 text-sm text-gray-500">Registration Site</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={3}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <Image src="/ui-design/ai-chatbot.png" alt="AI Chatbot" width={4032} height={2579} className="object-contain"/>
+                        <p className="text-center mt-3 text-sm text-gray-500">AI Chatbot</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
