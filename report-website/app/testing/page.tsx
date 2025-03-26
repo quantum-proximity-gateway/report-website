@@ -77,23 +77,26 @@ export default function Testing() {
               </p>
           </div>
           <div id="unit-integration-testing">
-            <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
-            <h1 className="text-2xl font-bold my-6">Integration Testing</h1>
+            <h1 className="text-4xl font-bold my-6">Integration Testing</h1>
             <p className="text-lg my-6">
               Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi ->  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system.
             </p>
             <p className="text-lg my-6">
               We utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
             </p>
-            <Image 
-              src="/testing/techforgood.jpg" 
-              alt="Tech For Good AI Lab" 
-              width={500} 
-              height={500}
-              className="object-contain"
-            />
-            <p className="text-center text-sm text-gray-500 mt-3 my-6">Image 1: Initial integration tests in Tech for Good AI lab</p>
-            <h1 className="text-2xl font-bold my-6">Unit Testing</h1>
+            <Card className="my-6 max-w-2xl mx-auto">
+              <CardContent className="flex flex-col items-center justify-center p-2">
+                <Image 
+                  src="/testing/techforgood.jpg" 
+                  alt="Tech For Good AI Lab" 
+                  width={400} 
+                  height={400}
+                  className="object-contain w-full"
+                />
+                <p className="text-center text-sm text-gray-500 mt-3">Initial integration tests in Tech for Good AI lab</p>
+              </CardContent>
+            </Card>
+            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
