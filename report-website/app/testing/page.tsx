@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import Prism from 'prismjs';
 import 'prismjs/components/prism-python';
-import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/themes/prism.css';
 import { useEffect } from 'react';
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -50,10 +50,6 @@ export default function Testing() {
           </div>
           <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
-            <h1 className="text-2xl font-bold my-6">Integration Testing</h1>
-            <p className="text-lg my-6">
-              [ADD INTEGRATION TESTING PARAGRAPH]
-            </p>
             <h1 className="text-2xl font-bold my-6">Unit Testing</h1>
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
@@ -109,6 +105,81 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
         assert False
 
     assert shared_secret == encryption_helper.shared_secrets.get(TEST_CLIENT_ID_1)`}
+              </code>
+            </pre>
+            <h1 className="text-2xl font-bold my-6">Integration Testing</h1>
+            <p className="text-lg my-6">
+              Integration testing is critical in ensuring that the various system components of our system interact seamlessly. We performed integration tests to validate the core server's interactions with other system components, including the Raspberry Pi, IBM Proximity Agents, and the Registration Site. We carried out a lot of these tests manually when building up the system, where we sent API requests to the server, and inspected the server responses, and analysed the database. Finally, we also performed full end-to-end tests to verify the entire process, from registering a new ESP32 device, to logging in via proximity and facial recognition, to updating preferences via the proximity agent app.
+            </p>
+            <p className="text-lg my-6">
+              One integration test we done was to check that our encryption when communicating between the Raspberry Pi and server works correctly. This is the example endpoint on the server:
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`@post('/example-endpoint')
+async def example_endpoint(data: EncryptedMessageRequest) -> dict:
+    '''
+    Example API endpoint which demonstrates decrypting incoming request data, and
+    encrypting outgoing response data.
+    '''
+
+    shared_secret = shared_secrets.get(data.client_id, None)
+    if not shared_secret:
+        raise HTTPException(status_code=404, detail='Shared secret not found.')
+    
+    try:
+        plaintext = aesgcm_decrypt(data.nonce_b64, data.ciphertext_b64, shared_secret)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail='Failed to decrypt data.')
+    print(f'Server received: {plaintext}')
+
+    response_text = f'Hello, Raspberry Pi #{data.client_id}!'
+    nonce_b64, ciphertext_b64 = aesgcm_encrypt(response_text, shared_secret)
+    return {'nonce_b64': nonce_b64, 'ciphertext_b64': ciphertext_b64}`}
+              </code>
+            </pre>
+            <p className="text-lg my-6">
+              This is the example Raspberry Pi client code which simulates API calls:
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`if __name__ == '__main__':
+    # Example usage
+
+    # Generate shared secret
+    # (generate once, use whenever communicating between this client and server)
+    try:
+        shared_secret = generate_shared_secret()
+    except KEMException as e:
+        raise RuntimeError(f'KEM failed, could not generate secret: {e}')
+
+    # Encrypt request data
+    request_text = 'Hello, Litestar!'
+    nonce_b64, ciphertext_b64 = aesgcm_encrypt(request_text, shared_secret)
+
+    # POST request
+    data = {
+        'client_id': str(CLIENT_ID),
+        'nonce_b64': nonce_b64,
+        'ciphertext_b64': ciphertext_b64
+    }
+    response = requests.post(f'{SERVER_URL}/example-endpoint', json=data)
+
+    if response.status_code != 201:
+        raise RuntimeError(f'Error {response.status_code}: {response.text}')
+    
+    response_data = response.json()
+    nonce_b64 = response_data.get('nonce_b64')
+    ciphertext_b64 = response_data.get('ciphertext_b64')
+    if not nonce_b64 or not ciphertext_b64:
+        raise RuntimeError('Missing parameters in response.')
+
+    # Decrypt response data
+    try:
+        plaintext = aesgcm_decrypt(nonce_b64, ciphertext_b64, shared_secret)
+        print(f'Client received: {plaintext}')
+    except Exception as e:
+        raise RuntimeError(f'Error: {e}\\nFailed to decrypt response data.')`}
               </code>
             </pre>
           </div>
