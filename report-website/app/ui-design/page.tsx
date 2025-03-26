@@ -160,7 +160,7 @@ export default function UIDesign() {
                     </p>
                     <Table>
                       <TableHeader>
-                        <TableRow className="text-lg">
+                        <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                           <TableHead>Responses</TableHead>
                         </TableRow>
                       </TableHeader>
@@ -204,7 +204,7 @@ export default function UIDesign() {
                     </p>
                     <Table>
                       <TableHeader>
-                        <TableRow className="text-lg">
+                        <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                           <TableHead>Responses</TableHead>
                         </TableRow>
                       </TableHeader>
@@ -255,7 +255,7 @@ export default function UIDesign() {
             </p>
             <Table>
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[50%]">❌ Problem</TableHead>
                   <TableHead>💡 Solution</TableHead>
                 </TableRow>
@@ -308,9 +308,12 @@ export default function UIDesign() {
                 <CarouselItem key={1}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex flex-col items-center justify-center p-6">
-                        <Image src="/ui-design/login.jpg" alt="Login" width={1552} height={1105} className="object-contain"/>
-                        <p className="text-center mt-3 text-sm text-gray-500">Login</p>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">Login Interface</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/ui-design/login.jpg" alt="Login Interface" width={1552} height={1105} className="object-contain"/>
                       </CardContent>
                     </Card>
                   </div>
@@ -318,9 +321,12 @@ export default function UIDesign() {
                 <CarouselItem key={2}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex flex-col items-center justify-center p-6">
-                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
-                        <p className="text-center mt-3 text-sm text-gray-500">Registration Site</p>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">AI Agent Desktop App</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/ui-design/ai-chatbot.png" alt="AI Agent Desktop App" width={1552} height={1105} className="object-contain"/>
                       </CardContent>
                     </Card>
                   </div>
@@ -328,9 +334,12 @@ export default function UIDesign() {
                 <CarouselItem key={3}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex flex-col items-center justify-center p-6">
-                        <Image src="/ui-design/ai-chatbot.png" alt="AI Chatbot" width={1552} height={1105} className="object-contain"/>
-                        <p className="text-center mt-3 text-sm text-gray-500">AI Chatbot</p>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">Registration Site</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
                       </CardContent>
                     </Card>
                   </div>

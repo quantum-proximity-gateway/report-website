@@ -221,12 +221,8 @@ const items = [
         url: "/testing#testing-strategy",
       },
       {
-        title: "Unit Testing",
-        url: "/testing#unit-testing",
-      },
-      {
-        title: "Integration Testing",
-        url: "/testing#integration-testing",
+        title: "Unit/Integration Testing",
+        url: "/testing#unit-integration-testing",
       },
       {
         title: "Compatibility Testing",

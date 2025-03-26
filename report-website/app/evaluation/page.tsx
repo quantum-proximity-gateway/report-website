@@ -42,7 +42,7 @@ export default function Evaluation() {
             </p>
             <Table className="my-6">
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead>ID</TableHead>
                   <TableHead>MoSCoW</TableHead>
                   <TableHead className="w-[60%]">Requirement</TableHead>
@@ -221,7 +221,7 @@ export default function Evaluation() {
             </p>
             <Table className="mt-6">
               <TableHeader>
-                <TableRow className="text-lg">
+                <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead>ID</TableHead>
                   <TableHead className="w-[70%]">Description</TableHead>
                   <TableHead>Severity</TableHead>
@@ -254,7 +254,7 @@ export default function Evaluation() {
                 <AccordionContent>
                   <Table>
                     <TableHeader>
-                      <TableRow className="text-lg">
+                      <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                         <TableHead>Work Package</TableHead>
                         <TableHead className="w-[20%]">Marwan</TableHead>
                         <TableHead className="w-[20%]">Raghav</TableHead>
@@ -431,7 +431,7 @@ export default function Evaluation() {
                 <AccordionContent>
                   <Table>
                     <TableHeader>
-                      <TableRow className="text-lg">
+                      <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                         <TableHead>Work Package</TableHead>
                         <TableHead className="w-[20%]">Marwan</TableHead>
                         <TableHead className="w-[20%]">Raghav</TableHead>
@@ -707,7 +707,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -720,7 +720,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -733,7 +733,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -746,7 +746,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -759,7 +759,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -772,7 +772,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -785,7 +785,7 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      [...]
                     </p>
                   </CardContent>
                 </Card>
@@ -798,7 +798,7 @@ export default function Evaluation() {
               [How could the project be extended if you had more time?]
             </p>
             <p className="text-lg my-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              [...]
             </p>
           </div>
         </div>
