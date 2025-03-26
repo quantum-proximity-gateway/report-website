@@ -301,20 +301,20 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             </p>
             <ul className="list-disc ml-8 text-lg my-6">
               <li className="mb-2">
-                <strong>Contextual inquiry:</strong> Participants were given minimal instructions and observed while they attempted to complete common tasks with our system.
+                <strong>Contextual inquiry:</strong> We gave a quick overview of the project to participants to insure they were given minimal instructions and then we observed while they attempted to complete tasks with our system, such as registering, interacting with the offline model and logging in.
               </li>
               <li className="mb-2">
                 <strong>Task completion analysis:</strong> We measured success rates for key workflows such as device registration, authentication, and system configuration.
               </li>
               <li className="mb-2">
-                <strong>Think-aloud protocols:</strong> Users were encouraged to verbalize their thoughts and expectations as they navigated the interface.
+                <strong>Think-aloud protocols:</strong> We encouraged participants to verbalize their thoughts and expectations as they navigated the interface.
               </li>
               <li className="mb-2">
-                <strong>Post-task interviews:</strong> Structured debriefing sessions were conducted to gather detailed insights on user experience and satisfaction.
+                <strong>Post-task interviews:</strong> Finally, we debriefed with users and conducted short interviews to gather detailed insights on user experience and satisfaction.
               </li>
             </ul>
             <p className="text-lg my-6">
-              This methodology allowed us to identify both obvious usability issues and more subtle pain points that might otherwise go undetected in traditional testing approaches.
+              This methodology allowed us to identify both obvious usability issues and more subtle pain points that we may have missed with our perspective as technical users.
             </p>
 
             <h1 className="text-2xl font-bold my-6">User Feedback</h1>
