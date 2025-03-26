@@ -309,7 +309,7 @@ export default function UIDesign() {
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-6">
-                        <Image src="/ui-design/login.jpg" alt="Login" width={4032} height={2579} className="object-contain"/>
+                        <Image src="/ui-design/login.jpg" alt="Login" width={1552} height={1105} className="object-contain"/>
                         <p className="text-center mt-3 text-sm text-gray-500">Login</p>
                       </CardContent>
                     </Card>
@@ -319,7 +319,7 @@ export default function UIDesign() {
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-6">
-                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={4032} height={2579} className="object-contain"/>
+                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
                         <p className="text-center mt-3 text-sm text-gray-500">Registration Site</p>
                       </CardContent>
                     </Card>
@@ -329,7 +329,7 @@ export default function UIDesign() {
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-6">
-                        <Image src="/ui-design/ai-chatbot.png" alt="AI Chatbot" width={4032} height={2579} className="object-contain"/>
+                        <Image src="/ui-design/ai-chatbot.png" alt="AI Chatbot" width={1552} height={1105} className="object-contain"/>
                         <p className="text-center mt-3 text-sm text-gray-500">AI Chatbot</p>
                       </CardContent>
                     </Card>
