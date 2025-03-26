@@ -45,7 +45,7 @@ export default function Testing() {
           <div id="testing-strategy">
             <h1 className="text-4xl font-bold my-6">Testing Strategy</h1>
             <p className="text-lg my-6">
-              Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
+              Our project consists of varied components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
           </div>
           <div id="unit-integration-testing">
@@ -234,8 +234,11 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
           </div>
           <div id="performance-testing">
             <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
-            <p className="text-lg">
-              [...]
+            <p className="text-lg my-6">
+              Ensuring that perfomance stayed optimal in our application was a priority we took as a team, specially considering the hardware we were using. As it is such a complex project, we needed to ensure that our code remained optimal and that we caught out any bottlenecks that may arise from unoptimized code. This applies more to the Raspberry Pi, which is a lot less powerful than the hardware the core server is meant to run on. 
+            </p>
+            <p className="text-lg my-6">
+              Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
             </p>
           </div>
           <div id="user-acceptance-testing">
@@ -246,7 +249,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
-            <Carousel className="my-6 w-full max-w-4xl">
+            <Carousel className="my-6 w-full">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
@@ -287,7 +290,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                           alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
-                          className="object-containmax-h-[560px] w-auto" 
+                          className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
                     </Card>
