@@ -45,13 +45,13 @@ export default function Testing() {
           <div id="testing-strategy">
             <h1 className="text-4xl font-bold my-6">Testing Strategy</h1>
             <p className="text-lg">
-              TALK ABOUT DIFFERENT UIs, DIFFERENT BACKEND SERVICES AND PYTEST
+              [TALK ABOUT DIFFERENT UIs, DIFFERENT BACKEND SERVICES AND PYTEST]
             </p>
           </div>
-          <div id="unit-testing">
+          <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
             <p className="text-lg my-6">
-              ADD INTEGRATION TESTING PARAGRAPH
+              [ADD INTEGRATION TESTING PARAGRAPH]
             </p>
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses. The suite also includes cleanup procedures that ensure test isolation by removing the test database after each test run.
@@ -77,7 +77,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               The most sophisticated part of these tests focuses on the key encapsulation mechanism (KEM) using quantum-resistant cryptography via the OQS library with ML-KEM-512. These tests validate the server's ability to initiate secure key exchange, generate appropriate public keys, and successfully complete the key exchange process by decapsulating client-provided ciphertexts to establish shared secrets. The comprehensive test coverage ensures the API provides secure device management capabilities while maintaining data confidentiality through end-to-end encryption - critical for a system that stores sensitive credentials and device information.
             </p>
             <p className="text-lg">
-              GIVE EXAMPLE CODE OF TEST
+              [GIVE EXAMPLE CODE OF TEST]
             </p>
             <p className="text-lg my-6">
               Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced.
@@ -92,7 +92,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               The high rate of compatibility was enabled by Tauri, which allowed us to easily create native applications on all platforms leveraging one single codebase.
             </p>
-            <Table className="my-6">
+            <Table>
               <TableCaption>Table 1: Operating System Compatibility for IBM Proximity Agents</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
@@ -138,13 +138,13 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               </TableBody>
             </Table>
             <h1 className="text-2xl font-medium my-6">Registration Site</h1>
-            <p className="text-lg mb-4">
+            <p className="text-lg my-6">
               We have also tested our registration site across multiple different environments. However, there are some issues regarding certain out-of-date browsers not natively supporting the Web Serial API, which is a core functionality of our website. This API allows us to directly communicate with the ESP32 during the registration process to share secret keys for TOTP and to read the MAC address of your device.
             </p>
-            <p className="text-lg mb-4">
+            <p className="text-lg my-6">
               Fortunately, there are simple solutions available by using widely available extensions that expose the Web Serial API. For example, for Firefox users, we recommend using the <a href="https://addons.mozilla.org/en-GB/firefox/addon/webserial-for-firefox/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">WebSerial for Firefox</a> extension.
             </p>
-            <Table className="my-6">
+            <Table>
               <TableCaption>Table 2: Browser Compatibility for Registration Site</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
@@ -198,33 +198,45 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
-            <div className="flex flex-col items-center my-6">
-              <Image
-                src="/testing/responsive-site.png" 
-                alt="Responsiveness Test" 
-                width={750} 
-                height={600}
-                className="max-w-full object-contain bg-white"
-                style={{borderRadius:'10px'}}
-              />
-              <p className="text-center text-sm text-gray-500">Figure 1: Registration Site - Responsive Design Test</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/testing/responsive-app.png" 
-                alt="Responsiveness Test" 
-                width={750} 
-                height={600}
-                className="max-w-full object-contain bg-white"
-                style={{borderRadius:'10px'}}
-              />
-              <p className="text-center text-sm text-gray-500">Figure 2: IBM Proximity Agents - Responsive Design Test</p>
-            </div>
+            <Carousel className="my-6">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">IBM Proximity Agents</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">Registration Site</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 2: Registration Site - Responsive Design Test</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
           <div id="performance-testing">
             <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              [...]
             </p>
           </div>
           <div id="user-acceptance-testing">
@@ -235,7 +247,6 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
-            <div className="flex justify-center">
             <Carousel className="my-6 w-full max-w-4xl">
               <CarouselContent>
                 <CarouselItem key={1}>
@@ -288,8 +299,6 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               <CarouselNext />
               <p className="text-center text-sm text-gray-500 mt-2">User Testing Sessions</p>
             </Carousel>
-            </div>
-
             <h1 className="text-2xl font-bold my-6">User Testing Methodology</h1>
             <p className="text-lg my-6">
               We employed a structured approach to user testing that combined task-based evaluation with qualitative feedback collection:
@@ -357,15 +366,14 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               This methodology allowed us to identify both obvious usability issues and more subtle pain points that we may have missed with our perspective as technical users.
             </p>
-
             <h1 className="text-2xl font-bold my-6">User Feedback</h1>
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement:
             </p>
             <p className="text-lg my-6">
-              MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION
+              [MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION]
             </p>
-            <Table className="my-6">
+            <Table>
               <TableCaption>Table 3: Summary of User Feedback</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
@@ -376,7 +384,7 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">"Straight out of Star Trek" - impressive integration of technologies</p>
+                    <p className="text-muted-foreground">Impressive integration of technologies, "Straight out of Star Trek"</p>
                   </TableCell>
                   <TableCell className="text-lg">
                     <p className="text-muted-foreground">ESP32 registration process was confusing and buggy during first-time setup</p>
@@ -402,9 +410,6 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
                   <TableCell className="text-lg">
                     <p className="text-muted-foreground">Time-saving capabilities praised</p>
                   </TableCell>
-                  <TableCell className="text-lg">
-                    <p className="text-muted-foreground"></p>
-                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -415,18 +420,30 @@ async def test_client() -> AsyncIterator[AsyncTestClient[Litestar]]:
             <p className="text-lg my-6">
               Based on user feedback, we implemented several significant improvements:
             </p>
-            <ul className="list-disc pl-6 text-lg my-6 space-y-3">
-              <li>
-                <strong>Restrictions:</strong> A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.
-              </li>
-              <li>
-                <strong>Error handling:</strong> Cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.
-              </li>
-              <li>
-                <strong>Visual feedback:</strong> We added clear visual indicators for successful authentication and other system states.
-              </li>
-            </ul>
-            <p className="text-lg my-6">
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Added Restrictions</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Better Error Handling</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">We cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.</p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Visual feedback</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-lg">We added clear visual indicators for successful authentication and other system states.</p>
+              </CardContent>
+            </Card>
+            <p className="text-lg mt-6">
               After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, particularly among non-technical users who had previously struggled with the system.
             </p>
           </div>

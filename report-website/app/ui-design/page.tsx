@@ -309,7 +309,7 @@ export default function UIDesign() {
                   <div className="p-1">
                     <Card>
                       <CardHeader>
-                        <CardTitle className="text-2xl font-bold">Login Interface</CardTitle>
+                        <CardTitle className="text-2xl">Login Interface</CardTitle>
                         <Separator />
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
@@ -322,7 +322,7 @@ export default function UIDesign() {
                   <div className="p-1">
                     <Card>
                       <CardHeader>
-                        <CardTitle className="text-2xl font-bold">AI Agent Desktop App</CardTitle>
+                        <CardTitle className="text-2xl">AI Agent Desktop App</CardTitle>
                         <Separator />
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
@@ -335,7 +335,7 @@ export default function UIDesign() {
                   <div className="p-1">
                     <Card>
                       <CardHeader>
-                        <CardTitle className="text-2xl font-bold">Registration Site</CardTitle>
+                        <CardTitle className="text-2xl">Registration Site</CardTitle>
                         <Separator />
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
