@@ -227,40 +227,10 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
-            <Carousel className="my-6">
-              <CarouselContent>
-                <CarouselItem key={1}>
-                  <div className="p-1">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-2xl">IBM Proximity Agents</CardTitle>
-                        <Separator />
-                      </CardHeader>
-                      <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={2}>
-                  <div className="p-1">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-2xl">Registration Site</CardTitle>
-                        <Separator />
-                      </CardHeader>
-                      <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 2: Registration Site - Responsive Design Test</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+            <p className="text-center text-sm text-gray-500 mt-3 my-6">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
+            <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+            <p className="text-center text-sm text-gray-500 mt-3">Figure 2: Registration Site - Responsive Design Test</p>
           </div>
           <div id="performance-testing">
             <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
