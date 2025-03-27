@@ -372,15 +372,16 @@ export default function SystemDesign() {
           </div>
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
-            <p className="text-lg">
+            <h1 className="text-2xl font-bold my-6">Server</h1>
+            <p className="text-lg my-6">
               We defined 11 API endpoints on our server in total, which allow for a range of operations such as registering a new device, managing preferences, facial recognition, etc.
             </p>
-            <h1 className="text-2xl font-bold mt-6">Authentication</h1>
+            <h1 className="text-2xl mt-6">Authentication</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">1.</span> POST /register
+                    <span className="mr-3">1.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST  </span>/register
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -402,7 +403,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">2.</span> PUT /devices/credentials
+                    <span className="mr-3">2.</span><span className="text-white bg-orange-500 p-1 rounded-sm mr-3"> PUT </span>/devices/credentials
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -420,12 +421,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Device Management</h1>
+            <h1 className="text-2xl mt-6">Device Management</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">3.</span> GET /devices/all-mac-addresses
+                    <span className="mr-3">3.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/devices/all-mac-addresses
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -447,7 +448,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">4.</span> GET /devices/{'{'}mac_address{'}'}/username
+                    <span className="mr-3">4.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/devices/{'{'}mac_address{'}'}/username
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -469,7 +470,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">5.</span> DELETE /devices/delete
+                    <span className="mr-3">5.</span><span className="text-white bg-red-500 p-1 rounded-sm mr-3"> DELETE </span>/devices/delete
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -487,12 +488,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Preferences Management</h1>
+            <h1 className="text-2xl mt-6">Preferences Management</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">6.</span> POST /preferences/update
+                    <span className="mr-3">6.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/preferences/update
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -514,7 +515,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">7.</span> GET /preferences/{'{'}username{'}'}
+                    <span className="mr-3">7.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/preferences/{'{'}username{'}'}
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -532,12 +533,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Key Exchange Mechanism (KEM)</h1>
+            <h1 className="text-2xl mt-6">Key Exchange Mechanism (KEM)</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">8.</span> POST /kem/initiate
+                    <span className="mr-3">8.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/kem/initiate
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -559,7 +560,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">9.</span> POST /kem/complete
+                    <span className="mr-3">9.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/kem/complete
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -577,12 +578,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Face Recognition</h1>
+            <h1 className="text-2xl mt-6">Face Recognition</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">10.</span> POST /register/face
+                    <span className="mr-3">10.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/register/face
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -604,7 +605,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">11.</span> GET /encodings
+                    <span className="mr-3">11.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/encodings
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
