@@ -557,7 +557,7 @@ shutil.rmtree(user_video_dir, ignore_errors=True)
             <p className="text-lg mb-4">
                 The <code>train_model()</code> method in <code>server/backend/face_recognition.py</code> is where we actually train the model. We use the <code>face_recognition</code> library in order to do this, which is a very powerful and well-known library in Python used for face recognition (as the name implies). The library uses a deep learning model called <code>ResNet-34</code> to extract facial features from images, and then we use these features to train a simple SVM (Support Vector Machines) classifier and save the 128-dimensional embeddings computed by the model for each person. The model is essentially just a bunch of face embeddings that are stored in a database and mapped to the usernames of a person. After training the model, the next time the facial recognition request is made, we simply load the encodings data and compare the current feed of the Raspberry Pi 5's camera module to the embeddings stored in the database. The code for the training of the model is quite straightforward:
             </p>
-            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto mb-8">
               <code className="language-python">
 {`def train_model(frame_paths, username):
     # read/create encodings data structure
@@ -590,12 +590,135 @@ shutil.rmtree(user_video_dir, ignore_errors=True)
               </code>
             </pre>
 
+            <h2 className="text-2xl font-bold my-4">Storing JSON Preferences</h2>
+            
+            <h3 className="text-xl font-bold my-4">Overview</h3>
+            <p className="text-lg mb-4">
+                Each user has a set of preferences that they can set in order to control the accessibility of their device. These preferences are stored in a JSON format, as specified in the System Design section. These are stored in a preferences column in the devices table in <code>server/backend/app.py</code> according to sqlalchemy's MutableDict JSON type in order to handle updates to the JSON data.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`class Device(Base):
+    __tablename__ = 'devices'
+    mac_address = mapped_column(primary_key=True)
+    # other code
+    preferences = mapped_column(
+        MutableDict.as_mutable(JSON),
+        default=lambda: deepcopy(DEFAULT_PREFS),
+        nullable=False
+    )
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                The reason we use a <code>MutableDict</code> is to ensure that the server can track changes in the dictionary and automatically commit them to the database, rather than having to rely on the developers to do this manually. This is important because the preferences can be updated at any time by the desktop application, and we want to ensure that these changes persist for the next time that the user logs in into a device. The default preferences are defined in <code>server/backend/json_example.json</code>, and we load these automatically when a user's device is registered.
+            </p>
+
+            <h3 className="text-xl font-bold my-4">Updating the Preferences</h3>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`@post('/preferences/update')
+async def update_json_preferences(data: EncryptedMessageRequest, transaction: AsyncSession) -> dict:
+    decrypted_data = encryption_helper.decrypt_msg(data)
+    validated_data = UpdateJSONPreferencesRequest(**decrypted_data)
+
+    query = select(Device).where(Device.username == validated_data.username)
+    device = (await transaction.execute(query)).scalar_one_or_none()
+    
+    device.preferences = validated_data.preferences
+    await transaction.commit()
+
+    return encryption_helper.encrypt_msg({'preferences': validated_data.preferences}, data.client_id)
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-8">
+                The code shown above is the POST <code>/preferences/update</code> endpoint which handles updating the JSON file (with requests to this being sent from the desktop application). First, as always, we decrypt the data received from the client (the desktop app), and then we validate the data is in the correct format by using our <code>Pydantic</code>-defined models. After validating the data, we query the database to get the device with the specific username (since these will also be unique), and we update the preferences column with the new preferences. The desktop app sends the full JSON back, so we can simply replace the entirety of the preferences column, rather than having to search through the JSON and updating each key-value pair individually, which could potentially be a complex operation. Finally, we encrypt the updated preferences and send them back to the client, so that they can be reflected in the desktop application.
+            </p>
             </div>
           <div id="esp32">
             <h1 className="text-4xl font-bold my-6">ESP32</h1>
-            <p className="text-lg">
-              HOW SENDING MAC ADDRESS TO REG SITE (NOT SPECIFICALLY, BUT CAN SEE IN SERIAL MONITOR)
+            <p className="text-lg mb-6">
+                This is the code needed on the ESP32 device which ensures that its MAC address is transmitted when necessary, and also handles the Bluetooth Low Energy communication with the Raspberry Pi as the users approaches the computer to be logged in into.
             </p>
+
+            <h2 className="text-2xl font-bold my-4">Tools & Dependencies</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <Card className="p-4">
+                <div className="flex flex-row items-center gap-3">
+                <Image src="/implementation/litestar.svg" alt="Litestar logo" width={36} height={36} />
+                <div>
+                    <h3 className="text-base font-semibold">Litestar</h3>
+                    <p className="text-sm text-muted-foreground">
+                    Async, fast, and light-weight Python web framework running our server's API.
+                    </p>
+                </div>
+                </div>
+            </Card>
+
+            <Card className="p-4">
+                <div className="flex flex-row items-center gap-3">
+                <Image src="/implementation/liboqs.png" alt="liboqs logo" width={36} height={36} />
+                <div>
+                    <h3 className="text-base font-semibold">Liboqs</h3>
+                    <p className="text-sm text-muted-foreground">
+                    Open-source library for quantum-safe cryptographic algorithms.
+                    </p>
+                </div>
+                </div>
+            </Card>
+
+            <Card className="p-4">
+                <div className="flex flex-row items-center gap-3">
+                <Image src="/implementation/opencv.svg" alt="OpenCV logo" width={36} height={36} />
+                <div>
+                    <h3 className="text-base font-semibold">OpenCV</h3>
+                    <p className="text-sm text-muted-foreground">
+                    Handles camera input and image preprocessing for facial recognition.
+                    </p>
+                </div>
+                </div>
+            </Card>
+            </div>
+
+            <h2 className="text-2xl font-bold my-4">Post-Quantum KEM Key Exchange with LibOQS</h2>
+            <p className="text-lg mb-4">
+                The server implements the post-quantum key exchange mentioned above in the Registration Site section by using the LibOQS library (via Python's oqs bindings). This is used to establish the shared secret with the client, and ensure that this secret is safe from potential attacks by classical computers.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`def kem_initiate(self, data: KEMInitiateRequest) -> dict:
+    # create a KEM object from liboqs
+    server_kem = oqs.KeyEncapsulation(self.KEM_ALGORITHM)
+    
+    # generate a key pair
+    public_key = server_kem.generate_keypair()
+    public_key_b64 = base64.b64encode(public_key).decode()
+    
+    # store the KEM object in a session dict
+    self.kem_sessions[data.client_id] = server_kem
+    
+    return {'public_key_b64': public_key_b64}
+
+def kem_complete(self, data: KEMCompleteRequest) -> dict:
+    server_kem = self.kem_sessions.pop(data.client_id, None)
+    if not server_kem:
+        raise HTTPException(status_code=401, detail='Client not recognised...')
+    
+    # decode the encapsulated data from client
+    ciphertext = base64.b64decode(data.ciphertext_b64)
+    
+    # decapsulate to get the shared secret
+    shared_secret = server_kem.decap_secret(ciphertext)
+    
+    # store the shared secret in a dictionary for future use
+    self.shared_secrets[data.client_id] = shared_secret
+    server_kem.free()
+    
+    return {'status': 'success'}
+`}
+              </code>
+            </pre>
           </div>
           <div id="raspberry-pi">
             <h1 className="text-4xl font-bold my-6">Raspberry Pi</h1>
