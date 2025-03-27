@@ -47,8 +47,11 @@ export default function Testing() {
             <p className="text-lg my-6">
               Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done manual integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
-            <h1 className="text-2xl font-bold my-6">Automated Testing</h1>
-            <ul className="text-lg list-disc pl-6 space-y-3">
+            <p className="text-lg my-6">
+              Our testing can be divided into automated testing and manual testing. Automated testing involves using scripts and tools to quickly verify the functionality of individual components, making it ideal for repetitive and large-scale tests. In contrast, manual testing allows us to assess parts that require human judgment, such as user experience, or to verify the functioning of our system without spending a large amount of time developing comprehensive testing scripts.
+            </p>
+            <h1 className="text-2xl font-bold mt-6">Automated Testing</h1>
+            <ul className="text-lg list-disc pl-6 space-y-3 mt-3">
               <li>
                 <span className="font-medium">Unit Testing</span>
               </li>
@@ -56,8 +59,8 @@ export default function Testing() {
                 <span className="font-medium">Continuous Integration (CI)</span>
               </li>
             </ul>
-            <h1 className="text-2xl font-bold my-6">Manual Testing</h1>
-            <ul className="text-lg list-disc pl-6 space-y-3">
+            <h1 className="text-2xl font-bold mt-6">Manual Testing</h1>
+            <ul className="text-lg list-disc pl-6 space-y-3 mt-3">
               <li>
                 <span className="font-medium">Integration Testing</span>
               </li>
@@ -96,7 +99,7 @@ export default function Testing() {
                 </p>
               </CardContent>
             </Card>
-            <div className="flex flex-col items-center my-6">
+            <div className="flex flex-col items-center mt-8 my-6">
               <Image 
                 src="/testing/coverage.png" 
                 alt="Test Coverage" 
@@ -115,7 +118,7 @@ export default function Testing() {
               </CardContent>
             </Card>
             <p className="text-lg my-6">
-              Our test suite uses pytest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. The <code>@pytest_asyncio.fixture</code> decorator below registers the function as an asynchronous fixture with function scope. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
+              Our test suite uses pytest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -199,7 +202,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
               </code>
             </pre>
             <p className="text-lg my-6">
-              This is the example Raspberry Pi client code which simulates API calls:
+              This is the example Raspberry Pi client code which simulates API calls that may be made:
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -545,9 +548,6 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement:
             </p>
-            <p className="text-lg my-6">
-              [MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION]
-            </p>
             <Table>
               <TableCaption>Table 3: Summary of User Feedback</TableCaption>
               <TableHeader>
@@ -585,11 +585,17 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                   <TableCell className="text-lg">
                     <p>Time-saving capabilities praised</p>
                   </TableCell>
+                  <TableCell className="text-lg">
+                    <p>The hardware side is underdeveloped - the Raspberry Pi and camera casing is not production ready</p>
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
             <p className="text-lg mt-6">
               Overall, users were impressed by the innovative technology, praising it's ease of use and seamlessness once installed on computers. Our main focus for improvements was making the system more intuitive and user-friendly, especially for non-technical users.
+            </p>
+            <p className="text-lg my-6">
+              [MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION]
             </p>
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
             <p className="text-lg my-6">
