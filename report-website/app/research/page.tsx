@@ -190,9 +190,15 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="flex flex-col items-center my-6">
-                    <Image src="/research/rpi5.webp" alt="Raspberry Pi 5" width={300} height={150}/>
-                    <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi 5</p>
+                  <div className="flex flex-row items-center justify-center my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/rpi5.webp" alt="Raspberry Pi 5" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi 5</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/nvidia-jetson-nano.png" alt="NVIDIA Jetson Nano" width={450} height={300}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">NVIDIA Jetson Nano</p>
+                    </div>
                   </div>
                   <p className="text-lg">
                     The Raspberry Pi 5 offers ample processing power to handle incoming BLE signals, run facial recognition algorithms, and communicate with our main server <span className="text-muted-foreground">[8]</span>. Furthermore, the Raspberry Pi Camera Module enables us to capture high definition video which is used in the facial recogntion algorithms. Whilst more advanced alternatives like NVIDIA's Jetson Nano provide superior AI capabilities <span className="text-muted-foreground">[9]</span>, they come at a higher cost and exceed the requirements of our project. The Raspberry Pi 5 strikes a balance between performance and affordability.
@@ -208,12 +214,18 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="flex flex-col items-center my-6">
-                    <Image src="/research/esp32.webp" alt="ESP32" width={300} height={150}/>
-                    <p className="text-center mt-3 text-sm text-gray-500">ESP32</p>
+                  <div className="flex flex-row items-center justify-center my-6 gap-5">
+                    <div className="flex flex-col items-center6">
+                      <Image src="/research/esp32.webp" alt="ESP32" width={250} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">ESP32</p>
+                    </div>
+                    <div className="flex flex-col items-center6">
+                      <Image src="/research/rpi-pico-w.jpg" alt="Raspberry Pi Pico W" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi Pico W</p>
+                    </div>
                   </div>
                   <p className="text-lg">
-                    The ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals <span className="text-muted-foreground">[10]</span>. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
+                    The ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals <span className="text-muted-foreground">[10]</span>. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico W for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -309,9 +321,13 @@ export default function Research() {
                       <Image src="/research/python.svg" alt="Python" width={820/9} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Python</p>
                     </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/rpi.svg" alt="Raspberry Pi" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi</p>
+                    </div>
                   </div>
                   <p className="text-lg">
-                    Python was chosen to be used on our Raspberry Pi due to its simplicity, and extensive library ecosystem. Its ease of use allowed us to focus on the overall development of our system, without being bogged down by syntax and other considerations. It is well-suited for implementing facial recognition due to support for libraries like OpenCV and Dlib. Furthermore, its support for BLE communication via bluepy, UART, and USB HID libraries, makes it an excellent choice for IoT hardware.
+                    Python was chosen to be used on our Raspberry Pi due to its simplicity, and extensive library ecosystem, including Raspberry Pi libraries. Its ease of use allowed us to focus on the overall development of our system, without being bogged down by syntax and other considerations. It is well-suited for implementing facial recognition due to support for libraries like OpenCV and Dlib. Furthermore, its support for BLE communication via bluepy, UART, and USB HID libraries, makes it an excellent choice for IoT hardware.
                   </p>
                 </AccordionContent>
               </AccordionItem>
