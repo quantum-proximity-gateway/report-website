@@ -84,7 +84,7 @@ export default function Testing() {
             <p className="text-lg my-6">
               We utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
             </p>
-            <Card className="my-6 max-w-2xl mx-auto">
+            <Card className="my-6 max-w-xl mx-auto">
               <CardContent className="flex flex-col items-center justify-center p-2">
                 <Image 
                   src="/testing/techforgood.jpg" 
