@@ -639,6 +639,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 </TableRow>
               </TableBody>
             </Table>
+            <h1 className="text-xl font-bold my-6">Summary of User Feedback</h1>
             <Table>
               <TableCaption>Table 4: Summary of User Feedback</TableCaption>
               <TableHeader>
@@ -681,7 +682,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </p>
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
             <p className="text-lg my-6">
-              Based on user feedback, we implemented several significant improvements:
+              Based on user feedback, we implemented several significant improvements in the last weeks of development:
             </p>
             <Card className="my-6">
               <CardHeader>
@@ -690,7 +691,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.</p>
-              </CardContent>
+              </CardContent> 
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Better Error Handling</CardTitle>
                 <Separator />
@@ -699,11 +700,11 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <p className="text-muted-foreground text-lg">We cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.</p>
               </CardContent>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">Visual feedback</CardTitle>
+                <CardTitle className="text-2xl font-bold">Cluttered UI</CardTitle>
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">We added clear visual indicators for successful authentication and other system states.</p>
+                <p className="text-muted-foreground text-lg">The proximity agents application got a complete redesign, making it look more modern and pleasing to users. </p>
               </CardContent>
             </Card>
             <p className="text-lg mt-6">
