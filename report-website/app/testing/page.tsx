@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 
 export default function Testing() {
@@ -44,72 +45,80 @@ export default function Testing() {
         <div className="max-w-4xl">
           <div id="testing-strategy">
             <h1 className="text-4xl font-bold my-6">Testing Strategy</h1>
-            <p className="text-lg my-6">
+            <p className="text-lg">
               Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done manual integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
-            <p className="text-lg my-6">
+            <p className="text-lg mt-6">
               Our testing can be divided into automated testing and manual testing. Automated testing involves using scripts and tools to quickly verify the functionality of individual components, making it ideal for repetitive and large-scale tests. In contrast, manual testing allows us to assess parts that require human judgment, such as user experience, or to verify the functioning of our system without spending a large amount of time developing comprehensive testing scripts.
             </p>
-            <h1 className="text-2xl font-bold mt-6">Automated Testing</h1>
-            <ul className="text-lg list-disc pl-6 space-y-3 mt-3">
-              <li>
-                <span className="font-medium">Unit Testing</span>
-              </li>
-              <li>
-                <span className="font-medium">Continuous Integration (CI)</span>
-              </li>
-            </ul>
-            <h1 className="text-2xl font-bold mt-6">Manual Testing</h1>
-            <ul className="text-lg list-disc pl-6 space-y-3 mt-3">
-              <li>
-                <span className="font-medium">Integration Testing</span>
-              </li>
-              <li>
-                <span className="font-medium">Responsive Design Testing</span>
-              </li>
-              <li>
-                <span className="font-medium">Compatibility Testing</span>
-              </li>
-              <li>
-                <span className="font-medium">User Acceptance Testing</span>
-              </li>
-            </ul>
-            <div className="flex flex-wrap justify-center gap-6 my-8">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Automated Testing
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3 mb-3">
+                    <li>
+                      <span className="font-medium">Unit Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Continuous Integration (CI)</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Manual Testing
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3 mb-3">
+                    <li>
+                      <span className="font-medium">Integration Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Responsive Design Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Compatibility Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">User Acceptance Testing</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
+            <p className="text-lg mb-6">
+              Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application for a given user. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities.
+            </p>
+            <p className="text-lg mb-3">
+              On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
+            </p>
+          </div>
+          <div id="unit-testing">
+            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
+            <div className="flex justify-center my-6">
               <div>
                 <Image 
                   src="/testing/pytest.svg" 
                   alt="PyTest Logo" 
                   width={200} 
                   height={200}
-                  className="mx-auto transition-transform hover:scale-105"
                 />
-                <p className="text-center font-medium mt-3">PyTest</p>
+                <p className="text-center font-medium">PyTest</p>
                 <p className="text-center text-sm text-gray-500">Unit Testing Framework</p>
               </div>
-              <div>
-                <Image 
-                  src="/testing/responsivelyapp.png" 
-                  alt="Responsively App Logo" 
-                  width={200} 
-                  height={200}
-                  className="mx-auto transition-transform hover:scale-105"
-                />
-                <p className="text-center font-medium mt-3">Responsively App</p>
-                <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
-              </div>
             </div>
-            <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
             <p className="text-lg my-6">
-              Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application depending on who is using it. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities.
-            </p>
-            <p className="text-lg my-6">
-              On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
-            </p>
-          </div>
-          <div id="unit-testing">
-            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
-            <p className="text-lg my-6">
-              Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
+              Our unit tests are performed utilising a comprehensive suite of unit tests for the API endpoints defined in our server, using PyTest. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
             <div className="flex flex-col items-center my-6">
               <Image 
@@ -148,7 +157,7 @@ export default function Testing() {
               </CardContent>
             </Card>
             <p className="text-lg my-6">
-              Our test suite uses pytest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
+              Our test suite uses PyTest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -394,6 +403,18 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistent design throughout multiple platforms and devices. We've implemented responsive layouts that automatically adjust to different screen sizes, from large desktop monitors to mobile devices. This approach ensures that both of our applications remain usable and visually coherent regardless of the device being used.
             </p>
+            <div className="flex justify-center my-6">
+              <div>
+                <Image 
+                  src="/testing/responsivelyapp.png" 
+                  alt="Responsively App Logo" 
+                  width={200} 
+                  height={200}
+                />
+                <p className="text-center font-medium">Responsively App</p>
+                <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
+              </div>
+            </div>
             <p className="text-lg my-6">
               During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
@@ -729,7 +750,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <Table className="mb-8">
               <TableCaption>Table 3: User Feedback on Quantum Proximity Gateway</TableCaption>
               <TableHeader>
-                <TableRow>
+                <TableRow className="bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[300px]">Acceptance Requirement</TableHead>
                   <TableHead className="text-center">Strongly Disagree</TableHead>
                   <TableHead className="text-center">Disagree</TableHead>
