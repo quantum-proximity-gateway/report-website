@@ -600,9 +600,6 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-lg">
                     <p className="text-muted-foreground">Convenient authentication once properly configured</p>
                   </TableCell>
-                  <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Technical terminology like "quantum-resistant cryptography" and "TOTP" confused non-technical users</p>
-                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
