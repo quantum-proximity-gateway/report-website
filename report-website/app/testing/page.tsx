@@ -254,16 +254,16 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               We also utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
             </p>
-            <Card className="my-6 max-w-xl mx-auto">
+            <Card className="my-6">
               <CardContent className="flex flex-col items-center justify-center p-2">
                 <Image 
                   src="/testing/techforgood.jpg" 
                   alt="Tech For Good AI Lab" 
                   width={400} 
                   height={400}
-                  className="object-contain w-full rounded-md"
+                  className="object-contain rounded-md mt-3"
                 />
-                <p className="text-center text-sm text-gray-500 mt-3">Initial Integration Tests in Lab</p>
+                <p className="text-center text-sm text-gray-500 my-3">Initial Integration Tests in Lab</p>
               </CardContent>
             </Card>
             <h1 className="text-2xl font-bold my-6">Continous Integration (CI)</h1>
@@ -516,7 +516,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, which is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
             </p>
-            <h1 className="text-2xl font-bold my-6">Desktop Application Overhead</h1>
+            <h1 className="text-2xl font-bold my-6">Desktop Application System Usage</h1>
             <p className="text-lg my-6">
               Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas a simple application at a much smaller scale than ours made using other frameworks like Electron usually have a larger size of around 85MB, so using Tauri was definitely a good choice when it came reducing our performance footprint <span className="text-muted-foreground">[1]</span>.
             </p>
@@ -532,8 +532,8 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                         <Image 
                           src="/testing/proximity-agents-memory.png" 
                           alt="Tauri App Memory Usage" 
-                          width={1636} 
-                          height={1169} 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
                         <p className="text-center text-sm text-gray-500 mt-3">Tauri App Memory Usage</p>
@@ -548,8 +548,8 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                         <Image 
                           src="/testing/proximity-agents-cpu.png" 
                           alt="Tauri App CPU/GPU Usage" 
-                          width={1636} 
-                          height={1169} 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
                         <p className="text-center text-sm text-gray-500 mt-3">Tauri App CPU/GPU Usage</p>
@@ -564,8 +564,8 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                         <Image 
                           src="/testing/ollama-memory.png" 
                           alt="Ollama Memory Usage" 
-                          width={1636} 
-                          height={1169} 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
                         <p className="text-center text-sm text-gray-500 mt-3">Ollama Memory Usage</p>
@@ -580,8 +580,8 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                         <Image 
                           src="/testing/ollama-gpu.png" 
                           alt="Ollama CPU/GPU Usage" 
-                          width={1636} 
-                          height={1169} 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
                         <p className="text-center text-sm text-gray-500 mt-3">Ollama CPU/GPU Usage</p>
