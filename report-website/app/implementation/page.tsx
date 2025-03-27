@@ -308,7 +308,7 @@ recorder.start();
             <p className="text-lg mb-4">
                 The code below shows how we did the 5-second countdown for the video, as well as how we actually submit the video (as a video blob) to the server.
             </p>
-            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto mb-8">
               <code className="language-ts">
 {`// 5-second video countdown
 const countdownInterval = setInterval(() => {
@@ -334,7 +334,18 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
 `}
               </code>
             </pre>
+            <p className="text-lg mb-8 mt-8">
+                Overall, the workflow for the registration site is as follows:
+                <ul className="space-y-3 list-decimal list-inside text-lg pl-4 my-2">
+                    <li>The user initially visits the main registration page and clicks on "Connect to device".</li>
+                    <li>The Web Serial API is then used to connect to the ESP32, a newly-generated TOTP secret is sent to the ESP32, and the ESP32's MAC address is transmitted to the browser, which is displayed in that MAC address field. </li>
+                    <li>The user then fills out their username and password, clicking on the submit button, which calls the server's <code>/register</code> endpoint after encrypting the data (AES-GCM with a shared secret generated from a post-quantum handshake).</li>
+                    <li>The server returns a success response, at which point the user is redrected to the face recognition page.</li>
+                    <li>The user then records a 5-second video with the camera, and the captured video is converted into a video blob and sent to the server, which will then register the user's face (this will be covered in more detail in the Server section).</li>
+                </ul>
 
+                Throughout the entire process, the <code>EncryptionClient</code> ensures that all sensitive data such as username, password, and TOTP secret, are always encrypted before being sent.
+            </p>
           </div>
 
           <div id="server">
