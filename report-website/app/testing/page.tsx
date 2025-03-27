@@ -603,7 +603,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
-            <Carousel className="my-6 w-full max-w-4xl">
+            <Carousel className="my-6 w-full">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
@@ -644,7 +644,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                           alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
-                          className="object-containmax-h-[560px] w-auto" 
+                          className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
                     </Card>
