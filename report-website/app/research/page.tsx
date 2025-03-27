@@ -182,7 +182,7 @@ export default function Research() {
             <p className="text-lg my-6">
               Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.
             </p>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -190,13 +190,23 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row items-center justify-center my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/rpi5.webp" alt="Raspberry Pi 5" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi 5</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/nvidia-jetson-nano.png" alt="NVIDIA Jetson Nano" width={450} height={300}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">NVIDIA Jetson Nano</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
                     The Raspberry Pi 5 offers ample processing power to handle incoming BLE signals, run facial recognition algorithms, and communicate with our main server <span className="text-muted-foreground">[8]</span>. Furthermore, the Raspberry Pi Camera Module enables us to capture high definition video which is used in the facial recogntion algorithms. Whilst more advanced alternatives like NVIDIA's Jetson Nano provide superior AI capabilities <span className="text-muted-foreground">[9]</span>, they come at a higher cost and exceed the requirements of our project. The Raspberry Pi 5 strikes a balance between performance and affordability.
                   </p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -204,8 +214,18 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row items-center justify-center my-6 gap-5">
+                    <div className="flex flex-col items-center6">
+                      <Image src="/research/esp32.webp" alt="ESP32" width={250} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">ESP32</p>
+                    </div>
+                    <div className="flex flex-col items-center6">
+                      <Image src="/research/rpi-pico-w.jpg" alt="Raspberry Pi Pico W" width={300} height={150}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi Pico W</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
-                    The ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals <span className="text-muted-foreground">[10]</span>. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
+                    The ESP32 was chosen for our low-power BLE beacon due to its cost-effectiveness, and efficiency in sending out BLE signals <span className="text-muted-foreground">[10]</span>. It continuously broadcasts signals so that it can be detected by our Raspberry Pi 5, facilitating proximity detection. Whilst a Raspberry Pi Pico W for example could also serve as a BLE beacon, we opted for the ESP32 due to our prior experience with the platform, and due to it being more established within the IoT community. By integrating the ESP32 with the Raspberry Pi 5, our system achieves an optimal balance of performance and cost to detect the presence and proximity of our users.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -216,7 +236,7 @@ export default function Research() {
             <p className="text-lg my-6">
               Our system consists of many distinct parts which come together to form the quantum proximity gateway. For each part, we thought about the optimal programming languages which would strike a balance between development time and performance.
             </p>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -224,13 +244,23 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/python.svg" alt="Python" width={820/9} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Python</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/litestar.svg" alt="Litestar" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Litestar</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
                     For our main server that manages user profiles, Python was chosen as the core language due to its simplicity and extensive library ecosystem. The Litestar framework was used to develop the API endpoints on our server. It was chosen over other renowned frameworks such as Flask or Django due to being asynchronous, highly performant, and lightweight out of the box <span className="text-muted-foreground">[11]</span>. Whilst there are more mature, tested frameworks such as Spring for Java, its verbosity and slower development cycle makes it less suitable for rapid prototyping. Moreover, Python bindings for liboqs were available and easy to use allowing us to implement post-quantum encryption without much friction.
                   </p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -238,13 +268,23 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/rust.svg" alt="Rust" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Rust</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/tauri.svg" alt="Tauri" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Tauri</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
                     For our desktop application with the AI chatbot, we chose Rust with the Tauri framework to create the backend. Rust offers memory safety and high performance, making it ideal for a secure desktop application. Compared to the popular alternative Electron, Tauri is lightweight and more compact, reducing resource consumption <span className="text-muted-foreground">[12]</span>. It also enables direct access to native system APIs without the heavy resource consumption of bundling an entire Chromium engine, unlike Electron, which requires a full-fledged Chromium instance for rendering.
                   </p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -252,13 +292,23 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/typescript.svg" alt="TypeScript" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">TypeScript</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/next-js.svg" alt="Next.js" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Next.js</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
                     Next.js is a react framework used across all of our frontends (i.e. Desktop app, Reigstration site, Report site, Raspberry Pi BLE proximity demo site) due to its popularity, and ease of use <span className="text-muted-foreground">[13]</span>. By using supported UI libraries such as Chakra UI and shadcn/ui, we were able to quickly develop impressive, robust frontends. Furthermore, TypeScript, which is the language we used with Next.js, provides a structured approach to JavaScript development, offering type safety and enhanced maintainability.
                   </p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -266,13 +316,23 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/python.svg" alt="Python" width={820/9} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Python</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/rpi.svg" alt="Raspberry Pi" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
-                    Python was chosen to be used on our Raspberry Pi due to its simplicity, and extensive library ecosystem. Its ease of use allowed us to focus on the overall development of our system, without being bogged down by syntax and other considerations. It is well-suited for implementing facial recognition due to support for libraries like OpenCV and Dlib. Furthermore, its support for BLE communication via bluepy, UART, and USB HID libraries, makes it an excellent choice for IoT hardware.
+                    Python was chosen to be used on our Raspberry Pi due to its simplicity, and extensive library ecosystem, including Raspberry Pi libraries. Its ease of use allowed us to focus on the overall development of our system, without being bogged down by syntax and other considerations. It is well-suited for implementing facial recognition due to support for libraries like OpenCV and Dlib. Furthermore, its support for BLE communication via bluepy, UART, and USB HID libraries, makes it an excellent choice for IoT hardware.
                   </p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -280,6 +340,16 @@ export default function Research() {
                   </p>  
                 </AccordionTrigger>
                 <AccordionContent>
+                  <div className="flex flex-row my-6 gap-5">
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/cpp.svg" alt="C++" width={3825/43} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">C++</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Image src="/research/platformio.svg" alt="PlatformIO" width={100} height={100}/>
+                      <p className="text-center mt-3 text-sm text-gray-500">PlatformIO</p>
+                    </div>
+                  </div>
                   <p className="text-lg">
                     C++ was chosen to program the ESP32 microcontroller to handle the constant BLE broadcasting, as it is highly performant, and enables low-level hardware control and efficient memory management. This is is crucial for real-time processing on constrained devices. Furthermore, C++ has a mature toolchain, and good support for the Arduino framework, and BLE libraries. Additionally, PlatformIO is used for ESP32 firmware management, streamlining development, debugging, and deployment.
                   </p>

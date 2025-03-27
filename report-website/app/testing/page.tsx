@@ -5,12 +5,13 @@ import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import Prism from 'prismjs';
 import 'prismjs/components/prism-python';
-import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/themes/prism.css';
 import { useEffect } from 'react';
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 
 export default function Testing() {
@@ -103,8 +104,44 @@ export default function Testing() {
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
+            <div className="flex flex-col items-center my-6">
+              <Image 
+                src="/testing/unit-tests.png" 
+                alt="Unit Tests" 
+                width={900} 
+                height={900}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Unit Tests</p>
+            </div>
+            <Card>
+              <CardContent className="p-6">
+                <p className="text-lg">
+                  <span className="font-semibold">100%</span> of the unit tests on our server API endpoints <span className="font-semibold text-green-500">successfully pass</span>!
+                </p>
+              </CardContent>
+            </Card>
+            <div className="flex flex-col items-center mt-8 my-6">
+              <Image 
+                src="/testing/coverage.png" 
+                alt="Test Coverage" 
+                width={500} 
+                height={500}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 2: Test Coverage</p>
+            </div>
+            <Card>
+              <CardContent className="p-6">
+                <p className="text-lg">
+                  Even though the test coverage shows only <span className="font-semibold">50%</span> coverage on the app.py server, this is <span className="font-semibold text-red-500">not accurate</span> as it was discoverd that there was an issue where the coverage tool used stops coverage detection in a function from the point a database access is made.
+                </p>
+              </CardContent>
+            </Card>
             <p className="text-lg my-6">
-              Our test suite uses pytest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. The <code>@pytest_asyncio.fixture</code> decorator below registers the function as an asynchronous fixture with function scope. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
+              Our test suite uses PyTest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -156,6 +193,87 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
     assert shared_secret == encryption_helper.shared_secrets.get(TEST_CLIENT_ID_1)`}
               </code>
             </pre>
+          </div>
+          <div id="integration-testing">
+            <h1 className="text-4xl font-bold my-6">Integration Testing</h1>
+            <h1 className="text-2xl font-bold my-6">Manual</h1>
+            <p className="text-lg my-6">
+              Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi &rarr;  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system. Finally, we also performed full end-to-end tests to verify the entire process, from registering a new ESP32 device, to logging in via proximity and facial recognition, to updating preferences via the proximity agent app.
+            </p>
+            <p className="text-lg my-6">
+              One integration test we done was to check that our encryption when communicating between the Raspberry Pi and server works correctly. This is the example Raspberry Pi client code which simulates an API call that may be made:
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`if __name__ == '__main__':
+    # Example usage
+
+    # Generate shared secret
+    # (generate once, use whenever communicating between this client and server)
+    try:
+        shared_secret = generate_shared_secret()
+    except KEMException as e:
+        raise RuntimeError(f'KEM failed, could not generate secret: {e}')
+
+    # Encrypt request data
+    request_text = 'Hello, Litestar!'
+    nonce_b64, ciphertext_b64 = aesgcm_encrypt(request_text, shared_secret)
+
+    # POST request
+    data = {
+        'client_id': str(CLIENT_ID),
+        'nonce_b64': nonce_b64,
+        'ciphertext_b64': ciphertext_b64
+    }
+    response = requests.post(f'{SERVER_URL}/example-endpoint', json=data)
+
+    if response.status_code != 201:
+        raise RuntimeError(f'Error {response.status_code}: {response.text}')
+    
+    response_data = response.json()
+    nonce_b64 = response_data.get('nonce_b64')
+    ciphertext_b64 = response_data.get('ciphertext_b64')
+    if not nonce_b64 or not ciphertext_b64:
+        raise RuntimeError('Missing parameters in response.')
+
+    # Decrypt response data
+    try:
+        plaintext = aesgcm_decrypt(nonce_b64, ciphertext_b64, shared_secret)
+        print(f'Client received: {plaintext}')
+    except Exception as e:
+        raise RuntimeError(f'Error: {e}\\nFailed to decrypt response data.')`}
+              </code>
+            </pre>
+            <p className="text-lg my-6">
+              We also utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
+            </p>
+            <Card className="my-6">
+              <CardContent className="flex flex-col items-center justify-center p-2">
+                <Image 
+                  src="/testing/techforgood.jpg" 
+                  alt="Tech For Good AI Lab" 
+                  width={400} 
+                  height={400}
+                  className="object-contain rounded-md mt-3"
+                />
+                <p className="text-center text-sm text-gray-500 my-3">Initial Integration Tests in Lab</p>
+              </CardContent>
+            </Card>
+            <h1 className="text-2xl font-bold my-6">Continous Integration (CI)</h1>
+            <p className="text-lg my-6">
+              For our proximity agents desktop application, we made use of continuous integration (CI). It is widley used in modern software development, ensuring code changes integrate smoothly and function correctly. GitHub Actions was used to automatically trigger predefined workflows to build, test, and deploy our desktop application after commits were done. The workflow logs and status indicators provide immediate feedback on whether the integration was successful or if errors need to be addressed. This automated process helps us to catch issues early, improving reliability and streamlining development.
+            </p>
+            <div className="flex flex-col items-center my-6">
+              <Image 
+                src="/testing/continuous-integration.png" 
+                alt="Continuous Integration" 
+                width={900} 
+                height={900}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 3: Continuous Integration</p>
+            </div>
           </div>
           <div id="compatibility-testing">
             <h1 className="text-4xl font-bold my-6">Compatibility Testing</h1>
@@ -259,6 +377,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   </TableCell>
                   <TableCell className="text-lg">
                     Communication using Web Serial API not natively supported. Extensions are available to fix this.
+                    Communication using Web Serial API not natively supported. Extensions are available to fix this.
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -269,6 +388,18 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               As all of our frontends have been designed with accessibility in mind, the choice of utilising frameworks like Next.js have allowed us to keep a consistent design throughout multiple platforms and devices. We've implemented responsive layouts that automatically adjust to different screen sizes, from large desktop monitors to mobile devices. This approach ensures that both of our applications remain usable and visually coherent regardless of the device being used.
             </p>
+            <div className="flex justify-center my-6">
+              <div>
+                <Image 
+                  src="/testing/responsivelyapp.png" 
+                  alt="Responsively App Logo" 
+                  width={200} 
+                  height={200}
+                />
+                <p className="text-center font-medium">Responsively App</p>
+                <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
+              </div>
+            </div>
             <p className="text-lg my-6">
               During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
@@ -446,6 +577,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
             <Carousel className="my-6 w-full">
+            <Carousel className="my-6 w-full">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
@@ -486,6 +618,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                           alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
+                          className="object-contain max-h-[560px] w-auto" 
                           className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
@@ -567,6 +700,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <h1 className="text-2xl font-bold my-6">User Feedback</h1>
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
+              Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
             </p>
             <Table className="my-8">
               <TableCaption>Table 3: User Feedback on Quantum Proximity Gateway</TableCaption>
@@ -642,6 +776,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <h1 className="text-xl font-bold my-6">Summary of User Feedback</h1>
             <Table>
               <TableCaption>Table 4: Summary of User Feedback</TableCaption>
+              <TableCaption>Table 4: Summary of User Feedback</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[50%]">✅ Positive Feedback</TableHead>
@@ -651,28 +786,28 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Impressive integration of technologies, "Straight out of Star Trek"</p>
+                    <p>Impressive integration of technologies, "Straight out of Star Trek"</p>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">ESP32 registration process was confusing and buggy during first-time setup</p>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Strong perceived security benefits that users appreciated</p>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Error messages were cluttered and difficult to understand</p>
+                    <p>ESP32 registration process was confusing and buggy during first-time setup</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Convenient authentication once properly configured</p>
+                    <p>Strong perceived security benefits that users appreciated</p>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <p>Error messages were cluttered and difficult to understand</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Time-saving capabilities praised</p>
+                    <p>Convenient authentication once properly configured</p>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <p>Time-saving capabilities praised</p>
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -683,6 +818,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
             <p className="text-lg my-6">
               Based on user feedback, we implemented several significant improvements in the last weeks of development:
+              Based on user feedback, we implemented several significant improvements in the last weeks of development:
             </p>
             <Card className="my-6">
               <CardHeader>
@@ -691,6 +827,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.</p>
+              </CardContent> 
               </CardContent> 
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Better Error Handling</CardTitle>
@@ -744,6 +881,14 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </div>
 
             
+          </div>
+          <div id="references">
+            <h1 className="text-4xl font-bold my-6">References</h1>
+            <ul className="text-lg space-y-6">
+              <li className="flex flex-row">
+                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

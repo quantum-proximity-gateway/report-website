@@ -1,3 +1,5 @@
+'use client'
+
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
@@ -6,12 +8,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
+import { useEffect } from 'react';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism.css';
 
-export const metadata: Metadata = {
-    title: 'System Design',
-  };
 
 export default function SystemDesign() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, []);
+
   return (
     <main className="w-full">
       <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -136,6 +145,9 @@ export default function SystemDesign() {
           </div>
           <div id="design-patterns">
             <h1 className="text-4xl font-bold my-6">Design Patterns</h1>
+            <p className="text-lg">
+              In software development, design patterns are solutions to common problems encountered in software design. They provide a structured approach to writing maintainable, scalable, and reusable code by defining proven methodologies that can be applied to different scenarios. In our system, we leverage several design patterns to enhance the modularity, and robustness of our code. Below, we explore four key design patterns which are Client-Server, Delegate, Facade, and Observer, detailing how they are implemented in our project.
+            </p>
             <Tabs defaultValue="client-server" className="my-6">
               <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="client-server">Client-Server Pattern</TabsTrigger>
@@ -253,9 +265,10 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               Preferences are stored as a JSON on the database:
             </p>
-            <details>
+            <details open>
               <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
-              <code className="block whitespace-pre-wrap bg-gray-100 p-4 rounded-md">
+              <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+                <code className="language-javascript">
 {`{
   "zoom": {
     "lower_bound": 0.5,
@@ -338,20 +351,22 @@ export default function SystemDesign() {
     }
   }
 }`}
-              </code>
+                </code>
+              </pre>
             </details>
           </div>
           <div id="apis">
             <h1 className="text-4xl font-bold my-6">APIs</h1>
-            <p className="text-lg">
+            <h1 className="text-2xl font-bold my-6">Server</h1>
+            <p className="text-lg my-6">
               We defined 11 API endpoints on our server in total, which allow for a range of operations such as registering a new device, managing preferences, facial recognition, etc.
             </p>
-            <h1 className="text-2xl font-bold mt-6">Authentication</h1>
+            <h1 className="text-2xl mt-6">Authentication</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">1.</span> POST /register
+                    <span className="mr-3">1.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST  </span>/register
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -373,7 +388,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">2.</span> PUT /devices/credentials
+                    <span className="mr-3">2.</span><span className="text-white bg-orange-500 p-1 rounded-sm mr-3"> PUT </span>/devices/credentials
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -391,12 +406,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Device Management</h1>
+            <h1 className="text-2xl mt-6">Device Management</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">3.</span> GET /devices/all-mac-addresses
+                    <span className="mr-3">3.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/devices/all-mac-addresses
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -418,7 +433,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">4.</span> GET /devices/{'{'}mac_address{'}'}/username
+                    <span className="mr-3">4.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/devices/{'{'}mac_address{'}'}/username
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -440,7 +455,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">5.</span> DELETE /devices/delete
+                    <span className="mr-3">5.</span><span className="text-white bg-red-500 p-1 rounded-sm mr-3"> DELETE </span>/devices/delete
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -458,12 +473,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Preferences Management</h1>
+            <h1 className="text-2xl mt-6">Preferences Management</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">6.</span> POST /preferences/update
+                    <span className="mr-3">6.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/preferences/update
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -485,7 +500,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">7.</span> GET /preferences/{'{'}username{'}'}
+                    <span className="mr-3">7.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/preferences/{'{'}username{'}'}
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -503,12 +518,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Key Exchange Mechanism (KEM)</h1>
+            <h1 className="text-2xl mt-6">Key Exchange Mechanism (KEM)</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">8.</span> POST /kem/initiate
+                    <span className="mr-3">8.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/kem/initiate
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -530,7 +545,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">9.</span> POST /kem/complete
+                    <span className="mr-3">9.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/kem/complete
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -548,12 +563,12 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h1 className="text-2xl font-bold mt-6">Face Recognition</h1>
+            <h1 className="text-2xl mt-6">Face Recognition</h1>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">10.</span> POST /register/face
+                    <span className="mr-3">10.</span><span className="text-white bg-blue-500 p-1 rounded-sm mr-3"> POST </span>/register/face
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -575,7 +590,7 @@ export default function SystemDesign() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-lg font-medium">
-                    <span className="mr-3">11.</span> GET /encodings
+                    <span className="mr-3">11.</span><span className="text-white bg-green-500 p-1 rounded-sm mr-3"> GET </span>/encodings
                   </h1>
                 </AccordionTrigger>
                 <AccordionContent>
