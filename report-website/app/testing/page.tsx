@@ -644,8 +644,27 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg mt-6">
               After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, particularly among non-technical users who had previously struggled with the system.
             </p>
+            <div id="references">
+              <h1 className="text-4xl font-bold my-6">References</h1>
+              <ol className="text-lg list-decimal space-y-6 pl-5">
+                <li>
+                  <span className="text-muted-foreground">
+                    www.levminer.com. (n.d.). Tauri VS. Electron - Real world application. [online] Available at:{" "}
+                    <a
+                      href="https://www.levminer.com/blog/tauri-vs-electron"
+                      className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      https://www.levminer.com/blog/tauri-vs-electron
+                    </a>
+                    . [Accessed March 26, 2025].
+                  </span>
+                </li>
+              </ol>
+            </div>
 
-            www.levminer.com. (n.d.). Tauri VS. Electron - Real world application. [online] Available at: https://www.levminer.com/blog/tauri-vs-electron.
+            
           </div>
         </div>
       </div>
