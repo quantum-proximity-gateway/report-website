@@ -566,13 +566,81 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </p>
             <h1 className="text-2xl font-bold my-6">User Feedback</h1>
             <p className="text-lg my-6">
-              Key insights from our user testing sessions revealed both positive aspects and areas for improvement:
+              Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
             </p>
-            <p className="text-lg my-6">
-              [MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION]
-            </p>
+            <Table className="my-10">
+              <TableCaption>Table 3: User Feedback on Quantum Proximity Gateway</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[300px]">Acceptance Requirement</TableHead>
+                  <TableHead className="text-center">Strongly Disagree</TableHead>
+                  <TableHead className="text-center">Disagree</TableHead>
+                  <TableHead className="text-center">Agree</TableHead>
+                  <TableHead className="text-center">Strongly Agree</TableHead>
+                  <TableHead>Comments</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>Authentication process was seamless</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell className="text-center">3</TableCell>
+                  <TableCell>+ Overall system often worked flawlessly</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Registration process was intuitive</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell className="text-center">2</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell>- ESP32 pairing was buggy for some users</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Bluetooth communication was reliable</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell className="text-center">2</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell>+ Some interference issues in crowded environments, but reliable most of the time</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Raspberry Pi setup was straightforward</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">2</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell>+ Technical users found it manageable, which was expected</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Error messages were clear</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">2</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell className="text-center">1</TableCell>
+                  <TableCell>- Too much technical jargon in error messages</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Would use this over passwords</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">4</TableCell>
+                  <TableCell>+ Unanimous preference for proximity-based auth</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Overall security perception</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">0</TableCell>
+                  <TableCell className="text-center">4</TableCell>
+                  <TableCell>+ Users felt more secure with quantum-resistant methods and TOTP verification</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
             <Table>
-              <TableCaption>Table 3: Summary of User Feedback</TableCaption>
+              <TableCaption>Table 4: Summary of User Feedback</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[50%]">✅ Positive Feedback</TableHead>
