@@ -45,8 +45,32 @@ export default function Testing() {
           <div id="testing-strategy">
             <h1 className="text-4xl font-bold my-6">Testing Strategy</h1>
             <p className="text-lg my-6">
-              Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
+              Only project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done manual integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
+            <h1 className="text-2xl font-bold my-6">Automated Testing</h1>
+            <ul className="text-lg list-disc pl-6 space-y-3">
+              <li>
+                <span className="font-medium">Unit Testing</span>
+              </li>
+              <li>
+                <span className="font-medium">Continuous Integration (CI)</span>
+              </li>
+            </ul>
+            <h1 className="text-2xl font-bold my-6">Manual Testing</h1>
+            <ul className="text-lg list-disc pl-6 space-y-3">
+              <li>
+                <span className="font-medium">Integration Testing</span>
+              </li>
+              <li>
+                <span className="font-medium">Responsive Design Testing</span>
+              </li>
+              <li>
+                <span className="font-medium">Compatibility Testing</span>
+              </li>
+              <li>
+                <span className="font-medium">User Acceptance Testing</span>
+              </li>
+            </ul>
           </div>
           <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
@@ -75,13 +99,13 @@ export default function Testing() {
             <div className="flex flex-col items-center my-6">
               <Image 
                 src="/testing/coverage.png" 
-                alt="Unit Tests Coverage" 
+                alt="Test Coverage" 
                 width={500} 
                 height={500}
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
-              <p className="text-center mt-3 text-sm text-gray-500">Figure 2: Unit Tests Coverage</p>
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 2: Test Coverage</p>
             </div>
             <Card>
               <CardContent className="p-6">
@@ -218,6 +242,21 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
         raise RuntimeError(f'Error: {e}\\nFailed to decrypt response data.')`}
               </code>
             </pre>
+            <h1 className="text-2xl font-bold my-6">Continous Integration (CI)</h1>
+            <p className="text-lg my-6">
+              For our proximity agents desktop application, we made use of continuous integration (CI). It is widley used in modern software development, ensuring code changes integrate smoothly and function correctly. GitHub Actions was used to automatically trigger predefined workflows to build, test, and deploy our desktop application after commits were done. The workflow logs and status indicators provide immediate feedback on whether the integration was successful or if errors need to be addressed. This automated process helps us to catch issues early, improving reliability and streamlining development.
+            </p>
+            <div className="flex flex-col items-center my-6">
+              <Image 
+                src="/testing/continuous-integration.png" 
+                alt="Continuous Integration" 
+                width={900} 
+                height={900}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 3: Continuous Integration</p>
+            </div>
           </div>
           <div id="compatibility-testing">
             <h1 className="text-4xl font-bold my-6">Compatibility Testing</h1>
@@ -345,7 +384,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
                         <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 3: IBM Proximity Agents - Responsive Design Test</p>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 4: IBM Proximity Agents - Responsive Design Test</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -359,7 +398,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
                         <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 4: Registration Site - Responsive Design Test</p>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 5: Registration Site - Responsive Design Test</p>
                       </CardContent>
                     </Card>
                   </div>
