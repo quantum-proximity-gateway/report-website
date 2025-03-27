@@ -217,7 +217,7 @@ export default function Evaluation() {
             </Card>
             <h1 className="text-2xl font-medium my-6">Known Bugs</h1>
             <p className="text-lg">
-              During the creation of each feature in our system, we ensured that any known bugs preventing the system from functioning as intended was dealth with. As such, there are currently no known bugs.
+              During the creation of each feature in our system, we ensured that any known bugs preventing the system from functioning as intended was dealt with immediately. As such, there are currently no known bugs.
             </p>
             <Table className="mt-6">
               <TableHeader>

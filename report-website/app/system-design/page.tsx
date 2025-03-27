@@ -1,3 +1,5 @@
+'use client'
+
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
@@ -6,12 +8,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
+import { useEffect } from 'react';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism.css';
 
-export const metadata: Metadata = {
-    title: 'System Design',
-  };
 
 export default function SystemDesign() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, []);
+
   return (
     <main className="w-full">
       <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -270,7 +279,8 @@ export default function SystemDesign() {
             </p>
             <details>
               <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
-              <code className="block whitespace-pre-wrap bg-gray-100 p-4 rounded-md">
+              <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+                <code className="language-javascript">
 {`{
   "zoom": {
     "lower_bound": 0.5,
@@ -353,7 +363,8 @@ export default function SystemDesign() {
     }
   }
 }`}
-              </code>
+                </code>
+              </pre>
             </details>
           </div>
           <div id="apis">
