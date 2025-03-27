@@ -1,3 +1,13 @@
+'use client'
+
+import Prism from 'prismjs';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
+import 'prismjs/components/prism-arduino';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/themes/prism-okaidia.css';
+import { useEffect } from 'react';
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
@@ -5,11 +15,13 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
 
-export const metadata: Metadata = {
-    title: 'Implementation',
-  };
-
 export default function Implementation() {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          Prism.highlightAll();
+        }
+      }, []);
+
   return (
     <main className="w-full">
       <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -87,6 +99,118 @@ export default function Implementation() {
                 </div>
             </Card>
             </div>
+
+            <h2 className="text-2xl font-bold my-4">Web Serial API (ESP32 Communication)</h2>
+            <p className="text-lg mb-4">
+                The Web Serial API is what allows the browser to communicate with the ESP32 device over a serial connection. This is what we use to retrieve the MAC address of the ESP32 device, and then send it to the server for registration. In general, users grant permission to access serial devices, which then connects the ESP32 to the browser, allowing data to be sent back and forth between the microcontroller and the webpage.
+            </p>
+            <p className="text-lg mb-4">
+                In <code>registration-site/src/app/page.tsx</code>, we have a <code>connectSerial()</code> function. This function is what is called when the user decides to click on the "Connect to device" button on the main page of the registration website, and it uses the Web Serial API to connect to the ESP32 device. The code is shown below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ts">
+{`async function connectSerial(secret: string): Promise<[string, number]> { // Connect to ESP32 (cu.wchuusbserial)
+  const log = document.getElementById('target');
+
+  try {
+    // prompt the user to select which serial port they want to connect to
+    const port = await navigator.serial.requestPort();
+    await port.open({ baudRate: 9600 });
+    
+    // setup the writeable stream to the ESP32
+    const textEncoder = new TextEncoderStream();
+    const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
+    const writer = textEncoder.writable.getWriter();
+
+    // setup the read stream from the ESP32
+    const decoder = new TextDecoderStream(); // Decodes incoming data from ESP32
+    port.readable.pipeTo(decoder.writable);
+
+    const reader = decoder.readable.getReader();
+    let macAddress = "";
+    let current_time = 0;
+
+    while (true) {
+      const { value, done } = await reader.read();
+      
+      if (value) {
+        if (value.length == 19) { // MAC Address are 17 characters long + 2 newlines
+          macAddress = value;
+          reader.releaseLock();
+          current_time = Date.now();
+          await writer.write(secret + '\\n'); // write the secret key to the ESP32
+          writer.releaseLock();
+          break;
+        }
+      }
+
+      if (done) {
+        reader.releaseLock();
+        break;
+      }
+    }
+
+    return [macAddress, current_time];
+  }
+}
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                After opening the popup for the user to select a serial port, the function opens the port with a specific baud rate of 9600 (which is what we flashed the ESP32 with). We then set up a text encoder/decoder so that we can actually communicate over the serial lines. Data that is being send from the browser to the ESP32 uses the <i>writer</i>, while the data getting sent from the ESP32 is received by reading from the <i>reader</i> object. 
+            </p>
+            <p className='text-lg mb-8'>
+                The function then enters a loop where it waits for a MAC address string to be sent from the ESP32 (we will cover how the ESP32 is sending this MAC address in the ESP32 section). We know that a MAC address is a fixed length (of 17 characters + 2 characters of <code>\r</code> and <code>\n</code>), so we explicitly check for a value of that length. Finally, only once the MAC address arrives do we release the lock we set on the reader and writer and send the newly generated TOTP secret key back to the ESP32.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">TOTP Secret Generation</h2>
+            <p className="text-lg mb-4">
+                In the same <code>registration-site/src/app/page.tsx</code> file, we have a <code>handleConnect()</code> method in which we generate the shared TOTP secret of size 160 bits (20 bytes), and give it to the ESP32 over the serial connection after storing it in our React state. In the server, this secret is stored with the device so that the user can authenticate using TOTP.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto mb-8">
+              <code className="language-ts">
+{`randomBytes(20,(err, buf) => {
+    const secret = base32Encode(buf, 'RFC4648');
+    setSecret(secret);
+    connectSerial(secret).then((result) => {
+    // rest of the code
+    });
+})
+`}
+              </code>
+            </pre>
+
+            <h2 className="text-2xl font-bold my-4">Data Encryption</h2>
+            <p className="text-lg mb-8">
+                Before we send any data from the website to the server, we use a post-quantum key exchange library (mlkem) to generate a shared secret with the server, which is then used for AES-GCM encryption on all communications that happen afterwards. This is the code that is contained within <code>registration-site/src/app/<br/>EncryptionClient.tsx</code>.
+            </p>
+
+            <h3 className="text-xl font-bold my-4">Post-Quantum Key Exchange</h3>
+            <p className="text-lg mb-4">
+                In order to do the key exchange, we first start with requesting the server's public key via the server endpoint <code>/kem/initiate</code>. We then encapsulate a shared secret using that public key, and send the ciphertext we generate with that public key encapsulation back to the server, using the endpoint <code>/kem/complete</code>. The server is then able to decapsulate the ciphertext using its private key in order to get the original shared secret key that was generated by the <code>handleConnect()</code> method above. After the endpoint sends the correct response back, we then store the shared secret so that it can be used to symmetrically encrypt all messages going forward. The relevant code snippets for this post-quantum key exchange are highlighted below. These snippets are located in the method <code>genClientSecret()</code>.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ts">
+{`// retrieve server's public key
+await axios.post(\`\${API_URL}/kem/initiate\`, data)
+  .then(response => {
+    const public_key_b64 = response.data.public_key_b64;
+    pk = this.base64ToUint8Array(public_key_b64);
+  });
+
+// 2. Generate the shared secret using mlkem
+const sender = new MlKem512();
+const [ciphertext, shared_secret] = await sender.encap(pk);
+
+// 3. Convert ciphertext to base64 and send to server
+const ciphertext_b64 = this.uint8ArrayToBase64(ciphertext);
+const complete_data = { client_id: String(this.CLIENT_ID), ciphertext_b64 };
+await axios.post(\`\${API_URL}/kem/complete\`, complete_data);
+`}
+              </code>
+            </pre>
+
+
           </div>
 
           <div id="server">
@@ -166,7 +290,7 @@ export default function Implementation() {
           <div id="esp32">
             <h1 className="text-4xl font-bold my-6">ESP32</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              HOW SENDING MAC ADDRESS TO REG SITE (NOT SPECIFICALLY, BUT CAN SEE IN SERIAL MONITOR)
             </p>
           </div>
           <div id="raspberry-pi">
