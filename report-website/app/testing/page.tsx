@@ -11,7 +11,6 @@ import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 
 export default function Testing() {
@@ -577,7 +576,6 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               We ensured our testing groups encompassed a diverse range of participants, from secondary school students to industry professionals, providing us with perspectives from both technical and non-technical users across different age groups and experience levels. This also allowed us to gain a wide range of perspectives on the usability of our project in different enviroments.
             </p>
             <Carousel className="my-6 w-full">
-            <Carousel className="my-6 w-full">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
@@ -618,7 +616,6 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                           alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
-                          className="object-contain max-h-[560px] w-auto" 
                           className="object-contain max-h-[560px] w-auto" 
                         />
                       </CardContent>
@@ -827,8 +824,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.</p>
-              </CardContent> 
-              </CardContent> 
+              </CardContent>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Better Error Handling</CardTitle>
                 <Separator />
@@ -879,16 +875,6 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 </li>
               </ol>
             </div>
-
-            
-          </div>
-          <div id="references">
-            <h1 className="text-4xl font-bold my-6">References</h1>
-            <ul className="text-lg space-y-6">
-              <li className="flex flex-row">
-                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
