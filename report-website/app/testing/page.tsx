@@ -705,7 +705,20 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">The proximity agents application got a complete redesign, making it look more modern and pleasing to users. </p>
+                <div className="flex flex-col items-center justify-center my-6">
+                  <Image 
+                    src="/testing/proximity-agents-new-ui.png" 
+                    alt="Proximity Agents New UI" 
+                    width={500} 
+                    height={500} 
+                    className="object-contain max-h-[560px] w-auto" 
+                  />
+                  <p className="text-center text-sm text-gray-500 mt-3">
+                    Figure 3: Redesigned IBM Proximity Agents UI with improved layout and visual clarity
+                  </p>
+                </div>
               </CardContent>
+
             </Card>
             <p className="text-lg mt-6">
               After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, specifically users stopped finding workarounds the registration website and our UIs were received more positively overall.
