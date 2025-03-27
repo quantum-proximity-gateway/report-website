@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription }
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Metadata } from 'next';
+import { BASE_PATH } from "@/config";
+
 
 export const metadata: Metadata = {
     title: 'Evaluation',
@@ -20,7 +22,7 @@ export default function Evaluation() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">

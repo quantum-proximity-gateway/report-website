@@ -1,3 +1,5 @@
+import { BASE_PATH } from "@/config";
+
 export default function loader({
     src,
     width,
@@ -8,5 +10,5 @@ export default function loader({
     quality?: number
   }) {
     const params = ['f_auto', 'c_limit', `w_${width}`, `q_${quality || 'auto'}`]
-    return `${src}`
+    return `${BASE_PATH}${src}`
   }

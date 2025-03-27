@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/sidebar"
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
 
+import { BASE_PATH } from "@/config";
+
 const items = [
   {
     title: "Home",
@@ -316,7 +318,7 @@ export function AppSidebar() {
               >
                 <SidebarMenuItem>
                   <div className="flex items-center">
-                    <a href={item.url} className="flex-1">
+                    <a href={`${BASE_PATH}${item.url}`} className="flex-1">
                       <SidebarMenuButton tooltip={item.title}>
                         {item.icon && <item.icon />}
                         <span>{item.title}</span>
@@ -333,7 +335,7 @@ export function AppSidebar() {
                       {item.subitems?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild>
-                            <a href={subItem.url}>
+                            <a href={`${BASE_PATH}${subItem.url}`}>
                               <span>{subItem.title}</span>
                             </a>
                           </SidebarMenuSubButton>
