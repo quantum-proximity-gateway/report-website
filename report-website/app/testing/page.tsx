@@ -433,7 +433,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </Carousel>
           </div>
           <div id="performance-testing">
-          <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
+            <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
             <p className="text-lg my-6">
               Ensuring that perfomance stayed optimal in our application was a priority we took as a team, specially considering the hardware we were using. As it is such a complex project, we needed to ensure that our code remained optimal and that we caught out any bottlenecks that may arise from unoptimized code. This applies more to the Raspberry Pi, which is a lot less powerful than the hardware the core server is meant to run on. 
             </p>
@@ -441,89 +441,89 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi or the overhead it would add to typical operations on the server. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
             </p>
             <h1 className="text-2xl font-bold my-6">Post-Quantum Cryptography Performance Benchmarks</h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-bold">ML-KEM-512 Key Exchange</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Metric</TableHead>
-                          <TableHead>Time (ms)</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell>Minimum</TableCell>
-                          <TableCell>0.067</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Maximum</TableCell>
-                          <TableCell>3.354</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Mean</TableCell>
-                          <TableCell>0.078</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Median</TableCell>
-                          <TableCell>0.069</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>95th Percentile</TableCell>
-                          <TableCell>0.083</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                    <p className="text-sm text-gray-500 mt-3">Complete KEM cycle operations (key generation, encapsulation, and decapsulation)</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-bold">Message Encryption/Decryption</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Operation</TableHead>
-                          <TableHead>Mean (ms)</TableHead>
-                          <TableHead>Median (ms)</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell>Encrypt</TableCell>
-                          <TableCell>0.015</TableCell>
-                          <TableCell>0.009</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Decrypt</TableCell>
-                          <TableCell>0.009</TableCell>
-                          <TableCell>0.008</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                    <p className="text-sm text-gray-500 mt-3">Time to encrypt and decrypt messages using our EncryptionHelper</p>
-                  </CardContent>
-                </Card>
-              </div>
-              <p className="text-lg my-6">
-                Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
-              </p>
-              <p className="text-lg my-6">
-                In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, which is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
-              </p>
-              <h1 className="text-2xl font-bold my-6">Desktop Application Overhead</h1>
-              <p className="text-lg my-6">
-                Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas a simple application at a much smaller scale than ours made using other frameworks like Electron usually have a larger size of around 85MB, so using Tauri was definitely a good choice when it came reducing our performance footprint <span className="text-muted-foreground">[1]</span>.
-              </p>
-              <p className="text-lg my-6">
-                Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware. When the user is prompting the model, GPU utilization goes up to 94% and RAM utilization to 1.4GB, this was tested with Granite 3.2.
-              </p>
-              <Carousel className="my-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold">ML-KEM-512 Key Exchange</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Metric</TableHead>
+                        <TableHead>Time (ms)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Minimum</TableCell>
+                        <TableCell>0.067</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Maximum</TableCell>
+                        <TableCell>3.354</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Mean</TableCell>
+                        <TableCell>0.078</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Median</TableCell>
+                        <TableCell>0.069</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>95th Percentile</TableCell>
+                        <TableCell>0.083</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                  <p className="text-sm text-gray-500 mt-3">Complete KEM cycle operations (key generation, encapsulation, and decapsulation)</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold">Message Encryption/Decryption</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Operation</TableHead>
+                        <TableHead>Mean (ms)</TableHead>
+                        <TableHead>Median (ms)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Encrypt</TableCell>
+                        <TableCell>0.015</TableCell>
+                        <TableCell>0.009</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Decrypt</TableCell>
+                        <TableCell>0.009</TableCell>
+                        <TableCell>0.008</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                  <p className="text-sm text-gray-500 mt-3">Time to encrypt and decrypt messages using our EncryptionHelper</p>
+                </CardContent>
+              </Card>
+            </div>
+            <p className="text-lg my-6">
+              Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
+            </p>
+            <p className="text-lg my-6">
+              In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, which is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Desktop Application Overhead</h1>
+            <p className="text-lg my-6">
+              Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas a simple application at a much smaller scale than ours made using other frameworks like Electron usually have a larger size of around 85MB, so using Tauri was definitely a good choice when it came reducing our performance footprint <span className="text-muted-foreground">[1]</span>.
+            </p>
+            <p className="text-lg my-6">
+              Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware. When the user is prompting the model, GPU utilization goes up to 94% and RAM utilization to 1.4GB, this was tested with Granite 3.2.
+            </p>
+            <Carousel className="my-6">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
@@ -726,7 +726,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
             </p>
-            <Table className="mb-6">
+            <Table className="mb-8">
               <TableCaption>Table 3: User Feedback on Quantum Proximity Gateway</TableCaption>
               <TableHeader>
                 <TableRow>
@@ -798,7 +798,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </TableBody>
             </Table>
             <Table>
-              <TableCaption>Table 3: Summary of User Feedback</TableCaption>
+              <TableCaption>Table 4: Summary of User Feedback</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[50%]">✅ Positive Feedback</TableHead>
@@ -840,12 +840,9 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg mt-6">
               Overall, users were impressed by the innovative technology, praising it's ease of use and seamlessness once installed on computers. Our main focus for improvements was making the system more intuitive and user-friendly, especially for non-technical users.
             </p>
-            <p className="text-lg my-6">
-              [MAYBE ADD USER INTERVIEW AND JOHN MCNAMARA MENTION]
-            </p>
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
             <p className="text-lg my-6">
-              Based on user feedback, we implemented several significant improvements:
+              Based on user feedback, we implemented several significant improvements in the last weeks of development:
             </p>
             <Card className="my-6">
               <CardHeader>
@@ -854,7 +851,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.</p>
-              </CardContent>
+              </CardContent> 
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Better Error Handling</CardTitle>
                 <Separator />
@@ -863,16 +860,36 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <p className="text-muted-foreground text-lg">We cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.</p>
               </CardContent>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">Visual feedback</CardTitle>
+                <CardTitle className="text-2xl font-bold">Greatly Improved UI</CardTitle>
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">We added clear visual indicators for successful authentication and other system states.</p>
+                <p className="text-muted-foreground text-lg">The proximity agents application got a complete redesign, making it look more modern and pleasing to users. </p>
+                <div className="flex flex-col items-center justify-center mt-6">
+                  <Image 
+                    src="/testing/proximity-agents-new-ui.png" 
+                    alt="Proximity Agents New UI" 
+                    width={500} 
+                    height={500} 
+                    className="object-contain max-h-[560px] w-auto" 
+                  />
+                  <p className="text-center text-sm text-gray-500 mt-3">
+                    Figure 6: Redesigned IBM Proximity Agents UI with improved layout and visual clarity
+                  </p>
+                </div>
               </CardContent>
             </Card>
             <p className="text-lg mt-6">
-              After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, particularly among non-technical users who had previously struggled with the system.
+              After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, specifically users stopped finding workarounds the registration website and our UIs were received more positively overall.
             </p>
+          </div>
+          <div id="references">
+            <h1 className="text-4xl font-bold my-6">References</h1>
+            <ul className="text-lg space-y-6">
+              <li className="flex flex-row">
+                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
