@@ -73,7 +73,10 @@ export default function Testing() {
             </div>
             <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
               <p className="text-lg my-6">
-                Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application depending on who is using it. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities. On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
+                Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application depending on who is using it. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities.
+              </p>
+              <p className="text-lg my-6">
+              On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
               </p>
           </div>
           <div id="unit-integration-testing">
@@ -361,11 +364,78 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, this is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
               </p>
               <p className="text-lg my-6">
-                Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas the average application made using other frameworks like electron usually have a larger size of around 150MB [1]
+                Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas the average application made using other frameworks like Electron usually have a larger size of around 150MB. [1]
               </p>
               <p className="text-lg my-6">
-                Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only big bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware.
-              </p>  
+                Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware. When the user is prompting the model, GPU utilization goes up to 94% and RAM utilization to 1.4GB, this was tested with Granite 3.2.
+              </p>
+              <Carousel className="my-6 max-w-3xl mx-auto">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-4">
+                        <Image 
+                          src="/testing/proximity-agents-memory.png" 
+                          alt="Tauri App Memory Footprint" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-4">
+                        <Image 
+                          src="/testing/proximity-agents-cpu.png" 
+                          alt="Tauri App CPU/GPU Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={3}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-4">
+                        <Image 
+                          src="/testing/ollama-gpu.png" 
+                          alt="Ollama CPU/GPU Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={4}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex items-center justify-center p-4">
+                        <Image 
+                          src="/testing/ollama-memory.png" 
+                          alt="Ollama Memory Footprint Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+              <p className="text-center text-sm text-gray-500 mt-2">Performance monitoring of Proximity Agents and Ollama</p>
+            </Carousel>
           </div>
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
