@@ -568,7 +568,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
             </p>
-            <Table className="my-10">
+            <Table className="my-8">
               <TableCaption>Table 3: User Feedback on Quantum Proximity Gateway</TableCaption>
               <TableHeader>
                 <TableRow>
@@ -611,7 +611,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">2</TableCell>
                   <TableCell className="text-center">1</TableCell>
                   <TableCell className="text-center">1</TableCell>
-                  <TableCell>+ Technical users found it manageable, which was expected</TableCell>
+                  <TableCell>- Only technical users found it manageable, which was expected</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Error messages were clear</TableCell>
