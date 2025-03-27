@@ -303,51 +303,38 @@ export default function UIDesign() {
             <p className="text-lg my-6">
               As the project went on, we shifted our attention towards designing and developing the user interfaces for our AI Agent desktop app and user registration site. So, in terms of the production design of the login interface, it unfortunately remains the same as the default login interface of the linux distribution being used.
             </p>
-            <Carousel className="my-6">
-              <CarouselContent>
-                <CarouselItem key={1}>
-                  <div className="p-1">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-2xl">Login Interface</CardTitle>
-                        <Separator />
-                      </CardHeader>
-                      <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/ui-design/login.jpg" alt="Login Interface" width={1552} height={1105} className="object-contain"/>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={2}>
-                  <div className="p-1">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-2xl">AI Agent Desktop App</CardTitle>
-                        <Separator />
-                      </CardHeader>
-                      <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/ui-design/ai-chatbot.png" alt="AI Agent Desktop App" width={1552} height={1105} className="object-contain"/>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem key={3}>
-                  <div className="p-1">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-2xl">Registration Site</CardTitle>
-                        <Separator />
-                      </CardHeader>
-                      <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Login Interface</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/ui-design/login.jpg" alt="Login Interface" width={1552} height={1105} className="object-contain"/>
+                <p className="text-lg mt-6">
+                  The default login interface is already somewhat user friendly with the contrasting gray background, and the white text. One key area for improvement is the font size, since it is quite small. Furthermore, the interface itself is quite bland, and could be improved by having more interesting images in the background.
+                </p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl">AI Agent Desktop App</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/ui-design/ai-chatbot.png" alt="AI Agent Desktop App" width={1552} height={1105} className="object-contain"/>
+                <p className="text-lg mt-6">
+                  The desktop app follows our design principles quite well. The app has good visibility, and affordance. It is also simple in its design, making it suitable for people of all ages and capabilities. Furthermore, the colours used provide an interesting interface, whithout being too overwhelming for neurodivergent users for eaxmple. 
+                </p>
+              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-2xl">Registration Site</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
+                <p className="text-lg mt-6">
+                  The registration site provides a sleek, dark interface. The purposes of the website are very clearly defined, with no unnecessary elements added that would otherwise distract from the main goal.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
