@@ -82,7 +82,7 @@ export default function Testing() {
           <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Integration Testing</h1>
             <p className="text-lg my-6">
-              Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi ->  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system.
+              Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi &rarr;  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system.
             </p>
             <p className="text-lg my-6">
               We utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
@@ -644,6 +644,8 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg mt-6">
               After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, particularly among non-technical users who had previously struggled with the system.
             </p>
+
+            www.levminer.com. (n.d.). Tauri VS. Electron - Real world application. [online] Available at: https://www.levminer.com/blog/tauri-vs-electron.
           </div>
         </div>
       </div>
