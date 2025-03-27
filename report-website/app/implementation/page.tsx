@@ -182,7 +182,7 @@ export default function Implementation() {
 
             <h2 className="text-2xl font-bold my-4">Data Encryption</h2>
             <p className="text-lg mb-8">
-                Before we send any data from the website to the server, we use a post-quantum key exchange library (mlkem) to generate a shared secret with the server, which is then used for AES-GCM encryption on all communications that happen afterwards. This is the code that is contained within <code>registration-site/src/app/<br/>EncryptionClient.tsx</code>.
+                Before we send any data from the website to the server, we use a post-quantum key exchange library (mlkem) to generate a shared secret with the server, which is then used for AES-GCM encryption on all communications that happen afterwards. This is the code that is contained within <code>registration-site/src/app/EncryptionClient.tsx</code>.
             </p>
 
             <h3 className="text-xl font-bold my-4">Post-Quantum Key Exchange</h3>
@@ -198,11 +198,11 @@ await axios.post(\`\${API_URL}/kem/initiate\`, data)
     pk = this.base64ToUint8Array(public_key_b64);
   });
 
-// 2. Generate the shared secret using mlkem
+// generate the shared secret using mlkem
 const sender = new MlKem512();
 const [ciphertext, shared_secret] = await sender.encap(pk);
 
-// 3. Convert ciphertext to base64 and send to server
+// convert ciphertext to base64 and send to server
 const ciphertext_b64 = this.uint8ArrayToBase64(ciphertext);
 const complete_data = { client_id: String(this.CLIENT_ID), ciphertext_b64 };
 await axios.post(\`\${API_URL}/kem/complete\`, complete_data);
@@ -210,6 +210,130 @@ await axios.post(\`\${API_URL}/kem/complete\`, complete_data);
               </code>
             </pre>
 
+            <h3 className="text-xl font-bold my-4">AES-GCM Encryption/Decryption</h3>
+            <p className="text-lg mb-4">
+                After the post-quantum handshake, the client now also has a shared secret. We then use the following methods to encrypt and decryt data according to the AES-GCM standard.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ts">
+{`encryptData(data: string): EncryptedData {
+  const key = this.SHARED_SECRET;
+  const nonce = randomBytes(24);
+  const bytes = utf8ToBytes(data);
+  const aes = gcm(key, nonce);
+  const ciphertext = aes.encrypt(bytes);
+
+  return {
+    ciphertext_b64: this.uint8ArrayToBase64(ciphertext),
+    nonce_b64: this.uint8ArrayToBase64(nonce),
+    client_id: this.CLIENT_ID
+  }
+}
+
+decryptData(data: EncryptedData): string {
+  const key = this.SHARED_SECRET;
+  const nonce = this.base64ToUint8Array(data.nonce_b64);
+  const aes = gcm(key, nonce);
+  const plaintext = aes.decrypt(this.base64ToUint8Array(data.ciphertext_b64));
+  return new TextDecoder().decode(plaintext);
+}
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-4'>
+                Encryption essentially takes a JSON string (which will contain username, password, and TOTP sercret), and creates a random 24-byte nonce. This nonce serves as a unique one-time-use number that makes sure that every encryption operation we do is distinct, even with the same key being used over many encryptions. In other words, the same (key, nonce) pair is never reused because, if they are, for whatever reason, the they will produce identical keystream blocks, which would reveal the relationship between messages, making it easy for a malicious actor to decrypt.
+            </p>
+            <p className='text-lg mb-8'>
+                Decryption, on the other hand, takes a response from the server with almost the same structure (ciphertext, nonce and client id). The function then reconstructs the nonce and ciphertext, and this is then decrypted with AES-GCM, returning the resulting plaintext string which the server originally had.
+            </p>
+            
+            <h3 className="text-xl font-bold my-4">Registration Flow</h3>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ts">
+{`function handleRegister() {
+    // other code
+    let plaintext = {
+      mac_address,
+      username,
+      password,
+      secret,
+      timestamp
+    }
+
+    let data = encryptionClient.encryptData(JSON.stringify(plaintext));
+    axios.post(\`\${API_URL}/register\`, data).then((res) => {
+      let decrypted_data: RegisterResponse = JSON.parse(encryptionClient.decryptData(res.data));
+      // other code
+      router.push(\`/registerFace?mac_address=\${mac_address}\`);
+    
+    }).catch((err) => {
+    // other code
+  }
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-8">
+                To actually send the registration data to the server, we use the <code>handleRegister()</code> method in <code>registration-site/src/app/page.tsx</code>. This method is quite simple, but it is important nonetheless. First off, assuming we have all the information we need (username, password, mac_address, and shared secret key), we create a plaintext object with this information which we later convert into a JSON. Then, we use our encryption client to encrypt the data, as defined above. Finally, we post the data to the server at <code>/register</code> and handle the response accordingly. Once this is done, we need to navigate to the face registration page, which we use our router for, with the argument of the mac address.
+            </p>
+
+            <h3 className="text-xl font-bold my-4">Facial Recognition Video Capture</h3>
+            <p className='text-lg mb-4'>
+                To register the user's face, as aforementioned, they are automatically directed to the <code>registration-site/src/app/registerFace/page.tsx</code> page. The logic for this section is completely encapsulated inside a React component called <code>RegisterFaceContent</code>, and the basic idea is that we first capture a 5-second video using the user's webcam, using a countdown to measure the time and let the user know how much time is remaining. Then, we submit the video the server so that the user's face can be registered.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ts">
+{`// request webcam
+const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+videoRef.current.srcObject = stream; // live preview
+
+const recorder = new MediaRecorder(stream);
+const chunks: BlobPart[] = [];
+recorder.ondataavailable = (event) => {
+  chunks.push(event.data);
+};
+
+recorder.onstop = () => {
+  const blob = new Blob(chunks, { type: 'video/webm' }); // record in webm format - most compatible
+  setVideoBlob(blob);
+  // Stop the camera
+  stream.getTracks().forEach(track => track.stop());
+};
+recorder.start();
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                We first need to request access to the webcam, which is done via the <code>navigator.mediaDevices.getUserMedia()</code> method. This method returns a promise that resolves to a MediaStream object representing the video stream from the user's webcam, and we then set this stream as the source for our video element, which allows us to preview the video in real-time. After creating a <code>MediaRecorder</code> object (used to record the video stream), we wait for the <code>ondataavailable</code> event, and then push the data into an array of chunks because the data will not be available all at once (due to being a stream). Finally, after the recording ends, we create a new Blob object, because this is the best and most efficient format for sending the video to the server.
+            </p>
+            <p className="text-lg mb-4">
+                The code below shows how we did the 5-second countdown for the video, as well as how we actually submit the video (as a video blob) to the server.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ts">
+{`// 5-second video countdown
+const countdownInterval = setInterval(() => {
+  setCountdown(prevCountdown => {
+    if (prevCountdown <= 1) {
+      clearInterval(countdownInterval);
+      stream.getTracks().forEach(track => track.stop());
+      setRecord(false);
+      setRecorded(true);
+    }
+    return prevCountdown - 1;
+  });
+}, 1000);
+
+// submit video to server as video blob
+const formData = new FormData();
+formData.append('video', videoBlob, 'recorded-video.webm');
+formData.append('mac_address', mac_address as string);
+
+await axios.post(\`\${API_URL}/register/face\`, formData, {
+  headers: { 'Content-Type': 'multipart/form-data' }
+});
+`}
+              </code>
+            </pre>
 
           </div>
 
