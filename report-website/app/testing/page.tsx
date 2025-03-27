@@ -282,7 +282,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi or the overhead it would add to typical operations on the server. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
             </p>
-            <h1 className="text-2xl font-bold my-6">Performance Benchmarks</h1>
+            <h1 className="text-2xl font-bold my-6">Performance Benchmarks - Post-Quantum Cryptography</h1>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
                 <Card>
                   <CardHeader>
@@ -356,6 +356,15 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               <p className="text-lg my-6">
                 Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
               </p>
+
+              <p className="text-lg my-6">
+                In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, this is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
+              </p>
+              <p className="text-lg my-6">
+                
+              </p>
+
+              
           </div>
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
