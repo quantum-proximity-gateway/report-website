@@ -6,7 +6,8 @@ import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-arduino';
 import 'prismjs/components/prism-typescript';
-import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/components/prism-python';
+import 'prismjs/themes/prism.css';
 import { useEffect } from 'react';
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
@@ -157,7 +158,7 @@ export default function Implementation() {
               </code>
             </pre>
             <p className="text-lg mb-4">
-                After opening the popup for the user to select a serial port, the function opens the port with a specific baud rate of 9600 (which is what we flashed the ESP32 with). We then set up a text encoder/decoder so that we can actually communicate over the serial lines. Data that is being send from the browser to the ESP32 uses the <i>writer</i>, while the data getting sent from the ESP32 is received by reading from the <i>reader</i> object. 
+                After opening the popup for the user to select a serial port, the function opens the port with a specific baud rate of 9600 (which is what we flashed the ESP32 with). We then set up a text encoder/decoder so that we can actually communicate over the serial lines. Data that is being sent from the browser to the ESP32 uses the <i>writer</i>, while the data getting sent from the ESP32 is received by reading from the <i>reader</i> object. 
             </p>
             <p className='text-lg mb-8'>
                 The function then enters a loop where it waits for a MAC address string to be sent from the ESP32 (we will cover how the ESP32 is sending this MAC address in the ESP32 section). We know that a MAC address is a fixed length (of 17 characters + 2 characters of <code>\r</code> and <code>\n</code>), so we explicitly check for a value of that length. Finally, only once the MAC address arrives do we release the lock we set on the reader and writer and send the newly generated TOTP secret key back to the ESP32.
@@ -181,7 +182,7 @@ export default function Implementation() {
             </pre>
 
             <h2 className="text-2xl font-bold my-4">Data Encryption</h2>
-            <p className="text-lg mb-8">
+            <p className="text-lg mb-4">
                 Before we send any data from the website to the server, we use a post-quantum key exchange library (mlkem) to generate a shared secret with the server, which is then used for AES-GCM encryption on all communications that happen afterwards. This is the code that is contained within <code>registration-site/src/app/EncryptionClient.tsx</code>.
             </p>
 
@@ -247,7 +248,7 @@ decryptData(data: EncryptedData): string {
                 Decryption, on the other hand, takes a response from the server with almost the same structure (ciphertext, nonce and client id). The function then reconstructs the nonce and ciphertext, and this is then decrypted with AES-GCM, returning the resulting plaintext string which the server originally had.
             </p>
             
-            <h3 className="text-xl font-bold my-4">Registration Flow</h3>
+            <h2 className="text-2xl font-bold my-4">Registration Flow</h2>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-ts">
 {`function handleRegister() {
@@ -276,7 +277,7 @@ decryptData(data: EncryptedData): string {
                 To actually send the registration data to the server, we use the <code>handleRegister()</code> method in <code>registration-site/src/app/page.tsx</code>. This method is quite simple, but it is important nonetheless. First off, assuming we have all the information we need (username, password, mac_address, and shared secret key), we create a plaintext object with this information which we later convert into a JSON. Then, we use our encryption client to encrypt the data, as defined above. Finally, we post the data to the server at <code>/register</code> and handle the response accordingly. Once this is done, we need to navigate to the face registration page, which we use our router for, with the argument of the mac address.
             </p>
 
-            <h3 className="text-xl font-bold my-4">Facial Recognition Video Capture</h3>
+            <h2 className="text-2xl font-bold my-4">Facial Recognition Video Capture</h2>
             <p className='text-lg mb-4'>
                 To register the user's face, as aforementioned, they are automatically directed to the <code>registration-site/src/app/registerFace/page.tsx</code> page. The logic for this section is completely encapsulated inside a React component called <code>RegisterFaceContent</code>, and the basic idea is that we first capture a 5-second video using the user's webcam, using a countdown to measure the time and let the user know how much time is remaining. Then, we submit the video the server so that the user's face can be registered.
             </p>
@@ -395,33 +396,200 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
             </Card>
             </div>
 
-            <h2 className="text-2xl font-bold my-4">Key Feature: Encrypted Profile Fetching</h2>
+            <h2 className="text-2xl font-bold my-4">Post-Quantum KEM Key Exchange with LibOQS</h2>
             <p className="text-lg mb-4">
-                When a Raspberry Pi requests a user profile, the server validates the BLE MAC address and returns encrypted settings using post-quantum cryptography.
+                The server implements the post-quantum key exchange mentioned above in the Registration Site section by using the LibOQS library (via Python's oqs bindings). This is used to establish the shared secret with the client, and ensure that this secret is safe from potential attacks by classical computers.
             </p>
-            <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mb-4">
-                <code>{`@get("/profile/{mac_address}")
-            async def get_profile(mac_address: str) -> dict:
-                user = await db.get_user_by_mac(mac_address)
-                if not user:
-                    raise NotFoundException("User not found")
-                
-                encrypted_profile = pqc_encrypt(user.profile_data)
-                return {"encrypted_data": encrypted_profile}`}</code>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`def kem_initiate(self, data: KEMInitiateRequest) -> dict:
+    # create a KEM object from liboqs
+    server_kem = oqs.KeyEncapsulation(self.KEM_ALGORITHM)
+    
+    # generate a key pair
+    public_key = server_kem.generate_keypair()
+    public_key_b64 = base64.b64encode(public_key).decode()
+    
+    # store the KEM object in a session dict
+    self.kem_sessions[data.client_id] = server_kem
+    
+    return {'public_key_b64': public_key_b64}
+
+def kem_complete(self, data: KEMCompleteRequest) -> dict:
+    server_kem = self.kem_sessions.pop(data.client_id, None)
+    if not server_kem:
+        raise HTTPException(status_code=401, detail='Client not recognised...')
+    
+    # decode the encapsulated data from client
+    ciphertext = base64.b64decode(data.ciphertext_b64)
+    
+    # decapsulate to get the shared secret
+    shared_secret = server_kem.decap_secret(ciphertext)
+    
+    # store the shared secret in a dictionary for future use
+    self.shared_secrets[data.client_id] = shared_secret
+    server_kem.free()
+    
+    return {'status': 'success'}
+`}
+              </code>
             </pre>
-            <p className="text-lg mb-8">
-                The server uses a custom `pqc_encrypt` function powered by liboqs bindings to protect sensitive user preferences and accessibility settings.
+            <p className='text-lg mb-4'>
+                The code above shows how we handle the KEM key exchange on the server side, since we already covered the registration site side previously. The <code>kem_initiate()</code> method, located in <code>server/backend/encryption_helper.py</code> is called when the client first connects to the server, and it generates a public/private key pair using the KEM algorithm specified (ML-KEM-512, in this case). The public key is sent back to the client (registration site), and the KEM object is stored temporarily in a session dictionary until the client returns the encapsulated secret key. Note that we also store the client ID in the session dictionary so that we can identify which client is sending the request.
+            </p>
+            <p className='text-lg mb-4'>
+                The <code>kem_complete()</code> method, on the other hand, is called when the client, after encapsulating the plaintext with the public key, send the ciphertext back to the server. For this part of the code, we also use the client ID to identify which client is sending the request, and we retrieve the KEM object from the session dictionary. Then, we remove the client ID from the stored session dictionary since we have already used it. This function then decapsulates the ciphertext from the client using the private key of the KEM object (saved in the temporary session dictionary storage), and retrieves the shared secret. This shared secret is then stored in a dictionary so that it can be used for future communications with the client and data encryption/decryption via AES-GCM. Additionally, we also ensure that we free the KEM object from memory so that we do not use unnecessary resources. The KEM object is no longer required as we have now obtained the shared secret.
             </p>
 
-            <h2 className="text-2xl font-bold my-4">API Structure</h2>
-            <p className="text-lg">
-                The API follows a RESTful structure, with endpoints such as:
+            <h2 className="text-2xl font-bold my-4">Data Encryption with AES-GCM</h2>
+            <p className="text-lg mb-8">
+                After the KEM key exchange is complete and the server now has the shared secret, we can use it to encrypt and decrypt using AES-GCM. This code is practically identical to the one in the registration website, just in Python instead of TypeScript, so there is no real need to go into explicit detail about it. The idea is the same - we generate a random nonce, then encrypt the plaintext with the nonce and shared secret key, and finally return the ciphertext and the nonce. For decryption, we do the opposite as before - we take the ciphertext and nonce, and then we decrypt the ciphertext using the nonce and shared key in order to retrieve the original plaintext that was encrypted. This code is all located within <code>server/backend/encryption_helper.py</code> as well.
             </p>
-            <ul className="list-disc list-inside text-lg my-4">
-                <li><code>/register</code> – For new user registration via the web app</li>
-                <li><code>/authenticate</code> – Verifies facial recognition hashes</li>
-                <li><code>/profile/{'{'}mac{'}'}</code> – Returns encrypted user data to the Raspberry Pi</li>
-            </ul>
+
+            <h2 className="text-2xl font-bold my-4">Handling TOTP</h2>
+            <p className="text-lg mb-4">
+                The TOTP (Time-based One-Time Password) is a standard for generating one-time passwords based on a shared secret key and the current time. As we discussed in the registration site section, the TOTP secret is generated when the user registers their device, and it is stored in the database along with the user's account information. The TOTP is then used to authenticate the user when they try to log in to their account by deriving a 6-digit code using a standard TOTP approach. The <code>/devices/credentials</code> endpoint defined in <code>server/backend/app.py</code> is used to first generate the correct TOTP code with <code>generate_totp()</code>. Then, we compare this to the TOTP code passed by the client, and, only if it matches, we return the username and password stored in the databased (after decrypting it with the shared secret key). The implementation of these features is shown below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`async def generate_totp(mac_address: str ,transaction: AsyncSession) -> int:
+    # get secret, timestamp from DB
+    query = select(Device.secret, Device.totp_timestamp).where(Device.mac_address == mac_address)
+    result = await transaction.execute(query)
+    secret, timestamp = result.one_or_none()
+    
+    return totp(secret, timestamp)
+
+def totp(secret: str, timestamp: int) -> int:
+    # time-based offset
+    time_now = time.time()
+    time_elapsed = int(time_now - timestamp)
+    TIME_STEP = 30
+    
+    time_counter = int(time_elapsed / TIME_STEP)
+    # convert to 8-byte array, run HMAC-SHA1, etc.
+    # other code
+    totp_code = bin_code % 10**6  # 6-digit TOTP
+    return totp_code
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                For TOTP, the secret is first stored on the device (the ESP32 in this case) and the server. Then, the server calculates the TOTP code based on the current time plus the stored <code>timestamp</code>, which is the time when the TOTP secret was generated. The server then returns this TOTP code to the client, which is then compared to the TOTP code the device sends as a form or second factor authentication.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">Facial Recognition</h2>
+            
+            <h3 className="text-xl font-bold my-4">Overview</h3>
+            <p className="text-lg mb-4">
+                After the server receives the 5-second video from the registration website, we need to process the video and extract some frames (images) from it in order to retrain the facial recognition model on the new data to identify the person and match their face with the correct username. We will discuss how we do this in the following sections. The general process is outlined in the code below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`video_path = os.path.join(user_video_dir, 'video.webm')
+# save the webm
+with open(video_path, 'wb') as video_file:
+    while True:
+        chunk = await data.video.read(chunk_size)
+        if not chunk:
+            break
+        video_file.write(chunk)
+
+mp4_path = os.path.join(user_video_dir, "video.mp4")
+convert_to_mp4(video_path, mp4_path)
+extracted_frames = split_frames(mp4_path, user_video_dir)
+train_model(extracted_frames, username)
+
+shutil.rmtree(user_video_dir, ignore_errors=True)
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                The snippet above is the code written for the <code>/register/face</code> endpoint in <code>server/backend/app.py</code>. The general outline is to first take the video blob that we received from the registration website and save it as a file on the server. Then, we convert the video to an MP4 format, and, after this conversion, we split the 5-second video into frames and save them into a local directory we make for the images temporarily. Then, we train the image, and finally delete the images and video so that we do not use unnecessary space on the server or store any personal data.
+            </p>
+
+            <h3 className="text-xl font-bold my-4">WebM &rarr; MP4 Conversion</h3>
+            <p className="text-lg mb-4">
+                The reason we convert the WebM to MP4 is to ensure that all of the data has been received appropriately. When we tried to process the webm video directly, we faced some errors due to the video stream which caused not all of the video data to be received, so this seemed like the best solution. We use <code>ffmpeg</code>, a powerful multimedia framework which is widely used for video and audio processing, in order to do the conversion. The code for this method in <code>server/backend/video_encoding.py</code> is highlighted below, using the <code>subprocess</code> module to call the ffmpeg command line tool.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`def convert_to_mp4(webm_path: str, mp4_path: str) -> None:
+    command = [
+        'ffmpeg',
+        '-i', webm_path,
+        '-c:v', 'libx264',
+        '-c:a', 'aac',
+        '-strict', 'experimental',
+        '-y',
+        mp4_path
+    ]
+    subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+`}
+              </code>
+            </pre>
+            
+            <h3 className="text-xl font-bold my-4">Extracting Frames</h3>
+            <p className="text-lg mb-4">
+                In order to train the facial recognition model, we need images rather than a video. To do this, we use the <code>split_frames()</code> method in <code>server/backend/video_encoding.py</code>. Originally, this method split the video into 5 frames, but we later realised that this is too small of a dataset to train the model on for a user, since it's not very accurate. Instead, we extract 20 frames at continuous intervals, skipping the first 0.5 seconds of the video to ensure that we wait for the camera to stabilise. As we mentioned before, we use OpenCV to do this, and then we save the frames in a temporary directory that we create for this specific user. This will be deleted after the model is trained, along with the videos (in both webm and mp4 formats).
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`def split_frames(mp4_path: str, user_video_dir: str):
+    cap = cv2.VideoCapture(mp4_path)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+    skip_frames = int(0.5 * fps)  # skip half second
+    interval = max(1, (total_frames - skip_frames) // 21)
+
+    for i in range(1, 21):
+        frame_idx = skip_frames + i * interval
+        # other code
+        ret, frame = cap.read()
+        # other code
+        cv2.imwrite(frame_path, frame)
+`}
+              </code>
+            </pre>
+
+            <h3 className="text-xl font-bold my-4">Training the Facial Recognition Model</h3>
+            <p className="text-lg mb-4">
+                The <code>train_model()</code> method in <code>server/backend/face_recognition.py</code> is where we actually train the model. We use the <code>face_recognition</code> library in order to do this, which is a very powerful and well-known library in Python used for face recognition (as the name implies). The library uses a deep learning model called <code>ResNet-34</code> to extract facial features from images, and then we use these features to train a simple SVM (Support Vector Machines) classifier and save the 128-dimensional embeddings computed by the model for each person. The model is essentially just a bunch of face embeddings that are stored in a database and mapped to the usernames of a person. After training the model, the next time the facial recognition request is made, we simply load the encodings data and compare the current feed of the Raspberry Pi 5's camera module to the embeddings stored in the database. The code for the training of the model is quite straightforward:
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-python">
+{`def train_model(frame_paths, username):
+    # read/create encodings data structure
+    if os.path.exists("encodings.pickle"):
+        with open("encodings.pickle", "rb") as f:
+            data = pickle.loads(f.read())
+        knownEncodings = data['encodings']
+        knownNames = data['names']
+    else:
+        knownEncodings = []
+        knownNames = []
+
+    # find faces and compute embeddings for each frame
+    for (i, imagePath) in enumerate(frame_paths):
+        image = cv2.imread(imagePath)
+        rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+        boxes = face_recognition.face_locations(rgb, model="hog")
+        encodings = face_recognition.face_encodings(rgb, boxes)
+
+        for encoding in encodings:
+            knownEncodings.append(encoding)
+            knownNames.append(username)
+
+    # save back to 'encodings.pickle'
+    data = {"encodings": knownEncodings, "names": knownNames}
+    with open("encodings.pickle", "wb") as f:
+        f.write(pickle.dumps(data))
+`}
+              </code>
+            </pre>
+
             </div>
           <div id="esp32">
             <h1 className="text-4xl font-bold my-6">ESP32</h1>
