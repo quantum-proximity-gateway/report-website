@@ -160,6 +160,9 @@ export default function SystemDesign() {
           </div>
           <div id="design-patterns">
             <h1 className="text-4xl font-bold my-6">Design Patterns</h1>
+            <p className="text-lg">
+              In software development, design patterns are solutions to common problems encountered in software design. They provide a structured approach to writing maintainable, scalable, and reusable code by defining proven methodologies that can be applied to different scenarios. In our system, we leverage several design patterns to enhance the modularity, and robustness of our code. Below, we explore four key design patterns which are Client-Server, Delegate, Facade, and Observer, detailing how they are implemented in our project.
+            </p>
             <Tabs defaultValue="client-server" className="my-6">
               <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="client-server">Client-Server Pattern</TabsTrigger>
@@ -277,7 +280,7 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               Preferences are stored as a JSON on the database:
             </p>
-            <details>
+            <details open>
               <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
               <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
                 <code className="language-javascript">

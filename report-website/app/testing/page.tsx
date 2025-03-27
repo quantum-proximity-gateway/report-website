@@ -54,6 +54,24 @@ export default function Testing() {
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
+            <div className="flex flex-col items-center my-6">
+              <Image 
+                src="/testing/unit-tests.png" 
+                alt="Unit Tests" 
+                width={900} 
+                height={900}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Unit Tests</p>
+            </div>
+            <Card>
+              <CardContent className="p-6">
+                <p className="text-lg">
+                  <span className="font-semibold">100%</span> of the unit tests on our server API endpoints <span className="font-semibold text-green-500">successfully pass</span>!
+                </p>
+              </CardContent>
+            </Card>
             <p className="text-lg my-6">
               Our test suite uses pytest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. The <code>@pytest_asyncio.fixture</code> decorator below registers the function as an asynchronous fixture with function scope. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
             </p>
@@ -309,7 +327,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
                         <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 2: IBM Proximity Agents - Responsive Design Test</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -323,7 +341,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
                         <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 2: Registration Site - Responsive Design Test</p>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 3: Registration Site - Responsive Design Test</p>
                       </CardContent>
                     </Card>
                   </div>
