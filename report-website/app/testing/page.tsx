@@ -72,6 +72,24 @@ export default function Testing() {
                 </p>
               </CardContent>
             </Card>
+            <div className="flex flex-col items-center my-6">
+              <Image 
+                src="/testing/coverage.png" 
+                alt="Unit Tests Coverage" 
+                width={500} 
+                height={500}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 2: Unit Tests Coverage</p>
+            </div>
+            <Card>
+              <CardContent className="p-6">
+                <p className="text-lg">
+                  Even though the test coverage shows only <span className="font-semibold">50%</span> coverage on the app.py server, this is <span className="font-semibold text-red-500">not accurate</span> as it was discoverd that there was an issue where the coverage tool used stops coverage detection in a function from the point a database access is made.
+                </p>
+              </CardContent>
+            </Card>
             <p className="text-lg my-6">
               Our test suite uses pytest's fixture mechanism for dependency injection, which helps us easily create test clients for our server before every test, inject them into the test function as a dependency, and automatically run the test cleanup - which ensures test isolation by removing the test database after each test run, and consistency across test runs. The <code>@pytest_asyncio.fixture</code> decorator below registers the function as an asynchronous fixture with function scope. Whenever a test requests this fixture, it automatically creates a new test client which is connected to our application and then yields it to the test function. After the test finishes, it cleans up by removing the test database file.
             </p>
@@ -327,7 +345,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
                         <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 2: IBM Proximity Agents - Responsive Design Test</p>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 3: IBM Proximity Agents - Responsive Design Test</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -341,7 +359,7 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
                         <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
-                        <p className="text-center text-sm text-gray-500 mt-3">Figure 3: Registration Site - Responsive Design Test</p>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 4: Registration Site - Responsive Design Test</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -502,31 +520,31 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
               <TableBody>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Impressive integration of technologies, "Straight out of Star Trek"</p>
+                    <p>Impressive integration of technologies, "Straight out of Star Trek"</p>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">ESP32 registration process was confusing and buggy during first-time setup</p>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Strong perceived security benefits that users appreciated</p>
-                  </TableCell>
-                  <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Error messages were cluttered and difficult to understand</p>
+                    <p>ESP32 registration process was confusing and buggy during first-time setup</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Convenient authentication once properly configured</p>
+                    <p>Strong perceived security benefits that users appreciated</p>
                   </TableCell>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Technical terminology like "quantum-resistant cryptography" and "TOTP" confused non-technical users</p>
+                    <p>Error messages were cluttered and difficult to understand</p>
                   </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
-                    <p className="text-muted-foreground">Time-saving capabilities praised</p>
+                    <p>Convenient authentication once properly configured</p>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <p>Technical terminology like "quantum-resistant cryptography" and "TOTP" confused non-technical users</p>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    <p>Time-saving capabilities praised</p>
                   </TableCell>
                 </TableRow>
               </TableBody>
