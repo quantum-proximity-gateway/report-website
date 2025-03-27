@@ -361,10 +361,11 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, this is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
               </p>
               <p className="text-lg my-6">
-                
+                Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas the average application made using other frameworks like electron usually have a larger size of around 150MB [1]
               </p>
-
-              
+              <p className="text-lg my-6">
+                Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only big bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware.
+              </p>  
           </div>
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
