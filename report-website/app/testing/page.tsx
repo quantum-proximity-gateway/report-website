@@ -75,7 +75,7 @@ export default function Testing() {
               </li>
             </ul>
             <div className="flex flex-wrap justify-center gap-6 my-8">
-              <div className="testing-tool-card">
+              <div>
                 <Image 
                   src="/testing/pytest.svg" 
                   alt="PyTest Logo" 
@@ -86,7 +86,7 @@ export default function Testing() {
                 <p className="text-center font-medium mt-3">PyTest</p>
                 <p className="text-center text-sm text-gray-500">Unit Testing Framework</p>
               </div>
-              <div className="testing-tool-card">
+              <div>
                 <Image 
                   src="/testing/responsivelyapp.png" 
                   alt="Responsively App Logo" 
@@ -106,9 +106,8 @@ export default function Testing() {
               On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
             </p>
           </div>
-          <div id="unit-integration-testing">
-            <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
-            <h1 className="text-2xl font-bold my-6">Unit Testing</h1>
+          <div id="unit-testing">
+            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
             <p className="text-lg my-6">
               Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
@@ -201,7 +200,10 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
     assert shared_secret == encryption_helper.shared_secrets.get(TEST_CLIENT_ID_1)`}
               </code>
             </pre>
-            <h1 className="text-2xl font-bold my-6">Integration Testing</h1>
+          </div>
+          <div id="integration-testing">
+            <h1 className="text-4xl font-bold my-6">Integration Testing</h1>
+            <h1 className="text-2xl font-bold my-6">Manual</h1>
             <p className="text-lg my-6">
               Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi &rarr;  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system. Finally, we also performed full end-to-end tests to verify the entire process, from registering a new ESP32 device, to logging in via proximity and facial recognition, to updating preferences via the proximity agent app.
             </p>
@@ -261,7 +263,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   height={400}
                   className="object-contain w-full rounded-md"
                 />
-                <p className="text-center text-sm text-gray-500 mt-3">Initial integration tests in Tech for Good AI lab</p>
+                <p className="text-center text-sm text-gray-500 mt-3">Initial Integration Tests in Lab</p>
               </CardContent>
             </Card>
             <h1 className="text-2xl font-bold my-6">Continous Integration (CI)</h1>
