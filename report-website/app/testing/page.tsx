@@ -74,6 +74,37 @@ export default function Testing() {
                 <span className="font-medium">User Acceptance Testing</span>
               </li>
             </ul>
+            <div className="flex flex-wrap justify-center gap-6 my-8">
+              <div className="testing-tool-card">
+                <Image 
+                  src="/testing/pytest.svg" 
+                  alt="PyTest Logo" 
+                  width={200} 
+                  height={200}
+                  className="mx-auto transition-transform hover:scale-105"
+                />
+                <p className="text-center font-medium mt-3">PyTest</p>
+                <p className="text-center text-sm text-gray-500">Unit Testing Framework</p>
+              </div>
+              <div className="testing-tool-card">
+                <Image 
+                  src="/testing/responsivelyapp.png" 
+                  alt="Responsively App Logo" 
+                  width={200} 
+                  height={200}
+                  className="mx-auto transition-transform hover:scale-105"
+                />
+                <p className="text-center font-medium mt-3">Responsively App</p>
+                <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
+              </div>
+            </div>
+            <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
+            <p className="text-lg my-6">
+              Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application depending on who is using it. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities.
+            </p>
+            <p className="text-lg my-6">
+              On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
+            </p>
           </div>
           <div id="unit-integration-testing">
             <h1 className="text-4xl font-bold my-6">Unit/Integration Testing</h1>
@@ -172,37 +203,10 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </pre>
             <h1 className="text-2xl font-bold my-6">Integration Testing</h1>
             <p className="text-lg my-6">
-              Integration testing is critical in ensuring that the various system components of our system interact seamlessly. We performed integration tests to validate the core server's interactions with other system components, including the Raspberry Pi, IBM Proximity Agents, and the Registration Site. We carried out a lot of these tests manually when building up the system, where we sent API requests to the server, and inspected the server responses, and analysed the database. Finally, we also performed full end-to-end tests to verify the entire process, from registering a new ESP32 device, to logging in via proximity and facial recognition, to updating preferences via the proximity agent app.
+              Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi &rarr;  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system. Finally, we also performed full end-to-end tests to verify the entire process, from registering a new ESP32 device, to logging in via proximity and facial recognition, to updating preferences via the proximity agent app.
             </p>
             <p className="text-lg my-6">
-              One integration test we done was to check that our encryption when communicating between the Raspberry Pi and server works correctly. This is the example endpoint on the server:
-            </p>
-            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
-              <code className="language-python">
-{`@post('/example-endpoint')
-async def example_endpoint(data: EncryptedMessageRequest) -> dict:
-    '''
-    Example API endpoint which demonstrates decrypting incoming request data, and
-    encrypting outgoing response data.
-    '''
-
-    shared_secret = shared_secrets.get(data.client_id, None)
-    if not shared_secret:
-        raise HTTPException(status_code=404, detail='Shared secret not found.')
-    
-    try:
-        plaintext = aesgcm_decrypt(data.nonce_b64, data.ciphertext_b64, shared_secret)
-    except Exception as e:
-        raise HTTPException(status_code=400, detail='Failed to decrypt data.')
-    print(f'Server received: {plaintext}')
-
-    response_text = f'Hello, Raspberry Pi #{data.client_id}!'
-    nonce_b64, ciphertext_b64 = aesgcm_encrypt(response_text, shared_secret)
-    return {'nonce_b64': nonce_b64, 'ciphertext_b64': ciphertext_b64}`}
-              </code>
-            </pre>
-            <p className="text-lg my-6">
-              This is the example Raspberry Pi client code which simulates API calls that may be made:
+              One integration test we done was to check that our encryption when communicating between the Raspberry Pi and server works correctly. This is the example Raspberry Pi client code which simulates API calls that may be made:
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -245,6 +249,21 @@ async def example_endpoint(data: EncryptedMessageRequest) -> dict:
         raise RuntimeError(f'Error: {e}\\nFailed to decrypt response data.')`}
               </code>
             </pre>
+            <p className="text-lg my-6">
+              We also utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
+            </p>
+            <Card className="my-6 max-w-xl mx-auto">
+              <CardContent className="flex flex-col items-center justify-center p-2">
+                <Image 
+                  src="/testing/techforgood.jpg" 
+                  alt="Tech For Good AI Lab" 
+                  width={400} 
+                  height={400}
+                  className="object-contain w-full rounded-md"
+                />
+                <p className="text-center text-sm text-gray-500 mt-3">Initial integration tests in Tech for Good AI lab</p>
+              </CardContent>
+            </Card>
             <h1 className="text-2xl font-bold my-6">Continous Integration (CI)</h1>
             <p className="text-lg my-6">
               For our proximity agents desktop application, we made use of continuous integration (CI). It is widley used in modern software development, ensuring code changes integrate smoothly and function correctly. GitHub Actions was used to automatically trigger predefined workflows to build, test, and deploy our desktop application after commits were done. The workflow logs and status indicators provide immediate feedback on whether the integration was successful or if errors need to be addressed. This automated process helps us to catch issues early, improving reliability and streamlining development.
