@@ -208,7 +208,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi &rarr;  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system. Finally, we also performed full end-to-end tests to verify the entire process, from registering a new ESP32 device, to logging in via proximity and facial recognition, to updating preferences via the proximity agent app.
             </p>
             <p className="text-lg my-6">
-              One integration test we done was to check that our encryption when communicating between the Raspberry Pi and server works correctly. This is the example Raspberry Pi client code which simulates API calls that may be made:
+              One integration test we done was to check that our encryption when communicating between the Raspberry Pi and server works correctly. This is the example Raspberry Pi client code which simulates an API call that may be made:
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -433,10 +433,167 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </Carousel>
           </div>
           <div id="performance-testing">
-            <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
-            <p className="text-lg">
-              [...]
+          <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
+            <p className="text-lg my-6">
+              Ensuring that perfomance stayed optimal in our application was a priority we took as a team, specially considering the hardware we were using. As it is such a complex project, we needed to ensure that our code remained optimal and that we caught out any bottlenecks that may arise from unoptimized code. This applies more to the Raspberry Pi, which is a lot less powerful than the hardware the core server is meant to run on. 
             </p>
+            <p className="text-lg my-6">
+              Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi or the overhead it would add to typical operations on the server. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Post-Quantum Cryptography Performance Benchmarks</h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold">ML-KEM-512 Key Exchange</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Metric</TableHead>
+                          <TableHead>Time (ms)</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell>Minimum</TableCell>
+                          <TableCell>0.067</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Maximum</TableCell>
+                          <TableCell>3.354</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Mean</TableCell>
+                          <TableCell>0.078</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Median</TableCell>
+                          <TableCell>0.069</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>95th Percentile</TableCell>
+                          <TableCell>0.083</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                    <p className="text-sm text-gray-500 mt-3">Complete KEM cycle operations (key generation, encapsulation, and decapsulation)</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold">Message Encryption/Decryption</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Operation</TableHead>
+                          <TableHead>Mean (ms)</TableHead>
+                          <TableHead>Median (ms)</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell>Encrypt</TableCell>
+                          <TableCell>0.015</TableCell>
+                          <TableCell>0.009</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Decrypt</TableCell>
+                          <TableCell>0.009</TableCell>
+                          <TableCell>0.008</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                    <p className="text-sm text-gray-500 mt-3">Time to encrypt and decrypt messages using our EncryptionHelper</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <p className="text-lg my-6">
+                Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
+              </p>
+              <p className="text-lg my-6">
+                In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, which is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
+              </p>
+              <h1 className="text-2xl font-bold my-6">Desktop Application Overhead</h1>
+              <p className="text-lg my-6">
+                Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas a simple application at a much smaller scale than ours made using other frameworks like Electron usually have a larger size of around 85MB, so using Tauri was definitely a good choice when it came reducing our performance footprint <span className="text-muted-foreground">[1]</span>.
+              </p>
+              <p className="text-lg my-6">
+                Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware. When the user is prompting the model, GPU utilization goes up to 94% and RAM utilization to 1.4GB, this was tested with Granite 3.2.
+              </p>
+              <Carousel className="my-6 max-w-3xl mx-auto">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-4">
+                        <Image 
+                          src="/testing/proximity-agents-memory.png" 
+                          alt="Tauri App Memory Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                        <p className="text-center text-sm text-gray-500 mt-3">Tauri App Memory Usage</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-4">
+                        <Image 
+                          src="/testing/proximity-agents-cpu.png" 
+                          alt="Tauri App CPU/GPU Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                        <p className="text-center text-sm text-gray-500 mt-3">Tauri App CPU/GPU Usage</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={3}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-4">
+                        <Image 
+                          src="/testing/ollama-memory.png" 
+                          alt="Ollama Memory Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                        <p className="text-center text-sm text-gray-500 mt-3">Ollama Memory Usage</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={4}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex flex-col items-center justify-center p-4">
+                        <Image 
+                          src="/testing/ollama-gpu.png" 
+                          alt="Ollama CPU/GPU Usage" 
+                          width={1636} 
+                          height={1169} 
+                          className="object-contain max-h-[500px]" 
+                        />
+                        <p className="text-center text-sm text-gray-500 mt-3">Ollama CPU/GPU Usage</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+              <p className="text-center text-sm text-gray-500 mt-2">Performance monitoring of Proximity Agents and Ollama</p>
+            </Carousel>
           </div>
           <div id="user-acceptance-testing">
             <h1 className="text-4xl font-bold my-6">User Acceptance Testing</h1>
