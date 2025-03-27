@@ -79,7 +79,7 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
             </p>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">IBM Cloud Server</h1>
@@ -109,7 +109,7 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">ESP32/Registration Site</h1>
@@ -127,7 +127,7 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">Raspberry Pi</h1>
@@ -139,7 +139,7 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">Proximity Agents</h1>

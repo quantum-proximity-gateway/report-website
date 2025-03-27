@@ -182,7 +182,7 @@ export default function Research() {
             <p className="text-lg my-6">
               Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.
             </p>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -196,7 +196,7 @@ export default function Research() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -216,7 +216,7 @@ export default function Research() {
             <p className="text-lg my-6">
               Our system consists of many distinct parts which come together to form the quantum proximity gateway. For each part, we thought about the optimal programming languages which would strike a balance between development time and performance.
             </p>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -230,7 +230,7 @@ export default function Research() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -244,7 +244,7 @@ export default function Research() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -258,7 +258,7 @@ export default function Research() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
@@ -272,7 +272,7 @@ export default function Research() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <p className="text-lg font-semibold">
