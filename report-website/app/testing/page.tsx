@@ -708,7 +708,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardContent>
             </Card>
             <p className="text-lg mt-6">
-              After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, particularly among non-technical users who had previously struggled with the system.
+              After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, specifically users stopped finding workarounds the registration website and our UIs were received more positively overall.
             </p>
             <div id="references">
               <h1 className="text-4xl font-bold my-6">References</h1>
