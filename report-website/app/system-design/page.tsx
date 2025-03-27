@@ -1,3 +1,5 @@
+'use client'
+
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
@@ -6,12 +8,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
+import { useEffect } from 'react';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism.css';
 
-export const metadata: Metadata = {
-    title: 'System Design',
-  };
 
 export default function SystemDesign() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, []);
+
   return (
     <main className="w-full">
       <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -70,7 +79,7 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
             </p>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">IBM Cloud Server</h1>
@@ -100,7 +109,7 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">ESP32/Registration Site</h1>
@@ -118,7 +127,7 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">Raspberry Pi</h1>
@@ -130,7 +139,7 @@ export default function SystemDesign() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" defaultValue="item-1" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">Proximity Agents</h1>
@@ -151,6 +160,9 @@ export default function SystemDesign() {
           </div>
           <div id="design-patterns">
             <h1 className="text-4xl font-bold my-6">Design Patterns</h1>
+            <p className="text-lg">
+              In software development, design patterns are solutions to common problems encountered in software design. They provide a structured approach to writing maintainable, scalable, and reusable code by defining proven methodologies that can be applied to different scenarios. In our system, we leverage several design patterns to enhance the modularity, and robustness of our code. Below, we explore four key design patterns which are Client-Server, Delegate, Facade, and Observer, detailing how they are implemented in our project.
+            </p>
             <Tabs defaultValue="client-server" className="my-6">
               <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="client-server">Client-Server Pattern</TabsTrigger>
@@ -268,9 +280,10 @@ export default function SystemDesign() {
             <p className="text-lg my-6">
               Preferences are stored as a JSON on the database:
             </p>
-            <details>
+            <details open>
               <summary className="text-lg font-medium cursor-pointer">Show JSON Configuration</summary>
-              <code className="block whitespace-pre-wrap bg-gray-100 p-4 rounded-md">
+              <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+                <code className="language-javascript">
 {`{
   "zoom": {
     "lower_bound": 0.5,
@@ -353,7 +366,8 @@ export default function SystemDesign() {
     }
   }
 }`}
-              </code>
+                </code>
+              </pre>
             </details>
           </div>
           <div id="apis">
