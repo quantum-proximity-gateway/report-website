@@ -101,7 +101,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-sm text-muted-foreground">
-                    Abdul Muhaymin, Raghav
+                    Abdul Muhaymin, Raghav, Abdulhamid
                   </TableCell>
                 </TableRow>
                 <TableRow>
