@@ -112,7 +112,6 @@ export default function Research() {
             <p className="text-lg">
               Proximity detection is a crucial element of our system, allowing users to interact effortlessly with nearby devices whilst also ensuring security. To determine the most suitable technology for this purpose, we evaluated several options, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi Positioning System (WPS).
             </p>
-
             <div className="space-y-6 mt-6">
               <Card>
                 <CardHeader>
@@ -125,7 +124,6 @@ export default function Research() {
                   </p>
                 </CardContent>
               </Card>
-
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Near-Field Communication (NFC)</CardTitle>
@@ -137,7 +135,6 @@ export default function Research() {
                   </p>
                 </CardContent>
               </Card>
-
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Radio Frequency Identification (RFID)</CardTitle>
@@ -149,7 +146,6 @@ export default function Research() {
                   </p>
                 </CardContent>
               </Card>
-
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Wi-Fi Positioning System (WPS)</CardTitle>
@@ -162,6 +158,40 @@ export default function Research() {
                 </CardContent>
               </Card>
             </div>
+            <p className="text-lg my-6">
+              Ultimately, BLE's balance of affordability, efficiency, and compatibility makes it the most appropriate solution for efficient, profile-based authentication in real-world environments, which is why we selected this option for use in our QPG system.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Facial Recognition for Authentication</h1>
+            <p className="text-lg my-6">
+              We chose facial recognition to be the primary authentication method for our system as it provides a reasonable compromise between security, usability, and accessibility. Implementing facial recognition within our system means that users can log in to devices without physical interaction, which makes it an ideal solution for accessible two-factor authentication (2FA).
+            </p>
+            <p className="text-lg my-6">
+              Voice recognition was considered as an alternative authentication method but we decided against this due to several limitations. While voice authentication does provide a hands-free authentication method, it is a lot more susceptible to environmental noise, variations in a user's voice due to illness or stress, and spoofing attacks using recorded samples. Additionally, voice authentication systems require continuous model training to adapt to changes in a user's voice, making them less practical for seamless authentication. Facial recognition however, offers a higher level of security due to unique facial features and ensures a more reliable and user-friendly authentication experience.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Post-Quantum Cryptography (PQC) Algorithm</h1>
+            <p className="text-lg my-6">
+              To secure user authentication and communication between devices, we considered it a necessity to use post-quantum cryptography (PQC), making our system future-proof from any quantum attack. While traditional encryption methods such as RSA-4096 and Elliptic Curve Cryptography (ECC) are adequately effective today, they may become vulnerable as quantum computing evolves, and so we took this into consideration while designing our system.
+            </p>
+            <p className="text-lg my-6">
+              After research and evaluation of several PQC algorithms, we chose to implement the Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM), a standardised version of the CRYSTALS-Kyber algorithm, as the encryption standard for our system. CRYSTALS-Kyber is a lattice-based encryption algorithm that provides strong security against quantum attacks.
+            </p>
+            <p className="text-lg mb-3">
+              The KEM stage involves:
+            </p>
+            <ul className="text-lg space-y-3">
+              <li>
+                <span className="font-medium">1. Key Pair Generation</span><span className="text-muted-foreground"> —  Each party (sender/receiver) generates a public-private key pair using the Kyber algorithm.</span>
+              </li>
+              <li>
+                <span className="font-medium">2. Encapsulation</span><span className="text-muted-foreground"> — The sender uses the recipient's public key to generate a shared secret and a corresponding ciphertext.</span>
+              </li>
+              <li>
+                <span className="font-medium">3. Decapsulation</span><span className="text-muted-foreground"> —  The recipient uses their private key to retrieve the shared secret from the ciphertext.</span>
+              </li>
+            </ul>
+            <p className="text-lg my-6">
+              Alongside ML-KEM, we also implemented the Advanced Encryption Standard with Galois/Counter Mode (AES-GCM) symmetric encryption algorithm to ensure secure communication between devices. Our system's encryption process begins with KEM, which establishes a shared secret between communicating parties. Once the shared secret is established, AES-GCM is used to encrypt and decrypt messages.
+            </p>
             <h1 className="text-2xl font-bold my-6">Comparison of IoT Devices</h1>
             <p className="text-lg my-6">
               Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.
