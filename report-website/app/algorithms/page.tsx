@@ -43,7 +43,11 @@ export default function Algorithms() {
             <h1 className="text-4xl font-bold my-6">Facial Recognition Algorithm</h1>
             <h1 className="text-2xl font-bold my-6">Models</h1>
             <p className="text-lg my-6">
-              The facial recognition algorithm that we implemented in our system is based on the face_recognition library, an open-source Python library that uses deep learning models to detect and recognise faces from images or videos. The model converts human facial features into high-dimensional numerical vectors, known as face encodings, which uniquely represent each face. These encodings are created via a convolutional neural network (CNN), a deep learning network architecture that analyses visual information through pattern and feature detection. To do this, the CNN uses convolution and pooling, where it applies a small filter to the image to identify specific patterns, before simplifying the the data by aggregating information. When a new face is detected via the Raspberry Pi's camera module, its encoding is compared with a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether or not the match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have the maximum distances between each other.            </p>
+              The facial recognition algorithm that we implemented in our system is based on the face_recognition library, an open-source Python library that uses deep learning models to detect and recognise faces from images or videos. The model converts human facial features into high-dimensional numerical vectors, known as face encodings, which uniquely represent each face. These encodings are created via a convolutional neural network (CNN), a deep learning network architecture that analyses visual information through pattern and feature detection. To do this, the CNN uses convolution and pooling, where it applies a small filter to the image to identify specific patterns, before simplifying the the data by aggregating information.
+            </p>
+            <p className="text-lg my-6">  
+              When a new face is detected via the Raspberry Pi's camera module, its encoding is compared with a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether or not the match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have the maximum distances between each other.
+            </p>
             <h1 className="text-2xl font-bold my-6">Data</h1>
             <p className="text-lg my-6">
               The dataset we used for facial recognition consists of high-resolution images captured by the Raspberry Pi camera module. Each image undergoes preprocessing to extract meaningful facial features while ensuring real-time recognition performance.
@@ -54,37 +58,37 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-3">
               <li>
-                <strong>Captured faces:</strong> Images of authorised personnel stored in an encoded format.
+                <span className="font-medium">Captured faces:</span> Images of authorised personnel stored in an encoded format.
               </li>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Real-time Frames:</strong> Continuous video feed used for live recognition.
+                  <span className="font-medium">Real-time Frames:</span> Continuous video feed used for live recognition.
                 </li>
               </ul>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Environmental Variations:</strong> Data collected under different lighting conditions, angles, and facial obstructions.
+                  <span className="font-medium">Environmental Variations:</span> Data collected under different lighting conditions, angles, and facial obstructions.
                 </li>
               </ul>
             </ul>
             <h1 className="text-lg font-bold my-6">Data Preprocessing</h1>
             <ul className="text-lg list-disc pl-6 my-3">
               <li>
-                <strong>Resolution Adjustment:</strong> We resized images to strike a balance between the retention of detail and computational efficiency.
+                <span className="font-medium">Resolution Adjustment:</span> We resized images to strike a balance between the retention of detail and computational efficiency.
               </li>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Encoding Generation:</strong> Each detected face is converted into a 128-dimensional vector using deep metric learning.
+                  <span className="font-medium">Encoding Generation:</span> Each detected face is converted into a 128-dimensional vector using deep metric learning.
                 </li>
               </ul>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Color Conversion:</strong> Frames were converted to RGB format, as required by the face_recognition library.
+                  <span className="font-medium">Color Conversion:</span> Frames were converted to RGB format, as required by the face_recognition library.
                 </li>
               </ul>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Noise Reduction:</strong> We discarded blurry or low-confidence frames to prevent incorrect identifications.
+                  <span className="font-medium">Noise Reduction:</span> We discarded blurry or low-confidence frames to prevent incorrect identifications.
                 </li>
               </ul>
             </ul>
@@ -102,16 +106,16 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>1. Baseline Test:</strong> Users were asked to stand at a fixed distance and face the camera directly.
+                <span className="font-medium">1. Baseline Test:</span> Users were asked to stand at a fixed distance and face the camera directly.
               </li>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>2. Variable Conditions:</strong> Users moved around the frame, wore accessories (glasses/masks), or appeared in different lighting.
+                  <span className="font-medium">2. Variable Conditions:</span> Users moved around the frame, wore accessories (glasses/masks), or appeared in different lighting.
                 </li>
               </ul>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>3. Real-Time Scenario:</strong> The system was deployed in a dynamic environment with multiple people moving in and out of the frame.
+                  <span className="font-medium">3. Real-Time Scenario:</span> The system was deployed in a dynamic environment with multiple people moving in and out of the frame.
                 </li>
               </ul>
             </ul>
@@ -121,21 +125,21 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>Recognition Accuracy (%):</strong> Number of correct identifications vs total attempted identifications.
+                <span className="font-medium">Recognition Accuracy (%):</span> Number of correct identifications vs total attempted identifications.
               </li>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>False Positive Rate (FPR):</strong> Incorrect matches where an unauthorised face is recognised.
+                  <span className="font-medium">False Positive Rate (FPR):</span> Incorrect matches where an unauthorised face is recognised.
                 </li>
               </ul>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Frame Rate (FPS)</strong> Number of frames processed per second.
+                  <span className="font-medium">Frame Rate (FPS)</span> Number of frames processed per second.
                 </li>
               </ul>
               <ul className="list-disc my-3">
                 <li>
-                  <strong>Latency (ms):</strong> Time taken for face detection and verification.
+                  <span className="font-medium">Latency (ms):</span> Time taken for face detection and verification.
                 </li>
               </ul>
             </ul>
@@ -150,7 +154,7 @@ export default function Algorithms() {
             <ul className="list-disc pl-6 my-6">
               <li>
                 <p className="text-lg my-6">
-                  <strong>HOG vs. CNN for Face Detection:</strong> The face_recognition library supports two methods for face detection: Histogram of Oriented Gradients (HOG) and Convolutional Neural Networks (CNN). HOG is a traditional feature descriptor that detects edges and gradients in an image to identify faces. While HOG is computationally efficient, it is typically less accurate in complex environments like low light. CNN on the other hand, is a deep learning-based approach that detects faces with higher accuracy, especially in more difficult situations, but it does require more computational power. We compared each of these approaches' performance based on accuracy and processing time, and evaluated their trade-offs.
+                  <span className="font-medium">HOG vs. CNN for Face Detection:</span> The face_recognition library supports two methods for face detection: Histogram of Oriented Gradients (HOG) and Convolutional Neural Networks (CNN). HOG is a traditional feature descriptor that detects edges and gradients in an image to identify faces. While HOG is computationally efficient, it is typically less accurate in complex environments like low light. CNN on the other hand, is a deep learning-based approach that detects faces with higher accuracy, especially in more difficult situations, but it does require more computational power. We compared each of these approaches' performance based on accuracy and processing time, and evaluated their trade-offs.
                 </p>
                 <p className="text-lg my-6">
                   [Insert table: Detection Model - HOG/CNN; Accuracy (%), Processing Time (ms per frame); Computational Requirement (High/Low)]
@@ -161,7 +165,7 @@ export default function Algorithms() {
               </li>
               <li>
                 <p className="text-lg my-6">
-                  <strong>cv_scaler - Balancing Speed and Accuracy</strong> The cv_scaler parameter controls how much an image is resized before face detection. A higher value results in a smaller image, which speeds up processing but reduces the level of detail available for recognition. We conducted experiments to test different values of cv_scaler, to measure its effect on frame rate (FPS) and recognition accuracy.
+                  <span className="font-medium">cv_scaler - Balancing Speed and Accuracy</span> The cv_scaler parameter controls how much an image is resized before face detection. A higher value results in a smaller image, which speeds up processing but reduces the level of detail available for recognition. We conducted experiments to test different values of cv_scaler, to measure its effect on frame rate (FPS) and recognition accuracy.
                 </p>
                 <p className="text-lg my-6">
                   [Insert table: cv_scaler - 4,6,8; Accuracy (%), FPS]
@@ -172,7 +176,7 @@ export default function Algorithms() {
               </li>
               <li>
                 <p className="text-lg my-6">
-                  <strong>Face Encoding Model - Small vs Large Model </strong> The face_recognition library offers two pre-trained face encoding models: the Small model (model='small') uses a lightweight neural network, which offers faster encoding but lower accuracy, while the Large model (model='large') uses a deeper neural network, which generates more precise encodings but requires a longer processing time. We analysed which option would be most suitable for our system through experiments:
+                  <span className="font-medium">Face Encoding Model - Small vs Large Model </span> The face_recognition library offers two pre-trained face encoding models: the Small model (model='small') uses a lightweight neural network, which offers faster encoding but lower accuracy, while the Large model (model='large') uses a deeper neural network, which generates more precise encodings but requires a longer processing time. We analysed which option would be most suitable for our system through experiments:
                 </p>
                 <p className="text-lg my-6">
                   [Insert table: Encoding model - Small vs Large; Accuracy (%), Encoding time (ms per face)]
@@ -186,15 +190,15 @@ export default function Algorithms() {
             <p className="text-lg my-6">
               Unfortunately, our facial recognition algorithm did fail for some test examples. Recognition accuracy and performance degraded under these circumstances:
             </p>
-            <ul className="text-lg list-disc pl-6 my-3">
+            <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>Occlusions:</strong> If a user wears glasses or a mask, recognition accuracy drops.
+                <span className="font-medium">Occlusions:</span> If a user wears glasses or a mask, recognition accuracy drops.
               </li>
               <li>
-                <strong>Lighting Conditions:</strong> Poor lighting can degrade performance.
+                <span className="font-medium">Lighting Conditions:</span> Poor lighting can degrade performance.
               </li>
               <li>
-                <strong>Low Resolution Input:</strong> If the camera resolution is too low, facial features are less distinguishable.
+                <span className="font-medium">Low Resolution Input:</span> If the camera resolution is too low, facial features are less distinguishable.
               </li>
             </ul>
             <p className="text-lg">
@@ -213,13 +217,13 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>1. Public and Private Keys:</strong> These keys are used in the KEM stage to securely establish a shared secret (key).
+                <span className="font-medium">1. Public and Private Keys:</span> These keys are used in the KEM stage to securely establish a shared secret (key).
               </li>
               <li>
-                <strong>2. Shared Secret:</strong> This is the symmetric key derived from the key encapsulation process, which is then used for AES-GCM encryption.
+                <span className="font-medium">2. Shared Secret:</span> This is the symmetric key derived from the key encapsulation process, which is then used for AES-GCM encryption.
               </li>
               <li>
-                <strong>3. Ciphertext and Nonce:</strong> The data encrypted using AES-GCM requires a unique nonce for each operation to prevent replay attacks. The nonce is used as an initialization vector for the counter mode of the AES encryption.
+                <span className="font-medium">3. Ciphertext and Nonce:</span> The data encrypted using AES-GCM requires a unique nonce for each operation to prevent replay attacks. The nonce is used as an initialization vector for the counter mode of the AES encryption.
               </li>
             </ul>
             <p className="text-lg">
@@ -236,10 +240,10 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>KEM Performance:</strong> The time taken for public/private key generation; time required for encapsulation of a shared secret; time required for decapsulation and retrieval of the shared secret.
+                <span className="font-medium">KEM Performance:</span> The time taken for public/private key generation; time required for encapsulation of a shared secret; time required for decapsulation and retrieval of the shared secret.
               </li>
               <li>
-                <strong>AES-GCM Encryption Performance</strong> The time taken to encrypt data using shared secret; time taken to decrypt and verify integrity of data; key size overhead compared to traditional cryptographic algorithms including RSA-2048.
+                <span className="font-medium">AES-GCM Encryption Performance</span> The time taken to encrypt data using shared secret; time taken to decrypt and verify integrity of data; key size overhead compared to traditional cryptographic algorithms including RSA-2048.
               </li>
             </ul>
             <h1 className="text-lg font-bold my-6"> Experiment Results</h1>
@@ -252,13 +256,13 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>Security Implications:</strong> Since AES-GCM requires a unique nonce for every encryption operation, improper handling of the nonces can lead to security vulnerabilities, such as key reuse attacks.
+                <span className="font-medium">Security Implications:</span> Since AES-GCM requires a unique nonce for every encryption operation, improper handling of the nonces can lead to security vulnerabilities, such as key reuse attacks.
               </li>
               <li>
-                <strong>Computational Overhead: </strong> While key encapsulation is efficient, the added step of using PQC introduces slight latency compared to traditional symmetric key exchanges like Diffie-Hellman.
+                <span className="font-medium">Computational Overhead:</span> While key encapsulation is efficient, the added step of using PQC introduces slight latency compared to traditional symmetric key exchanges like Diffie-Hellman.
               </li>
               <li>
-                <strong>Larger Key Sizes:</strong> Kyber-512 public keys (800 bytes) and ciphertexts (768 bytes) are much bigger than standard RSA-2048 keys (~256 bytes), and this could introduce additional bandwidth and storage requirements.
+                <span className="font-medium">Larger Key Sizes:</span> Kyber-512 public keys (800 bytes) and ciphertexts (768 bytes) are much bigger than standard RSA-2048 keys (~256 bytes), and this could introduce additional bandwidth and storage requirements.
               </li>
             </ul>
             <p className="text-lg">
@@ -266,10 +270,10 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>Improved Key Storage:</strong> We could efficiently manage key pairs to minimise memory overhead.
+                <span className="font-medium">Improved Key Storage:</span> We could efficiently manage key pairs to minimise memory overhead.
               </li>
               <li>
-                <strong>Optimised Nonce Generation for AES-GCM </strong> Use a cryptographically secure pseudo-random number generator (CSPRNG) for nonce generation. Implement a nonce-reuse prevention mechanism to mitigate security risks.
+                <span className="font-medium">Optimised Nonce Generation for AES-GCM </span> Use a cryptographically secure pseudo-random number generator (CSPRNG) for nonce generation. Implement a nonce-reuse prevention mechanism to mitigate security risks.
               </li>
             </ul>
           </div>
@@ -301,10 +305,10 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 my-6">
               <li>
-                <strong>Tokens per Second:</strong> The number of tokens generated every second by each implementation.
+                <span className="font-medium">Tokens per Second:</span> The number of tokens generated every second by each implementation.
               </li>
               <li>
-                <strong>Response Latency</strong> The time taken to generate a response, measured in milliseconds.
+                <span className="font-medium">Response Latency</span> The time taken to generate a response, measured in milliseconds.
               </li>
             </ul>
             <h1 className="text-lg font-bold my-6"> Experiment Results</h1>
@@ -328,7 +332,7 @@ export default function Algorithms() {
             </p>
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
             <p className="text-lg my-6">
-              We could easily conclude that utilising ollama as our choice of LLM inferencing was the best option, due to the backend optimization that the Ollama team could perform that we could not. This was further confirmed by Bill Higgins - IBM VP Watson X, after a presentation for IBM OIC where he encouraged our team to keep exploring Ollama.
+              We could easily conclude that utilising ollama as our choice of LLM inferencing was the best option, due to the backend optimization that the Ollama team could perform that we could not. This was further confirmed by Bill Higgins (IBM VP Watson X), after a presentation for IBM OIC where he encouraged our team to keep exploring Ollama.
             </p>
             <p className="text-lg">
               However, we are still very proud of the work we completed as it also empowered other teams in our year to clone our repository and try out the llama.cpp inferencing on their own projects.
