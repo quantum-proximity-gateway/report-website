@@ -1255,9 +1255,6 @@ fn get_platform_info() -> String {
             <p className="text-lg mb-4">
                 Executing the actual commands is done using the <code>tauri_plugin_shell</code> plugin, as we mentioned before, which allows us to run shell commands from the Tauri app itself. The commands returned from the LLM's responses are run in this way, and is also how we run the startup applications (using some built-in features of Linux Operating Systems). We also ensure that we have a whitelist of commands that we allow the Tauri app to run, otherwise there could be potential security issues.
             </p>
-            <p className="text-lg mb-4">
-                The general preferences commands are relatively straightforward - we just split the commands by whitespaces and put them into the <code>command()</code> method, <code>args()</code> method (for all arguments in the middle), and <code>arg()</code> method (for the last argument). Alternatively, for the startup applications, we need to do a bit more work - we essentially simulate a sub-shell process and use the <code>nohup</code> bash command, alongside <code>/dev/null 2{'>'}&1 &</code>, which allows us to run the command in the background and not have it be a part of the parent process (i.e. the Tauri application). If it was a part of the parent process, then we would need to wait for the startup applications to close before being able to open the Tauri app itself. The code below shows examples of the preferences and startup application commands.
-            </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-rust">
 {`// preferences command
@@ -1284,6 +1281,9 @@ match shell.command("sh").args(["-c", &bg_app_cmd]).output().await {
 `}
               </code>
             </pre>
+            <p className="text-lg mb-4">
+                The general preferences commands are relatively straightforward - we just split the commands by whitespaces and put them into the <code>command()</code> method, <code>args()</code> method (for all arguments in the middle), and <code>arg()</code> method (for the last argument). Alternatively, for the startup applications, we need to do a bit more work - we essentially simulate a sub-shell process and use the <code>nohup</code> bash command, alongside <code>/dev/null 2{'>'}&1 &</code>, which allows us to run the command in the background and not have it be a part of the parent process (i.e. the Tauri application). If it was a part of the parent process, then we would need to wait for the startup applications to close before being able to open the Tauri app itself. The code above shows examples of these preferences and startup application commands.
+            </p>
           </div>
         </div>
       </div>
