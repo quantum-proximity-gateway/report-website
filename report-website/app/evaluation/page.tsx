@@ -252,6 +252,28 @@ export default function Evaluation() {
                     🟢
                   </TableCell>
                 </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    3
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium"> Preferences feature on IBM Proximity Agents</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                  🟡
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    4
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium"> BLE connections failing whilst connected to eduroam</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                  🟡
+                  </TableCell>
+                </TableRow>
               </TableBody>
             </Table>
           </div>
