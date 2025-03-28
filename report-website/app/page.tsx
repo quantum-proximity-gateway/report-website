@@ -112,10 +112,11 @@ export default function Home() {
             </div>
           </div>
           <div id="project-management">
-            <h1 className="text-4xl font-bold my-6">Project Management</h1>
+            <h1 className="text-4xl font-bold my-4">Project Timeline</h1>
             <p className="text-lg">
-              [INSERT GANTT-CHART]
+              We used a Gantt chart in order to track our progress throughout the project.
             </p>
+            <Image src="/Gantt-Chart.png" alt="Gantt chart" width={1000} height={500} className="object-contain my-4" />
           </div>
         </div>
       </div>
