@@ -192,12 +192,12 @@ const items = [
         url: "/implementation/#overview",
       },
       {
-        title: "Server",
-        url: "/implementation/#server",
-      },
-      {
         title: "Registration Site",
         url: "/implementation/#registration-site",
+      },
+      {
+        title: "Server",
+        url: "/implementation/#server",
       },
       {
         title: "ESP32",
