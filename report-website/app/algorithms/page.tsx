@@ -281,7 +281,7 @@ export default function Algorithms() {
               </CardHeader>
               <CardContent>
                 <p className="text-lg">
-                  While we already knew that CRYSTALS-Kyber provides long-term quantum resistance, we wanted to evaluate its performance in real-world scenarios. In order to assess the performance of the PQC system and algorithms, we conducted multiple iterations of KEM and AES-GCM to measure execution time. We then compared the results to other traditional encryption methods to analyse the efficiency and viability of our PQC in real-world environments.
+                  While we already knew that CRYSTALS-Kyber provides long-term quantum resistance [2], we wanted to evaluate its performance in real-world scenarios. In order to assess the performance of the PQC system and algorithms, we conducted multiple iterations of KEM and AES-GCM to measure execution time. We then compared the results to other traditional encryption methods to analyse the efficiency and viability of our PQC in real-world environments.
                 </p>
               </CardContent>
             </Card>
@@ -439,7 +439,7 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
               <li>
-                <span className="font-medium">Jaro-Winkler Similarity</span> — This algorithm is a string metric used to measure the similarity between two sequences of characters. We initially tested this algorithm due to its efficiency in handling short strings, however it struggled with longer phrases.
+                <span className="font-medium">Jaro-Winkler Similarity</span> — This algorithm is a string metric used to measure the similarity between two sequences of characters [3]. We initially tested this algorithm due to its efficiency in handling short strings, however it struggled with longer phrases.
               </li>
               <li>
                 <span className="font-medium">Cosine Similarity</span> — This measures the similarity between two vectors by calculating the cosine of the angle between them, ranging from -1 to 1, with values closer to 1 indicating higher similarity. We selected cosine similarity as the final approach due to its ability to handle multi-word phrases and capture contextual meaning through vector representations.
@@ -591,7 +591,9 @@ export default function Algorithms() {
           </div>
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
-            [1]GeeksforGeeks (2024) Introduction to convolution neural network, GeeksforGeeks. Available at: https://www.geeksforgeeks.org/introduction-convolution-neural-network/ (Accessed: 28 March 2025). 
+            <p className="text-lg my-6">[1]GeeksforGeeks (2024) Introduction to convolution neural network, GeeksforGeeks. Available at: https://www.geeksforgeeks.org/introduction-convolution-neural-network/ (Accessed: 28 March 2025).</p>
+            <p className="text-lg my-6">[2]Crystals (2024) Kyber. Available at: https://pq-crystals.org/kyber/ (Accessed: 28 March 2025).</p>
+            <p className="text-lg my-6">[3]Wellington, A. by J. (2022) Implementing the fastest (pseudo) Jaro-Winkler algorithm in rust, ISRDI IT Blog. Available at: https://tech.popdata.org/speeding-up-Jaro-Winkler-with-rust-and-bitwise-operations/#:~:text=The%20Jaro%20Winkler%20algorithm%20computes,characters%20between%20the%20two%20strings. (Accessed: 28 March 2025). </p>
           </div>
         </div>
       </div>
