@@ -147,8 +147,8 @@ export default function SystemDesign() {
               <Image 
                 src="/system-design/sequence.svg" 
                 alt="Raspberry Pi Authentication Sequence Diagram" 
-                width={800} 
-                height={800}
+                width={900} 
+                height={900}
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
