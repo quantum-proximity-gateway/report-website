@@ -143,10 +143,13 @@ export default function Home() {
                   </CardHeader>
                   <CardContent className="flex justify-center">
                     <a href={ member.link }>
-                      <Avatar className="w-32 h-32">
-                        <AvatarImage src={ member.photo } />
-                        <AvatarFallback></AvatarFallback>
-                      </Avatar>
+                      <Image
+                        src={ member.photo }
+                        alt={ member.name }
+                        width={128}
+                        height={128}
+                        className="object-contain rounded-full"
+                      />
                     </a>
                   </CardContent>
                   <CardFooter>
@@ -157,8 +160,8 @@ export default function Home() {
             </div>
           </div>
           <div id="project-management">
-            <h1 className="text-4xl font-bold my-4">Project Timeline</h1>
-            <p className="text-lg">
+            <h1 className="text-4xl font-bold my-6">Project Timeline</h1>
+            <p className="text-lg my-6">
               We used a Gantt chart in order to track our progress throughout the project.
             </p>
             <Image
