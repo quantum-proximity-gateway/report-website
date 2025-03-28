@@ -780,8 +780,47 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
           <div id="raspberry-pi">
             <h1 className="text-4xl font-bold my-6">Raspberry Pi</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              This code checks for BLE signals from registered ESP32 devices and verifies their credentials, alongside constantly checking the distance from the computer. Once the distance is small enough, it uses the camera module attached to the Raspberry Pi and checks for the registered user, and if they are found the Raspberry Pi 5 communicates with the Raspberry Pi Pico via UART which acts as a USB HID (Human-Interface Device) keyboard connected to the computer to be logged in into, and types out the user's username and password.
             </p>
+
+            <h2 className="text-2xl font-bold my-4">Tools & Dependencies</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <Card className="p-4">
+                <div className="flex flex-row items-center gap-3">
+                <Image src="/implementation/liboqs.png" alt="Liboqs logo" width={36} height={36} />
+                <div>
+                    <h3 className="text-base font-semibold">LibOQS</h3>
+                    <p className="text-sm text-muted-foreground">
+                    Open-source library for quantum-safe cryptographic algorithms.
+                    </p>
+                </div>
+                </div>
+            </Card>
+
+            <Card className="p-4">
+                <div className="flex flex-row items-center gap-3">
+                <Image src="/implementation/bluetooth.png" alt="Bluepy logo" width={36} height={36} />
+                <div>
+                    <h3 className="text-base font-semibold">BluePy</h3>
+                    <p className="text-sm text-muted-foreground">
+                    A Python library for Bluetooth Low Energy communication on Linux.
+                    </p>
+                </div>
+                </div>
+            </Card>
+
+            <Card className="p-4">
+                <div className="flex flex-row items-center gap-3">
+                <Image src="/implementation/circuitpython.png" alt="Circuit Python logo" width={36} height={36} />
+                <div>
+                    <h3 className="text-base font-semibold">Circuit Python</h3>
+                    <p className="text-sm text-muted-foreground">
+                    A microcontroller-focused version of Python used on the Pico.
+                    </p>
+                </div>
+                </div>
+            </Card>
+            </div>
           </div>
           <div id="desktop-app">
             <h1 className="text-4xl font-bold my-6">Desktop App</h1>
