@@ -140,8 +140,22 @@ export default function SystemDesign() {
           </div>
           <div id="sequence-diagrams">
             <h1 className="text-4xl font-bold my-6">Sequence Diagrams</h1>
-            <p className="text-lg">
-              [...]
+            <p className="text-lg mb-6">
+              Sequence diagrams illustrate how different components of our system interact over time. The following diagram shows the authentication flow for our Raspberry Pi component, demonstrating how it processes Bluetooth signals, authenticates users, and manages the login process.
+            </p>
+            <div className="flex flex-col items-center my-6">
+              <Image 
+                src="/system-design/sequence.svg" 
+                alt="Raspberry Pi Authentication Sequence Diagram" 
+                width={800} 
+                height={800}
+                className="max-w-full object-contain bg-white"
+                style={{borderRadius:'10px'}}
+              />
+              <p className="text-center mt-3 text-sm text-gray-500">Figure 3: Raspberry Pi Authentication Sequence Diagram</p>
+            </div>
+            <p className="text-lg my-6">
+              Our sequence diagram shows the interactions between different components in our complex authentication process. It shows how the Raspberry Pi detects Bluetooth devices, filters them based on registered MAC addresses, verifies their TOTP tokens, and then performs facial recognition for additional security. After successful authentication, the system retrieves user credentials and executes the login process on the host machine.
             </p>
           </div>
           <div id="design-patterns">
@@ -238,7 +252,7 @@ export default function SystemDesign() {
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
-              <p className="text-center text-sm text-gray-500">Figure 3: Entity Relationship Diagram</p>
+              <p className="text-center text-sm text-gray-500">Figure 4: Entity Relationship Diagram</p>
             </div>
             <p className="text-lg my-6">
               By default, we intilize a Device with a preferences JSON which has the default values for the specific accessibility command, this is stored on the Preferences table. On the other hand in the Authentication table, a nonce is stored which helps the server decrypt the password utilising a key stored elsewhere, making it difficult for bad actors to steal credentials. The TOTP timestamp and secret that is agreed upon during registration is also stored on this table.
