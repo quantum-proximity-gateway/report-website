@@ -312,9 +312,84 @@ export default function Appendices() {
             </div>
           <div id="monthly-videos">
             <h1 className="text-4xl font-bold my-6">Monthly Videos</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg mb-6">
+              Below are our four monthly update videos for our project. Each video dives deeper into our progress and challenges we faced during each month of development.
             </p>
+            {/* Responsive 2-column layout for videos */}
+            <div className="grid gap-6 md:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">December Update</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {/* Replace VIDEO_ID with your actual YouTube video ID */}
+                  <div className="overflow-hidden rounded-lg shadow">
+                    <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/2vZZyaepIAw"
+                      title="December YouTube video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">January Update</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-hidden rounded-lg shadow">
+                    <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/YmrEh3_8U_8"
+                      title="January YouTube video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">February Update</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-hidden rounded-lg shadow">
+                    <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/Lb6-CZsGs4E"
+                      title="February YouTube video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">March Update</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-hidden rounded-lg shadow">
+                    <iframe
+                      className="w-full aspect-video"
+                      src="https://www.youtube.com/embed/gIj8c0EoBAk"
+                      title="March YouTube video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
