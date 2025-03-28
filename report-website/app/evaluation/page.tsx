@@ -705,13 +705,13 @@ export default function Evaluation() {
                       <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">27</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
                       <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">23</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     </TableRow>
                   </TableBody>
