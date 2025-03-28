@@ -119,6 +119,10 @@ const items = [
         url: "/algorithms/#ai-chatbot",
       },
       {
+        title: "Natural Language Processing",
+        url: "/algorithms/#natural-language-processing",
+      },
+      {
         title: "Conclusion",
         url: "/algorithms/#conclusion",
       },
