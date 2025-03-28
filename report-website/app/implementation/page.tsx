@@ -52,7 +52,7 @@ export default function Implementation() {
                 The Quantum Proximity Gateway (QPG) is made up of five core components, each of which serves an incredible important and specific role in creating a secure and accessible system. The project was split into these individual submodules in order to improve the modularity of the system, enable parallel development, and also ensure that each component could be tested and deployed individually. Additionally, due to the complexity of the system and the variety of hardware being used, it was important to ensure that each component could be easily replaced or upgraded without affecting the rest of the system.
             </p>
             <p className="text-lg mb-6">
-                As a result of this modularity, each component of the QPG project has different technologies and languages that are best suited for their relevant tasks, and so, we will discuss the implementations and the tools and dependenciees used for each submodule separately in the following sections.
+                As a result of this modularity, each component of the QPG project has different technologies and languages that are best suited for their relevant tasks, and so, we will discuss the implementations and the tools and dependencies used for each submodule separately in the following sections.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Implementation() {
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/usb.svg" alt="Chakra UI logo" width={36} height={36} />
+                <Image src="/implementation/usb.svg" alt="Web Serial logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Web Serial API</h3>
                     <p className="text-sm text-muted-foreground">
@@ -213,7 +213,7 @@ await axios.post(\`\${API_URL}/kem/complete\`, complete_data);
 
             <h3 className="text-xl font-bold my-4">AES-GCM Encryption/Decryption</h3>
             <p className="text-lg mb-4">
-                After the post-quantum handshake, the client now also has a shared secret. We then use the following methods to encrypt and decryt data according to the AES-GCM standard.
+                After the post-quantum handshake, the client now also has a shared secret. We then use the following methods to encrypt and decrypt data according to the AES-GCM standard.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-ts">
@@ -242,7 +242,7 @@ decryptData(data: EncryptedData): string {
               </code>
             </pre>
             <p className='text-lg mb-4'>
-                Encryption essentially takes a JSON string (which will contain username, password, and TOTP sercret), and creates a random 24-byte nonce. This nonce serves as a unique one-time-use number that makes sure that every encryption operation we do is distinct, even with the same key being used over many encryptions. In other words, the same (key, nonce) pair is never reused because, if they are, for whatever reason, the they will produce identical keystream blocks, which would reveal the relationship between messages, making it easy for a malicious actor to decrypt.
+                Encryption essentially takes a JSON string (which will contain username, password, and TOTP secret), and creates a random 24-byte nonce. This nonce serves as a unique one-time-use number that makes sure that every encryption operation we do is distinct, even with the same key being used over many encryptions. In other words, the same (key, nonce) pair is never reused because, if they are, for whatever reason, the they will produce identical keystream blocks, which would reveal the relationship between messages, making it easy for a malicious actor to decrypt.
             </p>
             <p className='text-lg mb-8'>
                 Decryption, on the other hand, takes a response from the server with almost the same structure (ciphertext, nonce and client id). The function then reconstructs the nonce and ciphertext, and this is then decrypted with AES-GCM, returning the resulting plaintext string which the server originally had.
@@ -342,7 +342,7 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
                 <li>The user initially visits the main registration page and clicks on "Connect to device".</li>
                 <li>The Web Serial API is then used to connect to the ESP32, a newly-generated TOTP secret is sent to the ESP32, and the ESP32's MAC address is transmitted to the browser, which is displayed in that MAC address field. </li>
                 <li>The user then fills out their username and password, clicking on the submit button, which calls the server's <code>/register</code> endpoint after encrypting the data (AES-GCM with a shared secret generated from a post-quantum handshake).</li>
-                <li>The server returns a success response, at which point the user is redrected to the face recognition page.</li>
+                <li>The server returns a success response, at which point the user is redirected to the face recognition page.</li>
                 <li>The user then records a 5-second video with the camera, and the captured video is converted into a video blob and sent to the server, which will then register the user's face (this will be covered in more detail in the Server section).</li>
             </ul>
             <p className="text-lg mb-8">
@@ -375,7 +375,7 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
                 <div className="flex flex-row items-center gap-3">
                 <Image src="/implementation/liboqs.png" alt="liboqs logo" width={36} height={36} />
                 <div>
-                    <h3 className="text-base font-semibold">Liboqs</h3>
+                    <h3 className="text-base font-semibold">LibOQS</h3>
                     <p className="text-sm text-muted-foreground">
                     Open-source library for quantum-safe cryptographic algorithms.
                     </p>
@@ -448,7 +448,7 @@ def kem_complete(self, data: KEMCompleteRequest) -> dict:
 
             <h2 className="text-2xl font-bold my-4">Handling TOTP</h2>
             <p className="text-lg mb-4">
-                The TOTP (Time-based One-Time Password) is a standard for generating one-time passwords based on a shared secret key and the current time. As we discussed in the registration site section, the TOTP secret is generated when the user registers their device, and it is stored in the database along with the user's account information. The TOTP is then used to authenticate the user when they try to log in to their account by deriving a 6-digit code using a standard TOTP approach. The <code>/devices/credentials</code> endpoint defined in <code>server/backend/app.py</code> is used to first generate the correct TOTP code with <code>generate_totp()</code>. Then, we compare this to the TOTP code passed by the client, and, only if it matches, we return the username and password stored in the databased (after decrypting it with the shared secret key). The implementation of these features is shown below.
+                The TOTP (Time-based One-Time Password) is a standard for generating one-time passwords based on a shared secret key and the current time. As we discussed in the registration site section, the TOTP secret is generated when the user registers their device, and it is stored in the database along with the user's account information. The TOTP is then used to authenticate the user when they try to log in to their account by deriving a 6-digit code using a standard TOTP approach. The <code>/devices/credentials</code> endpoint defined in <code>server/backend/app.py</code> is used to first generate the correct TOTP code with <code>generate_totp()</code>. Then, we compare this to the TOTP code passed by the client, and, only if it matches, we return the username and password stored in the database (after decrypting it with the shared secret key). The implementation of these features is shown below.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-python">
@@ -639,18 +639,18 @@ async def update_json_preferences(data: EncryptedMessageRequest, transaction: As
           <div id="esp32">
             <h1 className="text-4xl font-bold my-6">ESP32</h1>
             <p className="text-lg mb-6">
-                This is the code needed on the ESP32 device which ensures that its MAC address is transmitted when necessary, and also handles the Bluetooth Low Energy communication with the Raspberry Pi as the users approaches the computer to be logged in into.
+                This is the code needed on the ESP32 device which ensures that its MAC address is transmitted when necessary, and also handles the Bluetooth Low Energy communication with the Raspberry Pi as the users approaches the computer to be logged in into. It also handles the TOTP secret key generation.
             </p>
 
             <h2 className="text-2xl font-bold my-4">Tools & Dependencies</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/litestar.svg" alt="Litestar logo" width={36} height={36} />
+                <Image src="/implementation/arduinoble.png" alt="ArduinoBLE logo" width={36} height={36} />
                 <div>
-                    <h3 className="text-base font-semibold">Litestar</h3>
+                    <h3 className="text-base font-semibold">ArduinoBLE</h3>
                     <p className="text-sm text-muted-foreground">
-                    Async, fast, and light-weight Python web framework running our server's API.
+                    A light-weight BLE library for Arduino, used to handle the BLE communication.
                     </p>
                 </div>
                 </div>
@@ -658,64 +658,81 @@ async def update_json_preferences(data: EncryptedMessageRequest, transaction: As
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/liboqs.png" alt="liboqs logo" width={36} height={36} />
+                <Image src="/implementation/platformio.png" alt="PlatformIO logo" width={36} height={36} />
                 <div>
-                    <h3 className="text-base font-semibold">Liboqs</h3>
+                    <h3 className="text-base font-semibold">PlatformIO</h3>
                     <p className="text-sm text-muted-foreground">
-                    Open-source library for quantum-safe cryptographic algorithms.
-                    </p>
-                </div>
-                </div>
-            </Card>
-
-            <Card className="p-4">
-                <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/opencv.svg" alt="OpenCV logo" width={36} height={36} />
-                <div>
-                    <h3 className="text-base font-semibold">OpenCV</h3>
-                    <p className="text-sm text-muted-foreground">
-                    Handles camera input and image preprocessing for facial recognition.
+                    An open-source ecosystem, used to manage libraries and dependencies.
                     </p>
                 </div>
                 </div>
             </Card>
             </div>
 
-            <h2 className="text-2xl font-bold my-4">Post-Quantum KEM Key Exchange with LibOQS</h2>
+            <h2 className="text-2xl font-bold my-4">Bluetooth Low Energy (BLE) Setup</h2>
             <p className="text-lg mb-4">
-                The server implements the post-quantum key exchange mentioned above in the Registration Site section by using the LibOQS library (via Python's oqs bindings). This is used to establish the shared secret with the client, and ensure that this secret is safe from potential attacks by classical computers.
+                In <code>ESP32-code/BLE-Broadcasting/src/main.cpp</code>, the code sets up the BLE server using the ESP32's built-in capabilities. The ESP32 acts as a BLE peripheral, broadcasting its MAC address and other information to nearby devices, using the <code>ArduinoBLE</code> library to handle the BLE communication. The ESP32 advertises its MAC address and a custom service UUID, allowing the Raspberry Pi to discover and connect to it.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
-              <code className="language-python">
-{`def kem_initiate(self, data: KEMInitiateRequest) -> dict:
-    # create a KEM object from liboqs
-    server_kem = oqs.KeyEncapsulation(self.KEM_ALGORITHM)
-    
-    # generate a key pair
-    public_key = server_kem.generate_keypair()
-    public_key_b64 = base64.b64encode(public_key).decode()
-    
-    # store the KEM object in a session dict
-    self.kem_sessions[data.client_id] = server_kem
-    
-    return {'public_key_b64': public_key_b64}
+              <code className="language-ino">
+{`BLEDevice::init("ESP32 Key"); // Initialize BLE with a device name
+BLEServer *pServer = BLEDevice::createServer();
+pServer->setCallbacks(new MyServer()); // Custom server callbacks
 
-def kem_complete(self, data: KEMCompleteRequest) -> dict:
-    server_kem = self.kem_sessions.pop(data.client_id, None)
-    if not server_kem:
-        raise HTTPException(status_code=401, detail='Client not recognised...')
-    
-    # decode the encapsulated data from client
-    ciphertext = base64.b64decode(data.ciphertext_b64)
-    
-    # decapsulate to get the shared secret
-    shared_secret = server_kem.decap_secret(ciphertext)
-    
-    # store the shared secret in a dictionary for future use
-    self.shared_secrets[data.client_id] = shared_secret
-    server_kem.free()
-    
-    return {'status': 'success'}
+BLEService *pService = pServer->createService(SERVICE_UUID);
+pCharacteristic = pService->createCharacteristic(
+    CHARACTERISTIC_UUID,
+    BLECharacteristic::PROPERTY_READ |
+    BLECharacteristic::PROPERTY_WRITE
+);
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                In the code above, we first initialise the BLE device with a name, and then we create a BLE service and a characteristic. The characteristic is for reading and writing data, and it is set up with the <code>PROPERTY_READ</code> and <code>PROPERTY_WRITE</code> properties, allowing a central device (the Raspberry Pi, in our case) to read/write data from/to it. The UUIDs for the service and characteristic are defined at the top of the file (not shown above), and they are used to identify the service and characteristic when the Raspberry Pi connects to the ESP32.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ino">
+{`BLEAdvertisementData oAdvertisementData;
+oAdvertisementData.setName("ESP32 Key");
+oAdvertisementData.setCompleteServices(BLEUUID(SERVICE_UUID));
+
+BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
+pAdvertising->setAdvertisementData(oAdvertisementData);
+pAdvertising->start();
+BLEDevice::startAdvertising();
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                The code above sets up and configures an advertisement packet so that other devices can discover and connect to the ESP32 via BLE. We ensure that the advertisement data includes the device name and the service UUID, which allows the other devices (Raspberry Pi) to identify the ESP32 when scanning for nearby devices. The <code>BLEAdvertising</code> object is used to start advertising the service, and the <code>BLEDevice::startAdvertising()</code> method is called in order to begin broadcasting the packet.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">Reading the MAC Address over Serial</h2>
+            <p className="text-lg mb-4">
+                By default, each ESP32 device (or any device with a Network Interface Card in general) has a unique MAC address. This is used to identify the device on the network, and it is a 6-byte hexadecimal number. The ESP32 has a built-in function to retrieve the MAC address, which we use to send the MAC address to the Raspberry Pi when it connects to the ESP32 via BLE. In the main <code>loop()</code> function of <code>ESP32-code/BLE-Broadcasting/src/main.cpp</code>, we continually print the MAC address of the device until the device receives a secret key from the Raspberry Pi. The code snippet below shows how we do this.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ino">
+{`if (!done) {
+        BLEAddress address = BLEDevice::getAddress();
+        Serial.println(address.toString().c_str());
+    }
+`}
+              </code>
+            </pre>
+            
+            <h2 className="text-2xl font-bold my-4">Handling the TOTP Secret</h2>
+            <h3 className="text-xl font-bold my-4">Overview</h3>
+            <p className="text-lg mb-4">
+                The logic behind 
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ino">
+{`if (!done) {
+        BLEAddress address = BLEDevice::getAddress();
+        Serial.println(address.toString().c_str());
+    }
 `}
               </code>
             </pre>
