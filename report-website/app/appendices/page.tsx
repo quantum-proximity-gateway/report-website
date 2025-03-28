@@ -178,8 +178,19 @@ export default function Appendices() {
           <div id="legal">
             <h1 className="text-4xl font-bold my-6">Legal</h1>
               <h1 className="text-2xl font-bold my-6">Source Code License</h1>
-              <p className="text-lg">
-                This is a proof-of-concept research project, therefore we have decided to open-source all of our codebase under the MIT license to help spread awareness and pioneer the world of proximity-based computing. The MIT license allows anyone to freely use, modify, distribute, and even commercialize our code with minimal restrictions, requiring only that the original copyright notice and permission notice be included. This permissive licensing approach enables other researchers, developers, and organizations to build upon our work.
+              <p className="text-lg my-6">
+                This is a proof-of-concept research project, therefore we have decided to open-source all of our codebase under the MIT license to help spread awareness and pioneer the world of proximity-based computing. This MIT license allows anyone to freely use, modify, distribute, and allows for the commercialization of our code with minimal restrictions.
+              </p>
+              <p className="text-lg my-6">
+                This license also frees us from any liability associated with the use of our codebase:
+              </p>
+              <p className="text-lg font-mono bg-gray-100 p-4 rounded-md whitespace-pre-line">
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+                INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+                PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+                HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+                OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+                SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
               <h1 className="text-2xl font-bold my-6">GDPR</h1>
               <p className="text-lg mb-3">
