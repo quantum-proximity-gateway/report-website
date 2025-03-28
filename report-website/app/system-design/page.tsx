@@ -164,7 +164,7 @@ export default function SystemDesign() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      This is the main pattern we utilise in our system, most of our components rely on the centralised server to fetch updated data on the user like credentials, encodings, preferences amongst other items. However, we also utilise this pattern in our Rapsberry Pi code, where we have the main Bluetooth scanner program act as a server to provide data to a graphical interface that allows you to see shortlisted ESP32 keys and their estimated distance to the Raspberry Pi.
+                      This is the main pattern we utilise in our system. Most of our components rely on the centralised server to fetch updated data on the user like credentials, encodings, preferences amongst other items. However, we also utilise this pattern in our Rapsberry Pi code, where we have the main Bluetooth scanner program act as a server to provide data to a graphical interface that allows you to see shortlisted ESP32 keys and their estimated distance to the Raspberry Pi.
                     </p>
                     <p className="text-lg mt-6">
                       [INSERT PICTURE OF ALL COMPONENTS COMMUNICATING WITH SERVER]
