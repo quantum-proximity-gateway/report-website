@@ -638,7 +638,7 @@ async def update_json_preferences(data: EncryptedMessageRequest, transaction: As
             </p>
             </div>
           <div id="esp32">
-            <h1 className="text-4xl font-bold my-6">ESP32</h1>
+            <h1 className="text-4xl font-bold my-6">ESP32 Code</h1>
             <p className="text-lg mb-6">
                 This is the code needed on the ESP32 device which ensures that its MAC address is transmitted when necessary, and also handles the Bluetooth Low Energy communication with the Raspberry Pi as the users approaches the computer to be logged in into. It also handles the TOTP secret key generation.
             </p>
@@ -779,7 +779,7 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
 
           </div>
           <div id="raspberry-pi">
-            <h1 className="text-4xl font-bold my-6">Raspberry Pi</h1>
+            <h1 className="text-4xl font-bold my-6">Raspberry Pi Code</h1>
             <p className="text-lg mb-4">
               This code checks for BLE signals from registered ESP32 devices and verifies their credentials, alongside constantly checking the distance from the computer. Once the distance is small enough, it uses the camera module attached to the Raspberry Pi and checks for the registered user, and if they are found the Raspberry Pi 5 communicates with the Raspberry Pi Pico via UART which acts as a USB HID (Human-Interface Device) keyboard connected to the computer to be logged in into, and types out the user's username and password.
             </p>
@@ -822,6 +822,168 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
                 </div>
             </Card>
             </div>
+
+            <h2 className="text-2xl font-bold my-4">Post-Quantum Encryption</h2>
+            <p className="text-lg mb-4">
+                This code is almost the same as that located in the server, and this is also in Python. Therefore, we will not discuss this any further, since the section in the server can be referred to.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">BLE Device Scanning</h2>
+            <h3 className="text-xl font-bold my-4">Overview</h3>
+            <p className="text-lg mb-4">
+                The Raspberry Pi acts as a central device that scans for nearby BLE-enabled peripherals that match the known MAC addresses which are retrieved from the server. The code uses <code>BluePy</code> to find <code>RSSI</code> (signal strength) and read the TOTP code from the characteristic. The <code>ScanDelegate</code> class located in <code>rpi-code/main/scan.py</code> recieves notifications when a device is discovered and when the RSSI value changes (at certain intervals).
+            </p>
+
+            <h3 className="text-xl font-bold my-4">Scanning</h3>
+            <p className="text-lg mb-4">
+                The <code>scan_devices()</code> method is what we use in order to scan for nearly BLE peripherals, and it begins by getting a set of all addresses that we are looking for, followed by creating a simple Scanner object. It then starts the scan and waits for a certain amount of time (3 seconds, in this case) to find devices - this is known as passive mode. Then, we stop scanning to check if any of the found devices match any of the devices we are looking for. If we find a device, we check if the RSSI value is above a certain threshold, and if it is, we read the TOTP code from the characteristic. We also make sure to remove devices from the list of devices we found if they have not been updated within a timeout limit. The code below shows how we do this.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-py">
+{`def scan_devices():
+    while True:
+        addresses = set(get_all_mac_addresses())
+        data = reload_encoding() # fetch face encodings
+        
+        scanner = Scanner().withDelegate(ScanDelegate())
+        
+        try:
+            scanner.start(passive=True)
+            scanner.process(timeout=3)
+        except Exception as e:
+            logging.error(f"Error during device scanning: {e}")
+            # continue with the next iteration if scanning fails
+            sleep(1)
+            continue
+        
+        # remove devices that have not been updated within the timeout limit
+        for dev in list(devices):
+            if time.time() - devices[dev]['last_seen'] > TIMEOUT_LIMIT:
+                print(dev, "has disappeared.")
+                del devices[dev]
+        
+        within_range_mac_addresses = [
+            mac for mac in devices if devices[mac].get('distance', float('inf')) <= DISTANCE_LIMIT
+        ]
+        
+        # face recognition and then UART code
+`}
+              </code>
+            </pre>
+
+            <h3 className="text-xl font-bold my-4">Reading the TOTP Code</h3>
+            <p className="text-lg mb-4">
+                When a discovered device's MAC address is in the <code>addresses</code> set (from the code above), the code attempts to connect and then read the TOTP code from the device's BLE characteristic. Assuming the device is in range, <code>device[mac_address]['value']</code> will now be holding the integer TOTP code te ESP32 produced, and we can use this to verify the user. After storing the integer TOTP code, we then disconnect from the peripheral. The code below shows exactly how this is done.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-py">
+{`class ScanDelegate(DefaultDelegate):
+    def handleDiscovery(self, dev, isNewDev, isNewData):
+        if dev.addr in addresses:
+            distance = self.calculateDistance(dev.rssi)
+            # other code
+            try:
+                with Peripheral(mac_address) as peripheral:
+                    # connected now
+                    service = peripheral.getServiceByUUID(SERVICE_UUID)
+                    characteristic = service.getCharacteristics(CHARACTERISTIC_UUID)[0]
+                    value = characteristic.read().decode("utf-8")
+                    devices[mac_address]['value'] = int(value)
+                    peripheral.disconnect()
+            except Exception as e:
+                logging.error(f"Error: {e}")
+`}
+              </code>
+            </pre>
+
+            <h2 className="text-2xl font-bold my-4">Facial Recognition</h2>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-py">
+{`# main loop capturing frames
+def main_loop(self, list_of_names):
+    while time.time() - start_time_loop < 2: # Check for 2 seconds
+        frame = picam2.capture_array()
+
+        for name in list_of_names:
+            processed_frame, person_checking_found = self.process_frame(frame, name)
+            if person_checking_found:
+                # found the user
+                return name
+    return None
+
+# comparison of encodings
+self.face_locations = face_recognition.face_locations(rgb_resized_frame)
+self.face_encodings = face_recognition.face_encodings(rgb_resized_frame, self.face_locations, model='large')
+for face_encoding in self.face_encodings:
+    matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
+    # if match, get name from known_face_names
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-8">
+                In <code>rpi-code/main/recognise.py</code>, we use the camera module attached to the Raspberry Pi 5 to capture images and perform facial recognition. First, we load a Face Recognition model with the face encodings we retrieved from the server. Then, in an exactly 2-second loop, we capture as many frames as possible frm the <code>Picamera2</code> (the camera module connected to the Raspberry Pi 5). We then find the encodings of these images and compare them with our known users (retrieved from the server), and finally, if a match is found, we return the user's username, which can then be used to send the appropriate data via UART to the Pico.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">UART Connection from Raspberry Pi 5</h2>
+            <p className="text-lg mb-4">
+                After verifying TOTP and the face recognition, the Pi 5 gets the username and password of the relevant user from the server. Then, these credentials are sent to the Raspberry Pi Pico via UART, which will act as a USB HID keyboard. The code for this UART connection from the Raspberry Pi 5 side is located in <code>rpi-code/main/uart_rpi5.py</code> and snippets of it are shown below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-py">
+{`def write_to_pico(username, password):
+    ser = serial.Serial('/dev/ttyAMA0', baudrate=9600, timeout=1)
+    try:
+        while True:
+            json_data = f'{{"username": "{username}", "password": "{password}"}}\\n'
+            ser.write(json_data.encode())
+            response = ser.readline()
+            if response:
+                decoded_response = response.decode('utf-8').strip()
+                if decoded_response == "OK":
+                    return
+            time.sleep(1)
+    finally:
+        if ser.is_open:
+            ser.close()
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-8">
+                First, the code opens a serial connection to the Pico at 9600 baud. Then, it enters a loop where sends the username and password to the Pico in an encoded JSON format until a valid response (after being correctly decoded) is received from the Pico. If no response is recieved, the Pi 5 will try the same thing again after a 1-second delay.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">Raspberry Pi Pico USB HID Emulation</h2>
+            <p className="text-lg mb-4">
+                The Pico has a <code>CircuitPython</code> script which handles the UART communication with the Raspberry Pi 5, and then acts as a HID keyboard to type the username and password into the device to be logged in into. First, the Pico listens over UART on the GPIO pins GP0/GP1. Then, after receiving the JSON from the Raspberry Pi (as specified above), the Pico then simulates keyboard input via the <code>Adafruit HID library</code>. Note that the target system recongises the Pico as a standard USB HID keyboard when the Pico connects to it as a peripheral, and this is what allows the Pi to type the user's credentials automatically. The code for this is located in <code>rpi-code/pico/pico-hid.py</code>, and is shown below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-py">
+{`import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
+from adafruit_hid.keycode import Keycode
+
+keyboard = Keyboard(usb_hid.devices)
+keyboard_layout = KeyboardLayoutUS(keyboard)
+
+while True:
+    response = receive_data() # read from UART
+    if response:
+        username, password = parse_response(response)
+        if username and password:
+            # type out username, press Enter
+            keyboard_layout.write(username)
+            keyboard.press(Keycode.ENTER)
+            keyboard.release_all()
+            
+            # type out password, press Enter
+            keyboard_layout.write(password)
+            keyboard.press(Keycode.ENTER)
+            keyboard.release_all()
+`}
+              </code>
+            </pre>
+
           </div>
           <div id="desktop-app">
             <h1 className="text-4xl font-bold my-6">Desktop App</h1>
