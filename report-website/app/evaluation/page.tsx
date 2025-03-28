@@ -850,12 +850,32 @@ export default function Evaluation() {
           </div>
           <div id="future">
             <h1 className="text-4xl font-bold my-6">Future</h1>
-            <p className="text-lg">
-              [How could the project be extended if you had more time?]
-            </p>
             <p className="text-lg my-6">
-              [...]
+              As a team, we are happy to say that we have completed practically all of the functional requirements of our project that we laid out initially, as well as some additional features. With that said, as with any system, there is always room for improvement, and additional extensions that could be added: 
             </p>
+            <ul className="text-lg list-disc pl-6 space-y-2 mb-6">
+              <li>
+                <span className="font-medium">Improved Hardware Design</span><span className="text-muted-foreground"> — The current housing for the Raspberry Pi and camera module is underdeveloped. Ideally the camera module should be situated in a convenient location dependent on the device, such as above the monitor of the computer being logged into.</span>
+              </li>
+              <li>
+                <span className="font-medium">Battery-Powered Keys</span><span className="text-muted-foreground"> — Currently our ESP32s are powered via a USB-C connection, however in practice it should be wireless and battery-powered.</span>
+              </li>
+              <li>
+                <span className="font-medium">More Reliable Connections</span><span className="text-muted-foreground"> — There were some UART connection issues between the Raspberry Pi and Pico that still need to be resolved. Furthermore, there is sometimes inconsistencies with the BLE connections in certain environments that needs to be further examined.</span>
+              </li>
+              <li>
+                <span className="font-medium">Additional Device Support</span><span className="text-muted-foreground"> — Now that we have successfully implemented a working example of our system for desktop PCs, it would be a good idea to look towards other devices such as tablets, printers, TVs, etc.</span>
+              </li>
+              <li>
+                <span className="font-medium">Advanced Gestures</span><span className="text-muted-foreground"> — An advanced touchless gestures solution such as MotionInput could be integrated with our camera module to allow for gestures that can peform certain tasks, such as logging on/off, opening new windows, changing settings, etc.</span>
+              </li>
+              <li>
+                <span className="font-medium">More Wireless Protocols</span><span className="text-muted-foreground"> — Even though BLE was ultimately chosen as our wireless proximity technology of choice, it may be a good idea to support other protocols depending on the context.</span>
+              </li>
+              <li>
+                <span className="font-medium">Extra UI Settings</span><span className="text-muted-foreground"> — To improve our user interfaces even further, we could include multi-language support, as well as different themes to choose from depending on the user's likings.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
