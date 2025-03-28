@@ -801,7 +801,7 @@ export default function Requirements() {
                       <span className="font-medium">Usability</span><span className="text-muted-foreground"> — The interface should be intuitive, ensuring accessibility for all users.</span>
                     </li>
                     <li>
-                      <span className="font-medium">Privacy Control</span><span className="text-muted-foreground"> — Users must have control over data storage, sharing, and deletion.</span>
+                      <span className="font-medium">Privacy</span><span className="text-muted-foreground"> — Users must have full transparency over data storage, sharing, and deletion.</span>
                     </li>
                     <li>
                       <span className="font-medium">Extensibility</span><span className="text-muted-foreground"> — The architecture should allow for future integrations, such as additional authentication methods.</span>
@@ -840,11 +840,6 @@ export default function Requirements() {
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="text-lg list-disc pl-6 space-y-3">
-                    <li>
-                      <span className="font-medium">Open Source</span><span className="text-muted-foreground"> — The project will remain proprietary due to security and commercial considerations.</span>
-                    </li>
-                  </ul>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

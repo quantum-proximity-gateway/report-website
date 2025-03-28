@@ -171,9 +171,23 @@ export default function Appendices() {
           </div>
           <div id="deployment-manual">
             <h1 className="text-4xl font-bold my-6">Deployment Manual</h1>
-            <p className="text-lg">
-              Same as README? Copy content from README or link it?
-            </p>
+            <div className="w-full h-[800px] border rounded-lg overflow-hidden">
+              <object
+                data="/deployment-manual.pdf"
+                type="application/pdf"
+                className="w-full h-full"
+              >
+                <p className="p-4">
+                  It appears your browser doesn't support embedded PDFs. You can 
+                  <a 
+                    href="/deployment-manual.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
+                  > download the PDF here</a> instead.
+                </p>
+              </object>
+            </div>
           </div>
           <div id="legal">
             <h1 className="text-4xl font-bold my-6">Legal</h1>
