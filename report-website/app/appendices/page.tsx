@@ -182,7 +182,7 @@ export default function Appendices() {
                 This is a proof-of-concept research project, therefore we have decided to open-source all of our codebase under the MIT license to help spread awareness and pioneer the world of proximity-based computing. This MIT license allows anyone to freely use, modify, distribute, and allows for the commercialization of our code with minimal restrictions.
               </p>
               <p className="text-lg my-6">
-                This license also frees us from any liability associated with the use of our codebase:
+                The MIT license also frees us from any liability associated with the use of our codebase:
               </p>
               <p className="text-lg font-mono bg-gray-100 p-4 rounded-md whitespace-pre-line">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
@@ -218,7 +218,7 @@ export default function Appendices() {
               </ul>
               <h1 className="text-2xl font-bold my-6">Privacy Concerns</h1>
               <p className="text-lg">
-                Face recordings are stored temporarily and immediately deleted after they are used to generate encodings for the facial recognition model.
+                As explained throughout the project, all data associated with the user is encrypted to the highest standards, and we only store the essential data that allows us to log users in and change their preferences. Another concern we would like to address is the face recordings, these are NOT stored and are immediately deleted once the face encodings have been generated, this allow us to ensure we store as little biometric data on users as we can. 
               </p>
 
           </div>
