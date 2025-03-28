@@ -7,6 +7,7 @@ import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-arduino';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-rust';
 import 'prismjs/themes/prism.css';
 import { useEffect } from 'react';
 import { SidebarTrigger } from "@/components/ui/sidebar"
@@ -866,6 +867,80 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
                 </div>
             </Card>
             </div>
+
+            <h2 className="text-2xl font-bold my-4">Tauri Application Setup</h2>
+            <p className="text-lg mb-4">
+                The typical pattern for a Tauri application is to have a <code>src-tauri</code> directory, which contains the Tauri configuration and the all of the Rust code for the backend. Additionally, the <code>main.rs</code> doesn't really have a lot of code in it, it's just the minimal entry point for the Tauri application which hands off the control to <code>lib.rs</code> and other files. In the latter file, we do most of our initial setup and anything that needs to be run before the Tauri app starts up is called. Additionally, all the necessary plugins and setup is done here, such as adding the <code>tauri_plugin_shell</code> plugin which allows us to run shell commands from the Tauri app. The general setup for the Tauri app which we use is given below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`if dotenv().is_err() {
+    from_filename(".env.example").ok();
+}
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                The above code is how we load the environment variables from the <code>.env.example</code> file at the root of the desktop application project (i.e. in <code>desktop-app/QPG-Application/</code>). This is important because we use the variables defined in this file (the ollama URL and the server URL) in the code whenever we need to make a request to the server or the LLM. The idea of the using environment variables is to avoid having to hard-code values, and making it easier for developers to change these.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`tauri::Builder::default()
+        .setup(move |app| {
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                This is how we actually build the Tauri application, and the <code>setup()</code> method is a closure which initialises the app state and allows us to do an post-start tasks required for certain setups and configurations (such as invoking the encryption handler).
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`tauri::async_runtime::block_on(async move {
+    if let Err(err) = commands::startup::init_startup_commands( // startup commands
+    )
+});
+
+let listener_handle = app.app_handle().clone();
+listener_handle.listen("frontend-loaded", {
+    let captured_handle = listener_handle.clone();
+
+    move |_event| {
+        if let Err(err) = commands::startup::init_startup_apps(
+        )
+    }
+});
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                The code given above is how we actually call our initial startup commands and applications. The first chunk of code is run as soon as the application opens, calling all the startup commands necessary (which are saved in the server). On the other hand, the second chunk tells the Tauri application that the startup applications should only load when the <i>frontend-loaded</i> message is received from the frontend - something which we emit once the initial animation of the application is complete.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`.invoke_handler(tauri::generate_handler![
+`}
+              </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                Finally, the <code>invoke_handler()</code> method is how we actually set up the Tauri application to handle the commands and events that are emitted from the frontend. This is how we call Rust functions from the frontend - exposing these Rust commands to the JavaScript/Next.js (frontend) environment.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">Post-Quantum Encryption</h2>
+            <p className="text-lg mb-4">
+                As before, this is practically the same encryption code used in the server and the registration site. The only difference is that it is written in Rust and we specifically use the AES-GCM at 256 bits for the encryption (as this was the best balance between efficiency and security for this particular module of the code). For more information on the encryption and how it works, please refer to the server section above.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">Preferences JSON</h2>
+            <h3 className="text-xl font-bold my-4">Overview</h3>
+            <p className="text-lg mb-8">
+                One of the most important aspects of this desktop application, the preferences JSON is used to store the user's preferences and settings for the application within the server. As soon as the Tauri app is loaded, this is the first thing we retrieve since we need to be able to load the preferences immediately for the user. In this section, we will discuss where the JSON is used, how it is used and updated, as well as how we filter it and why we do this. Note that the JSON is extremely important for the AI agent since we set a system prompt for the LLM, giving the JSON file as context for the LLM to generate/choose commands from.
+            </p>
+
+            <h3 className="text-xl font-bold my-4">Fetching the Preferences</h3>
+            <p className="text-lg mb-4">
+                The very first thing we need to be able to do is to actually fetch the preferences from the server. This is done in the <code>desktop-app.QPG-Application/src-tauri/src/preferences/mod.rs</code> file, where we have a function called <code>fetch_preferences_impl()</code>, which is what actually defines what to do in order to fetch the preferences. Essentially, this function makes a request to the server to get the preferences for the user, and then it returns the preferences in a format that can be used by the frontend, but it also calls another method to filter the JSON. Additionally, in case of a failed request to the server, we also have a fallback JSON file in the project directory which is read. The code for this is given below.
+            </p>
+
           </div>
         </div>
       </div>
