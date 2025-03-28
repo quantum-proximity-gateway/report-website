@@ -326,10 +326,10 @@ export default function Evaluation() {
                           30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          30<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          10<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -343,10 +343,10 @@ export default function Evaluation() {
                           40<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          20<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          20<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -354,16 +354,16 @@ export default function Evaluation() {
                           <span className="font-medium">Server</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          30<span className="text-muted-foreground">%</span>
+                          33<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
                           30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          10<span className="text-muted-foreground">%</span>
+                          5<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          30<span className="text-muted-foreground">%</span>
+                          32<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -411,10 +411,10 @@ export default function Evaluation() {
                           20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          15<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          15<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -497,7 +497,7 @@ export default function Evaluation() {
                           <span className="font-medium">Videos</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                        33<span className="text-muted-foreground">%</span>
+                        34<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
                         33<span className="text-muted-foreground">%</span>
@@ -514,16 +514,16 @@ export default function Evaluation() {
                           <span className="font-medium">Home</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          10<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          10<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          75<span className="text-muted-foreground">%</span>
+                          40<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          5<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -537,10 +537,10 @@ export default function Evaluation() {
                           10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          70<span className="text-muted-foreground">%</span>
+                          40<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          10<span className="text-muted-foreground">%</span>
+                          40<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -548,16 +548,16 @@ export default function Evaluation() {
                           <span className="font-medium">Research</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          30<span className="text-muted-foreground">%</span>
+                          25<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
                           0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          60<span className="text-muted-foreground">%</span>
+                          25<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          10<span className="text-muted-foreground">%</span>
+                          50<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -574,7 +574,7 @@ export default function Evaluation() {
                           60<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          0<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -588,10 +588,10 @@ export default function Evaluation() {
                           0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          50<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          50<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -636,13 +636,13 @@ export default function Evaluation() {
                           70<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          5<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          5<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          20<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -708,10 +708,10 @@ export default function Evaluation() {
                       <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">25</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">19</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     </TableRow>
                   </TableBody>
