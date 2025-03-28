@@ -8,28 +8,28 @@ import Image from "next/image";
 const teamMembers = [
     {
         name: 'Marwan Yassini Chairi El Kamel',
-        role: '...',
+        role: 'Project Lead, Client Liason, Lead Programmer',
         email: 'marwan.kamel.23@ucl.ac.uk',
         photo: '/marwan.jpg',
         link: 'https://www.linkedin.com/in/marwanyassini/',
     },
     {
         name: 'Raghav Awasthi',
-        role: '...',
+        role: 'NLP Lead Programmer',
         email: 'raghav.awasthi.23@ucl.ac.uk',
         photo: '/raghav.jpg',
         link: 'https://www.linkedin.com/in/raghavawasthi2005/',
     },
     {
         name: 'Abdulhamid Abayomi',
-        role: '...',
+        role: 'UI/UX Designer, Report Website Lead',
         email: 'abdulhamid.abayomi.23@ucl.ac.uk',
         photo: '/abdulhamid.jpg',
         link: 'https://www.linkedin.com/in/abdulhamid-abayomi-145593235/',
     },
     {
         name: 'Abdul Muhaymin Abdul Hafiz',
-        role: '...',
+        role: 'Software Developer, Encryption Lead',
         email: 'abdul.hafiz.23@ucl.ac.uk',
         photo: '/abdul-muhaymin.jpg',
         link: 'https://www.linkedin.com/in/abmu/',
@@ -59,6 +59,42 @@ export default function Home() {
           <Image src="/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
           <Image src="/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
           <Image src="/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
+        </div>
+      </div>
+      <div className="flex justify-center px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-4xl">
+          <Card>
+            <CardHeader>
+              <CardTitle>Proximity Detection</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Intelligent proximity sensing that automatically locks and unlocks devices based on user presence, enhancing both security and convenience.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Proximity Agents</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>AI-powered assistants that learn user preferences and accessibility needs, automatically adjusting device settings when a user approaches.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Facial Recognition</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Advanced facial recognition technology that authenticates users based on their unique facial features, providing secure and seamless access without passwords.</p>
+            </CardContent>
+          </Card>  
+          <Card>
+            <CardHeader>
+              <CardTitle>Post-Quantum Encryption</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Future-proof security using encryption algorithms resistant to quantum computing attacks, ensuring long-term protection of sensitive user data.</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
       <div className="flex justify-center p-6">
