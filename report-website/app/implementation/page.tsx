@@ -723,19 +723,59 @@ BLEDevice::startAdvertising();
             </pre>
             
             <h2 className="text-2xl font-bold my-4">Handling the TOTP Secret</h2>
+            
             <h3 className="text-xl font-bold my-4">Overview</h3>
             <p className="text-lg mb-4">
-                The logic behind 
+                The logic behind this section is to first read the TOTP secret over Serial from the Raspberry Pi, and then generate the TOTP code using the secret key and a local time counter. The TOTP code is then sent back to the Raspberry Pi via BLE by writing it to the BLE characteristic. Once we read the secret string, we set a flag (<code>done</code>, in the code below), which means we no longer need to print the MAC address to the Serial monitor. We also reset the <code>time_now</code> variable to treat this moment as the start time for the TOTP code generation.
             </p>
             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
               <code className="language-ino">
-{`if (!done) {
-        BLEAddress address = BLEDevice::getAddress();
-        Serial.println(address.toString().c_str());
+{`if (Serial.available() > 0) {
+    secret = Serial.readStringUntil('\\n');
+    if (secret.length() > 0) {
+        done = true;
+        time_now = 0; // treat this moment as 'epoch'
     }
+}
 `}
               </code>
             </pre>
+
+            <h3 className="text-xl font-bold my-4">Generating TOTP Codes</h3>
+            <p className="text-lg mb-4">
+                The TOTP logic is located in <code>ESP32-code/BLE-Broadcasting/src/totp.cpp</code>, and it is quite simple using <code>mbedtls</code> for HMAC-SHA1. Firstly, every second, the <code>time_now</code> variable is incremented by 1, and we use this variable as the number of seconds since the secret was received. Typically, TOTP uses 30-second steps, so, in <code>generate_totp()</code>, we divide <code>time_now</code> by 30 in order to find the time step. This approach ensures that the TOTP code is generated based on the time elapsed since the secret was received, rather than the time when the device was powered on. Additionally, we avoid needing an RTC (Real-Time Clock) or a network timer, which would be impractical for a low-power device like the ESP32.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-ino">
+{`if (done) {  
+    otp = generate_totp((const unsigned char*)secret.c_str(), secret.length(), time_now);
+    String otp_str = String(otp);
+    pCharacteristic->setValue(otp_str.c_str());
+}
+delay(1000);
+time_now += 1;
+
+unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t time_now) {
+    uint64_t time_counter = time_now / TIME_STEP; // TIME_STEP = 30
+    unsigned char counter[8];
+
+    // convert time_counter to an 8-byte array
+    for (int i = 7; i >= 0; i--) {
+        counter[i] = time_counter & 0xFF;
+        time_counter >>= 8;
+    }
+
+    // HMAC-SHA1 on counter
+    // other code
+    
+    // truncate the 20-byte HMAC down to a 6-digit TOTP
+    unsigned int otp = bin_code % 1000000;
+    return otp;
+}
+`}
+              </code>
+            </pre>
+
           </div>
           <div id="raspberry-pi">
             <h1 className="text-4xl font-bold my-6">Raspberry Pi</h1>
