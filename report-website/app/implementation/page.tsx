@@ -940,7 +940,186 @@ listener_handle.listen("frontend-loaded", {
             <p className="text-lg mb-4">
                 The very first thing we need to be able to do is to actually fetch the preferences from the server. This is done in the <code>desktop-app.QPG-Application/src-tauri/src/preferences/mod.rs</code> file, where we have a function called <code>fetch_preferences_impl()</code>, which is what actually defines what to do in order to fetch the preferences. Essentially, this function makes a request to the server to get the preferences for the user, and then it returns the preferences in a format that can be used by the frontend, but it also calls another method to filter the JSON. Additionally, in case of a failed request to the server, we also have a fallback JSON file in the project directory which is read. The code for this is given below.
             </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`pub async fn fetch_preferences_impl() -> Result<String, String> {
+    // other code
 
+    let default_commands = match load_default_app_config("src/json_example.json") {
+        Ok(config) => {
+            serde_json::to_value(config).unwrap_or(Value::Null)
+        }
+    };
+
+    let mut url = url::Url::parse(&format!("{}/preferences/{}", SERVER_URL.to_string(), username)).unwrap();
+    url.query_pairs_mut().append_pair("client_id", &encryption_client.client_id);
+    let client = Client::new();
+
+    let preferences_json = match client.get(url).send().await {
+    // other code
+
+    let flattened = match serde_json::from_str::<Value>(&preferences_json) {
+        Ok(mut val) => {
+            if let Value::Object(ref mut root_obj) = val {
+                if let Some(Value::Object(inner_prefs)) = root_obj.remove("preferences") {
+                    match serde_json::to_string_pretty(&Value::Object(inner_prefs)) {
+                        Ok(s) => s,
+    // other code
+
+    state.update_jsons(&flattened, &filtered_json_str).await;
+    Ok(filtered_json_str)
+}
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                As we can see above, first we load the fallback JSON in case the request to the server doesn't work. Then, we make the request to the server to get the preferences, encrypting and decrypting as necessary. Then, we parse the JSON to filter it, and finally we update the state of the application with the new JSON so that it can be used everywhere else by the code (even in the frontend), without having to request it again from the server.
+            </p>
+
+            <h3 className="text-xl font-bold my-4">Filtering the Preferences</h3>
+            <p className="text-lg mb-4">
+                By filtering the JSON in this case, we mean stripping it down so that we only have the commands relevant to the current Operating System. In other words, we get the environment of the current system using Tauri's built-in utilities, and then remove the unnecessary keys from the JSON. This is important because we don't want to have to deal with unnecessary data, and it also means that other information can fit more easily into the LLM's context window.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`pub fn filter_json_by_env(json_str: &str, env: &str) -> Result<String, serde_json::Error> {
+    let mut data: Value = serde_json::from_str(json_str)?;
+
+    if let Value::Object(ref mut categories) = data {
+        for (_key, setting_value) in categories.iter_mut() {
+            if let Value::Object(ref mut setting_obj) = setting_value {
+                if let Some(Value::Object(commands)) = setting_obj.get_mut("commands") {
+                    *commands = commands.iter().filter(|(k, _)| k.as_str() == env)
+                        .map(|(k, v)| (k.clone(), v.clone())).collect();
+                }
+            }
+        }
+    }
+    serde_json::to_string_pretty(&data)
+}
+`}
+                </code>
+            </pre>
+            <p className="text-lg mb-4">
+                The code above shows how we filter the JSON. It is relatively straightforward, but essentially, we iterate through the JSON and remove any keys that are not relevant to the current environment. The <code>env</code> variable is passed in as a parameter, and it is used to determine which keys to keep in the JSON. This env variable is passed in after being returned from the <code>get_platform_info()</code> method found in <code>desktop-app/QPG-Application/src-tauri/src/state/mod.rs</code>. This method is shown below, and, as aforementioned, uses Tauri's <code>target_os</code> configuration to reliably determine the current environment.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`#[tauri::command]
+fn get_platform_info() -> String {
+    #[cfg(target_os = "macos")] { return "macos".into(); }
+    #[cfg(target_os = "windows")] { return "windows".into(); }
+    #[cfg(target_os = "linux")] {
+        let frontend_env = get_linux_gui();
+        if let Some(env) = frontend_env {
+            if env.to_lowercase().contains("gnome") { return "gnome".into(); }
+            else { return format!("linux-{env}").into(); }
+        } else { return "linux-unknown".into(); }
+    }
+}
+`}
+                </code>
+            </pre>
+            <p className='text-lg mb-8'>
+                We do also differentiate between the different Linux environments, since there are a lot of various GUIs that can be used. However, we are only concerned about the GNOME environment since this is the most popular one, as well as the GUI we are using when testing the app. It is also the environment for which we have already populated the JSON preferences commands with.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">Ollama Generation</h2>
+            <p className="text-lg mb-4">
+                The Ollama generation is done using the <code>ollama-rs</code> library, which is a Rust client for the Ollama LLM server. This library allows us to easily interact with the Ollama server and generate text using the LLM, and the code for this is relatively straightforward, as underlined below. Our <code>generate_impl()</code> method's implementation, located in <code>desktop-app/QPG-Application/src-tauri/src/commands/generation.rs</code>, is shown below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`pub async fn generate_impl() -> Result<GenerateResult, String> {	
+	let filtered_json = state.get_filtered_json().await;
+    let mut ollama = g_ollama.0.lock().await;
+    let mut seen_chats = seen_chats.0.lock().await;
+
+    if !seen_chats.contains_key(&request.chat_id) {
+        seen_chats.insert(request.chat_id.clone(), true);
+        let sys_prompt = format!(...);
+    }
+
+    let best_match = crate::preferences::find_best_match(&request.prompt, &filtered_json);
+    let best_match_json = match best_match {
+        Some(ref key) => {
+            let parsed_json: Value = serde_json::from_str(&filtered_json).unwrap_or(Value::Null);
+            if let Value::Object(mut root) = parsed_json {
+                if let Some(matching_value) = root.remove(key) {
+                    let mut new_obj = serde_json::Map::new();
+                    new_obj.insert(key.clone(), matching_value);
+
+                    let snippet = serde_json::to_string_pretty(&Value::Object(new_obj))
+                        .unwrap_or_else(|_| filtered_json.clone());
+
+                    state.set_best_match_json(&snippet).await;
+                    snippet
+                }
+            }
+        }
+    };
+    // other code
+}
+`}
+              </code>
+            </pre>
+            <p className="text-lg mb-4">
+                Initially, we set a system prompt for the LLM providing it with context. We tell it that it is supposed to always return a command (for preferences) and a text response (which will be shown to the user). Additionally, we give it the entire JSON (after being filtered for the environment) which it can use to search for commands. The LLM is then asked to find the best match for the command (i.e. the key in the JSON which best matches the user's prompt), and we use this to set the <code>best_match_json</code> variable. This is done using the <code>find_best_match()</code> method, which uses NLP and the cosine similarity algorithm in order to ensure that the model has no hallucinations (or, at least, very few of them). After getting this best match snippet of the JSON, we prepend it to the beginning of the relevant user prompt, which suggests to the LLM that it should use this JSON snippet to generate the command.
+            </p>
+
+            <h2 className="text-2xl font-bold my-4">NLP Cosine Similarity</h2>
+            <p className="text-lg mb-4">
+                Originally, when we just gave the LLM the full JSON, it would often hallucinate and return commands that were not actually in the JSON. This was a problem because we wanted to ensure that the LLM only returned commands that we actually white-listed and wanted it to execute. In order to solve this problem we tried a few different NLP similarity algorithms, and eventually ended up using the cosine similarity as it gave us the lowest rate of hallucinations. The code for how we used the cosine similarity (as defined in the Algorithms section) to find the best match in the JSON is shown below.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`fn cosine_similarity(set1: &std::collections::HashSet<String>, set2: &std::collections::HashSet<String>) -> f64 {
+    let intersection = set1.intersection(set2).count() as f64;
+    let norm1 = set1.len() as f64;
+    let norm2 = set2.len() as f64;
+
+    if norm1 == 0.0 || norm2 == 0.0 {
+        return 0.0;
+    }
+    intersection / (norm1.sqrt() * norm2.sqrt())
+}
+`}
+              </code>
+            </pre>
+
+            <h2 className="text-2xl font-bold my-4">Command Execution and Startup Applications</h2>
+            <p className="text-lg mb-4">
+                Executing the actual commands is done using the <code>tauri_plugin_shell</code> plugin, as we mentioned before, which allows us to run shell commands from the Tauri app itself. The commands returned from the LLM's responses are run in this way, and is also how we run the startup applications (using some built-in features of Linux Operating Systems). We also ensure that we have a whitelist of commands that we allow the Tauri app to run, otherwise there could be potential security issues.
+            </p>
+            <p className="text-lg mb-4">
+                The general preferences commands are relatively straightforward - we just split the commands by whitespaces and put them into the <code>command()</code> method, <code>args()</code> method (for all arguments in the middle), and <code>arg()</code> method (for the last argument). Alternatively, for the startup applications, we need to do a bit more work - we essentially simulate a sub-shell process and use the <code>nohup</code> bash command, alongside <code>/dev/null 2{'>'}&1 &</code>, which allows us to run the command in the background and not have it be a part of the parent process (i.e. the Tauri application). If it was a part of the parent process, then we would need to wait for the startup applications to close before being able to open the Tauri app itself. The code below shows examples of the preferences and startup application commands.
+            </p>
+            <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto">
+              <code className="language-rust">
+{`// preferences command
+let command_parts: Vec<&str> = command.split_whitespace().collect();
+let (base_parts, value_part) = command_parts.split_at(command_parts.len() - 1);
+let last_value = value_part.first().unwrap();
+let base_cmd_str = base_parts.join(" ");
+
+let valid_commands = gather_valid_commands_for_env(&state, &platform_info).await?;
+
+let shell = app_handle.shell();
+match shell.command(&base_parts[0]).args(&base_parts[1..]).arg(last_value).output().await {
+    // other code
+}
+
+// startup application command
+let command_base = command.trim_end_matches(" &").trim().to_string();
+let startup_apps = state.get_startup_apps().await;
+let bg_app_cmd = format!("nohup {} >/dev/null 2>&1 &", command_base);
+let shell = app_handle.shell();
+match shell.command("sh").args(["-c", &bg_app_cmd]).output().await {
+    // other code
+}
+`}
+              </code>
+            </pre>
           </div>
         </div>
       </div>
