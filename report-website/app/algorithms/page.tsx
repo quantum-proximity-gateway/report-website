@@ -44,7 +44,7 @@ export default function Algorithms() {
             <h1 className="text-4xl font-bold my-6">Facial Recognition Algorithm</h1>
             <h1 className="text-2xl font-bold my-6">Models</h1>
             <p className="text-lg my-6">
-              The facial recognition algorithm that we implemented in our system is based on the face_recognition library, an open-source Python library that uses deep learning models to detect and recognise faces from images or videos. The model converts human facial features into high-dimensional numerical vectors, known as face encodings, which uniquely represent each face. These encodings are created via a convolutional neural network (CNN), a deep learning network architecture that analyses visual information through pattern and feature detection. To do this, the CNN uses convolution and pooling, where it applies a small filter to the image to identify specific patterns, before simplifying the the data by aggregating information.
+              The facial recognition algorithm that we implemented in our system is based on the face_recognition library, an open-source Python library that uses deep learning models to detect and recognise faces from images or videos. The model converts human facial features into high-dimensional numerical vectors, known as face encodings, which uniquely represent each face. These encodings are created via a convolutional neural network (CNN), a deep learning network architecture that analyses visual information through pattern and feature detection [1]. To do this, the CNN uses convolution and pooling, where it applies a small filter to the image to identify specific patterns, before simplifying the the data by aggregating information.
             </p>
             <p className="text-lg my-6">  
               When a new face is detected via the Raspberry Pi's camera module, its encoding is compared with a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether or not the match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have the maximum distances between each other.
@@ -591,6 +591,7 @@ export default function Algorithms() {
           </div>
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
+            [1]GeeksforGeeks (2024) Introduction to convolution neural network, GeeksforGeeks. Available at: https://www.geeksforgeeks.org/introduction-convolution-neural-network/ (Accessed: 28 March 2025). 
           </div>
         </div>
       </div>
