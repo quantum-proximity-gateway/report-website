@@ -36,7 +36,7 @@ export default function Algorithms() {
           <div id="overview">
             <h1 className="text-4xl font-bold my-6">Overview</h1>
             <p className="text-lg">
-              Our Quantum Proximity Gateway system incorporates multiple algorithms to ensure the highest level of security and usability. This page provides an in-depth explanation of each algorithm used within the system. The following sections cover the AI chatbot assistant model, post-quantum cryptography, and facial recognition.
+              Our Quantum Proximity Gateway system incorporates multiple algorithms to ensure the highest level of security and usability. This page provides an in-depth explanation of each algorithm used within the system. The following sections cover our facial recognition algorithm, post-quantum cryptography, and our AI chatbot assistant model.
             </p>
           </div>
           <div id="facial-recognition">
@@ -48,11 +48,11 @@ export default function Algorithms() {
             <p className="text-lg my-6">
               The dataset we used for facial recognition consists of high-resolution images captured by the Raspberry Pi camera module. Each image undergoes preprocessing to extract meaningful facial features while ensuring real-time recognition performance.
             </p>
-            <h1 className="text-1xl font-bold my-4">Dataset</h1>
+            <h1 className="text-lg font-bold my-6">Dataset</h1>
             <p className="text-lg">
               The dataset consists of:
             </p>
-            <ul className="list-disc pl-6 my-3">
+            <ul className="text-lg list-disc pl-6 my-3">
               <li>
                 <strong>Captured faces:</strong> Images of authorised personnel stored in an encoded format.
               </li>
@@ -67,30 +67,28 @@ export default function Algorithms() {
                 </li>
               </ul>
             </ul>
-            <h1 className="text-1xl font-bold my-6">Data Preprocessing</h1>
-            <p className="text-lg">
-              <ul className="list-disc pl-6 my-3">
+            <h1 className="text-lg font-bold my-6">Data Preprocessing</h1>
+            <ul className="text-lg list-disc pl-6 my-3">
+              <li>
+                <strong>Resolution Adjustment:</strong> We resized images to strike a balance between the retention of detail and computational efficiency.
+              </li>
+              <ul className="list-disc my-3">
                 <li>
-                  <strong>Resolution Adjustment:</strong> We resized images to strike a balance between the retention of detail and computational efficiency.
+                  <strong>Encoding Generation:</strong> Each detected face is converted into a 128-dimensional vector using deep metric learning.
                 </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Encoding Generation:</strong> Each detected face is converted into a 128-dimensional vector using deep metric learning.
-                  </li>
-                </ul>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Color Conversion:</strong> Frames were converted to RGB format, as required by the face_recognition library.
-                  </li>
-                </ul>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Noise Reduction:</strong> We discarded blurry or low-confidence frames to prevent incorrect identifications.
-                  </li>
-                </ul>
               </ul>
-            </p>
-            <h1 className="text-1xl font-bold my-6">Training and Testing Sets</h1>
+              <ul className="list-disc my-3">
+                <li>
+                  <strong>Color Conversion:</strong> Frames were converted to RGB format, as required by the face_recognition library.
+                </li>
+              </ul>
+              <ul className="list-disc my-3">
+                <li>
+                  <strong>Noise Reduction:</strong> We discarded blurry or low-confidence frames to prevent incorrect identifications.
+                </li>
+              </ul>
+            </ul>
+            <h1 className="text-lg font-bold my-6">Training and Testing Sets</h1>
             <p className="text-lg">
               Since this is a real-time face recognition system, it does not have a traditional training phase. Instead, it operates by storing known face encodings and comparing incoming video frames against this dataset.
             </p>
@@ -98,11 +96,11 @@ export default function Algorithms() {
             <p className="text-lg">
               We tested the facial recognition system using a controlled environment and real-world scenarios to measure its accuracy and performance under different conditions.
             </p>
-            <h1 className="text-1xl font-bold my-4">Experiment Deisgn</h1>
+            <h1 className="text-lg font-bold my-6">Experiment Deisgn</h1>
             <p className="text-lg">
               The system processes video frames from the Raspberry Pi camera in real-time. A user enters the frame, and the system attempts to detect and match their face against stored encodings. If a match is found, their profile is activated. We conducted experiments to assess the algorithm's performance using the following design:
             </p>
-            <ul className="list-disc pl-6 my-4">
+            <ul className="text-lg list-disc pl-6 my-6">
               <li>
                 <strong>1. Baseline Test:</strong> Users were asked to stand at a fixed distance and face the camera directly.
               </li>
@@ -117,11 +115,11 @@ export default function Algorithms() {
                 </li>
               </ul>
             </ul>
-            <h1 className="text-1xl font-bold my-6">Performance Evaluation</h1>
+            <h1 className="text-lg font-bold my-6">Performance Evaluation</h1>
             <p className="text-lg">
               The metrics we used to evaluate and measure the algorithm's performance are:
             </p>
-            <ul className="list-disc pl-6 my-4">
+            <ul className="text-lg list-disc pl-6 my-6">
               <li>
                 <strong>Recognition Accuracy (%):</strong> Number of correct identifications vs total attempted identifications.
               </li>
@@ -141,67 +139,65 @@ export default function Algorithms() {
                 </li>
               </ul>
             </ul>
-            <h1 className="text-1xl font-bold my-6">Experiment Results</h1>
-            <p className="text-lg">
+            <h1 className="text-lg font-bold my-6">Experiment Results</h1>
+            <p className="text-lg my-6">
               [Table: left column = Scenario/Condition - Controlled lighting, dim lighting, wearing glasses, wearing mask?; top row = Accuracy (%), False Positives, FPS, Latency (ms)]
             </p>
-            <h1 className="text-1xl font-bold my-4">Hyperparameter Investigation</h1>
+            <h1 className="text-lg font-bold my-6">Hyperparameter Investigation</h1>
             <p className="text-lg">
               In our QPG's facial recognition system, optimising hyperparameters is necessary for balancing accuracy, speed and resource efficiency. Hyperparameters are tunable values that affect the model's image processing, face detection, and comparison with stored encodings. We explored several key hyperparameters to observe and determine their impact on system performance.
             </p>
-            <ul className="list-disc pl-6 my-4">
+            <ul className="list-disc pl-6 my-6">
               <li>
-                <strong>HOG vs. CNN for Face Detection:</strong> The face_recognition library supports two methods for face detection: Histogram of Oriented Gradients (HOG) and Convolutional Neural Networks (CNN). HOG is a traditional feature descriptor that detects edges and gradients in an image to identify faces. While HOG is computationally efficient, it is typically less accurate in complex environments like low light. CNN on the other hand, is a deep learning-based approach that detects faces with higher accuracy, especially in more difficult situations, but it does require more computational power. We compared each of these approaches' performance based on accuracy and processing time, and evaluated their trade-offs.
-                <ul className="list-disc pl-6 my-3">
-                  <li>
-                    Insert table: Detection Model - HOG/CNN; Accuracy (%), Processing Time (ms per frame); Computational Requirement (High/Low)
-                  </li>
-                </ul>
-                The results show that CNN provides higher accuracy but is less suitable for real-time applications on low-power hardware like the Raspberry Pi. Therefore, we selected HOG for real-time face detection, while CNN could be considered for periodic re-validation of identities.
+                <p className="text-lg my-6">
+                  <strong>HOG vs. CNN for Face Detection:</strong> The face_recognition library supports two methods for face detection: Histogram of Oriented Gradients (HOG) and Convolutional Neural Networks (CNN). HOG is a traditional feature descriptor that detects edges and gradients in an image to identify faces. While HOG is computationally efficient, it is typically less accurate in complex environments like low light. CNN on the other hand, is a deep learning-based approach that detects faces with higher accuracy, especially in more difficult situations, but it does require more computational power. We compared each of these approaches' performance based on accuracy and processing time, and evaluated their trade-offs.
+                </p>
+                <p className="text-lg my-6">
+                  [Insert table: Detection Model - HOG/CNN; Accuracy (%), Processing Time (ms per frame); Computational Requirement (High/Low)]
+                </p>
+                <p className="text-lg my-6">
+                  The results show that CNN provides higher accuracy but is less suitable for real-time applications on low-power hardware like the Raspberry Pi. Therefore, we selected HOG for real-time face detection, while CNN could be considered for periodic re-validation of identities.
+                </p>
               </li>
-              <ul className="list-disc my-3">
-                <li>
+              <li>
+                <p className="text-lg my-6">
                   <strong>cv_scaler - Balancing Speed and Accuracy</strong> The cv_scaler parameter controls how much an image is resized before face detection. A higher value results in a smaller image, which speeds up processing but reduces the level of detail available for recognition. We conducted experiments to test different values of cv_scaler, to measure its effect on frame rate (FPS) and recognition accuracy.
-                  <ul className="list-disc pl-6 my-3">
-                    <li>
-                      Insert table: cv_scaler - 4,6,8; Accuracy (%), FPS
-                    </li>
-                  </ul>
+                </p>
+                <p className="text-lg my-6">
+                  [Insert table: cv_scaler - 4,6,8; Accuracy (%), FPS]
+                </p>
+                <p className="text-lg my-6">
                   From these results, cv_scaler = 8 was selected as the optimal setting, as it provides real-time performance (30 FPS) while maintaining acceptable accuracy.
-                </li>
-              </ul>
-              <ul className="list-disc my-3">
-                <li>
+                </p>
+              </li>
+              <li>
+                <p className="text-lg my-6">
                   <strong>Face Encoding Model - Small vs Large Model </strong> The face_recognition library offers two pre-trained face encoding models: the Small model (model='small') uses a lightweight neural network, which offers faster encoding but lower accuracy, while the Large model (model='large') uses a deeper neural network, which generates more precise encodings but requires a longer processing time. We analysed which option would be most suitable for our system through experiments:
-                  <ul className="list-disc pl-6 my-3">
-                    <li>
-                      Insert table: Encoding model - Small vs Large; Accuracy (%), Encoding time (ms per face)
-                    </li>
-                  </ul>
+                </p>
+                <p className="text-lg my-6">
+                  [Insert table: Encoding model - Small vs Large; Accuracy (%), Encoding time (ms per face)]
+                </p>
+                <p className="text-lg my-6">
                   Given our system's focus on security, we opted for the large model, as we felt that the additional processing time was justified by the XX% increase in accuracy.
-                </li>
-              </ul>
+                </p>
+              </li>
             </ul>
-          </div>
-          <div id="discussions">
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
             <p className="text-lg my-6">
               Unfortunately, our facial recognition algorithm did fail for some test examples. Recognition accuracy and performance degraded under these circumstances:
-              <ul className="list-disc pl-6 my-3">
-                <li>
-                  <strong>Occlusions:</strong> If a user wears glasses or a mask, recognition accuracy drops.
-                </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Lighting Conditions:</strong> Poor lighting can degrade performance.
-                  </li>
-                </ul>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Low Resolution Input:</strong> If the camera resolution is too low, facial features are less distinguishable.
-                  </li>
-                </ul>
-              </ul>
+            </p>
+            <ul className="text-lg list-disc pl-6 my-3">
+              <li>
+                <strong>Occlusions:</strong> If a user wears glasses or a mask, recognition accuracy drops.
+              </li>
+              <li>
+                <strong>Lighting Conditions:</strong> Poor lighting can degrade performance.
+              </li>
+              <li>
+                <strong>Low Resolution Input:</strong> If the camera resolution is too low, facial features are less distinguishable.
+              </li>
+            </ul>
+            <p className="text-lg">
               In order to improve performance, the stored dataset could be expanded to include variations in lighting, angles and occlusions to maintain high levels of accuracy. Addditonally, our algorithm could also incorporate a hybrid model - we could use CNN for initial face recognition, to ensure accurate face encoding, then switch to HOG for real-time tracking. This method would strike a balance between accuracy and efficiency, enabling reliable identification without excessive resource usage.
             </p>
           </div>
@@ -209,81 +205,73 @@ export default function Algorithms() {
             <h1 className="text-4xl font-bold my-6">Post-Quantum Cryptography</h1>
             <h1 className="text-2xl font-bold my-6">Models</h1>
             <p className="text-lg my-6">
-              Refer to "Post-Quantum Cryptography (PQC) Algorithm" under Research.
+              Please refer to the <span className="font-medium">Research</span> page, <span className="font-medium">Post-Quantum Cryptography (PQC) Algorithm</span> section.
             </p>
             <h1 className="text-2xl font-bold my-6">Data</h1>
             <p className="text-lg">
               Our cryptographic algorithm does not require a conventional dataset in the same way that other algorithms do, as it relies on mathematical operations rather than training data. However, the process involves several key components:
-              <ul className="list-disc pl-6 my-6">
-                <li>
-                  <strong>1. Public and Private Keys:</strong> These keys are used in the KEM stage to securely establish a shared secret (key).
-                </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>2. Shared Secret:</strong> This is the symmetric key derived from the key encapsulation process, which is then used for AES-GCM encryption.
-                  </li>
-                </ul>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>3. Ciphertext and Nonce:</strong> The data encrypted using AES-GCM requires a unique nonce for each operation to prevent replay attacks. The nonce is used as an initialization vector for the counter mode of the AES encryption.
-                  </li>
-                </ul>
-              </ul>
+            </p>
+            <ul className="text-lg list-disc pl-6 my-6">
+              <li>
+                <strong>1. Public and Private Keys:</strong> These keys are used in the KEM stage to securely establish a shared secret (key).
+              </li>
+              <li>
+                <strong>2. Shared Secret:</strong> This is the symmetric key derived from the key encapsulation process, which is then used for AES-GCM encryption.
+              </li>
+              <li>
+                <strong>3. Ciphertext and Nonce:</strong> The data encrypted using AES-GCM requires a unique nonce for each operation to prevent replay attacks. The nonce is used as an initialization vector for the counter mode of the AES encryption.
+              </li>
+            </ul>
+            <p className="text-lg">
               Furthermore, since PQC is a mathematical system, and is not driven by data, no data preprocessing was necessary. The keys are simply generated during execution, and the shared secret is encapsulated using the Kyber algorithm and then used in AES-GCM.
             </p>
             <h1 className="text-2xl font-bold my-6">Experiments</h1>
-            <h1 className="text-1xl font-bold my-6">Experiment Design</h1>
+            <h1 className="text-lg font-bold my-6">Experiment Design</h1>
             <p className="text-lg">
               While we already knew that CRYSTALS-Kyber provides long-term quantum resistance, we wanted to evaluate its performance in real-world scenarios. In order to assess the performance of the PQC system and algorithms, we conducted multiple iterations of KEM and AES-GCM to measure execution time. We then compared the results to other traditional encryption methods to analyse the efficiency and viability of our PQC in real-world environments.
             </p>
-            <h1 className="text-1xl font-bold my-6">Performance Evaluation</h1>
+            <h1 className="text-lg font-bold my-6">Performance Evaluation</h1>
             <p className="text-lg">
               To evaluate the performance of the PQC system, we measured the following factors:
-              <ul className="list-disc pl-6 my-6">
-                <li>
-                  <strong>KEM Performance:</strong> The time taken for public/private key generation; time required for encapsulation of a shared secret; time required for decapsulation and retrieval of the shared secret.
-                </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>AES-GCM Encryption Performance</strong> The time taken to encrypt data using shared secret; time taken to decrypt and verify integrity of data; key size overhead compared to traditional cryptographic algorithms including RSA-2048.
-                  </li>
-                </ul>
-              </ul>
             </p>
-            <h1 className="text-1xl font-bold my-4"> Experiment Results</h1>
+            <ul className="text-lg list-disc pl-6 my-6">
+              <li>
+                <strong>KEM Performance:</strong> The time taken for public/private key generation; time required for encapsulation of a shared secret; time required for decapsulation and retrieval of the shared secret.
+              </li>
+              <li>
+                <strong>AES-GCM Encryption Performance</strong> The time taken to encrypt data using shared secret; time taken to decrypt and verify integrity of data; key size overhead compared to traditional cryptographic algorithms including RSA-2048.
+              </li>
+            </ul>
+            <h1 className="text-lg font-bold my-6"> Experiment Results</h1>
             <p className="text-lg">
               We conducted experiments as part of our testing, results explaining the overhead caused by ML-KEM-512 can be found on our Testing section under the Performance Testing subheading.
             </p>
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
             <p className="text-lg">
               While the combination of CRYSTALS-Kyber and AES-CGM provides quantum-resistant security, the algorithm does face challenges in certain test examples:
-              <ul className="list-disc pl-6 my-4">
-                <li>
-                  <strong>Security Implications:</strong> Since AES-GCM requires a unique nonce for every encryption operation, improper handling of the nonces can lead to security vulnerabilities, such as key reuse attacks.
-                </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Computational Overhead: </strong> While key encapsulation is efficient, the added step of using PQC introduces slight latency compared to traditional symmetric key exchanges like Diffie-Hellman.
-                  </li>
-                </ul>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Larger Key Sizes:</strong> Kyber-512 public keys (800 bytes) and ciphertexts (768 bytes) are much bigger than standard RSA-2048 keys (~256 bytes), and this could introduce additional bandwidth and storage requirements.
-                  </li>
-                </ul>
-              </ul>
-              To improve performance, we could consider the following modifications:
-              <ul className="list-disc pl-6 my-4">
-                <li>
-                  <strong>Improved Key Storage:</strong> We could efficiently manage key pairs to minimise memory overhead.
-                </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Optimised Nonce Generation for AES-GCM </strong> Use a cryptographically secure pseudo-random number generator (CSPRNG) for nonce generation. Implement a nonce-reuse prevention mechanism to mitigate security risks.
-                  </li>
-                </ul>
-              </ul>
             </p>
+            <ul className="text-lg list-disc pl-6 my-6">
+              <li>
+                <strong>Security Implications:</strong> Since AES-GCM requires a unique nonce for every encryption operation, improper handling of the nonces can lead to security vulnerabilities, such as key reuse attacks.
+              </li>
+              <li>
+                <strong>Computational Overhead: </strong> While key encapsulation is efficient, the added step of using PQC introduces slight latency compared to traditional symmetric key exchanges like Diffie-Hellman.
+              </li>
+              <li>
+                <strong>Larger Key Sizes:</strong> Kyber-512 public keys (800 bytes) and ciphertexts (768 bytes) are much bigger than standard RSA-2048 keys (~256 bytes), and this could introduce additional bandwidth and storage requirements.
+              </li>
+            </ul>
+            <p className="text-lg">
+              To improve performance, we could consider the following modifications:
+            </p>
+            <ul className="text-lg list-disc pl-6 my-6">
+              <li>
+                <strong>Improved Key Storage:</strong> We could efficiently manage key pairs to minimise memory overhead.
+              </li>
+              <li>
+                <strong>Optimised Nonce Generation for AES-GCM </strong> Use a cryptographically secure pseudo-random number generator (CSPRNG) for nonce generation. Implement a nonce-reuse prevention mechanism to mitigate security risks.
+              </li>
+            </ul>
           </div>
           <div id="ai-chatbot">
             <h1 className="text-4xl font-bold my-6">AI Inferencing</h1>
@@ -295,8 +283,7 @@ export default function Algorithms() {
               The AI chatbot in our QPG system is powered by a Large Language Model (LLM), using IBM's Granite 3.2-8B-Instruct model. The model is specifically trained for creating human-like text responses and operates through an instruction-based system, in which it is guided to reply in structured JSON format.
             </p>
             <h1 className="text-2xl font-bold my-6">Data</h1>
-
-            <h1 className="text-1xl font-bold my-6">Data Preprocessing</h1>
+            <h1 className="text-lg font-bold my-6">Data Preprocessing</h1>
             <p className="text-lg">
               When interacting with the chatbot, user input is tokenised and decoded into a format that the model can utilise. Tokenisation breaks down the input text into small pieces (tokens), which are then mapped to embeddings. These embeddings allow the model to process and generate text efficiently. That is the high-level overview of how these LLM inferencing programs work.
             </p>
@@ -304,38 +291,36 @@ export default function Algorithms() {
               Our specific chatbot needs to operate in a JSON format, which means that all responses are structured acccordingly. The model is explicitly instructed to return responses in JSON in a "message" field, so that the output's formatting is consistent in order to be processed in later parts of the system.
             </p>
             <h1 className="text-2xl font-bold my-6">Experiments</h1>
-            <h1 className="text-1xl font-bold my-6">Experiment Design</h1>
+            <h1 className="text-lg font-bold my-6">Experiment Design</h1>
             <p className="text-lg">
               We assessed the inferencing performance through varied test cases, where the same prompts were given to the model, and we evaluated the inferencing performance. These test cases simulate real world examples, specifically the customisation of user preferences, which was the intended function of the chatbot.
             </p>
-            <h1 className="text-1xl font-bold my-6">Performance Evaluation</h1>
+            <h1 className="text-lg font-bold my-6">Performance Evaluation</h1>
             <p className="text-lg">
               We measured the performance of this algorithm using the following criteria:
-              <ul className="list-disc pl-6 my-4">
-                <li>
-                  <strong>Tokens per Second:</strong> The number of tokens generated every second by each implementation.
-                </li>
-                <ul className="list-disc my-3">
-                  <li>
-                    <strong>Response Latency</strong> The time taken to generate a response, measured in milliseconds.
-                  </li>
-                </ul>
-              </ul>
             </p>
-            <h1 className="text-1xl font-bold my-4"> Experiment Results</h1>
+            <ul className="text-lg list-disc pl-6 my-6">
+              <li>
+                <strong>Tokens per Second:</strong> The number of tokens generated every second by each implementation.
+              </li>
+              <li>
+                <strong>Response Latency</strong> The time taken to generate a response, measured in milliseconds.
+              </li>
+            </ul>
+            <h1 className="text-lg font-bold my-6"> Experiment Results</h1>
             <p className="text-lg my-6">
               We conducted a performance comparison between the Ollama framework and the llama.cpp implementation. The results, as illustrated in the performance graph below, show that while Ollama maintains a more stable token generation rate over multiple message exchanges, the llama.cpp implementation exhibits a gradual decline in performance. This highlights potential inefficiencies in memory management, or computational overhead in llama.cpp for prolonged interactions.
             </p>
             <p className="text-lg my-6 flex flex-col items-center">
               <Image
-                src="/algorithms/figure_1.png"
+                src="/algorithms/figure-1.png"
                 alt="Ollama v llama.cpp performance comparison"
                 width={500}
                 height={500}
                 className="mb-2"
               />
               <span className="text-sm text-muted-foreground text-center mt-2">
-                Figure 1: Performance comparison between Ollama and llama.cpp showing token generation rates.
+                Figure 1: Performance comparison of token generation rates between Ollama and llama.cpp 
               </span>
             </p>
             <p className="text-lg my-6">
