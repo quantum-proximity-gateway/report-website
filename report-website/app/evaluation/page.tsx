@@ -480,16 +480,16 @@ export default function Evaluation() {
                           <span className="font-medium">Website Template and Setup</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          5<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          5<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -497,16 +497,16 @@ export default function Evaluation() {
                           <span className="font-medium">Videos</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -514,16 +514,16 @@ export default function Evaluation() {
                           <span className="font-medium">Home</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          70<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -531,16 +531,16 @@ export default function Evaluation() {
                           <span className="font-medium">Requirements</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          70<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -548,16 +548,16 @@ export default function Evaluation() {
                           <span className="font-medium">Research</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          60<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -565,16 +565,16 @@ export default function Evaluation() {
                           <span className="font-medium">Algorithms</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          60<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -582,16 +582,16 @@ export default function Evaluation() {
                           <span className="font-medium">UI Design</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          50<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          50<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -599,16 +599,16 @@ export default function Evaluation() {
                           <span className="font-medium">System Design</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          85<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          15<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -616,16 +616,16 @@ export default function Evaluation() {
                           <span className="font-medium">Implementation</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          100<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -633,16 +633,16 @@ export default function Evaluation() {
                           <span className="font-medium">Testing</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -650,16 +650,16 @@ export default function Evaluation() {
                           <span className="font-medium">Evaluation</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -667,16 +667,16 @@ export default function Evaluation() {
                           <span className="font-medium">Appendices (Manuals, Legal, Blog, etc.)</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          40<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                     </TableBody>
@@ -702,16 +702,16 @@ export default function Evaluation() {
                   <TableBody>
                     <TableRow>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     </TableRow>
                   </TableBody>
@@ -822,7 +822,7 @@ export default function Evaluation() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg">
-                    Throughout the entire project, we have consistently met up as a group during weekly lab sessions. We have also maintained constant communication in a WhatsApp group chat, and have used GitHub's issue tracking, branching, and pull requests to communicate about our progress and code changes. Tasks were split amongst ourselves based on interests and capabilities to ensure that each part of our system and report was completed on time, and to a high standard. This teamwork has allowed us to develop a robust, peformant systen.
+                    Throughout the entire project, we have consistently met up as a group during weekly lab sessions. We have also maintained constant communication in a WhatsApp group chat, and have used GitHub's issue tracking, branching, and pull requests to communicate about our progress and code changes. Tasks were split amongst ourselves based on interests and capabilities to ensure that each part of our system and report was completed on time, and to a high standard. This teamwork has allowed us to develop a robust, performant system.
                   </p>
                   <p className="text-lg mt-6">
                     This was done <span className="font-medium text-green-600">very well</span>!
