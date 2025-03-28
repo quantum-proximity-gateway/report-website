@@ -177,9 +177,50 @@ export default function Appendices() {
           </div>
           <div id="legal">
             <h1 className="text-4xl font-bold my-6">Legal</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+              <h1 className="text-2xl font-bold my-6">Source Code License</h1>
+              <p className="text-lg my-6">
+                This is a proof-of-concept research project, therefore we have decided to open-source all of our codebase under the MIT license to help spread awareness and pioneer the world of proximity-based computing. This MIT license allows anyone to freely use, modify, distribute, and allows for the commercialization of our code with minimal restrictions.
+              </p>
+              <p className="text-lg my-6">
+                The MIT license also frees us from any liability associated with the use of our codebase:
+              </p>
+              <p className="text-lg font-mono bg-gray-100 p-4 rounded-md whitespace-pre-line">
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+                INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+                PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+                HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+                OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+                SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+              </p>
+              <h1 className="text-2xl font-bold my-6">GDPR</h1>
+              <p className="text-lg mb-3">
+                Our server is deployed on IBM Code Engine, which is in compliance with GDPR rules. Our implementation follows the <a href="https://www.ibm.com/cloud/compliance/eu-ccoc" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">EU Cloud Code of Conduct</a> that IBM adheres to.
+              </p>
+              <p className="text-lg mb-3">
+                Our GDPR compliance measures include:
+              </p>
+              <ul className="text-lg list-disc pl-6 space-y-2 mb-6">
+                <li>
+                  <span className="font-medium">Data Minimization</span><span className="text-muted-foreground"> — We only collect essential data required for the functioning of our authentication system.</span>
+                </li>
+                <li>
+                  <span className="font-medium">Purpose Limitation</span><span className="text-muted-foreground"> — All collected data is used solely for authentication and personalization purposes.</span>
+                </li>
+                <li>
+                  <span className="font-medium">Storage Limitation</span><span className="text-muted-foreground"> — Facial recordings are temporarily stored and immediately deleted after generating encodings.</span>
+                </li>
+                <li>
+                  <span className="font-medium">Security Measures</span><span className="text-muted-foreground"> — We implement Post-Quantum Cryptography for data encryption and secure transmission.</span>
+                </li>
+                <li>
+                  <span className="font-medium">User Rights</span><span className="text-muted-foreground"> — Users can request deletion of their data by contacting any member of the team.</span>
+                </li>
+              </ul>
+              <h1 className="text-2xl font-bold my-6">Privacy Concerns</h1>
+              <p className="text-lg">
+                As explained throughout the project, all data associated with the user is encrypted to the highest standards, and we only store the essential data that allows us to log users in and change their preferences. Another concern we would like to address is the face recordings, these are NOT stored and are immediately deleted once the face encodings have been generated, this allow us to ensure we store as little biometric data on users as we can. 
+              </p>
+
           </div>
           <div id="development-blog">
             <h1 className="text-4xl font-bold my-6">Development Blog</h1>
