@@ -158,17 +158,6 @@ export default function Algorithms() {
             </Card>
             <Card className="my-6">
               <CardHeader>
-                <CardTitle className="text-lg">Experiment Results</CardTitle>
-                <Separator />
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg my-6">
-                  [Table: left column = Scenario/Condition - Controlled lighting, dim lighting, wearing glasses, wearing mask?; top row = Accuracy (%), False Positives, FPS, Latency (ms)]
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="my-6">
-              <CardHeader>
                 <CardTitle className="text-lg">Hyperparameter Investigation</CardTitle>
                 <Separator />
               </CardHeader>
@@ -185,10 +174,7 @@ export default function Algorithms() {
                       The face_recognition library supports two methods for face detection: Histogram of Oriented Gradients (HOG) and Convolutional Neural Networks (CNN). HOG is a traditional feature descriptor that detects edges and gradients in an image to identify faces. While HOG is computationally efficient, it is typically less accurate in complex environments like low light. CNN on the other hand, is a deep learning-based approach that detects faces with higher accuracy, especially in more difficult situations, but it does require more computational power. We compared each of these approaches' performance based on accuracy and processing time, and evaluated their trade-offs.
                     </p>
                     <p className="text-lg my-6">
-                      [Insert table: Detection Model - HOG/CNN; Accuracy (%), Processing Time (ms per frame); Computational Requirement (High/Low)]
-                    </p>
-                    <p className="text-lg my-6">
-                      The results show that CNN provides higher accuracy but is less suitable for real-time applications on low-power hardware like the Raspberry Pi. Therefore, we selected HOG for real-time face detection, while CNN could be considered for periodic re-validation of identities.
+                      We found that CNN provides higher accuracy but is less suitable for real-time applications on low-power hardware like the Raspberry Pi. Therefore, we selected HOG for real-time face detection, while CNN could be considered for periodic re-validation of identities.
                     </p>
                   </li>
                   <li>
@@ -199,10 +185,7 @@ export default function Algorithms() {
                        The cv_scaler parameter controls how much an image is resized before face detection. A higher value results in a smaller image, which speeds up processing but reduces the level of detail available for recognition. We conducted experiments to test different values of cv_scaler, to measure its effect on frame rate (FPS) and recognition accuracy.
                     </p>
                     <p className="text-lg my-6">
-                      [Insert table: cv_scaler - 4,6,8; Accuracy (%), FPS]
-                    </p>
-                    <p className="text-lg my-6">
-                      From these results, cv_scaler = 8 was selected as the optimal setting, as it provides real-time performance (30 FPS) while maintaining acceptable accuracy.
+                      We selected cv_scaler = 8 was selected as the optimal setting, as it provides real-time performance (30 FPS) while maintaining acceptable accuracy.
                     </p>
                   </li>
                   <li>
@@ -211,9 +194,6 @@ export default function Algorithms() {
                     </p>
                     <p className="text-lg my-6">
                       The face_recognition library offers two pre-trained face encoding models: the Small model (model='small') uses a lightweight neural network, which offers faster encoding but lower accuracy, while the Large model (model='large') uses a deeper neural network, which generates more precise encodings but requires a longer processing time. We analysed which option would be most suitable for our system through experiments:
-                    </p>
-                    <p className="text-lg my-6">
-                      [Insert table: Encoding model - Small vs Large; Accuracy (%), Encoding time (ms per face)]
                     </p>
                     <p className="text-lg my-6">
                       Given our system's focus on security, we opted for the large model, as we felt that the additional processing time was justified by the XX% increase in accuracy.
@@ -544,11 +524,8 @@ export default function Algorithms() {
                 <Separator />
               </CardHeader>
               <CardContent>
-                <p className="text-lg my-6">
-                  [Table: left column = Algorithm - Jaro-Winkler/Cosine Security, top row = Accuracy (%), Average Response Time (ms), Handling of Long Queries (poor/good)]
-                </p>
                 <p className="text-lg">
-                  Cosine Similarity significantly outperformed Jaro-Winkler, particularly in handling longer queries.Although Jaro-Winkler was faster, its lower accuracy made it unsuitable for practical use.
+                  Cosine Similarity significantly outperformed Jaro-Winkler, particularly in handling longer queries. Although Jaro-Winkler was faster, its lower accuracy made it unsuitable for practical use.
                 </p>
               </CardContent>
             </Card>
