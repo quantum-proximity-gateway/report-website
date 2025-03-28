@@ -742,7 +742,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      During the project we ensured that the digital user interfaces were accessible for most users as that was a crucial point of our project. We frequently iterated on the design of our AI Agents Desktop App, and performed responsive design testing and user tests to ensure that it met the requirements of our users. From the initial sketches, to the prototypes, to the final production design, we have considered our clients every step of the way. The result is beautifully designed user interfaces, that provide an excellent user experience.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -755,7 +758,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Our system delivers on all of our requirements to at least some degree, with the overwhelming majority being completed to an even higher standard than what was originally specified. Our quantum proximity gateway provides a seamless method of authentication, whilst being quantum secure. The AI Agents Desktop App also provides an easy-to-use interface to load and update user preferences. Together, these create a highly functional system that would benefit most, if not all, users that decide to use it. 
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -768,7 +774,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Throughout the project duration, we created and carried out a very comprehensive set of tests which included both manual and automated testing. These tests ensured that our system was stable, and revealed any bugs that would need to be fixed. Our manual testing consisted of integration testing, responsive design and compatibility testing, and user acceptance testing. These tests ensured that our system components worked well together, and that our interfaces ran in different envrionemnts. Furthermore, our automated testing, wich consisted of unit testing and continuous integration, ensured that our server backend and desktop app were functioning correctly without any unexpected issues. 
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -781,7 +790,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Efficiency is a crucial part of our system that we have made one of our priorities. At each stage of development, we have always considered the most optimal way of doing things, from our choice of programming languages and frameworks, to building our API endpoints, and developing AI Agents Desktop App. We knew that all components of our system must be efficient, especially as our system scales to accomodate orders of magnitude more users. Any parts that are less efficient would eventually cause a bottleneck that would severely hurt the usability of our system, and waste the time of our users.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -794,7 +806,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      During development, 
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">well</span>!
                     </p>
                   </CardContent>
                 </Card>
