@@ -251,7 +251,7 @@ export default function UIDesign() {
             <div className="flex items-center justify-center w-full">
               <Image src="/ui-design/prototype-1.png" alt="Prototype 1" width={1000} height={1000} className="object-contain" />
             </div>
-            <h1 className="text-2xl font-bold my-6">Evaluation of Prototype 1</h1>
+            <h1 className="text-2xl font-bold mt-8 my-6">Evaluation of Prototype 1</h1>
             <p className="text-lg my-6">
               We met with our client over at IBM, who gave us feedback about our first prototype. They listed some problems they had with the prototype, as well as potential fixes we could make.
             </p>
@@ -293,7 +293,7 @@ export default function UIDesign() {
             <p className="text-lg my-6">
               We arrive at our finalised prototype version, utilising all of the feedback we have received from our users and clients throughout the entire process.
             </p>
-            <div className="flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full mb-8">
               <Image src="/ui-design/prototype-2.png" alt="Prototype 2" width={1000} height={1000} className="object-contain" />
             </div>
           </div>

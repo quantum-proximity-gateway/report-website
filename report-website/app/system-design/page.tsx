@@ -81,7 +81,6 @@ export default function SystemDesign() {
               All these components come together to create a complex, scalable and secure architecture, allowing future upgrades and the integration of new proximity agent iterations. We reduce our reliance on the device being authenticated into by utilising a Raspberry Pi which allows developers to easily adapt this system for other usecases (i.e printers, whiteboard profiles).
             </p>
             <div className="space-y-12 my-6">
-              {/* IBM Cloud Server Section */}
               <div className="system-component">
                 <h2 className="text-2xl font-medium mb-4">IBM Cloud Server</h2>
                 <p className="text-lg mb-6">
@@ -105,11 +104,7 @@ export default function SystemDesign() {
                 <p className="text-lg my-6">
                   This container serves as the central backend for all our services, all other components such as the ESP32, Raspberry Pi and Proximity Agents interact with this core, at least once in their lifetime. The ESP32 shares a TOTP secret key with this server, the Raspberry Pi fetches all registered ESP32s from the server and the Proximity Agents continuously fetch and update user profiles.
                 </p>
-              </div>
-
-              {/* ESP32/Registration Site Section */}
-              <div className="system-component">
-                <h2 className="text-2xl font-medium mb-4">ESP32/Registration Site</h2>
+                <h2 className="text-2xl font-medium my-6">ESP32/Registration Site</h2>
                 <p className="text-lg mb-6">
                   Our registration site is a simple frontend written utilising Next.js and the Chakra UI component library that communicates with our main backend on IBM Cloud. It registers a user's ESP32 onto the database and records a 5 second video of the user to send to the server for encodings processing.
                 </p>
@@ -119,19 +114,11 @@ export default function SystemDesign() {
                 <p className="text-lg my-6"> 
                   On the other hand, the ESP32 interacts with it's Bluetooth Stack to advertise itself as an available device. It initializes itself as a BLE peripheral and broadcasts a specific service UUID that client devices can discover. When a connection is established, it serves a characteristic that provides the TOTP token, which is being constantly regenerated in intervals of 30 seconds. This TOTP is read by the Raspberry Pi to verify the user's identity.
                 </p>
-              </div>
-
-              {/* Raspberry Pi Section */}
-              <div className="system-component">
-                <h2 className="text-2xl font-medium mb-4">Raspberry Pi</h2>
+                <h2 className="text-2xl font-medium my-6">Raspberry Pi</h2>
                 <p className="text-lg mb-6"> 
                   The Raspberry Pi acts as the key component for each and every QPG enabled device, it processed incoming BLE signals, sorts signal strength, filters MAC Addresses and performs facial recognition on incoming users. This is all done utilising Python and many different components that we have specifically built in-house to authenticate users securely.
                 </p>
-              </div>
-
-              {/* Proximity Agents Section */}
-              <div className="system-component">
-                <h2 className="text-2xl font-medium mb-4">Proximity Agents</h2>
+                <h2 className="text-2xl font-medium my-6">Proximity Agents</h2>
                 <p className="text-lg mb-6"> 
                   We are pioneering Proximity Prompting through our project, our first prototype of the Proximity Agents is a desktop application written using Tauri, which is a rust-based desktop application framework. This application runs on the host pc, and consists of a TypeScript based front-end alongside a Rust backend which is invoked by the frontend. The Rust backend allows us to do local LLM inferencing utilising ollama, communicate with the core server to update and fetch preferences, whilst the Next.js frontend displays the chatbot and the preferences according to the users actions.
                 </p>
@@ -180,9 +167,17 @@ export default function SystemDesign() {
                     <p className="text-lg">
                       This is the main pattern we utilise in our system. Most of our components rely on the centralised server to fetch updated data on the user like credentials, encodings, preferences amongst other items. However, we also utilise this pattern in our Rapsberry Pi code, where we have the main Bluetooth scanner program act as a server to provide data to a graphical interface that allows you to see shortlisted ESP32 keys and their estimated distance to the Raspberry Pi.
                     </p>
-                    <p className="text-lg mt-6">
-                      [INSERT PICTURE OF ALL COMPONENTS COMMUNICATING WITH SERVER]
-                    </p>
+                    <div className="flex flex-col items-center my-6">
+                      <Image 
+                        src="/system-design/client-server.jpg" 
+                        alt="Client Server" 
+                        width={800} 
+                        height={800}
+                        className="max-w-full object-contain bg-white"
+                        style={{borderRadius:'10px'}}
+                      />
+                      <p className="text-center mt-3 text-sm text-gray-500">Figure 4: Client-Server Communication</p>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -252,7 +247,7 @@ export default function SystemDesign() {
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
-              <p className="text-center text-sm text-gray-500">Figure 4: Entity Relationship Diagram</p>
+              <p className="text-center text-sm text-gray-500">Figure 5: Entity Relationship Diagram</p>
             </div>
             <p className="text-lg my-6">
               By default, we intilize a Device with a preferences JSON which has the default values for the specific accessibility command, this is stored on the Preferences table. On the other hand in the Authentication table, a nonce is stored which helps the server decrypt the password utilising a key stored elsewhere, making it difficult for bad actors to steal credentials. The TOTP timestamp and secret that is agreed upon during registration is also stored on this table.
@@ -272,7 +267,7 @@ export default function SystemDesign() {
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
               />
-              <p className="text-center text-sm text-gray-500">Figure 4: SQLite Logo</p>
+              <p className="text-center text-sm text-gray-500">Figure 6: SQLite Logo</p>
             </div>
             <p className="text-lg my-6">
               In future iterations, utilising propietary database services such as IBM Cloud Databases for PostgreSQL or AWS RDS will be essential for scalability. However, due to the budget and time constraints of our projects we chose SQLite for the proof of concept.

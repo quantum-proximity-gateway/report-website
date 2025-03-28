@@ -66,7 +66,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Marwan
                   </TableCell>
                 </TableRow>
@@ -83,7 +83,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Raghav, Marwan
                   </TableCell>
                 </TableRow>
@@ -100,8 +100,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
-                    Abdul, Raghav
+                  <TableCell className="text-sm text-muted-foreground">
+                    Abdul Muhaymin, Raghav
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -117,8 +117,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
-                    Marwan, Abdul
+                  <TableCell className="text-sm text-muted-foreground">
+                    Marwan, Abdul Muhaymin
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -134,8 +134,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
-                    Marwan, Abdul
+                  <TableCell className="text-sm text-muted-foreground">
+                    Marwan, Abdul Muhaymin
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -151,7 +151,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Raghav, Marwan
                   </TableCell>
                 </TableRow>
@@ -168,7 +168,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ⚠️
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Marwan
                   </TableCell>
                 </TableRow>
@@ -185,7 +185,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Abdulhamid, Marwan
                   </TableCell>
                 </TableRow>
@@ -202,7 +202,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Raghav, Abdulhamid
                   </TableCell>
                 </TableRow>
@@ -219,7 +219,7 @@ export default function Evaluation() {
             </Card>
             <h1 className="text-2xl font-medium my-6">Known Bugs</h1>
             <p className="text-lg">
-              During the creation of each feature in our system, we performed extensive testing that any known bugs preventing the system from functioning as intended was dealt with immediately. However, due to time constraints some bugs remained, luckily all of these have easy remedies.
+              During the creation of each feature in our system, we performed extensive testing. Any known bugs preventing the system from functioning as intended was dealt with immediately. However, due to time constraints some bugs remained, luckily all of these have easy remedies.
             </p>
             <Table className="mt-6">
               <TableHeader>
@@ -235,10 +235,10 @@ export default function Evaluation() {
                     1
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="font-medium"> Raspberry Pi &rarr; Pico - UART Connection Issues due to lack of soldering</span>
+                    <span className="font-medium">UART connection issues Raspberry Pi &rarr; Pico, due to lack of soldering</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                    🟡
+                  <TableCell className="text-lg text-yellow-500">
+                    🟡 Moderate
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -248,8 +248,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     <span className="font-medium"> Small models hallucinating commands</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                    🟢
+                  <TableCell className="text-lg text-green-500">
+                    🟢 Low
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -259,8 +259,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     <span className="font-medium"> Preferences feature on IBM Proximity Agents</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                  🟡
+                  <TableCell className="text-lg text-yellow-500">
+                    🟡 Moderate
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -270,8 +270,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     <span className="font-medium"> BLE connections failing whilst connected to eduroam</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                  🟡
+                  <TableCell className="text-lg text-yellow-500">
+                    🟡 Moderate
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -722,7 +722,7 @@ export default function Evaluation() {
           <div id="critical-evaluation">
             <h1 className="text-4xl font-bold my-6">Critical Evaluation</h1>
             <p className="text-lg my-6">
-              Whilst great effort has been put into this project by all members, this project is not without fault. In the section below, we will evaluate which areas were completed to a high standard, and which areas could be improved upon given more time.
+              Great effort has been put into this project by all members, however it is still not without fault. In the section below, we will evaluate which areas were completed to a high standard, and which areas could be improved upon given more time.
             </p>
             <Tabs defaultValue="ui-ux">
               <TabsList className="grid w-full grid-cols-7">
@@ -742,7 +742,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      During the project we ensured that the digital user interfaces were accessible for most users as that was a crucial point of our project. We frequently iterated on the design of our AI Agents Desktop App, and performed responsive design testing and user tests to ensure that it met the requirements of our users. From the initial sketches, to the prototypes, to the final production design, we have considered our clients every step of the way. The result is beautifully designed user interfaces, that provide an excellent user experience.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-600">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -755,7 +758,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Our system delivers on all of our requirements to at least some degree, with the overwhelming majority being completed to an even higher standard than what was originally specified. Our quantum proximity gateway provides a seamless method of authentication, whilst being quantum secure. The AI Agents Desktop App also provides an easy-to-use interface to load and update user preferences. Together, these create a highly functional system that would benefit most, if not all, users that decide to use it. 
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-600">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -768,7 +774,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Throughout the project duration, we created and carried out a very comprehensive set of tests which included both manual and automated testing. These tests ensured that our system was stable, and revealed any bugs that would need to be fixed. Our manual testing consisted of integration testing, responsive design and compatibility testing, and user acceptance testing. These tests ensured that our system components worked well together, and that our interfaces ran in different envrionemnts. Furthermore, our automated testing, wich consisted of unit testing and continuous integration, ensured that our server backend and desktop app were functioning correctly without any unexpected issues. 
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-600">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -781,7 +790,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Efficiency is a crucial part of our system that we have made one of our priorities. At each stage of development, we have always considered the most optimal way of doing things, from our choice of programming languages and frameworks, to building our API endpoints, and developing AI Agents Desktop App. We knew that all components of our system must be efficient, especially as our system scales to accomodate orders of magnitude more users. Any parts that are less efficient would eventually cause a bottleneck that would severely hurt the usability of our system, and waste the time of our users.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -794,7 +806,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      During development, we carried out compatibility testing on the AI Agents Desktop App, and Registration Site to ensure that they run correctly in different environments. The desktop app was tested on MacOS, Linux, and Windows, and was observed to be mostly compatible across all platforms. Moreover, the registration site was compatible in the major chromium browsers, however it was not completely compatible with browsers such as Firefox out of the box due to lack of support for WebSerial. Although there are some issues, overall we have tried our best in ensuring compatibility with different environments.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-yellow-500">okay</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -807,7 +822,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      For each distinct part of our system, we have maintained the code in a git repository. We have dedicated ourselves to producing clean code, and adding comments wherever necessary to aid with maintainability. Our directory structures are well organised, and there is also plenty of documentation detailing how to setup different parts of the system, as well how to run tests. Practices like object-oriented programming have also been used where required to ehance modularity. This effort to ensure that our codebase is easy to understand and navigate also enables ease of development for future developers.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-500">well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -820,7 +838,10 @@ export default function Evaluation() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg">
-                      [...]
+                      Throughout the entire project, we have consistently met up as a group during weekly lab sessions. We have also maintained constant communication in a WhatsApp group chat, and have used GitHub's issue tracking, branching, and pull requests to communicate about our progress and code changes. Tasks were split amongst ourselves based on interests and capabilities to ensure that each part of our system and report was completed on time, and to a high standard. This teamwork has allowed us to develop a robust, peformant systen.
+                    </p>
+                    <p className="text-lg mt-6">
+                      This was done <span className="font-medium text-green-600">very well</span>!
                     </p>
                   </CardContent>
                 </Card>
@@ -829,12 +850,32 @@ export default function Evaluation() {
           </div>
           <div id="future">
             <h1 className="text-4xl font-bold my-6">Future</h1>
-            <p className="text-lg">
-              [How could the project be extended if you had more time?]
-            </p>
             <p className="text-lg my-6">
-              [...]
+              As a team, we are happy to say that we have completed practically all of the functional requirements of our project that we laid out initially, as well as some additional features. With that said, as with any system, there is always room for improvement, and additional extensions that could be added: 
             </p>
+            <ul className="text-lg list-disc pl-6 space-y-2 mb-6">
+              <li>
+                <span className="font-medium">Improved Hardware Design</span><span className="text-muted-foreground"> — The current housing for the Raspberry Pi and camera module is underdeveloped. Ideally the camera module should be situated in a convenient location dependent on the device, such as above the monitor of the computer being logged into.</span>
+              </li>
+              <li>
+                <span className="font-medium">Battery-Powered Keys</span><span className="text-muted-foreground"> — Currently our ESP32s are powered via a USB-C connection, however in practice it should be wireless and battery-powered.</span>
+              </li>
+              <li>
+                <span className="font-medium">More Reliable Connections</span><span className="text-muted-foreground"> — There were some UART connection issues between the Raspberry Pi and Pico that still need to be resolved. Furthermore, there is sometimes inconsistencies with the BLE connections in certain environments that needs to be further examined.</span>
+              </li>
+              <li>
+                <span className="font-medium">Additional Device Support</span><span className="text-muted-foreground"> — Now that we have successfully implemented a working example of our system for desktop PCs, it would be a good idea to look towards other devices such as tablets, printers, TVs, etc.</span>
+              </li>
+              <li>
+                <span className="font-medium">Advanced Gestures</span><span className="text-muted-foreground"> — An advanced touchless gestures solution such as MotionInput could be integrated with our camera module to allow for gestures that can peform certain tasks, such as logging on/off, opening new windows, changing settings, etc.</span>
+              </li>
+              <li>
+                <span className="font-medium">More Wireless Protocols</span><span className="text-muted-foreground"> — Even though BLE was ultimately chosen as our wireless proximity technology of choice, it may be a good idea to support other protocols depending on the context.</span>
+              </li>
+              <li>
+                <span className="font-medium">Extra UI Settings</span><span className="text-muted-foreground"> — To improve our user interfaces even further, we could include multi-language support, as well as different themes to choose from depending on the user's likings.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
