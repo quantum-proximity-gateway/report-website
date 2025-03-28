@@ -173,14 +173,14 @@ export default function Appendices() {
             <h1 className="text-4xl font-bold my-6">Deployment Manual</h1>
             <div className="w-full h-[800px] border rounded-lg overflow-hidden">
               <object
-                data="/appendices/deployment-manual.pdf"
+                data={`${BASE_PATH}/appendices/deployment-manual.pdf`}
                 type="application/pdf"
                 className="w-full h-full"
               >
                 <p className="p-4">
                   It appears your browser doesn't support embedded PDFs. You can 
                   <a 
-                    href="/appendices/deployment-manual.pdf" 
+                    href={`${BASE_PATH}/appendices/deployment-manual.pdf`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
