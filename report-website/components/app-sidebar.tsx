@@ -107,16 +107,16 @@ const items = [
         url: "/algorithms/#overview",
       },
       {
-        title: "AI Chatbot",
-        url: "/algorithms/#ai-chatbot",
+        title: "Facial Recognition",
+        url: "/algorithms/#facial-recognition",
       },
       {
         title: "Post-Quantum Cryptography",
         url: "/algorithms/#post-quantum-cryptography",
       },
       {
-        title: "Facial Recognition",
-        url: "/algorithms/#facial-recognition",
+        title: "AI Chatbot",
+        url: "/algorithms/#ai-chatbot",
       },
       {
         title: "Conclusion",
