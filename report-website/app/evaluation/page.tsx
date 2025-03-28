@@ -279,7 +279,7 @@ export default function Evaluation() {
           </div>
           <div id="individual-contribution">
             <h1 className="text-4xl font-bold my-6">Individual Contribution</h1>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible defaultValue="item-1">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">
@@ -320,16 +320,16 @@ export default function Evaluation() {
                           <span className="font-medium">Presentations</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -337,16 +337,16 @@ export default function Evaluation() {
                           <span className="font-medium">Research</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          40<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -354,16 +354,16 @@ export default function Evaluation() {
                           <span className="font-medium">Server</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -371,16 +371,16 @@ export default function Evaluation() {
                           <span className="font-medium">Registration Site</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -388,16 +388,16 @@ export default function Evaluation() {
                           <span className="font-medium">ESP32</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          90<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -405,16 +405,16 @@ export default function Evaluation() {
                           <span className="font-medium">Raspberry Pi</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          60<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -422,16 +422,16 @@ export default function Evaluation() {
                           <span className="font-medium">Desktop App</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          50<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -439,16 +439,16 @@ export default function Evaluation() {
                           <span className="font-medium">Testing</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          70<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                     </TableBody>
@@ -456,7 +456,7 @@ export default function Evaluation() {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible defaultValue="item-1">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h1 className="text-2xl font-medium">
@@ -480,16 +480,16 @@ export default function Evaluation() {
                           <span className="font-medium">Website Template and Setup</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          5<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          5<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -497,16 +497,16 @@ export default function Evaluation() {
                           <span className="font-medium">Videos</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                        0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -514,16 +514,16 @@ export default function Evaluation() {
                           <span className="font-medium">Home</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          70<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -531,16 +531,16 @@ export default function Evaluation() {
                           <span className="font-medium">Requirements</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          70<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -548,16 +548,16 @@ export default function Evaluation() {
                           <span className="font-medium">Research</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          60<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -565,16 +565,16 @@ export default function Evaluation() {
                           <span className="font-medium">Algorithms</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          60<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -582,16 +582,16 @@ export default function Evaluation() {
                           <span className="font-medium">UI Design</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          50<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          50<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -599,16 +599,16 @@ export default function Evaluation() {
                           <span className="font-medium">System Design</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          85<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          15<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -616,16 +616,16 @@ export default function Evaluation() {
                           <span className="font-medium">Implementation</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          100<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -633,16 +633,16 @@ export default function Evaluation() {
                           <span className="font-medium">Testing</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -650,16 +650,16 @@ export default function Evaluation() {
                           <span className="font-medium">Evaluation</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          80<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -667,16 +667,16 @@ export default function Evaluation() {
                           <span className="font-medium">Appendices (Manuals, Legal, Blog, etc.)</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          30<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          40<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          20<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                     </TableBody>
@@ -702,16 +702,16 @@ export default function Evaluation() {
                   <TableBody>
                     <TableRow>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">28</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     <TableCell className="text-lg">
-                      <span className="font-medium">XX</span><span className="text-muted-foreground">%</span>
+                      <span className="font-medium">22</span><span className="text-muted-foreground">%</span>
                     </TableCell>
                     </TableRow>
                   </TableBody>
@@ -724,129 +724,112 @@ export default function Evaluation() {
             <p className="text-lg my-6">
               Great effort has been put into this project by all members, however it is still not without fault. In the section below, we will evaluate which areas were completed to a high standard, and which areas could be improved upon given more time.
             </p>
-            <Tabs defaultValue="ui-ux">
-              <TabsList className="grid w-full grid-cols-7">
-                <TabsTrigger value="ui-ux">UI/UX</TabsTrigger>
-                <TabsTrigger value="functionality">Functionality</TabsTrigger>
-                <TabsTrigger value="stability">Stability</TabsTrigger>
-                <TabsTrigger value="efficiency">Efficiency</TabsTrigger>
-                <TabsTrigger value="compatibility">Compatibility</TabsTrigger>
-                <TabsTrigger value="maintainability">Maintainability</TabsTrigger>
-                <TabsTrigger value="project-management" className="text-xs">Project Management</TabsTrigger>
-              </TabsList>
-              <TabsContent value="ui-ux">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">User Interface / User Experience</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      During the project we ensured that the digital user interfaces were accessible for most users as that was a crucial point of our project. We frequently iterated on the design of our AI Agents Desktop App, and performed responsive design testing and user tests to ensure that it met the requirements of our users. From the initial sketches, to the prototypes, to the final production design, we have considered our clients every step of the way. The result is beautifully designed user interfaces, that provide an excellent user experience.
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-green-600">very well</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="functionality">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Functionality</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      Our system delivers on all of our requirements to at least some degree, with the overwhelming majority being completed to an even higher standard than what was originally specified. Our quantum proximity gateway provides a seamless method of authentication, whilst being quantum secure. The AI Agents Desktop App also provides an easy-to-use interface to load and update user preferences. Together, these create a highly functional system that would benefit most, if not all, users that decide to use it. 
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-green-600">very well</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="stability">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Stability</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      Throughout the project duration, we created and carried out a very comprehensive set of tests which included both manual and automated testing. These tests ensured that our system was stable, and revealed any bugs that would need to be fixed. Our manual testing consisted of integration testing, responsive design and compatibility testing, and user acceptance testing. These tests ensured that our system components worked well together, and that our interfaces ran in different envrionemnts. Furthermore, our automated testing, wich consisted of unit testing and continuous integration, ensured that our server backend and desktop app were functioning correctly without any unexpected issues. 
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-green-600">very well</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="efficiency">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Efficiency</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      Efficiency is a crucial part of our system that we have made one of our priorities. At each stage of development, we have always considered the most optimal way of doing things, from our choice of programming languages and frameworks, to building our API endpoints, and developing AI Agents Desktop App. We knew that all components of our system must be efficient, especially as our system scales to accomodate orders of magnitude more users. Any parts that are less efficient would eventually cause a bottleneck that would severely hurt the usability of our system, and waste the time of our users.
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-green-500">well</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="compatibility">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Compatibility</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      During development, we carried out compatibility testing on the AI Agents Desktop App, and Registration Site to ensure that they run correctly in different environments. The desktop app was tested on MacOS, Linux, and Windows, and was observed to be mostly compatible across all platforms. Moreover, the registration site was compatible in the major chromium browsers, however it was not completely compatible with browsers such as Firefox out of the box due to lack of support for WebSerial. Although there are some issues, overall we have tried our best in ensuring compatibility with different environments.
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-yellow-500">okay</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="maintainability">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Maintainability</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      For each distinct part of our system, we have maintained the code in a git repository. We have dedicated ourselves to producing clean code, and adding comments wherever necessary to aid with maintainability. Our directory structures are well organised, and there is also plenty of documentation detailing how to setup different parts of the system, as well how to run tests. Practices like object-oriented programming have also been used where required to ehance modularity. This effort to ensure that our codebase is easy to understand and navigate also enables ease of development for future developers.
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-green-500">well</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="project-management">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Project Management</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      Throughout the entire project, we have consistently met up as a group during weekly lab sessions. We have also maintained constant communication in a WhatsApp group chat, and have used GitHub's issue tracking, branching, and pull requests to communicate about our progress and code changes. Tasks were split amongst ourselves based on interests and capabilities to ensure that each part of our system and report was completed on time, and to a high standard. This teamwork has allowed us to develop a robust, peformant systen.
-                    </p>
-                    <p className="text-lg mt-6">
-                      This was done <span className="font-medium text-green-600">very well</span>!
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
+
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">User Interface / User Experience</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    During the project we ensured that the digital user interfaces were accessible for most users as that was a crucial point of our project. We frequently iterated on the design of our AI Agents Desktop App, and performed responsive design testing and user tests to ensure that it met the requirements of our users. From the initial sketches, to the prototypes, to the final production design, we have considered our clients every step of the way. The result is beautifully designed user interfaces, that provide an excellent user experience.
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-green-600">very well</span>!
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Functionality</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    Our system delivers on all of our requirements to at least some degree, with the overwhelming majority being completed to an even higher standard than what was originally specified. Our quantum proximity gateway provides a seamless method of authentication, whilst being quantum secure. The AI Agents Desktop App also provides an easy-to-use interface to load and update user preferences. Together, these create a highly functional system that would benefit most, if not all, users that decide to use it. 
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-green-600">very well</span>!
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Stability</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    Throughout the project duration, we created and carried out a very comprehensive set of tests which included both manual and automated testing. These tests ensured that our system was stable, and revealed any bugs that would need to be fixed. Our manual testing consisted of integration testing, responsive design and compatibility testing, and user acceptance testing. These tests ensured that our system components worked well together, and that our interfaces ran in different envrionemnts. Furthermore, our automated testing, wich consisted of unit testing and continuous integration, ensured that our server backend and desktop app were functioning correctly without any unexpected issues. 
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-green-600">very well</span>!
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Efficiency</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    Efficiency is a crucial part of our system that we have made one of our priorities. At each stage of development, we have always considered the most optimal way of doing things, from our choice of programming languages and frameworks, to building our API endpoints, and developing AI Agents Desktop App. We knew that all components of our system must be efficient, especially as our system scales to accomodate orders of magnitude more users. Any parts that are less efficient would eventually cause a bottleneck that would severely hurt the usability of our system, and waste the time of our users.
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-green-500">well</span>!
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Compatibility</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    During development, we carried out compatibility testing on the AI Agents Desktop App, and Registration Site to ensure that they run correctly in different environments. The desktop app was tested on MacOS, Linux, and Windows, and was observed to be mostly compatible across all platforms. Moreover, the registration site was compatible in the major chromium browsers, however it was not completely compatible with browsers such as Firefox out of the box due to lack of support for WebSerial. Although there are some issues, overall we have tried our best in ensuring compatibility with different environments.
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-yellow-500">okay</span>!
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Maintainability</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    For each distinct part of our system, we have maintained the code in a git repository. We have dedicated ourselves to producing clean code, and adding comments wherever necessary to aid with maintainability. Our directory structures are well organised, and there is also plenty of documentation detailing how to setup different parts of the system, as well how to run tests. Practices like object-oriented programming have also been used where required to ehance modularity. This effort to ensure that our codebase is easy to understand and navigate also enables ease of development for future developers.
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-green-500">well</span>!
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Project Management</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    Throughout the entire project, we have consistently met up as a group during weekly lab sessions. We have also maintained constant communication in a WhatsApp group chat, and have used GitHub's issue tracking, branching, and pull requests to communicate about our progress and code changes. Tasks were split amongst ourselves based on interests and capabilities to ensure that each part of our system and report was completed on time, and to a high standard. This teamwork has allowed us to develop a robust, performant system.
+                  </p>
+                  <p className="text-lg mt-6">
+                    This was done <span className="font-medium text-green-600">very well</span>!
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
           <div id="future">
             <h1 className="text-4xl font-bold my-6">Future</h1>
