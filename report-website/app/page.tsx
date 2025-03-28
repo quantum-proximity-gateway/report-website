@@ -1,9 +1,12 @@
+"use client";
+
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Image from "next/image";
+import { useState } from "react";
 
 const teamMembers = [
     {
@@ -37,6 +40,8 @@ const teamMembers = [
 ];
 
 export default function Home() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="w-full">
       <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -116,7 +121,31 @@ export default function Home() {
             <p className="text-lg">
               We used a Gantt chart in order to track our progress throughout the project.
             </p>
-            <Image src="/Gantt-Chart.png" alt="Gantt chart" width={1000} height={500} className="object-contain my-4" />
+            <Image
+              src="/Gantt-Chart.png"
+              alt="Gantt chart"
+              width={1000}
+              height={500}
+              className="object-contain my-4 cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+            />
+
+            {isModalOpen && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                onClick={() => setIsModalOpen(false)}
+              >
+                <div onClick={(e) => e.stopPropagation()}>
+                  <Image
+                    src="/Gantt-Chart.png"
+                    alt="Gantt chart enlarged"
+                    width={1250}
+                    height={750}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
