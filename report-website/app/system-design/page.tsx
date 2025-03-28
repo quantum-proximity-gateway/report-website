@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/themes/prism.css';
@@ -21,6 +21,8 @@ export default function SystemDesign() {
       Prism.highlightAll();
     }
   }, []);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <main className="w-full">
@@ -138,7 +140,26 @@ export default function SystemDesign() {
                 height={900}
                 className="max-w-full object-contain bg-white"
                 style={{borderRadius:'10px'}}
+                onClick={() => setIsModalOpen(true)}
               />
+              {isModalOpen && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                    onClick={() => setIsModalOpen(false)}
+                >
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <Image 
+                            src="/system-design/sequence.svg" 
+                            alt="Raspberry Pi Authentication Sequence Diagram enlarged" 
+                            width={1000} 
+                            height={1000}
+                            className="max-w-full object-contain bg-white"
+                            style={{borderRadius:'10px'}}
+                            onClick={() => setIsModalOpen(true)}
+                        />
+                    </div>
+                </div>
+                )}
               <p className="text-center mt-3 text-sm text-gray-500">Figure 3: Raspberry Pi Authentication Sequence Diagram</p>
             </div>
             <p className="text-lg my-6">
