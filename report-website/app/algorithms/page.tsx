@@ -44,7 +44,7 @@ export default function Algorithms() {
             <h1 className="text-4xl font-bold my-6">Facial Recognition Algorithm</h1>
             <h1 className="text-2xl font-bold my-6">Models</h1>
             <p className="text-lg my-6">
-              The facial recognition algorithm that we implemented in our system is based on the face_recognition library, an open-source Python library that uses deep learning models to detect and recognise faces from images or videos. The model converts human facial features into high-dimensional numerical vectors, known as face encodings, which uniquely represent each face. These encodings are created via a convolutional neural network (CNN), a deep learning network architecture that analyses visual information through pattern and feature detection [1]. To do this, the CNN uses convolution and pooling, where it applies a small filter to the image to identify specific patterns, before simplifying the the data by aggregating information.
+              The facial recognition algorithm that we implemented in our system is based on the face_recognition library, an open-source Python library that uses deep learning models to detect and recognise faces from images or videos. The model converts human facial features into high-dimensional numerical vectors, known as face encodings, which uniquely represent each face. These encodings are created via a convolutional neural network (CNN), a deep learning network architecture that analyses visual information through pattern and feature detection <span className="text-muted-foreground">[1]</span>. To do this, the CNN uses convolution and pooling, where it applies a small filter to the image to identify specific patterns, before simplifying the the data by aggregating information.
             </p>
             <p className="text-lg my-6">  
               When a new face is detected via the Raspberry Pi's camera module, its encoding is compared with a database of known encodings using Euclidean distance. A threshold-based decision mechanism then determines whether or not the match is valid: deep metric learning ensures that faces of the same person have minimal distance in the feature space, while faces of different people have the maximum distances between each other.
@@ -196,7 +196,7 @@ export default function Algorithms() {
                       The face_recognition library offers two pre-trained face encoding models: the Small model (model='small') uses a lightweight neural network, which offers faster encoding but lower accuracy, while the Large model (model='large') uses a deeper neural network, which generates more precise encodings but requires a longer processing time. We analysed which option would be most suitable for our system through experiments:
                     </p>
                     <p className="text-lg my-6">
-                      Given our system's focus on security, we opted for the large model, as we felt that the additional processing time was justified by the XX% increase in accuracy.
+                      Given our system's focus on security, we opted for the large model, as we felt that the additional processing time was justified by the increase in accuracy.
                     </p>
                   </li>
                 </ul>
@@ -261,7 +261,7 @@ export default function Algorithms() {
               </CardHeader>
               <CardContent>
                 <p className="text-lg">
-                  While we already knew that CRYSTALS-Kyber provides long-term quantum resistance [2], we wanted to evaluate its performance in real-world scenarios. In order to assess the performance of the PQC system and algorithms, we conducted multiple iterations of KEM and AES-GCM to measure execution time. We then compared the results to other traditional encryption methods to analyse the efficiency and viability of our PQC in real-world environments.
+                  While we already knew that CRYSTALS-Kyber provides long-term quantum resistance <span className="text-muted-foreground">[2]</span>, we wanted to evaluate its performance in real-world scenarios. In order to assess the performance of the PQC system and algorithms, we conducted multiple iterations of KEM and AES-GCM to measure execution time. We then compared the results to other traditional encryption methods to analyse the efficiency and viability of our PQC in real-world environments.
                 </p>
               </CardContent>
             </Card>
@@ -419,7 +419,7 @@ export default function Algorithms() {
             </p>
             <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
               <li>
-                <span className="font-medium">Jaro-Winkler Similarity</span> — This algorithm is a string metric used to measure the similarity between two sequences of characters [3]. We initially tested this algorithm due to its efficiency in handling short strings, however it struggled with longer phrases.
+                <span className="font-medium">Jaro-Winkler Similarity</span> — This algorithm is a string metric used to measure the similarity between two sequences of characters <span className="text-muted-foreground">[3]</span>. We initially tested this algorithm due to its efficiency in handling short strings, however it struggled with longer phrases.
               </li>
               <li>
                 <span className="font-medium">Cosine Similarity</span> — This measures the similarity between two vectors by calculating the cosine of the angle between them, ranging from -1 to 1, with values closer to 1 indicating higher similarity. We selected cosine similarity as the final approach due to its ability to handle multi-word phrases and capture contextual meaning through vector representations.
@@ -568,9 +568,47 @@ export default function Algorithms() {
           </div>
           <div id="references">
             <h1 className="text-4xl font-bold my-6">References</h1>
-            <p className="text-lg my-6">[1]GeeksforGeeks (2024) Introduction to convolution neural network, GeeksforGeeks. Available at: https://www.geeksforgeeks.org/introduction-convolution-neural-network/ (Accessed: 28 March 2025).</p>
-            <p className="text-lg my-6">[2]Crystals (2024) Kyber. Available at: https://pq-crystals.org/kyber/ (Accessed: 28 March 2025).</p>
-            <p className="text-lg my-6">[3]Wellington, A. by J. (2022) Implementing the fastest (pseudo) Jaro-Winkler algorithm in rust, ISRDI IT Blog. Available at: https://tech.popdata.org/speeding-up-Jaro-Winkler-with-rust-and-bitwise-operations/#:~:text=The%20Jaro%20Winkler%20algorithm%20computes,characters%20between%20the%20two%20strings. (Accessed: 28 March 2025). </p>
+            <ul className="text-lg space-y-6">
+              <li className="flex flex-row">
+                <span className="font-medium mr-4">[1]</span>
+                <span className="text-muted-foreground">
+                  GeeksforGeeks, "Introduction to Convolution Neural Network", Oct. 10, 2024. [Online]. Available: <a 
+                    href="https://www.geeksforgeeks.org/introduction-convolution-neural-network/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
+                  >
+                    https://www.geeksforgeeks.org/introduction-convolution-neural-network/
+                  </a>. [Accessed March 28, 2025].
+                </span>
+              </li>
+              <li className="flex flex-row">
+                <span className="font-medium mr-4">[2]</span>
+                <span className="text-muted-foreground">
+                  P. Schwabe, "Kyber", Dec. 23, 2020. [Online]. Available: <a 
+                    href="https://pq-crystals.org/kyber/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
+                  >
+                    https://pq-crystals.org/kyber/
+                  </a>. [Accessed March 28, 2025].
+                </span>
+              </li>
+                <li className="flex flex-row">
+                <span className="font-medium mr-4">[3]</span>
+                <span className="text-muted-foreground">
+                  J. Wellington, "Implementing the Fastest (Pseudo) Jaro-Winkler Algorithm in Rust", June 24, 2022. [Online]. Available: <a 
+                    href="https://tech.popdata.org/speeding-up-Jaro-Winkler-with-rust-and-bitwise-operations/#:~:text=The%20Jaro%20Winkler%20algorithm%20computes,characters%20between%20the%20two%20strings."
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
+                  >
+                    https://tech.popdata.org/speeding-up-Jaro-Winkler-with-rust-and-bitwise-operations/
+                  </a>. [Accessed March 28, 2025].
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

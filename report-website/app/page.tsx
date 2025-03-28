@@ -11,30 +11,30 @@ import { useState } from "react";
 const teamMembers = [
     {
         name: 'Marwan Yassini Chairi El Kamel',
-        role: 'Project Lead, Client Liason, Lead Programmer',
+        role: 'Project Lead, Lead Programmer',
         email: 'marwan.kamel.23@ucl.ac.uk',
-        photo: '/marwan.jpg',
+        photo: '/home/marwan.jpg',
         link: 'https://www.linkedin.com/in/marwanyassini/',
     },
     {
         name: 'Raghav Awasthi',
-        role: 'NLP Lead Programmer',
+        role: 'Software Developer, NLP Lead',
         email: 'raghav.awasthi.23@ucl.ac.uk',
-        photo: '/raghav.jpg',
+        photo: '/home/raghav.jpg',
         link: 'https://www.linkedin.com/in/raghavawasthi2005/',
     },
     {
         name: 'Abdulhamid Abayomi',
         role: 'UI/UX Designer, Report Website Lead',
         email: 'abdulhamid.abayomi.23@ucl.ac.uk',
-        photo: '/abdulhamid.jpg',
+        photo: '/home/abdulhamid.jpg',
         link: 'https://www.linkedin.com/in/abdulhamid-abayomi-145593235/',
     },
     {
         name: 'Abdul Muhaymin Abdul Hafiz',
         role: 'Software Developer, Encryption Lead',
         email: 'abdul.hafiz.23@ucl.ac.uk',
-        photo: '/abdul-muhaymin.jpg',
+        photo: '/home/abdul-muhaymin.jpg',
         link: 'https://www.linkedin.com/in/abmu/',
     },
 ];
@@ -61,43 +61,43 @@ export default function Home() {
       </div>
       <div className="flex flex-col items-center shrink-0 border-b px-8 py-4">
         <div className="flex flex-wrap items-center justify-center gap-12">
-          <Image src="/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
-          <Image src="/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
-          <Image src="/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
+          <Image src="/home/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
+          <Image src="/home/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
+          <Image src="/home/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
         </div>
       </div>
       <div className="flex justify-center px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-4xl">
           <Card>
             <CardHeader>
-              <CardTitle>Proximity Detection</CardTitle>
+              <CardTitle className="text-2xl font-bold">Proximity Detection</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Intelligent proximity sensing that automatically locks and unlocks devices based on user presence, enhancing both security and convenience.</p>
+              <p className="text-muted-foreground">Intelligent proximity sensing that automatically locks and unlocks devices based on user presence, enhancing both security and convenience.</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Proximity Agents</CardTitle>
+              <CardTitle className="text-2xl font-bold">Proximity Agents</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>AI-powered assistants that learn user preferences and accessibility needs, automatically adjusting device settings when a user approaches.</p>
+              <p className="text-muted-foreground">AI-powered assistants that learn user preferences and accessibility needs, automatically adjusting device settings when a user approaches.</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Facial Recognition</CardTitle>
+              <CardTitle className="text-2xl font-bold">Facial Recognition</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Advanced facial recognition technology that authenticates users based on their unique facial features, providing secure and seamless access without passwords.</p>
+              <p className="text-muted-foreground">Advanced facial recognition technology that authenticates users based on their unique facial features, providing secure and seamless access without passwords.</p>
             </CardContent>
           </Card>  
           <Card>
             <CardHeader>
-              <CardTitle>Post-Quantum Encryption</CardTitle>
+              <CardTitle className="text-2xl font-bold">Post-Quantum Encryption</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Future-proof security using encryption algorithms resistant to quantum computing attacks, ensuring long-term protection of sensitive user data.</p>
+              <p className="text-muted-foreground">Future-proof security using encryption algorithms resistant to quantum computing attacks, ensuring long-term protection of sensitive user data.</p>
             </CardContent>
           </Card>
         </div>
@@ -112,7 +112,7 @@ export default function Home() {
             <p className="text-lg my-6">
               As such, we have created the <span className="font-semibold">Quantum Proximity Gateway</span> (QPG). Our solution integrates facial recognition technology with complex IoT infrastructure to enable effortless computer access based on user proximity and identity profiles. The system design allows for a centralised ecosystem of devices to seamlessly communicate with each other, forming a robust and interconnected network of QPG-enabled devices, across which, encrypted user profiles and settings can be interacted with using <span className="font-semibold">Proximity Agents</span>. Robust security and privacy controls are also prioritised within the system, with post-quantum encryption ensuring that users' profiles and settings remain highly protected.
             </p>
-            <p className="text-lg mb-12">
+            <p className="text-lg">
               Through eliminating the need for manual logins, we have not only streamlined user access but also enhanced digital inclusivity — ensuring that individuals of all abilities can interact with technology effortlessly. Furthermore, our implementation of AI Proximity Agents, through the use of IBM Granite, has redefined how users personalise their digital experience, creating an intelligent, self-regulating ecosystem that adapts to users' accessibility needs in real time. In addition, by leveraging <span className="font-semibold">post-quantum encryption</span>, we have also future-proofed security, safeguarding sensitive data against even the most advanced threats. This project represents a transformative shift towards a smarter, more secure, and accessible digital experience.
             </p>
           </div>
@@ -122,10 +122,14 @@ export default function Home() {
               This video outlines the key finished functionalities of the Quantum Proximity Gateway and explores the technologies used.
             </p>
             <div className="flex justify-center">
-              <video controls width="100%">
-                <source src="path/to/video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe 
+                className="w-full aspect-video"
+                src="https://youtube.com/embed/mxV79edzIuk" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
           <div id="development-team">
@@ -158,7 +162,7 @@ export default function Home() {
               We used a Gantt chart in order to track our progress throughout the project.
             </p>
             <Image
-              src="/Gantt-Chart.png"
+              src="/home/gantt-chart.png"
               alt="Gantt chart"
               width={1000}
               height={500}
@@ -173,7 +177,7 @@ export default function Home() {
               >
                 <div onClick={(e) => e.stopPropagation()}>
                   <Image
-                    src="/Gantt-Chart.png"
+                    src="/home/gantt-chart.png"
                     alt="Gantt chart enlarged"
                     width={1250}
                     height={750}

@@ -909,7 +909,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <h1 className="text-4xl font-bold my-6">References</h1>
             <ul className="text-lg space-y-6">
               <li className="flex flex-row">
-                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
+                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 27, 2025].</span>
               </li>
             </ul>
           </div>
