@@ -19,10 +19,6 @@ import Image from "next/image";
 import { BASE_PATH } from "@/config";
 
 
-export const metadata: Metadata = {
-    title: 'Implementation',
-  };
-
 export default function Implementation() {
     useEffect(() => {
         if (typeof window !== 'undefined') {
