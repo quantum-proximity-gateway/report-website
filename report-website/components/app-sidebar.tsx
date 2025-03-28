@@ -45,256 +45,256 @@ const items = [
   },
   {
     title: "Requirements",
-    url: "/requirements",
+    url: "/requirements/",
     icon: ClipboardList,
     subitems: [
       {
         title: "Project Background",
-        url: "/requirements#project-background",
+        url: "/requirements/#project-background",
       },
       {
         title: "Goals",
-        url: "/requirements#goals",
+        url: "/requirements/#goals",
       },
       {
         title: "Requirements Gathering",
-        url: "/requirements#requirements-gathering",
+        url: "/requirements/#requirements-gathering",
       },
       {
         title: "Personas",
-        url: "/requirements#personas",
+        url: "/requirements/#personas",
       },
       {
         title: "Use Cases",
-        url: "/requirements#use-cases",
+        url: "/requirements/#use-cases",
       },
       {
         title: "MoSCoW List",
-        url: "/requirements#moscow-list",
+        url: "/requirements/#moscow-list",
       },
     ],
   },
   {
     title: "Research",
-    url: "/research",
+    url: "/research/",
     icon: BookOpenText,
     subitems: [
       {
         title: "Related Projects",
-        url: "/research#related-projects",
+        url: "/research/#related-projects",
       },
       {
         title: "Technology Review",
-        url: "/research#technology-review",
+        url: "/research/#technology-review",
       },
       {
         title: "Technical Decisions",
-        url: "/research#technical-decisions",
+        url: "/research/#technical-decisions",
       },
       {
         title: "References",
-        url: "/research#references",
+        url: "/research/#references",
       },
     ],
   },
   {
     title: "Algorithms",
-    url: "/algorithms",
+    url: "/algorithms/",
     icon: Braces,
     subitems: [
       {
         title: "Overview",
-        url: "/algorithms#overview",
+        url: "/algorithms/#overview",
       },
       {
         title: "AI Chatbot",
-        url: "/algorithms#ai-chatbot",
+        url: "/algorithms/#ai-chatbot",
       },
       {
         title: "Post-Quantum Cryptography",
-        url: "/algorithms#post-quantum-cryptography",
+        url: "/algorithms/#post-quantum-cryptography",
       },
       {
         title: "Facial Recognition",
-        url: "/algorithms#facial-recognition",
+        url: "/algorithms/#facial-recognition",
       },
       {
         title: "Conclusion",
-        url: "/algorithms#conclusion",
+        url: "/algorithms/#conclusion",
       },
       {
         title: "References",
-        url: "/algorithms#references",
+        url: "/algorithms/#references",
       },
     ],
   },
   {
     title: "UI Design",
-    url: "/ui-design",
+    url: "/ui-design/",
     icon: Frame,
     subitems: [
       {
         title: "Design Principles",
-        url: "/ui-design#design-principles",
+        url: "/ui-design/#design-principles",
       },
       {
         title: "Initial Sketches",
-        url: "/ui-design#initial-sketches",
+        url: "/ui-design/#initial-sketches",
       },
       {
         title: "Digital Prototypes",
-        url: "/ui-design#digital-prototypes",
+        url: "/ui-design/#digital-prototypes",
       },
       {
         title: "Production Design",
-        url: "/ui-design#production-design",
+        url: "/ui-design/#production-design",
       },
     ],
   },
   {
     title: "System Design",
-    url: "/system-design",
+    url: "/system-design/",
     icon: Layers,
     subitems: [
       {
         title: "System Architecture",
-        url: "/system-design#system-architecture",
+        url: "/system-design/#system-architecture",
       },
       {
         title: "Sequence Diagrams",
-        url: "/system-design#sequence-diagrams",
+        url: "/system-design/#sequence-diagrams",
       },
       {
         title: "Design Patterns",
-        url: "/system-design#design-patterns",
+        url: "/system-design/#design-patterns",
       },
       {
         title: "ER Diagrams",
-        url: "/system-design#er-diagrams",
+        url: "/system-design/#er-diagrams",
       },
       {
         title: "Data Storage",
-        url: "/system-design#data-storage",
+        url: "/system-design/#data-storage",
       },
       {
         title: "APIs",
-        url: "/system-design#apis",
+        url: "/system-design/#apis",
       },
     ],
   },
   {
     title: "Implementation",
-    url: "/implementation",
+    url: "/implementation/",
     icon: Hammer,
     subitems: [
       {
         title: "Overview",
-        url: "/implementation#overview",
+        url: "/implementation/#overview",
       },
       {
         title: "Server",
-        url: "/implementation#server",
+        url: "/implementation/#server",
       },
       {
         title: "Registration Site",
-        url: "/implementation#registration-site",
+        url: "/implementation/#registration-site",
       },
       {
         title: "ESP32",
-        url: "/implementation#esp32",
+        url: "/implementation/#esp32",
       },
       {
         title: "Raspberry Pi",
-        url: "/implementation#raspberry-pi",
+        url: "/implementation/#raspberry-pi",
       },
       {
         title: "Desktop App",
-        url: "/implementation#desktop-app",
+        url: "/implementation/#desktop-app",
       },
     ],
   },
   {
     title: "Testing",
-    url: "/testing",
+    url: "/testing/",
     icon: Flag,
     subitems: [
       {
         title: "Testing Strategy",
-        url: "/testing#testing-strategy",
+        url: "/testing/#testing-strategy",
       },
       {
         title: "Unit Testing",
-        url: "/testing#unit-testing",
+        url: "/testing/#unit-testing",
       },
       {
         title: "Integration Testing",
-        url: "/testing#integration-testing",
+        url: "/testing/#integration-testing",
       },
       {
         title: "Compatibility Testing",
-        url: "/testing#compatibility-testing",
+        url: "/testing/#compatibility-testing",
       },
       {
         title: "Responsive Design Testing",
-        url: "/testing#responsive-design-testing",
+        url: "/testing/#responsive-design-testing",
       },
       {
         title: "Performance Testing",
-        url: "/testing#performance-testing",
+        url: "/testing/#performance-testing",
       },
       {
         title: "User Acceptance Testing",
-        url: "/testing#user-acceptance-testing",
+        url: "/testing/#user-acceptance-testing",
       },
     ],
   },
   {
     title: "Evaluation",
-    url: "/evaluation",
+    url: "/evaluation/",
     icon: ChartNoAxesCombined,
     subitems: [
       {
         title: "Achievements",
-        url: "/evaluation#achievments",
+        url: "/evaluation/#achievments",
       },
       {
         title: "Individual Contribution",
-        url: "/evaluation#individual-contribution",
+        url: "/evaluation/#individual-contribution",
       },
       {
         title: "Critical Evaluation",
-        url: "/evaluation#critical-evaluation",
+        url: "/evaluation/#critical-evaluation",
       },
       {
         title: "Future",
-        url: "/evaluation#future",
+        url: "/evaluation/#future",
       },
     ],
   },
   {
     title: "Appendices",
-    url: "/appendices",
+    url: "/appendices/",
     icon: SquarePlus,
     subitems: [
       {
         title: "User Manual",
-        url: "/appendices#user-manual",
+        url: "/appendices/#user-manual",
       },
       {
         title: "Deployment Manual",
-        url: "/appendices#deployment-manual",
+        url: "/appendices/#deployment-manual",
       },
       {
         title: "Legal",
-        url: "/appendices#legal",
+        url: "/appendices/#legal",
       },
       {
         title: "Development Blog",
-        url: "/appendices#development-blog",
+        url: "/appendices/#development-blog",
       },
       {
         title: "Monthly Videos",
-        url: "/appendices#monthly-videos",
+        url: "/appendices/#monthly-videos",
       },
     ],
   }
@@ -313,7 +313,7 @@ export function AppSidebar() {
               <Collapsible
                 key={item.title}
                 asChild
-                defaultOpen={pathname === item.url}
+                defaultOpen={pathname === `${BASE_PATH}${item.url}`}
                 className="group/collapsible"
               >
                 <SidebarMenuItem>
