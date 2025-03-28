@@ -851,6 +851,11 @@ export default function Requirements() {
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
+                    <ul className="text-lg list-disc pl-6 space-y-3">
+                    <li>
+                      <span className="font-medium">Deployed Access</span><span className="text-muted-foreground"> — Due to the research-centric nature of this project, we believe there is no need to properly deploy a public API.</span>
+                    </li>
+                  </ul>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
