@@ -2,6 +2,8 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Metadata } from 'next';
+import { BASE_PATH } from "@/config";
+
 
 export const metadata: Metadata = {
     title: 'Algorithms',
@@ -16,7 +18,7 @@ export default function Algorithms() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">

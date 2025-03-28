@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription }
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Metadata } from 'next';
+import { BASE_PATH } from "@/config";
+
 
 export const metadata: Metadata = {
     title: 'Evaluation',
@@ -20,7 +22,7 @@ export default function Evaluation() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -65,7 +67,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Marwan
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -82,7 +84,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Raghav, Marwan
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -99,7 +101,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Abdul, Raghav
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -116,7 +118,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Marwan, Abdul
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -133,7 +135,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Marwan, Abdul
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -150,7 +152,7 @@ export default function Evaluation() {
                     ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Raghav, Marwan
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -161,13 +163,13 @@ export default function Evaluation() {
                     Should
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="font-medium">Website to register device and configure initial settings</span>
+                    <span className="font-medium">Website to register device and setup initial settings</span>
                   </TableCell>
                   <TableCell className="text-lg">
                     ⚠️
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Marwan
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -181,10 +183,10 @@ export default function Evaluation() {
                     <span className="font-medium">Directional proximity management</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    ❌
+                    ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Abdulhamid, Marwan
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -198,10 +200,10 @@ export default function Evaluation() {
                     <span className="font-medium">API Layer to make system reproducible</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    ⚠️
+                    ✅
                   </TableCell>
                   <TableCell className="text-lg">
-                    ...
+                    Raghav, Abdulhamid
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -210,14 +212,14 @@ export default function Evaluation() {
               <CardContent className="p-6">
                 <ul className="text-lg list-disc pl-6 space-y-1">
                   <li><span className="font-medium">100%</span> of our "must have" requirements were fully completed.</li>
-                  <li><span className="font-medium">50%</span> of our "should have" requirements were partially completed.</li>
-                  <li><span className="font-medium">100%</span> of our "could have" requirements were partially completed.</li>
+                  <li><span className="font-medium">100%</span> of our "should have" requirements were partially completed.</li>
+                  <li><span className="font-medium">100%</span> of our "could have" requirements were fully completed.</li>
                 </ul>
               </CardContent>
             </Card>
             <h1 className="text-2xl font-medium my-6">Known Bugs</h1>
             <p className="text-lg">
-              During the creation of each feature in our system, we ensured that any known bugs preventing the system from functioning as intended was dealt with immediately. As such, there are currently no known bugs.
+              During the creation of each feature in our system, we performed extensive testing that any known bugs preventing the system from functioning as intended was dealt with immediately. However, due to time constraints some bugs remained, luckily all of these have easy remedies.
             </p>
             <Table className="mt-6">
               <TableHeader>
@@ -233,10 +235,43 @@ export default function Evaluation() {
                     1
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="font-medium">...</span>
+                    <span className="font-medium"> Raspberry Pi &rarr; Pico - UART Connection Issues due to lack of soldering</span>
                   </TableCell>
                   <TableCell className="text-lg">
-                    🟢🟡🔴
+                    🟡
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    2
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium"> Small models hallucinating commands</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    🟢
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    3
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium"> Preferences feature on IBM Proximity Agents</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                  🟡
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-lg">
+                    4
+                  </TableCell>
+                  <TableCell className="text-lg">
+                    <span className="font-medium"> BLE connections failing whilst connected to eduroam</span>
+                  </TableCell>
+                  <TableCell className="text-lg">
+                  🟡
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -268,16 +303,16 @@ export default function Evaluation() {
                           <span className="font-medium">Project Partner Liaison</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          90<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          10<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                         <TableCell className="text-lg">
-                          XX<span className="text-muted-foreground">%</span>
+                          0<span className="text-muted-foreground">%</span>
                         </TableCell>
                       </TableRow>
                       <TableRow>

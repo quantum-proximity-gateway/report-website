@@ -11,6 +11,8 @@ import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption } from "@/components/ui/table"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { BASE_PATH } from "@/config";
 
 
 export default function Testing() {
@@ -28,7 +30,7 @@ export default function Testing() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -44,64 +46,80 @@ export default function Testing() {
         <div className="max-w-4xl">
           <div id="testing-strategy">
             <h1 className="text-4xl font-bold my-6">Testing Strategy</h1>
-            <p className="text-lg my-6">
-              Our project consists of varied components which requires testing in different ways. For our core server, we performed unit tests using pytest and done integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
+            <p className="text-lg">
+              Our project consists of many different components which requires testing in different ways. For our core server, we performed unit tests using pytest and done manual integration testing with the various system components which communicate with it to ensure that it functions correctly. For our frontends (IBM Proximity Agents Desktop App and Registration Site), we carried out compatibility testing, and responsive design testing. This ensures that they can run on different systems/browsers, and are displayed correctly regardless of window sizing. Finally, we also carried out user testing where we got clients to use our system to judge the feasibility and reception of our project in practice.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 my-8">
-              <div className="testing-tool-card">
+            <p className="text-lg mt-6">
+              Our testing can be divided into automated testing and manual testing. Automated testing involves using scripts and tools to quickly verify the functionality of individual components, making it ideal for repetitive and large-scale tests. In contrast, manual testing allows us to assess parts that require human judgment, such as user experience, or to verify the functioning of our system without spending a large amount of time developing comprehensive testing scripts.
+            </p>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Automated Testing
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3 mb-3">
+                    <li>
+                      <span className="font-medium">Unit Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Continuous Integration (CI)</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  <p className="text-lg font-semibold">
+                    Manual Testing
+                  </p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="text-lg list-disc pl-6 space-y-3 mb-3">
+                    <li>
+                      <span className="font-medium">Integration Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Responsive Design Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">Compatibility Testing</span>
+                    </li>
+                    <li>
+                      <span className="font-medium">User Acceptance Testing</span>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
+            <p className="text-lg mb-6">
+              Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application for a given user. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities.
+            </p>
+            <p className="text-lg mb-3">
+              On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
+            </p>
+          </div>
+          <div id="unit-testing">
+            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
+            <div className="flex justify-center my-6">
+              <div>
                 <Image 
                   src="/testing/pytest.svg" 
                   alt="PyTest Logo" 
                   width={200} 
                   height={200}
-                  className="mx-auto transition-transform hover:scale-105"
                 />
-                <p className="text-center font-medium mt-3">PyTest</p>
+                <p className="text-center font-medium">PyTest</p>
                 <p className="text-center text-sm text-gray-500">Unit Testing Framework</p>
               </div>
-              <div className="testing-tool-card">
-                <Image 
-                  src="/testing/responsivelyapp.png" 
-                  alt="Responsively App Logo" 
-                  width={200} 
-                  height={200}
-                  className="mx-auto transition-transform hover:scale-105"
-                />
-                <p className="text-center font-medium mt-3">Responsively App</p>
-                <p className="text-center text-sm text-gray-500">Responsive Design Testing</p>
-              </div>
             </div>
-            <h1 className="text-2xl font-bold my-6">Testing Scope</h1>
-              <p className="text-lg my-6">
-                Taking into account our personas, we developed our tests so that we can fairly judge the functionality of our application depending on who is using it. The registration website and proximity agents application had to be as user-friendly and usable as we could make it, due to the fact that it was to be interacted with by people of all ages and physical abilities.
-              </p>
-              <p className="text-lg my-6">
-              On the other hand, components such as the Raspberry Pi and Server were not going to be exposed to the average user, meaning that we could focus less on the "user-friendliness" of these components and more on the functionality and perfomance that they could provide.
-              </p>
-          </div>
-          <div id="unit-integration-testing">
-            <h1 className="text-4xl font-bold my-6">Integration Testing</h1>
             <p className="text-lg my-6">
-              Integration testing allowed us to keep validating the functionality of our codebase as we added on more features. We constantly conducted end-to-end tests to ensure that the core server, proximity agents, ESP32 devices, and Raspberry Pi gateways communicated correctly and maintained secure data transfer across the entire authentication flow. These tests revealed several edge cases where components failed to handle certain error conditions gracefully, particularly during request failures (Raspberry Pi &rarr;  Server) or when an ESP32 moved out of range during the authentication process, causing us to add a 3 strike system.
-            </p>
-            <p className="text-lg my-6">
-              We utilised physical environments to simulate scenarios where the QPG would be deployed, one such place was the Tech for Good lab in Malet Place 1.05. This approach helped us identify signal interference issues with the Raspberry Pi in places where there are many BLE devices around. We also integrated a manual testing framework, where as a team we would re-test the entire workflow, from registration to authentication once a big feature was added to the codebase.
-            </p>
-            <Card className="my-6 max-w-xl mx-auto">
-              <CardContent className="flex flex-col items-center justify-center p-2">
-                <Image 
-                  src="/testing/techforgood.jpg" 
-                  alt="Tech For Good AI Lab" 
-                  width={400} 
-                  height={400}
-                  className="object-contain w-full rounded-md"
-                />
-                <p className="text-center text-sm text-gray-500 mt-3">Initial integration tests in Tech for Good AI lab</p>
-              </CardContent>
-            </Card>
-            <h1 className="text-4xl font-bold my-6">Unit Testing</h1>
-            <p className="text-lg my-6">
-              Our unit tests are performed utilising a comprehensive suite of unit tests for a secure device management API that implements post-quantum cryptography. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
+              Our unit tests are performed utilising a comprehensive suite of unit tests for the API endpoints defined in our server, using PyTest. Having a large and critical part of our project like the core server being unit tested allows us to easily improve functionality in future iteration without the worries of additional bugs and vulnerabilities being introduced. The tests verify core functionality including device registration, credential management, and preferences handling - all protected by encrypted communications. Each test follows a consistent pattern of setting up test data on our database, performing different API operations through a test client, and verifying the expected responses.
             </p>
             <div className="flex flex-col items-center my-6">
               <Image 
@@ -376,7 +394,6 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   </TableCell>
                   <TableCell className="text-lg">
                     Communication using Web Serial API not natively supported. Extensions are available to fix this.
-                    Communication using Web Serial API not natively supported. Extensions are available to fix this.
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -402,10 +419,40 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               During development, we regularly tested our interfaces across various viewport sizes using development tools like <a href="https://responsively.app/" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">ResponsivelyApp</a> and other browser emulation tools. For our IBM Proximity Agents desktop application, we ensured the interface scaled appropriately with different window sizes, while our registration site was tested on multiple physical devices to verify its responsiveness in real-world conditions.
             </p>
-            <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain rounded-md"/>
-            <p className="text-center text-sm text-gray-500 mt-3 my-6">Figure 1: IBM Proximity Agents - Responsive Design Test</p>
-            <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain rounded-md"/>
-            <p className="text-center text-sm text-gray-500 mt-3">Figure 2: Registration Site - Responsive Design Test</p>
+            <Carousel className="my-6">
+              <CarouselContent>
+                <CarouselItem key={1}>
+                  <div className="p-1">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">IBM Proximity Agents</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 4: IBM Proximity Agents - Responsive Design Test</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={2}>
+                  <div className="p-1">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-2xl">Registration Site</CardTitle>
+                        <Separator />
+                      </CardHeader>
+                      <CardContent className="flex flex-col items-center justify-center">
+                        <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+                        <p className="text-center text-sm text-gray-500 mt-3">Figure 5: Registration Site - Responsive Design Test</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
           <div id="performance-testing">
             <h1 className="text-4xl font-bold my-6">Performance Testing</h1>
@@ -415,103 +462,103 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <p className="text-lg my-6">
               Initially, we were really concerned with the idea of "Post-Quantum Cryptography" running on limited hardware like the Raspberry Pi or the overhead it would add to typical operations on the server. So, as an experiment we created a performance test script which allowed us to view the overhead that such encryption mechanism would introduce to our codebase.
             </p>
-            <h1 className="text-2xl font-bold my-6">Performance Benchmarks - Post-Quantum Cryptography</h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-bold">ML-KEM-512 Key Exchange</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Metric</TableHead>
-                          <TableHead>Time (ms)</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell>Minimum</TableCell>
-                          <TableCell>0.067</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Maximum</TableCell>
-                          <TableCell>3.354</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Mean</TableCell>
-                          <TableCell>0.078</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Median</TableCell>
-                          <TableCell>0.069</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>95th Percentile</TableCell>
-                          <TableCell>0.083</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                    <p className="text-sm text-gray-500 mt-3">Complete KEM cycle operations (key generation, encapsulation, and decapsulation)</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-bold">Message Encryption/Decryption</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Operation</TableHead>
-                          <TableHead>Mean (ms)</TableHead>
-                          <TableHead>Median (ms)</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell>Encrypt</TableCell>
-                          <TableCell>0.015</TableCell>
-                          <TableCell>0.009</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Decrypt</TableCell>
-                          <TableCell>0.009</TableCell>
-                          <TableCell>0.008</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                    <p className="text-sm text-gray-500 mt-3">Time to encrypt and decrypt messages using our EncryptionHelper</p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <p className="text-lg my-6">
-                Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
-              </p>
-
-              <p className="text-lg my-6">
-                In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, this is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
-              </p>
-              <p className="text-lg my-6">
-                Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas a simple application at a much smaller scale than ours made using other frameworks like Electron usually have a larger size of around 85MB, so using Tauri was definitely a good choice when it came reducing our performance footprint. [1]
-              </p>
-              <p className="text-lg my-6">
-                Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware. When the user is prompting the model, GPU utilization goes up to 94% and RAM utilization to 1.4GB, this was tested with Granite 3.2.
-              </p>
-              <Carousel className="my-6 max-w-3xl mx-auto">
+            <h1 className="text-2xl font-bold my-6">Post-Quantum Cryptography Performance Benchmarks</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold">ML-KEM-512 Key Exchange</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Metric</TableHead>
+                        <TableHead>Time (ms)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Minimum</TableCell>
+                        <TableCell>0.067</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Maximum</TableCell>
+                        <TableCell>3.354</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Mean</TableCell>
+                        <TableCell>0.078</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Median</TableCell>
+                        <TableCell>0.069</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>95th Percentile</TableCell>
+                        <TableCell>0.083</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                  <p className="text-sm text-gray-500 mt-3">Complete KEM cycle operations (key generation, encapsulation, and decapsulation)</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold">Message Encryption/Decryption</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Operation</TableHead>
+                        <TableHead>Mean (ms)</TableHead>
+                        <TableHead>Median (ms)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Encrypt</TableCell>
+                        <TableCell>0.015</TableCell>
+                        <TableCell>0.009</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Decrypt</TableCell>
+                        <TableCell>0.009</TableCell>
+                        <TableCell>0.008</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                  <p className="text-sm text-gray-500 mt-3">Time to encrypt and decrypt messages using our EncryptionHelper</p>
+                </CardContent>
+              </Card>
+            </div>
+            <p className="text-lg my-6">
+              Overall, our results confirm that utilsing the liboqs implementation of the ML-KEM-512 key encapsulation algorithm alongside AES-GCM adds minimal overhead to the system, making it entirely feasible to deploy on resource-constrained devices like the Raspberry Pi.
+            </p>
+            <p className="text-lg my-6">
+              In addition to small performance tests like the Encryption/Decryption test-suite, we also added middleware to our server that allows us to monitor bottlenecks in different functions on production code, which is done by a profiler that we have defined utilising the cprofile and pstats libraries in Python.
+            </p>
+            <h1 className="text-2xl font-bold my-6">Desktop Application System Usage</h1>
+            <p className="text-lg my-6">
+              Finally, our choice of using Tauri for a cross-platform application development ensured that our application size stayed low, and that the application was performant. Our final build for the Proximity Agents application on MacOS ended up being 14.3MB, whereas a simple application at a much smaller scale than ours made using other frameworks like Electron usually have a larger size of around 85MB, so using Tauri was definitely a good choice when it came reducing our performance footprint <span className="text-muted-foreground">[1]</span>.
+            </p>
+            <p className="text-lg my-6">
+              Testing the performance of the application on a Macbook Pro M2 Pro, revealed that the app was very usable on everyday devices such as a consumer-grade laptop, the only bottleneck the app has is the Ollama inferencing, which is to be expected as LLM inferencing is quite a big task that relies on dedicated GPU hardware. When the user is prompting the model, GPU utilization goes up to 94% and RAM utilization to 1.4GB, this was tested with Granite 3.2.
+            </p>
+            <Carousel className="my-6">
               <CarouselContent>
                 <CarouselItem key={1}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex items-center justify-center p-4">
+                      <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
                           src="/testing/proximity-agents-memory.png" 
-                          alt="Tauri App Memory Footprint" 
-                          width={1636} 
-                          height={1169} 
+                          alt="Tauri App Memory Usage" 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
+                        <p className="text-center text-sm text-gray-500 mt-3">Tauri App Memory Usage</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -519,14 +566,15 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <CarouselItem key={2}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex items-center justify-center p-4">
+                      <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
                           src="/testing/proximity-agents-cpu.png" 
                           alt="Tauri App CPU/GPU Usage" 
-                          width={1636} 
-                          height={1169} 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
+                        <p className="text-center text-sm text-gray-500 mt-3">Tauri App CPU/GPU Usage</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -534,14 +582,15 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <CarouselItem key={3}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex items-center justify-center p-4">
+                      <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
-                          src="/testing/ollama-gpu.png" 
-                          alt="Ollama CPU/GPU Usage" 
-                          width={1636} 
-                          height={1169} 
+                          src="/testing/ollama-memory.png" 
+                          alt="Ollama Memory Usage" 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
+                        <p className="text-center text-sm text-gray-500 mt-3">Ollama Memory Usage</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -549,14 +598,15 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <CarouselItem key={4}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex items-center justify-center p-4">
+                      <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
-                          src="/testing/ollama-memory.png" 
-                          alt="Ollama Memory Footprint Usage" 
-                          width={1636} 
-                          height={1169} 
+                          src="/testing/ollama-gpu.png" 
+                          alt="Ollama CPU/GPU Usage" 
+                          width={1444} 
+                          height={322} 
                           className="object-contain max-h-[500px]" 
                         />
+                        <p className="text-center text-sm text-gray-500 mt-3">Ollama CPU/GPU Usage</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -697,12 +747,11 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <h1 className="text-2xl font-bold my-6">User Feedback</h1>
             <p className="text-lg my-6">
               Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
-              Key insights from our user testing sessions revealed both positive aspects and areas for improvement, we took a sample of 4 different users from different testing session, allowing us to get a wide range of opinions.
             </p>
-            <Table className="my-8">
+            <Table className="mb-8">
               <TableCaption>Table 3: User Feedback on Quantum Proximity Gateway</TableCaption>
               <TableHeader>
-                <TableRow>
+                <TableRow className="bg-gray-100 dark:bg-gray-700">
                   <TableHead className="w-[300px]">Acceptance Requirement</TableHead>
                   <TableHead className="text-center">Strongly Disagree</TableHead>
                   <TableHead className="text-center">Disagree</TableHead>
@@ -718,7 +767,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">0</TableCell>
                   <TableCell className="text-center">1</TableCell>
                   <TableCell className="text-center">3</TableCell>
-                  <TableCell>+ Overall system often worked flawlessly</TableCell>
+                  <TableCell>✅ Overall system often worked flawlessly</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Registration process was intuitive</TableCell>
@@ -726,7 +775,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">1</TableCell>
                   <TableCell className="text-center">2</TableCell>
                   <TableCell className="text-center">1</TableCell>
-                  <TableCell>- ESP32 pairing was buggy for some users</TableCell>
+                  <TableCell>❌ ESP32 pairing was buggy for some users</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Bluetooth communication was reliable</TableCell>
@@ -734,7 +783,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">1</TableCell>
                   <TableCell className="text-center">2</TableCell>
                   <TableCell className="text-center">1</TableCell>
-                  <TableCell>+ Some interference issues in crowded environments, but reliable most of the time</TableCell>
+                  <TableCell>✅ Some interference issues in crowded environments, but reliable most of the time</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Raspberry Pi setup was straightforward</TableCell>
@@ -742,7 +791,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">2</TableCell>
                   <TableCell className="text-center">1</TableCell>
                   <TableCell className="text-center">1</TableCell>
-                  <TableCell>- Only technical users found it manageable, which was expected</TableCell>
+                  <TableCell>❌ Only technical users found it manageable, which was expected</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Error messages were clear</TableCell>
@@ -750,7 +799,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">2</TableCell>
                   <TableCell className="text-center">1</TableCell>
                   <TableCell className="text-center">1</TableCell>
-                  <TableCell>- Too much technical jargon in error messages</TableCell>
+                  <TableCell>❌ Too much technical jargon in error messages</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Would use this over passwords</TableCell>
@@ -758,7 +807,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">0</TableCell>
                   <TableCell className="text-center">0</TableCell>
                   <TableCell className="text-center">4</TableCell>
-                  <TableCell>+ Unanimous preference for proximity-based auth</TableCell>
+                  <TableCell>✅ Unanimous preference for proximity-based auth</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Overall security perception</TableCell>
@@ -766,13 +815,11 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-center">0</TableCell>
                   <TableCell className="text-center">0</TableCell>
                   <TableCell className="text-center">4</TableCell>
-                  <TableCell>+ Users felt more secure with quantum-resistant methods and TOTP verification</TableCell>
+                  <TableCell>✅ Users felt more secure with quantum-resistant methods and TOTP verification</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
-            <h1 className="text-xl font-bold my-6">Summary of User Feedback</h1>
             <Table>
-              <TableCaption>Table 4: Summary of User Feedback</TableCaption>
               <TableCaption>Table 4: Summary of User Feedback</TableCaption>
               <TableHeader>
                 <TableRow className="text-lg bg-gray-100 dark:bg-gray-700">
@@ -801,6 +848,9 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                   <TableCell className="text-lg">
                     <p>Convenient authentication once properly configured</p>
                   </TableCell>
+                  <TableCell className="text-lg">
+                    <p>Technical terminology confused non-technical users</p>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="text-lg">
@@ -815,7 +865,6 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <h1 className="text-2xl font-bold my-6">Closing the Feedback Loop</h1>
             <p className="text-lg my-6">
               Based on user feedback, we implemented several significant improvements in the last weeks of development:
-              Based on user feedback, we implemented several significant improvements in the last weeks of development:
             </p>
             <Card className="my-6">
               <CardHeader>
@@ -824,7 +873,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">A few users found workarounds the registration website, which allowed them to sign up with an empty MAC address. We implemented stricter rules on the registration website and instructions to explain these restrictions.</p>
-              </CardContent>
+              </CardContent> 
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Better Error Handling</CardTitle>
                 <Separator />
@@ -833,12 +882,12 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <p className="text-muted-foreground text-lg">We cleared up a lot of unnecessary debugging information on the Raspberry Pi and improved the logging framework by utilising the ColoredLogs library.</p>
               </CardContent>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">Cluttered UI</CardTitle>
+                <CardTitle className="text-2xl font-bold">Greatly Improved UI</CardTitle>
                 <Separator />
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg">The proximity agents application got a complete redesign, making it look more modern and pleasing to users. </p>
-                <div className="flex flex-col items-center justify-center my-6">
+                <div className="flex flex-col items-center justify-center mt-6">
                   <Image 
                     src="/testing/proximity-agents-new-ui.png" 
                     alt="Proximity Agents New UI" 
@@ -847,34 +896,22 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     className="object-contain max-h-[560px] w-auto" 
                   />
                   <p className="text-center text-sm text-gray-500 mt-3">
-                    Figure 3: Redesigned IBM Proximity Agents UI with improved layout and visual clarity
+                    Figure 6: Redesigned IBM Proximity Agents UI with improved layout and visual clarity
                   </p>
                 </div>
               </CardContent>
-
             </Card>
             <p className="text-lg mt-6">
               After implementing these changes, follow-up testing showed significant improvements in task completion rates and user satisfaction scores, specifically users stopped finding workarounds the registration website and our UIs were received more positively overall.
             </p>
-            <div id="references">
-              <h1 className="text-4xl font-bold my-6">References</h1>
-              <ol className="text-lg list-decimal space-y-6 pl-5">
-                <li>
-                  <span className="text-muted-foreground">
-                    www.levminer.com. (n.d.). Tauri VS. Electron - Real world application. [online] Available at:{" "}
-                    <a
-                      href="https://www.levminer.com/blog/tauri-vs-electron"
-                      className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      https://www.levminer.com/blog/tauri-vs-electron
-                    </a>
-                    . [Accessed March 26, 2025].
-                  </span>
-                </li>
-              </ol>
-            </div>
+          </div>
+          <div id="references">
+            <h1 className="text-4xl font-bold my-6">References</h1>
+            <ul className="text-lg space-y-6">
+              <li className="flex flex-row">
+                <span className="font-medium mr-4">[1]</span><span className="text-muted-foreground">Lőrik Levente, "Tauri VS. Electron - Real world application", Aug. 22, 2022. [Online]. Available: <a href="https://www.levminer.com/blog/tauri-vs-electron" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://www.levminer.com/blog/tauri-vs-electron</a>. [Accessed March 26, 2025].</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

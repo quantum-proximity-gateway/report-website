@@ -7,6 +7,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Metadata } from 'next';
 import Image from "next/image";
+import { BASE_PATH } from "@/config";
+
 
 export const metadata: Metadata = {
     title: 'Research',
@@ -21,7 +23,7 @@ export default function Research() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -40,13 +42,7 @@ export default function Research() {
             <p className="text-lg my-6">
               Proximity-based solutions has become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies to be used in our project, we conducted an in-depth analysis of existing proximity-based authentication systems from 2 different companies, examining their software and hardware implementations to understand the core driving their functionality.
             </p>
-            <Tabs defaultValue="review-1" className="mt-6">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="review-1">Review 1: Yubico</TabsTrigger>
-                <TabsTrigger value="review-2">Review 2: Alps Alpine</TabsTrigger>
-              </TabsList>
-              <TabsContent value="review-1">
-                <Card>
+                <Card className="my-6">
                   <CardHeader>
                     <CardTitle className="text-lg">Review 1: Yubico</CardTitle>
                     <Separator />
@@ -75,8 +71,8 @@ export default function Research() {
                     </div>
                   </CardContent>
                 </Card>
-              </TabsContent>
-              <TabsContent value="review-2">
+
+
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Review 2: Alps Alpine</CardTitle>
@@ -109,8 +105,6 @@ export default function Research() {
                     </p>
                   </CardContent>
                 </Card>
-              </TabsContent>
-            </Tabs>
           </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
@@ -118,66 +112,56 @@ export default function Research() {
             <p className="text-lg">
               Proximity detection is a crucial element of our system, allowing users to interact effortlessly with nearby devices whilst also ensuring security. To determine the most suitable technology for this purpose, we evaluated several options, including Bluetooth Low Energy (BLE), Near-Field Communication (NFC), Radio Frequency Identification (RFID), and Wi-Fi Positioning System (WPS).
             </p>
-            <Tabs defaultValue="ble" className="mt-6">
-              <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="ble">BLE</TabsTrigger>
-                <TabsTrigger value="nfc">NFC</TabsTrigger>
-                <TabsTrigger value="rfid">RFID</TabsTrigger>
-                <TabsTrigger value="wps">WPS</TabsTrigger>
-              </TabsList>
-              <TabsContent value="ble">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Bluetooth Low Energy (BLE)</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      BLE was selected as the primary technology after careful consideration due to its optimal balance of cost-effectiveness, power efficiency, and broad compatibility. BLE signals provide an adequate range and signal strength variations, enabling accurate detection of a user's presence near a specific device <span className="text-muted-foreground">[4]</span>. The ESP32 microcontroller, recognized for its affordable and efficient BLE functionality, will serve as the primary BLE beacon. When paired with a Raspberry Pi, this system can analyze signal strength variations and infer directionality, allowing for precise proximity-based authentication.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="nfc">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Near-Field Communication (NFC)</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      NFC, although a good consideration for authentication, was rejected after a thorough analysis of our requirements indicated that it was not the best fit for our project. Given that our primary objective is to develop a seamless, proximity-based login system that is both secure and accessible, NFC's inherent limitations would hinder our ability to achieve this goal since it requires users to bring an NFC-enabled card or device into close contact of a reader to complete authentication <span className="text-muted-foreground">[5]</span>. While this provides a high level of security, it does not align with our vision of seamless authentication where users can be automatically detected as they approach a device. These constraints make NFC less practical for our intended application compared to BLE.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="rfid">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Radio Frequency Identification (RFID)</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      RFID was also explored as a potential alternative due to its ability to facilitate short-range authentication via electromagnetic fields. This technology operates by having a reader transmit a radio signal that activates passive RFID tags <span className="text-muted-foreground">[6]</span>, enabling secure identification. Unlike BLE, RFID tags do not require a power source, making them highly efficient for authentication applications. However, RFID is primarily intended for close-range authentication, typically within just a few centimetres, which does not align with our need for seamless proximity detection across a workspace. Additionally, implementing RFID on a large scale would also necessitate deploying dedicated RFID readers in every interaction zone, significantly increasing both cost and complexity.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="wps">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Wi-Fi Positioning System (WPS)</CardTitle>
-                    <Separator />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">
-                      WPS was another alternative considered, leveraging signal strength (RSSI), triangulation, and fingerprinting to estimate a user's location relative to a device <span className="text-muted-foreground">[7]</span>. One notable advantage of Wi-Fi is that it does not require additional hardware, as modern buildings are already equipped with Wi-Fi infrastructure, and most devices support Wi-Fi connectivity. However, WPS is considerably less precise than BLE, and varies greatly depending on interference and network conditions. Another significant drawback is power consumption: Wi-Fi scanning requires substantially more energy than BLE, making it impractical for low-power IoT devices like the ESP32.
-                    </p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
+
+            <div className="space-y-6 mt-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Bluetooth Low Energy (BLE)</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    BLE was selected as the primary technology after careful consideration due to its optimal balance of cost-effectiveness, power efficiency, and broad compatibility. BLE signals provide an adequate range and signal strength variations, enabling accurate detection of a user's presence near a specific device <span className="text-muted-foreground">[4]</span>. The ESP32 microcontroller, recognized for its affordable and efficient BLE functionality, will serve as the primary BLE beacon. When paired with a Raspberry Pi, this system can analyze signal strength variations and infer directionality, allowing for precise proximity-based authentication.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Near-Field Communication (NFC)</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    NFC, although a good consideration for authentication, was rejected after a thorough analysis of our requirements indicated that it was not the best fit for our project. Given that our primary objective is to develop a seamless, proximity-based login system that is both secure and accessible, NFC's inherent limitations would hinder our ability to achieve this goal since it requires users to bring an NFC-enabled card or device into close contact of a reader to complete authentication <span className="text-muted-foreground">[5]</span>. While this provides a high level of security, it does not align with our vision of seamless authentication where users can be automatically detected as they approach a device. These constraints make NFC less practical for our intended application compared to BLE.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Radio Frequency Identification (RFID)</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    RFID was also explored as a potential alternative due to its ability to facilitate short-range authentication via electromagnetic fields. This technology operates by having a reader transmit a radio signal that activates passive RFID tags <span className="text-muted-foreground">[6]</span>, enabling secure identification. Unlike BLE, RFID tags do not require a power source, making them highly efficient for authentication applications. However, RFID is primarily intended for close-range authentication, typically within just a few centimetres, which does not align with our need for seamless proximity detection across a workspace. Additionally, implementing RFID on a large scale would also necessitate deploying dedicated RFID readers in every interaction zone, significantly increasing both cost and complexity.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Wi-Fi Positioning System (WPS)</CardTitle>
+                  <Separator />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">
+                    WPS was another alternative considered, leveraging signal strength (RSSI), triangulation, and fingerprinting to estimate a user's location relative to a device <span className="text-muted-foreground">[7]</span>. One notable advantage of Wi-Fi is that it does not require additional hardware, as modern buildings are already equipped with Wi-Fi infrastructure, and most devices support Wi-Fi connectivity. However, WPS is considerably less precise than BLE, and varies greatly depending on interference and network conditions. Another significant drawback is power consumption: Wi-Fi scanning requires substantially more energy than BLE, making it impractical for low-power IoT devices like the ESP32.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
             <h1 className="text-2xl font-bold my-6">Comparison of IoT Devices</h1>
             <p className="text-lg my-6">
               Choosing the right hardware for proximity detection and facial recognition was essential to ensuring reliability and efficiency in our system. After considering several options, we selected the Raspberry Pi 5 as the primary processing unit for facial recognition, and proximity management, whilst the ESP32 microcontroller is used to function as a low-power BLE beacon.

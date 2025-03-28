@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Metadata } from 'next';
 import Image from "next/image";
+import { BASE_PATH } from "@/config";
 
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function Requirements() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">

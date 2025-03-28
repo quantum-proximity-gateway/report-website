@@ -1,8 +1,11 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Metadata } from 'next';
+import { BASE_PATH } from "@/config";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
     title: 'Appendices',
@@ -17,7 +20,7 @@ export default function Appendices() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="/">Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -33,9 +36,138 @@ export default function Appendices() {
         <div className="max-w-4xl">
           <div id="user-manual">
             <h1 className="text-4xl font-bold my-6">User Manual</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              This section provides step-by-step instructions for setting up and using our system. The manual is organized in the order that each component should be configured, starting with the ESP32 hardware and progressing through the registration site, Raspberry Pi setup, and desktop application usage.
             </p>
+            <h1 className="text-2xl font-bold my-6">ESP32</h1>
+            <p className="text-lg my-6">
+              To flash your ESP32, follow the guidelines written on the README.md on the ESP32 repository. Found here: <a href="https://github.com/quantum-proximity-gateway/esp32-code" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://github.com/quantum-proximity-gateway/esp32-code</a>. This user manual assumes you have flashed your ESP32 as that is the only step there is with the ESP32 component of our system.
+            </p>
+
+            <h1 className="text-2xl font-bold my-6">Registration Site</h1>
+            <p className="text-lg my-6">
+              The registration website is the first step to getting setup with the Proximity Gateway, our registration website is hosted on the following link: <a href="https://registration-site-ecru.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">https://registration-site-ecru.vercel.app/</a>. You will be firstly greeted with a welcome screen stating what the purpose of the website is.
+            </p>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Welcome Page</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/reg1.gif" alt="Registration Step 1" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">The welcome page initiates the encryption initiliasation, wait while the application establishes a secure connection with the server.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Connecting ESP32 Device</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/reg2.gif" alt="Registration Step 2" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">Connect your ESP32 via USB using the right port to your laptop and then click on Connect To Device, then select the new USB device that shows up. This should allow the website to read your MAC address.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">User Details Registration</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/reg3.gif" alt="Registration Step 3" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">Enter the credentials you want the Raspberry Pi to relay, this includes your username, then your password. These will be encrypted with Post-Quantum Cryptography, once ready click the register button. This will redirect you to record your face encodings.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Facial Recognition Setup</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/reg4.gif" alt="Registration Step 4" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">Click the record button to begin the 5 second recording of your facial encodings. Once these 5 seconds are done, you can choose to re-record by clicking on the record button again, or to submit the recording to the server.</p>
+              </CardContent>
+            </Card>
+
+
+            <h1 className="text-2xl font-bold my-6">Raspberry Pi</h1>
+            <p className="text-lg my-6">
+              The Raspberry Pi brings together the ESP32 and your computer, the codebase is setup in such a way that users do not need to interact with this part of the system. In case of clean installation, refer to the Deployment Manual where instructions to deploy the Raspberry Pi code are available.
+            </p>
+
+            <h1 className="text-2xl font-bold my-6">IBM Proximity Agents Application</h1>
+
+            <p className="text-lg my-6">
+              The IBM Proximity Agents application enables you to easily change your settings and set preferred applications to open on start-up depending on the user using the application. This is the final key to our system, it brings all our components together to seamlessly showcase the power that proximity brings.
+            </p>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Welcome Page</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/pr-agents-1.gif" alt="Proximity Agents 1" width={1500} height={1200} className="object-contain rounded-lg overflow-hidden"/>
+                <p className="text-center text-md text-gray-900 mt-3">Similarly to the registration page, the welcome page for the application initiates the encryption initiliasation, wait while the application establishes a secure connection with the server.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Applications Automatically Opening</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/pr-agents-2.gif" alt="Proximity Agents 2" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">As soon as the application opens, your profile applications should automatically open too, allowing you to get on with your day instantly.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Preferences</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/pr-agents-3.gif" alt="Registration Step 3" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">To check your current preferences JSON, simply click the "Preferences" button found at the top right of the application. This should display your current JSON preferences.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Model Selection</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/pr-agents-4.gif" alt="Registration Step 4" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">You can select any model you currently have installed with Ollama using the top model buttons, just simply click a new model to start a new chat with it.</p>
+              </CardContent>
+            </Card>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">LLM Prompting</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/pr-agents-5.5.gif" alt="Registration Step 5" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">Prompt the model however you want by simply typing into the text-box and clicking the send button or clicking Enter. This will then cause Ollama to infer your prompt and respond accordingly.</p>
+              </CardContent>
+            </Card>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">Command Execution</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Image src="/user-manual/pr-agents-5.gif" alt="Registration Step 5" width={1500} height={1200} className="object-contain"/>
+                <p className="text-center text-md text-gray-900 mt-3">If the response of the model includes a command you may want to run, the UI will prompt you to either execute or cancel the command. If you choose to execute the command, the changes will be saved to your preferences and applied to your settings.</p>
+              </CardContent>
+            </Card>
+            
           </div>
           <div id="deployment-manual">
             <h1 className="text-4xl font-bold my-6">Deployment Manual</h1>
@@ -45,9 +177,50 @@ export default function Appendices() {
           </div>
           <div id="legal">
             <h1 className="text-4xl font-bold my-6">Legal</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+              <h1 className="text-2xl font-bold my-6">Source Code License</h1>
+              <p className="text-lg my-6">
+                This is a proof-of-concept research project, therefore we have decided to open-source all of our codebase under the MIT license to help spread awareness and pioneer the world of proximity-based computing. This MIT license allows anyone to freely use, modify, distribute, and allows for the commercialization of our code with minimal restrictions.
+              </p>
+              <p className="text-lg my-6">
+                The MIT license also frees us from any liability associated with the use of our codebase:
+              </p>
+              <p className="text-lg font-mono bg-gray-100 p-4 rounded-md whitespace-pre-line">
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+                INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+                PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+                HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+                OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+                SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+              </p>
+              <h1 className="text-2xl font-bold my-6">GDPR</h1>
+              <p className="text-lg mb-3">
+                Our server is deployed on IBM Code Engine, which is in compliance with GDPR rules. Our implementation follows the <a href="https://www.ibm.com/cloud/compliance/eu-ccoc" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">EU Cloud Code of Conduct</a> that IBM adheres to.
+              </p>
+              <p className="text-lg mb-3">
+                Our GDPR compliance measures include:
+              </p>
+              <ul className="text-lg list-disc pl-6 space-y-2 mb-6">
+                <li>
+                  <span className="font-medium">Data Minimization</span><span className="text-muted-foreground"> — We only collect essential data required for the functioning of our authentication system.</span>
+                </li>
+                <li>
+                  <span className="font-medium">Purpose Limitation</span><span className="text-muted-foreground"> — All collected data is used solely for authentication and personalization purposes.</span>
+                </li>
+                <li>
+                  <span className="font-medium">Storage Limitation</span><span className="text-muted-foreground"> — Facial recordings are temporarily stored and immediately deleted after generating encodings.</span>
+                </li>
+                <li>
+                  <span className="font-medium">Security Measures</span><span className="text-muted-foreground"> — We implement Post-Quantum Cryptography for data encryption and secure transmission.</span>
+                </li>
+                <li>
+                  <span className="font-medium">User Rights</span><span className="text-muted-foreground"> — Users can request deletion of their data by contacting any member of the team.</span>
+                </li>
+              </ul>
+              <h1 className="text-2xl font-bold my-6">Privacy Concerns</h1>
+              <p className="text-lg">
+                As explained throughout the project, all data associated with the user is encrypted to the highest standards, and we only store the essential data that allows us to log users in and change their preferences. Another concern we would like to address is the face recordings, these are NOT stored and are immediately deleted once the face encodings have been generated, this allow us to ensure we store as little biometric data on users as we can. 
+              </p>
+
           </div>
           <div id="development-blog">
             <h1 className="text-4xl font-bold my-6">Development Blog</h1>
