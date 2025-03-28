@@ -42,13 +42,7 @@ export default function Research() {
             <p className="text-lg my-6">
               Proximity-based solutions has become integral to various industries, from IoT-powered smart offices to sophisticated access control systems. To identify the most effective technologies to be used in our project, we conducted an in-depth analysis of existing proximity-based authentication systems from 2 different companies, examining their software and hardware implementations to understand the core driving their functionality.
             </p>
-            <Tabs defaultValue="review-1" className="mt-6">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="review-1">Review 1: Yubico</TabsTrigger>
-                <TabsTrigger value="review-2">Review 2: Alps Alpine</TabsTrigger>
-              </TabsList>
-              <TabsContent value="review-1">
-                <Card>
+                <Card className="my-6">
                   <CardHeader>
                     <CardTitle className="text-lg">Review 1: Yubico</CardTitle>
                     <Separator />
@@ -77,8 +71,8 @@ export default function Research() {
                     </div>
                   </CardContent>
                 </Card>
-              </TabsContent>
-              <TabsContent value="review-2">
+
+
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Review 2: Alps Alpine</CardTitle>
@@ -111,8 +105,6 @@ export default function Research() {
                     </p>
                   </CardContent>
                 </Card>
-              </TabsContent>
-            </Tabs>
           </div>
           <div id="technology-review">
             <h1 className="text-4xl font-bold my-6">Technology Review</h1>
