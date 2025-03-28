@@ -389,12 +389,23 @@ export default function Requirements() {
             <h1 className="text-4xl font-bold my-6">Use Cases</h1>
             <h1 className="text-2xl font-bold my-6">Use Case Diagram</h1>
             <p className="text-lg">
-              The use case diagram below shows how users can interact with the QPG to authenticate themselves and access devices seamlessly. Each use case represents a real-world scenario where the QPG enhances efficiency, security, and accessibility by dynamically adapting to user presence and intent.
+              The use case diagram below shows how users can register themselves to the system, interact with the QPG to authenticate themselves, and also use the AI Agent application.
             </p>
-            <p className="text-lg my-6">
-              [INSERT USE CASE DIAGRAM]
-            </p>
+              <div className="flex flex-col items-center my-6">
+                <Image 
+                  src="/requirements/use-case.jpg" 
+                  alt="Use Case Diagram" 
+                  width={900} 
+                  height={900}
+                  className="max-w-full object-contain"
+                  style={{borderRadius:'10px'}}
+                />
+                <p className="text-center mt-3 text-sm text-gray-500">Figure 1: Use Case Diagram</p>
+              </div>
             <h1 className="text-2xl font-bold my-6">Use Case List</h1>
+            <p className="text-lg">
+              Each use case below represents one of many potential real-world scenarios where the QPG enhances efficiency, security, and accessibility by dynamically adapting to user presence and intent.
+            </p>
             <Tabs defaultValue="uc1" className="mt-6">
               <TabsList className="grid w-full grid-cols-5">
                 <TabsTrigger value="uc1">UC1</TabsTrigger>
