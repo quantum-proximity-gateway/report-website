@@ -37,7 +37,7 @@ export default function Algorithms() {
           <div id="overview">
             <h1 className="text-4xl font-bold my-6">Overview</h1>
             <p className="text-lg">
-              Our Quantum Proximity Gateway system incorporates multiple algorithms to ensure the highest level of security and usability. This page provides an in-depth explanation of each algorithm used within the system. The following sections cover our facial recognition algorithm, post-quantum cryptography, and our AI chatbot assistant model.
+              Our Quantum Proximity Gateway system incorporates multiple algorithms to ensure the highest level of security and usability. This page provides an in-depth explanation of each algorithm used within the system. The following sections cover our facial recognition algorithm, post-quantum cryptography, our AI chatbot assistant model, and natural-language-processing.
             </p>
           </div>
           <div id="facial-recognition">
@@ -423,7 +423,6 @@ export default function Algorithms() {
                 </p>
               </CardContent>
             </Card>
-
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
             <p className="text-lg my-6">
               We could easily conclude that utilising ollama as our choice of LLM inferencing was the best option, due to the backend optimization that the Ollama team could perform that we could not. This was further confirmed by Bill Higgins (IBM VP Watson X), after a presentation for IBM OIC where he encouraged our team to keep exploring Ollama.
@@ -432,10 +431,162 @@ export default function Algorithms() {
               However, we are still very proud of the work we completed as it also empowered other teams in our year to clone our repository and try out the llama.cpp inferencing on their own projects.
             </p>
           </div>
+          <div id="natural-language-processing">
+            <h1 className="text-4xl font-bold my-6">Natural Language Processing</h1>
+            <h1 className="text-2xl font-bold my-6">Models</h1>
+            <p className="text-lg my-6">
+              A natural language processing (NLP) algorithm is a complex mathematical formula used to train computers to understand, interpret and generate human language. The primary objective of our NLP algorithm is to ensure that the AI model used in the chatbot only retrieves relevant commands from a JSON dataset based on a user’s query, minimising hallucinations. To achieve this, we explored multiple text similarity algorithms:
+            </p>
+            <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
+              <li>
+                <span className="font-medium">Jaro-Winkler Similarity</span> — This algorithm is a string metric used to measure the similarity between two sequences of characters. We initially tested this algorithm due to its efficiency in handling short strings, however it struggled with longer phrases.
+              </li>
+              <li>
+                <span className="font-medium">Cosine Similarity</span> — This measures the similarity between two vectors by calculating the cosine of the angle between them, ranging from -1 to 1, with values closer to 1 indicating higher similarity. We selected cosine similarity as the final approach due to its ability to handle multi-word phrases and capture contextual meaning through vector representations.
+              </li>
+            </ul>
+            <h1 className="text-2xl font-bold my-6">Data</h1>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Dataset</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg">
+                  The dataset consists of JSON-formatted command configurations for different operating systems. Each command contains a setting name (e.g. "zoom", "cursor-size") and a specific terminal or API command for Windows, macOS and Linux.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Data Preprocessing</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg">
+                  Before running similarity comparisons, we preprocessed the JSON to extract only the necessary information. This involved:
+                </p>
+                <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
+                  <li>
+                    Identifying the current operating system to filter OS-specific commands
+                  </li>
+                  <li>
+                    Extracting setting names and their corresponding commands
+                  </li>
+                  <li>
+                    Removing unnecessary metadata from the JSON
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Training and Testing Sets</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg">
+                  Since this is a retrieval-based system rather than a traditional machine-learning model, no explicit training set is required. Instead, we used a validation set
+                </p>
+              </CardContent>
+            </Card>
+            <h1 className="text-2xl font-bold my-6">Experiments</h1>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Experiment Design</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg">
+                  We tested the NLP algorithm by evaluating its ability to correctly match user queries to the most relevant command from the JSON dataset. The experiment consisted of:
+                </p>
+                <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
+                  <li>
+                    <span className="font-medium">1. Manually curated test cases</span> with different phrasings of the same command request
+                  </li>
+                  <li>
+                    <span className="font-medium">2. User-based testing</span> to analyse real world performance.
+                  </li>
+                  <li>
+                    <span className="font-medium">3. Comparative testing between Jaro-Winkler and Cosine Similarity</span> 
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Performance Evaluation</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg">
+                  We measured performance using:           
+                </p>
+                <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
+                  <li>
+                    <span className="font-medium">Accuracy (%):</span> Percentage of test cases where the correct command was retrieved.
+                  </li>
+                  <li>
+                    <span className="font-medium">Precision & Recall:</span> To evaluate false positives and false negatives.
+                  </li>
+                  <li>
+                    <span className="font-medium">Response Time:</span> Average time taken to match a query.
+                  </li>
+                  <li>
+                    <span className="font-medium">Latency (ms):</span> Time taken for face detection and verification.
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="my-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Experiment Results</CardTitle>
+                <Separator />
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg my-6">
+                  [Table: left column = Algorithm - Jaro-Winkler/Cosine Security, top row = Accuracy (%), Average Response Time (ms), Handling of Long Queries (poor/good)]
+                </p>
+                <p className="text-lg">
+                  Cosine Similarity significantly outperformed Jaro-Winkler, particularly in handling longer queries.Although Jaro-Winkler was faster, its lower accuracy made it unsuitable for practical use.
+                </p>
+              </CardContent>
+            </Card>
+            <h1 className="text-2xl font-bold my-6">Discussions</h1>
+            <p className="text-lg my-6">
+              Unfortunately, some queries still failed to retrieve the correct command, for reasons including: 
+            </p>
+            <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
+              <li>
+                <span className="font-medium">Low Similarity Scores:</span> — Some user inputs contained terminology that differed from the dataset’s key phrases (e.g., “font enlargement” instead of “zoom”).
+              </li>
+              <li>
+                <span className="font-medium">Ambiguous Queries</span> — If a query matched multiple commands equally, incorrect retrieval occurred.
+              </li>
+            </ul>
+            <p className="text-lg my-6">
+              In order to improve performance, we could implement query expansion, using NLP techniques like synonym detection to expand user queries and match them to similar terms in the dataset. We could also combine Cosine Similarity with rule-based filtering to improve accuracy for ambiguous queries.
+            </p>
+          </div>
           <div id="conclusion">
             <h1 className="text-4xl font-bold my-6">Conclusion</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-lg my-6">
+              In conclusion, our Quantum Proximity Gateway solution integrates several highly advanced algorithms to drive security, efficiency, and usability. We've optimised facial recognition, post-quantum cryptography, AI inferencing, and natural language processing through extensive testing and analysis to deliver consistent real-time performance.
+            </p>
+            <p className="text-lg my-6">
+              For face recognition, we optimised our approach with deep metric learning, balancing computational efficiency and accuracy by fine-tuning hyperparameters. Our system remains robust to variations in environment, like lighting and occlusions, and can be improved further using hybrid detection models and increasing the dataset.
+            </p>
+            <p className="text-lg my-6">
+              Our integration of post-quantum cryptography with CRYSTALS-Kyber and AES-GCM is quantum-attack secure with strong security. Having low computational overhead and larger key sizes compared to RSA, our experiments confirm its long-term viability for secure key exchanges. Efficiency can be improved with optimizations in nonce management and key storage.
+            </p>
+            <p className="text-lg my-6">
+              AI inferencing was also compared with different deployment models, where Ollama proved to be more stable and with a greater token generation rate compared to llama.cpp. This option, as confirmed by industry testing, ensures maximum chatbot responsiveness while maintaining formatted JSON output.
+            </p>
+            <p className="text-lg my-6">
+              For natural language processing, Cosine Similarity was preferred over Jaro-Winkler due to its superior long query support and contextual appropriateness. The algorithm is strong at linking user commands to JSON-based settings, but further enhancement in synonym detection and rule-based filtering can help improve disambiguation in ambiguous cases.
+            </p>
+            <p className="text-lg my-6">
+              Overall, our research and experimentation have yielded a highly efficient and secure system. Future iterations will focus on making the real-time processing even more robust, less susceptible to environmental factors, and increasingly secure from future threats.
             </p>
           </div>
           <div id="references">
