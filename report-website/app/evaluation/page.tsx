@@ -66,7 +66,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Marwan
                   </TableCell>
                 </TableRow>
@@ -83,7 +83,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Raghav, Marwan
                   </TableCell>
                 </TableRow>
@@ -100,8 +100,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
-                    Abdul, Raghav
+                  <TableCell className="text-sm text-muted-foreground">
+                    Abdul Muhaymin, Raghav
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -117,8 +117,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
-                    Marwan, Abdul
+                  <TableCell className="text-sm text-muted-foreground">
+                    Marwan, Abdul Muhaymin
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -134,8 +134,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
-                    Marwan, Abdul
+                  <TableCell className="text-sm text-muted-foreground">
+                    Marwan, Abdul Muhaymin
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -151,7 +151,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Raghav, Marwan
                   </TableCell>
                 </TableRow>
@@ -168,7 +168,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ⚠️
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Marwan
                   </TableCell>
                 </TableRow>
@@ -185,7 +185,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Abdulhamid, Marwan
                   </TableCell>
                 </TableRow>
@@ -202,7 +202,7 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     ✅
                   </TableCell>
-                  <TableCell className="text-lg">
+                  <TableCell className="text-sm text-muted-foreground">
                     Raghav, Abdulhamid
                   </TableCell>
                 </TableRow>
@@ -235,10 +235,10 @@ export default function Evaluation() {
                     1
                   </TableCell>
                   <TableCell className="text-lg">
-                    <span className="font-medium"> Raspberry Pi &rarr; Pico - UART Connection Issues due to lack of soldering</span>
+                    <span className="font-medium">UART connection issues Raspberry Pi &rarr; Pico, due to lack of soldering</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                    🟡
+                  <TableCell className="text-lg text-yellow-500">
+                    🟡 Moderate
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -248,8 +248,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     <span className="font-medium"> Small models hallucinating commands</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                    🟢
+                  <TableCell className="text-lg text-green-500">
+                    🟢 Low
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -259,8 +259,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     <span className="font-medium"> Preferences feature on IBM Proximity Agents</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                  🟡
+                  <TableCell className="text-lg text-yellow-500">
+                    🟡 Moderate
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -270,8 +270,8 @@ export default function Evaluation() {
                   <TableCell className="text-lg">
                     <span className="font-medium"> BLE connections failing whilst connected to eduroam</span>
                   </TableCell>
-                  <TableCell className="text-lg">
-                  🟡
+                  <TableCell className="text-lg text-yellow-500">
+                    🟡 Moderate
                   </TableCell>
                 </TableRow>
               </TableBody>
