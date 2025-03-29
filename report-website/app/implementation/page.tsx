@@ -34,7 +34,7 @@ export default function Implementation() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -69,7 +69,7 @@ export default function Implementation() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/nextjs.png" alt="Next.js logo" width={36} height={36} />
+                <Image src="implementation/nextjs.png" alt="Next.js logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Next.js</h3>
                     <p className="text-sm text-muted-foreground">
@@ -81,7 +81,7 @@ export default function Implementation() {
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/chakraui.png" alt="Chakra UI logo" width={36} height={36} />
+                <Image src="implementation/chakraui.png" alt="Chakra UI logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Chakra UI</h3>
                     <p className="text-sm text-muted-foreground">
@@ -93,7 +93,7 @@ export default function Implementation() {
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/usb.svg" alt="Web Serial logo" width={36} height={36} />
+                <Image src="implementation/usb.svg" alt="Web Serial logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Web Serial API</h3>
                     <p className="text-sm text-muted-foreground">
@@ -364,7 +364,7 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/litestar.svg" alt="Litestar logo" width={36} height={36} />
+                <Image src="implementation/litestar.svg" alt="Litestar logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Litestar</h3>
                     <p className="text-sm text-muted-foreground">
@@ -376,7 +376,7 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/liboqs.png" alt="liboqs logo" width={36} height={36} />
+                <Image src="implementation/liboqs.png" alt="liboqs logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">LibOQS</h3>
                     <p className="text-sm text-muted-foreground">
@@ -388,7 +388,7 @@ await axios.post(\`\${API_URL}/register/face\`, formData, {
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/opencv.svg" alt="OpenCV logo" width={36} height={36} />
+                <Image src="implementation/opencv.svg" alt="OpenCV logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">OpenCV</h3>
                     <p className="text-sm text-muted-foreground">
@@ -649,7 +649,7 @@ async def update_json_preferences(data: EncryptedMessageRequest, transaction: As
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/arduinoble.png" alt="ArduinoBLE logo" width={36} height={36} />
+                <Image src="implementation/arduinoble.png" alt="ArduinoBLE logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">ArduinoBLE</h3>
                     <p className="text-sm text-muted-foreground">
@@ -661,7 +661,7 @@ async def update_json_preferences(data: EncryptedMessageRequest, transaction: As
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/platformio.png" alt="PlatformIO logo" width={36} height={36} />
+                <Image src="implementation/platformio.png" alt="PlatformIO logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">PlatformIO</h3>
                     <p className="text-sm text-muted-foreground">
@@ -790,7 +790,7 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/liboqs.png" alt="Liboqs logo" width={36} height={36} />
+                <Image src="implementation/liboqs.png" alt="Liboqs logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">LibOQS</h3>
                     <p className="text-sm text-muted-foreground">
@@ -802,7 +802,7 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/bluetooth.png" alt="Bluepy logo" width={36} height={36} />
+                <Image src="implementation/bluetooth.png" alt="Bluepy logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">BluePy</h3>
                     <p className="text-sm text-muted-foreground">
@@ -814,7 +814,7 @@ unsigned int generate_totp(const unsigned char *key, size_t key_len, uint64_t ti
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/circuitpython.png" alt="Circuit Python logo" width={36} height={36} />
+                <Image src="implementation/circuitpython.png" alt="Circuit Python logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Circuit Python</h3>
                     <p className="text-sm text-muted-foreground">
@@ -997,7 +997,7 @@ while True:
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/nextjs.png" alt="Next.js logo" width={36} height={36} />
+                <Image src="implementation/nextjs.png" alt="Next.js logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Next.js</h3>
                     <p className="text-sm text-muted-foreground">
@@ -1009,7 +1009,7 @@ while True:
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/tauri.png" alt="Tauri logo" width={36} height={36} />
+                <Image src="implementation/tauri.png" alt="Tauri logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Tauri</h3>
                     <p className="text-sm text-muted-foreground">
@@ -1021,7 +1021,7 @@ while True:
 
             <Card className="p-4">
                 <div className="flex flex-row items-center gap-3">
-                <Image src="/implementation/ollama-rs.png" alt="Ollama-rs logo" width={36} height={36} />
+                <Image src="implementation/ollama-rs.png" alt="Ollama-rs logo" width={36} height={36} />
                 <div>
                     <h3 className="text-base font-semibold">Ollama-rs</h3>
                     <p className="text-sm text-muted-foreground">

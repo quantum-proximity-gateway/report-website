@@ -30,7 +30,7 @@ export default function Testing() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -109,7 +109,7 @@ export default function Testing() {
             <div className="flex justify-center my-6">
               <div>
                 <Image 
-                  src="/testing/pytest.svg" 
+                  src="testing/pytest.svg" 
                   alt="PyTest Logo" 
                   width={200} 
                   height={200}
@@ -123,7 +123,7 @@ export default function Testing() {
             </p>
             <div className="flex flex-col items-center my-6">
               <Image 
-                src="/testing/unit-tests.png" 
+                src="testing/unit-tests.png" 
                 alt="Unit Tests" 
                 width={900} 
                 height={900}
@@ -141,7 +141,7 @@ export default function Testing() {
             </Card>
             <div className="flex flex-col items-center mt-8 my-6">
               <Image 
-                src="/testing/coverage.png" 
+                src="testing/coverage.png" 
                 alt="Test Coverage" 
                 width={500} 
                 height={500}
@@ -267,7 +267,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <Card className="my-6">
               <CardContent className="flex flex-col items-center justify-center p-2">
                 <Image 
-                  src="/testing/techforgood.jpg" 
+                  src="testing/techforgood.jpg" 
                   alt="Tech For Good AI Lab" 
                   width={400} 
                   height={400}
@@ -282,7 +282,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             </p>
             <div className="flex flex-col items-center my-6">
               <Image 
-                src="/testing/continuous-integration.png" 
+                src="testing/continuous-integration.png" 
                 alt="Continuous Integration" 
                 width={900} 
                 height={900}
@@ -407,7 +407,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
             <div className="flex justify-center my-6">
               <div>
                 <Image 
-                  src="/testing/responsivelyapp.png" 
+                  src="testing/responsivelyapp.png" 
                   alt="Responsively App Logo" 
                   width={200} 
                   height={200}
@@ -429,7 +429,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                         <Separator />
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+                        <Image src="testing/responsive-app.png" alt="IBM Proximity Agents - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
                         <p className="text-center text-sm text-gray-500 mt-3">Figure 4: IBM Proximity Agents - Responsive Design Test</p>
                       </CardContent>
                     </Card>
@@ -443,7 +443,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                         <Separator />
                       </CardHeader>
                       <CardContent className="flex flex-col items-center justify-center">
-                        <Image src="/testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
+                        <Image src="testing/responsive-site.png" alt="Registration Site - Responsive Design Test" width={1500} height={1200} className="object-contain"/>
                         <p className="text-center text-sm text-gray-500 mt-3">Figure 5: Registration Site - Responsive Design Test</p>
                       </CardContent>
                     </Card>
@@ -552,7 +552,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
-                          src="/testing/proximity-agents-memory.png" 
+                          src="testing/proximity-agents-memory.png" 
                           alt="Tauri App Memory Usage" 
                           width={1444} 
                           height={322} 
@@ -568,7 +568,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
-                          src="/testing/proximity-agents-cpu.png" 
+                          src="testing/proximity-agents-cpu.png" 
                           alt="Tauri App CPU/GPU Usage" 
                           width={1444} 
                           height={322} 
@@ -584,7 +584,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
-                          src="/testing/ollama-memory.png" 
+                          src="testing/ollama-memory.png" 
                           alt="Ollama Memory Usage" 
                           width={1444} 
                           height={322} 
@@ -600,7 +600,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex flex-col items-center justify-center p-4">
                         <Image 
-                          src="/testing/ollama-gpu.png" 
+                          src="testing/ollama-gpu.png" 
                           alt="Ollama CPU/GPU Usage" 
                           width={1444} 
                           height={322} 
@@ -632,7 +632,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/user-testing-3.jpg" 
+                          src="testing/user-testing-3.jpg" 
                           alt="User Testing 3" 
                           width={1636} 
                           height={1169} 
@@ -647,7 +647,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/user-testing-5.jpg" 
+                          src="testing/user-testing-5.jpg" 
                           alt="User Testing 5" 
                           width={1636} 
                           height={1169} 
@@ -662,7 +662,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <Image 
-                          src="/testing/user-testing-2.jpg" 
+                          src="testing/user-testing-2.jpg" 
                           alt="User Testing 4" 
                           width={1636} 
                           height={1169} 
@@ -889,7 +889,7 @@ async def test_kem_initiate_and_complete(test_client: AsyncTestClient) -> None:
                 <p className="text-muted-foreground text-lg">The proximity agents application got a complete redesign, making it look more modern and pleasing to users. </p>
                 <div className="flex flex-col items-center justify-center mt-6">
                   <Image 
-                    src="/testing/proximity-agents-new-ui.png" 
+                    src="testing/proximity-agents-new-ui.png" 
                     alt="Proximity Agents New UI" 
                     width={500} 
                     height={500} 

@@ -20,7 +20,7 @@ export default function Algorithms() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -388,7 +388,7 @@ export default function Algorithms() {
                 </p>
                 <div className="text-lg my-6 flex flex-col items-center">
                   <Image
-                    src="/algorithms/figure-1.png"
+                    src="algorithms/figure-1.png"
                     alt="Ollama v llama.cpp performance comparison"
                     width={500}
                     height={500}
@@ -448,13 +448,13 @@ export default function Algorithms() {
                 </p>
                 <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
                   <li>
-                    Identifying the current operating system to filter OS-specific commands
+                    Identifying the current operating system to filter OS-specific commands.
                   </li>
                   <li>
-                    Extracting setting names and their corresponding commands
+                    Extracting setting names and their corresponding commands.
                   </li>
                   <li>
-                    Removing unnecessary metadata from the JSON
+                    Removing unnecessary metadata from the JSON.
                   </li>
                 </ul>
               </CardContent>
@@ -466,7 +466,7 @@ export default function Algorithms() {
               </CardHeader>
               <CardContent>
                 <p className="text-lg">
-                  Since this is a retrieval-based system rather than a traditional machine-learning model, no explicit training set is required. Instead, we used a validation set
+                  Since this is a retrieval-based system rather than a traditional machine-learning model, no explicit training set is required. Instead, we used a validation set.
                 </p>
               </CardContent>
             </Card>
@@ -482,13 +482,13 @@ export default function Algorithms() {
                 </p>
                 <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
                   <li>
-                    <span className="font-medium">1. Manually curated test cases</span> with different phrasings of the same command request
+                    <span className="font-medium">1. Manually curated test cases</span> with different phrasings of the same command request.
                   </li>
                   <li>
                     <span className="font-medium">2. User-based testing</span> to analyse real world performance.
                   </li>
                   <li>
-                    <span className="font-medium">3. Comparative testing between Jaro-Winkler and Cosine Similarity</span> 
+                    <span className="font-medium">3. Comparative testing between Jaro-Winkler and Cosine Similarity</span>. 
                   </li>
                 </ul>
               </CardContent>
@@ -531,11 +531,11 @@ export default function Algorithms() {
             </Card>
             <h1 className="text-2xl font-bold my-6">Discussions</h1>
             <p className="text-lg my-6">
-              Unfortunately, some queries still failed to retrieve the correct command, for reasons including: 
+              Unfortunately, some queries still failed to retrieve the correct command, for reasons including:
             </p>
             <ul className="text-lg list-disc pl-6 space-y-3 mt-6">
               <li>
-                <span className="font-medium">Low Similarity Scores:</span> — Some user inputs contained terminology that differed from the dataset’s key phrases (e.g., “font enlargement” instead of “zoom”).
+                <span className="font-medium">Low Similarity Scores</span> — Some user inputs contained terminology that differed from the dataset's key phrases (e.g., “font enlargement” instead of “zoom”).
               </li>
               <li>
                 <span className="font-medium">Ambiguous Queries</span> — If a query matched multiple commands equally, incorrect retrieval occurred.

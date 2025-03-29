@@ -32,7 +32,7 @@ export default function SystemDesign() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -70,7 +70,7 @@ export default function SystemDesign() {
             </ul>
             <div className="flex flex-col items-center my-6">
               <Image 
-                src="/system-design/system-diagram.jpg" 
+                src="system-design/system-diagram.jpg" 
                 alt="System Architecture" 
                 width={800} 
                 height={800}
@@ -90,7 +90,7 @@ export default function SystemDesign() {
                 </p>
                 <div className="flex flex-col items-center my-6">
                   <Image 
-                    src="/system-design/codeengine-architecture.svg" 
+                    src="system-design/codeengine-architecture.svg" 
                     alt="IBM Cloud Engine Architecture" 
                     width={800} 
                     height={800}
@@ -134,7 +134,7 @@ export default function SystemDesign() {
             </p>
             <div className="flex flex-col items-center my-6">
               <Image 
-                src="/system-design/sequence.svg" 
+                src="system-design/sequence.svg" 
                 alt="Raspberry Pi Authentication Sequence Diagram" 
                 width={900} 
                 height={900}
@@ -149,7 +149,7 @@ export default function SystemDesign() {
                 >
                     <div onClick={(e) => e.stopPropagation()}>
                         <Image 
-                            src="/system-design/sequence.svg" 
+                            src="system-design/sequence.svg" 
                             alt="Raspberry Pi Authentication Sequence Diagram enlarged" 
                             width={1000} 
                             height={1000}
@@ -190,7 +190,7 @@ export default function SystemDesign() {
                     </p>
                     <div className="flex flex-col items-center my-6">
                       <Image 
-                        src="/system-design/client-server.jpg" 
+                        src="system-design/client-server.jpg" 
                         alt="Client Server" 
                         width={800} 
                         height={800}
@@ -261,7 +261,7 @@ export default function SystemDesign() {
             </p>
             <div className="flex flex-col items-center">
               <Image 
-                src="/system-design/er.svg" 
+                src="system-design/er.svg" 
                 alt="ER Diagram - Server" 
                 width={750} 
                 height={600}
@@ -281,7 +281,7 @@ export default function SystemDesign() {
             </p>
             <div className="flex flex-col items-center ">
               <Image 
-                src="/system-design/sqlite.png" 
+                src="system-design/sqlite.png" 
                 alt="SQLite Logo" 
                 width={300} 
                 height={300}

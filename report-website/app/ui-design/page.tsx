@@ -24,7 +24,7 @@ export default function UIDesign() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -149,7 +149,7 @@ export default function UIDesign() {
                       After gathering user requirements and considering our personas' needs, one of our first ideas was to use a mobile application to allow users to select the computer that they want to connect to. This functions as an initial system that would meet the basic requirements outlined by the users.
                     </p>
                     <div className="flex items-center justify-center w-full">
-                      <Image src="/ui-design/sketch-1.png" alt="Sketch 1" width={750} height={750} className="object-contain" />
+                      <Image src="ui-design/sketch-1.png" alt="Sketch 1" width={750} height={750} className="object-contain" />
                     </div>
                   </CardContent>
                   <CardHeader>
@@ -193,7 +193,7 @@ export default function UIDesign() {
                       Considering the user feedback we got, another promising idea we had was to use battery-powered RFID chips to identify whenever the user is nearby a device that is supported by our system. This system allows for a seamless experience for any kind of user to be able to login hands-free to a customized profile securely using biometric authentication, enhancing ease of use and inclusivity for everyone.
                     </p>
                     <div className="flex items-center justify-center w-full">
-                      <Image src="/ui-design/sketch-2.png" alt="Sketch 2" width={750} height={750} className="object-contain" />
+                      <Image src="ui-design/sketch-2.png" alt="Sketch 2" width={750} height={750} className="object-contain" />
                     </div>
                   </CardContent>
                   <CardHeader>
@@ -249,7 +249,7 @@ export default function UIDesign() {
               Based on our evaluation, we decided that Sketch 2 would better suit our vision for a more accessible system, so we added a few more details and created a prototype using Figma to make our idea come to life.
             </p>
             <div className="flex items-center justify-center w-full">
-              <Image src="/ui-design/prototype-1.png" alt="Prototype 1" width={1000} height={1000} className="object-contain" />
+              <Image src="ui-design/prototype-1.png" alt="Prototype 1" width={1000} height={1000} className="object-contain" />
             </div>
             <h1 className="text-2xl font-bold mt-8 my-6">Evaluation of Prototype 1</h1>
             <p className="text-lg my-6">
@@ -294,7 +294,7 @@ export default function UIDesign() {
               We arrive at our finalised prototype version, utilising all of the feedback we have received from our users and clients throughout the entire process.
             </p>
             <div className="flex items-center justify-center w-full mb-8">
-              <Image src="/ui-design/prototype-2.png" alt="Prototype 2" width={1000} height={1000} className="object-contain" />
+              <Image src="ui-design/prototype-2.png" alt="Prototype 2" width={1000} height={1000} className="object-contain" />
             </div>
           </div>
           <div id="production-design">
@@ -311,7 +311,7 @@ export default function UIDesign() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/ui-design/login.jpg" alt="Login Interface" width={1552} height={1105} className="object-contain"/>
+                <Image src="ui-design/login.jpg" alt="Login Interface" width={1552} height={1105} className="object-contain"/>
                 <p className="text-lg mt-6">
                   The default login interface is already somewhat user friendly with the contrasting gray background, and the white text. One key area for improvement is the font size, since it is quite small. Furthermore, the interface itself is quite bland, and could be improved by having more interesting images in the background.
                 </p>
@@ -321,7 +321,7 @@ export default function UIDesign() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/ui-design/ai-chatbot.png" alt="AI Agent Desktop App" width={1552} height={1105} className="object-contain"/>
+                <Image src="ui-design/ai-chatbot.png" alt="AI Agent Desktop App" width={1552} height={1105} className="object-contain"/>
                 <p className="text-lg mt-6">
                   The desktop app follows our design principles quite well. The app has good visibility, and affordance. It is also simple in its design, making it suitable for people of all ages and capabilities. Furthermore, the colours used provide an interesting interface, whithout being too overwhelming for neurodivergent users for eaxmple. 
                 </p>
@@ -331,7 +331,7 @@ export default function UIDesign() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
+                <Image src="ui-design/registration-site.png" alt="Registration Site" width={1552} height={1105} className="object-contain"/>
                 <p className="text-lg mt-6">
                   The registration site provides a sleek, dark interface. The purposes of the website are very clearly defined, with no unnecessary elements added that would otherwise distract from the main goal.
                 </p>

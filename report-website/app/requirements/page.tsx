@@ -24,7 +24,7 @@ export default function Requirements() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -330,7 +330,7 @@ export default function Requirements() {
                     <div className="p-1">
                       <Card>
                         <CardContent className="flex items-center justify-center p-6">
-                          <Image src="/requirements/persona-1.png" alt="Persona 1" width={1636} height={1169} className="object-contain" />
+                          <Image src="requirements/persona-1.png" alt="Persona 1" width={1636} height={1169} className="object-contain" />
                         </CardContent>
                       </Card>
                     </div>
@@ -339,7 +339,7 @@ export default function Requirements() {
                     <div className="p-1">
                       <Card>
                         <CardContent className="flex items-center justify-center p-6">
-                          <Image src="/requirements/persona-2.png" alt="Persona 2" width={1636} height={1169} className="object-contain" />
+                          <Image src="requirements/persona-2.png" alt="Persona 2" width={1636} height={1169} className="object-contain" />
                         </CardContent>
                       </Card>
                     </div>
@@ -348,7 +348,7 @@ export default function Requirements() {
                     <div className="p-1">
                       <Card>
                         <CardContent className="flex items-center justify-center p-6">
-                          <Image src="/requirements/persona-3.png" alt="Persona 3" width={1636} height={1169} className="object-contain" />
+                          <Image src="requirements/persona-3.png" alt="Persona 3" width={1636} height={1169} className="object-contain" />
                         </CardContent>
                       </Card>
                     </div>
@@ -393,7 +393,7 @@ export default function Requirements() {
             </p>
               <div className="flex flex-col items-center my-6">
                 <Image 
-                  src="/requirements/use-case.jpg" 
+                  src="requirements/use-case.jpg" 
                   alt="Use Case Diagram" 
                   width={900} 
                   height={900}

@@ -20,7 +20,7 @@ export default function Appendices() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -55,7 +55,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/reg1.gif" alt="Registration Step 1" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/reg1.gif" alt="Registration Step 1" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">The welcome page initiates the encryption initiliasation, wait while the application establishes a secure connection with the server.</p>
               </CardContent>
             </Card>
@@ -66,7 +66,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/reg2.gif" alt="Registration Step 2" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/reg2.gif" alt="Registration Step 2" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">Connect your ESP32 via USB using the right port to your laptop and then click on Connect To Device, then select the new USB device that shows up. This should allow the website to read your MAC address.</p>
               </CardContent>
             </Card>
@@ -77,7 +77,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/reg3.gif" alt="Registration Step 3" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/reg3.gif" alt="Registration Step 3" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">Enter the credentials you want the Raspberry Pi to relay, this includes your username, then your password. These will be encrypted with Post-Quantum Cryptography, once ready click the register button. This will redirect you to record your face encodings.</p>
               </CardContent>
             </Card>
@@ -88,7 +88,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/reg4.gif" alt="Registration Step 4" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/reg4.gif" alt="Registration Step 4" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">Click the record button to begin the 5 second recording of your facial encodings. Once these 5 seconds are done, you can choose to re-record by clicking on the record button again, or to submit the recording to the server.</p>
               </CardContent>
             </Card>
@@ -110,7 +110,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/pr-agents-1.gif" alt="Proximity Agents 1" width={1500} height={1200} className="object-contain rounded-lg overflow-hidden"/>
+                <Image src="appendices/pr-agents-1.gif" alt="Proximity Agents 1" width={1500} height={1200} className="object-contain rounded-lg overflow-hidden"/>
                 <p className="text-center text-md text-gray-900 mt-3">Similarly to the registration page, the welcome page for the application initiates the encryption initiliasation, wait while the application establishes a secure connection with the server.</p>
               </CardContent>
             </Card>
@@ -121,7 +121,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/pr-agents-2.gif" alt="Proximity Agents 2" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/pr-agents-2.gif" alt="Proximity Agents 2" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">As soon as the application opens, your profile applications should automatically open too, allowing you to get on with your day instantly.</p>
               </CardContent>
             </Card>
@@ -132,7 +132,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/pr-agents-3.gif" alt="Registration Step 3" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/pr-agents-3.gif" alt="Registration Step 3" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">To check your current preferences JSON, simply click the "Preferences" button found at the top right of the application. This should display your current JSON preferences.</p>
               </CardContent>
             </Card>
@@ -143,7 +143,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/pr-agents-4.gif" alt="Registration Step 4" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/pr-agents-4.gif" alt="Registration Step 4" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">You can select any model you currently have installed with Ollama using the top model buttons, just simply click a new model to start a new chat with it.</p>
               </CardContent>
             </Card>
@@ -153,7 +153,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/pr-agents-5.5.gif" alt="Registration Step 5" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/pr-agents-5.5.gif" alt="Registration Step 5" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">Prompt the model however you want by simply typing into the text-box and clicking the send button or clicking Enter. This will then cause Ollama to infer your prompt and respond accordingly.</p>
               </CardContent>
             </Card>
@@ -163,7 +163,7 @@ export default function Appendices() {
                 <Separator />
               </CardHeader>
               <CardContent className="flex flex-col items-center justify-center">
-                <Image src="/appendices/pr-agents-5.gif" alt="Registration Step 5" width={1500} height={1200} className="object-contain"/>
+                <Image src="appendices/pr-agents-5.gif" alt="Registration Step 5" width={1500} height={1200} className="object-contain"/>
                 <p className="text-center text-md text-gray-900 mt-3">If the response of the model includes a command you may want to run, the UI will prompt you to either execute or cancel the command. If you choose to execute the command, the changes will be saved to your preferences and applied to your settings.</p>
               </CardContent>
             </Card>
@@ -173,14 +173,14 @@ export default function Appendices() {
             <h1 className="text-4xl font-bold my-6">Deployment Manual</h1>
             <div className="w-full h-[800px] border rounded-lg overflow-hidden">
               <object
-                data={`${BASE_PATH}/appendices/deployment-manual.pdf`}
+                data={`${BASE_PATH}appendices/deployment-manual.pdf`}
                 type="application/pdf"
                 className="w-full h-full"
               >
                 <p className="p-4">
                   It appears your browser doesn't support embedded PDFs. You can 
                   <a 
-                    href={`${BASE_PATH}/appendices/deployment-manual.pdf`}
+                    href={`${BASE_PATH}appendices/deployment-manual.pdf`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:text-blue-700 hover:underline transition-colors"

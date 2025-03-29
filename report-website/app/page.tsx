@@ -13,28 +13,28 @@ const teamMembers = [
         name: 'Marwan Yassini Chairi El Kamel',
         role: 'Project Lead, Lead Programmer',
         email: 'marwan.kamel.23@ucl.ac.uk',
-        photo: '/home/marwan.jpg',
+        photo: 'home/marwan.jpg',
         link: 'https://www.linkedin.com/in/marwanyassini/',
     },
     {
         name: 'Raghav Awasthi',
         role: 'Software Developer, NLP Lead',
         email: 'raghav.awasthi.23@ucl.ac.uk',
-        photo: '/home/raghav.jpg',
+        photo: 'home/raghav.jpg',
         link: 'https://www.linkedin.com/in/raghavawasthi2005/',
     },
     {
         name: 'Abdulhamid Abayomi',
         role: 'UI/UX Designer, Report Website Lead',
         email: 'abdulhamid.abayomi.23@ucl.ac.uk',
-        photo: '/home/abdulhamid.jpg',
+        photo: 'home/abdulhamid.jpg',
         link: 'https://www.linkedin.com/in/abdulhamid-abayomi-145593235/',
     },
     {
         name: 'Abdul Muhaymin Abdul Hafiz',
         role: 'Software Developer, Encryption Lead',
         email: 'abdul.hafiz.23@ucl.ac.uk',
-        photo: '/home/abdul-muhaymin.jpg',
+        photo: 'home/abdul-muhaymin.jpg',
         link: 'https://www.linkedin.com/in/abmu/',
     },
 ];
@@ -61,9 +61,9 @@ export default function Home() {
       </div>
       <div className="flex flex-col items-center shrink-0 border-b px-8 py-4">
         <div className="flex flex-wrap items-center justify-center gap-12">
-          <Image src="/home/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
-          <Image src="/home/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
-          <Image src="/home/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
+          <Image src="home/ibm.png" alt="IBM logo" width={200} height={100} className="object-contain" />
+          <Image src="home/ucl.png" alt="UCL logo" width={300} height={100} className="object-contain" />
+          <Image src="home/rpi.png" alt="RPi logo" width={200} height={100} className="object-contain" />
         </div>
       </div>
       <div className="flex justify-center px-6 py-12">
@@ -165,7 +165,7 @@ export default function Home() {
               We used a Gantt chart in order to track our progress throughout the project.
             </p>
             <Image
-              src="/home/gantt-chart.png"
+              src="home/gantt-chart.png"
               alt="Gantt chart"
               width={1000}
               height={500}
@@ -180,7 +180,7 @@ export default function Home() {
               >
                 <div onClick={(e) => e.stopPropagation()}>
                   <Image
-                    src="/home/gantt-chart.png"
+                    src="home/gantt-chart.png"
                     alt="Gantt chart enlarged"
                     width={1250}
                     height={750}

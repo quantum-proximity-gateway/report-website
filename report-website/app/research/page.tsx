@@ -23,7 +23,7 @@ export default function Research() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href={`${BASE_PATH}/`}>Quantum Proximity Gateway</BreadcrumbLink>
+              <BreadcrumbLink href={`${BASE_PATH}`}>Quantum Proximity Gateway</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem className="hidden md:block">
@@ -52,21 +52,21 @@ export default function Research() {
                       <a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">Yubico</a> is an American company manufacturing hardware authentication devices, their main product is the YubiKey which is a security key utilised for 2FA based authentication <span className="text-muted-foreground">[1]</span>. They have a diverse range of products which tangentially relate to our project, utilising technologies like NFC, OTP and FIDO2.
                     </p>
                     <div className="flex flex-col items-center my-6">
-                      <Image src="/research/yubico.svg" alt="Yubico Logo" width={300} height={150}/>
+                      <Image src="research/yubico.svg" alt="Yubico Logo" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Yubico logo</p>
                     </div>
                     <p className="text-lg my-6">
                       Their products serve as the industry standard for hardware-based authentication systems, and inspired some of our intial ideas as we also considered using Near-Field Communication (NFC) based authentication, however after gathering our requirements and surveying stakeholders we realised it would not be the most appropriate for the purposes of our project. This is due to the fact that our project is largely aimed at creating a seamless proximity-based login system that is both accessible and secure. NFC would hinder our ability to leverage proximity-based authentication.
                     </p>
                     <div className="flex flex-col items-center my-6">
-                      <Image src="/research/yubikeys.png" alt="YubiKeys Lineup" width={300} height={150}/>
+                      <Image src="research/yubikeys.png" alt="YubiKeys Lineup" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Figure 1: YubiKey security devices offering multi-factor authentication</p>
                     </div>
                     <p className="text-lg my-6">
                       As additional authentication, we were also inspired by the usecase of these keys as TOTP generators that could validate their authenticity with an external server. As part of our research, we've also been in touch with employees from <a href="https://www.cyberark.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">CyberArk</a>, a leading InfoSec companies that specialises in identity security, and they also recommended an approach involving TOTP authentication.
                     </p>
                     <div className="flex flex-col items-center my-6">
-                      <Image src="/research/cyberark.svg" alt="Cyberark Logo" width={300} height={150}/>
+                      <Image src="research/cyberark.svg" alt="Cyberark Logo" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Cyberark logo</p>
                     </div>
                   </CardContent>
@@ -83,21 +83,21 @@ export default function Research() {
                       <a href="https://www.alpsalpine.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 hover:underline transition-colors">Alps Alpine</a> is a Japanese multinational corporation specializing in electronic components and vehicle information systems <span className="text-muted-foreground">[2]</span>. They leverage Bluetooth Low Energy (BLE) for secure digital key solutions, collaborating with industry leaders like Broadcom and Giesecke+Devrient (G+D) to enhance vehicle security and user convenience.
                     </p>
                     <div className="flex flex-col items-center my-6">
-                      <Image src="/research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
+                      <Image src="research/alpsalpine.png" alt="Alps Alpine Logo" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Alps Alpine logo</p>
                     </div>
                     <p className="text-lg my-6">
                       In partnership with Broadcom, Alps Alpine developed BLE-based high-accuracy distance measurement for secure keyless entry <span className="text-muted-foreground">[3]</span>, enabling seamless locking and unlocking via smartphones. Their system ensures both convenience and security, integrating Broadcom's Bluetooth and Wi-Fi® combo chip for precise proximity detection.
                     </p>
                     <div className="flex flex-col items-center my-6">
-                      <Image src="/research/broadcom.png" alt="Broadcom Logo" width={300} height={150}/>
+                      <Image src="research/broadcom.png" alt="Broadcom Logo" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Broadcom logo</p>
                     </div>
                     <p className="text-lg my-6">
                       Their collaboration with G+D led to a wireless digital key system aligned with the Car Connectivity Consortium (CCC) standard, incorporating encryption technologies similar to mobile payments. Alps Alpine designed keyless entry components, while G+D handled secure digital key issuance and management.
                     </p>
                     <div className="flex flex-col items-center my-6">
-                      <Image src="/research/giesecke+devrient.svg" alt="Giesecke+Devrient Logo" width={300} height={150}/>
+                      <Image src="research/giesecke+devrient.svg" alt="Giesecke+Devrient Logo" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Giesecke+Devrient logo</p>
                     </div>
                     <p className="text-lg my-6">
@@ -206,11 +206,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row items-center justify-center my-6 gap-5">
                     <div className="flex flex-col items-center">
-                      <Image src="/research/rpi5.webp" alt="Raspberry Pi 5" width={300} height={150}/>
+                      <Image src="research/rpi5.webp" alt="Raspberry Pi 5" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi 5</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image src="/research/nvidia-jetson-nano.png" alt="NVIDIA Jetson Nano" width={450} height={300}/>
+                      <Image src="research/nvidia-jetson-nano.png" alt="NVIDIA Jetson Nano" width={450} height={300}/>
                       <p className="text-center mt-3 text-sm text-gray-500">NVIDIA Jetson Nano</p>
                     </div>
                   </div>
@@ -230,11 +230,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row items-center justify-center my-6 gap-5">
                     <div className="flex flex-col items-center6">
-                      <Image src="/research/esp32.webp" alt="ESP32" width={250} height={150}/>
+                      <Image src="research/esp32.webp" alt="ESP32" width={250} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">ESP32</p>
                     </div>
                     <div className="flex flex-col items-center6">
-                      <Image src="/research/rpi-pico-w.jpg" alt="Raspberry Pi Pico W" width={300} height={150}/>
+                      <Image src="research/rpi-pico-w.jpg" alt="Raspberry Pi Pico W" width={300} height={150}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi Pico W</p>
                     </div>
                   </div>
@@ -260,11 +260,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row my-6 gap-5">
                     <div className="flex flex-col items-center">
-                      <Image src="/research/python.svg" alt="Python" width={820/9} height={100}/>
+                      <Image src="research/python.svg" alt="Python" width={820/9} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Python</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image src="/research/litestar.svg" alt="Litestar" width={100} height={100}/>
+                      <Image src="research/litestar.svg" alt="Litestar" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Litestar</p>
                     </div>
                   </div>
@@ -284,11 +284,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row my-6 gap-5">
                     <div className="flex flex-col items-center">
-                      <Image src="/research/rust.svg" alt="Rust" width={100} height={100}/>
+                      <Image src="research/rust.svg" alt="Rust" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Rust</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image src="/research/tauri.svg" alt="Tauri" width={100} height={100}/>
+                      <Image src="research/tauri.svg" alt="Tauri" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Tauri</p>
                     </div>
                   </div>
@@ -308,11 +308,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row my-6 gap-5">
                     <div className="flex flex-col items-center">
-                      <Image src="/research/typescript.svg" alt="TypeScript" width={100} height={100}/>
+                      <Image src="research/typescript.svg" alt="TypeScript" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">TypeScript</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image src="/research/next-js.svg" alt="Next.js" width={100} height={100}/>
+                      <Image src="research/next-js.svg" alt="Next.js" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Next.js</p>
                     </div>
                   </div>
@@ -332,11 +332,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row my-6 gap-5">
                     <div className="flex flex-col items-center">
-                      <Image src="/research/python.svg" alt="Python" width={820/9} height={100}/>
+                      <Image src="research/python.svg" alt="Python" width={820/9} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Python</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image src="/research/rpi.svg" alt="Raspberry Pi" width={100} height={100}/>
+                      <Image src="research/rpi.svg" alt="Raspberry Pi" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">Raspberry Pi</p>
                     </div>
                   </div>
@@ -356,11 +356,11 @@ export default function Research() {
                 <AccordionContent>
                   <div className="flex flex-row my-6 gap-5">
                     <div className="flex flex-col items-center">
-                      <Image src="/research/cpp.svg" alt="C++" width={3825/43} height={100}/>
+                      <Image src="research/cpp.svg" alt="C++" width={3825/43} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">C++</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image src="/research/platformio.svg" alt="PlatformIO" width={100} height={100}/>
+                      <Image src="research/platformio.svg" alt="PlatformIO" width={100} height={100}/>
                       <p className="text-center mt-3 text-sm text-gray-500">PlatformIO</p>
                     </div>
                   </div>
