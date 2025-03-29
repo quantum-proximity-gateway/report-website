@@ -307,7 +307,7 @@ export default function Algorithms() {
                 <span className="font-medium">Computational Overhead</span> — While key encapsulation is efficient, the added step of using PQC introduces slight latency compared to traditional symmetric key exchanges like Diffie-Hellman.
               </li>
               <li>
-                <span className="font-medium">Larger Key Sizes</span> —Kyber-512 public keys (800 bytes) and ciphertexts (768 bytes) are much bigger than standard RSA-2048 keys (~256 bytes), and this could introduce additional bandwidth and storage requirements.
+                <span className="font-medium">Larger Key Sizes</span> — Kyber-512 public keys (800 bytes) and ciphertexts (768 bytes) are much bigger than standard RSA-2048 keys (~256 bytes), and this could introduce additional bandwidth and storage requirements.
               </li>
             </ul>
             <p className="text-lg">
